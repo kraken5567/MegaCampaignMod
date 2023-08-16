@@ -1,0 +1,112 @@
+characters = {
+	Z75_50333592 = {
+		name = Jos_Sjah
+		portraits = {
+			civilian = {
+				large = GFX_portrait_unknown
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			traits = {  }
+		}
+	}
+	Z75_33555209 = {
+		name = Michael_Bouma
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33555209
+			cost = 150
+		}
+	}
+	Z75_33558926 = {
+		name = Jordao_Leiwakabessy
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33558926
+			cost = 150
+		}
+	}
+	Z75_50333441 = {
+		name = Sonny_Lilipaly
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50333441
+			cost = 150
+		}
+	}
+	Z75_50334759 = {
+		name = Denny_Weisapy
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50334759
+			cost = 150
+		}
+	}
+	Z75_83888030 = {
+		name = Edinho_Mainaky
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_83888030
+			cost = 150
+		}
+	}
+	Z75_100667463 = {
+		name = Edinho_Kolano
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_100667463
+			cost = 150
+		}
+	}
+	Z75_117441875 = {
+		name = Ignacio_Lilipaly
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_117441875
+			cost = 150
+		}
+	}
+}

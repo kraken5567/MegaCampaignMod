@@ -1,0 +1,29 @@
+state = {
+	id = 433
+	name = "STATE_433"
+	manpower = 374853
+	resources = {
+		steel = 1
+	}
+
+	state_category = rural
+
+	history = {
+		owner = SPR
+		victory_points = {
+			1189 1
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 0
+			arms_factory = 0
+			1189 = {
+				naval_base = 1
+			}
+		}
+	}
+
+	provinces = {
+		1149 1174 1189 4051 4194 7066 7154 10037 10067 11940 12009 12039 
+	}
+}

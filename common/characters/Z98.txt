@@ -1,0 +1,225 @@
+characters = {
+	Z98_33555382 = {
+		name = Pellegrino_Tommasi
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_Europe_Generic_2
+			}
+		}
+		country_leader = {
+			ideology = liberalism
+			traits = {  }
+		}
+	}
+	Z98_16777563 = {
+		name = Oronzio_de_Luca
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16777563
+			cost = 150
+		}
+	}
+	Z98_33555077 = {
+		name = Fabio_Cuoco
+		portraits = {
+			army = {
+				large = GFX_Portrait_Italy_Generic_land_4
+				small = GFX_Portrait_Italy_Generic_land_4_small
+			}
+		}
+		corps_commander = {
+			traits = { infantry_officer inflexible_strategist }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 3
+			planning_skill = 1
+			logistics_skill = 2
+		}
+	}
+	Z98_33555183 = {
+		name = Alessandro_Antici
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33555183
+			cost = 150
+		}
+	}
+	Z98_33555288 = {
+		name = Orazio_del_Re
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33555288
+			cost = 150
+		}
+	}
+	Z98_33557739 = {
+		name = Raffaele_Filangieri
+		portraits = {
+			army = {
+				large = GFX_Portrait_Italy_Generic_land_8
+				small = GFX_Portrait_Italy_Generic_land_8_small
+			}
+		}
+		corps_commander = {
+			traits = { old_guard trait_mountaineer }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 3
+			planning_skill = 1
+			logistics_skill = 2
+		}
+	}
+	Z98_33558533 = {
+		name = Oronzio_Zurlo
+		portraits = {
+			army = {
+				large = GFX_Portrait_Italy_Generic_land_2
+				small = GFX_Portrait_Italy_Generic_land_2_small
+			}
+		}
+		corps_commander = {
+			traits = { cavalry_officer trait_mountaineer }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	Z98_33558545 = {
+		name = Saverio_Mezzacapo
+		portraits = {
+			army = {
+				large = GFX_Portrait_Italy_Generic_land_3
+				small = GFX_Portrait_Italy_Generic_land_3_small
+			}
+		}
+		field_marshal = {
+			traits = { infantry_officer logistics_wizard organizer trait_cautious }
+			skill = 3
+			attack_skill = 1
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 4
+		}
+	}
+	Z98_50331830 = {
+		name = Alessandro_Torelli
+		portraits = {
+			navy = {
+				large = GFX_Portrait_Italy_Generic_navy_2
+				small = GFX_Portrait_Italy_Generic_navy_2_small
+			}
+			civilian = {
+			}
+		}
+		navy_leader = {
+			traits = { battleship_adherent }
+			skill = 1
+			attack_skill = 2
+			defense_skill = 1
+			maneuvering_skill = 1
+			coordination_skill = 1
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50331830
+			cost = 150
+		}
+	}
+	Z98_67110712 = {
+		name = Nicola_Sgariglia
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_67110712
+			cost = 150
+		}
+	}
+	Z98_67111346 = {
+		name = Francesco_Bufalari
+		portraits = {
+			army = {
+				large = GFX_Portrait_Italy_Generic_land_6
+				small = GFX_Portrait_Italy_Generic_land_6_small
+			}
+		}
+		corps_commander = {
+			traits = { cavalry_officer desert_fox }
+			skill = 2
+			attack_skill = 3
+			defense_skill = 1
+			planning_skill = 3
+			logistics_skill = 2
+		}
+	}
+	Z98_67113225 = {
+		name = Cristoforo_Carrascosa
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_67113225
+			cost = 150
+		}
+	}
+	Z98_83886764 = {
+		name = Lorenzo_CalA__Ulloa
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_83886764
+			cost = 150
+		}
+	}
+	Z98_100667635 = {
+		name = Vincenzo_Baccarini
+		portraits = {
+			navy = {
+				large = GFX_Portrait_Italy_Generic_navy_1
+				small = GFX_Portrait_Italy_Generic_navy_1_small
+			}
+		}
+		navy_leader = {
+			traits = { cuts_corners }
+			skill = 2
+			attack_skill = 3
+			defense_skill = 1
+			maneuvering_skill = 3
+			coordination_skill = 1
+		}
+	}
+}

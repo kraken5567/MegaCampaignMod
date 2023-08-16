@@ -1,0 +1,29 @@
+state = {
+	id = 112
+	name = "STATE_112"
+	manpower = 3188187
+	resources = {
+		aluminium = 4
+		steel = 10
+		tungsten = 2
+	}
+
+	state_category = town
+
+	history = {
+		owner = HUN
+		victory_points = {
+			9692 1
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 0
+			arms_factory = 1
+		}
+		add_core_of = HUN
+	}
+
+	provinces = {
+		541 581 3484 3537 3550 3716 6561 9539 9692 11522 11539 11554 11679 
+	}
+}

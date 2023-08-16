@@ -1,0 +1,126 @@
+characters = {
+	Z31_33556060 = {
+		name = Jose_2_Atagotaaluk
+		portraits = {
+			civilian = {
+				large = GFX_portrait_south_america_generic_8
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			traits = {  }
+		}
+	}
+	Z31_16777771 = {
+		name = Naalak_Tullaugaq
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16777771
+			cost = 150
+		}
+	}
+	Z31_16778534 = {
+		name = Simeonie_Quissa
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16778534
+			cost = 150
+		}
+	}
+	Z31_33555630 = {
+		name = Germaine_Atagotaaluk
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33555630
+			cost = 150
+		}
+	}
+	Z31_33555723 = {
+		name = James_Maksagak
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33555723
+			cost = 150
+		}
+	}
+	Z31_50334258 = {
+		name = Simeonie_Maksagak
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50334258
+			cost = 150
+		}
+	}
+	Z31_50335350 = {
+		name = Germaine_Atagotaaluk
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50335350
+			cost = 150
+		}
+	}
+	Z31_67109224 = {
+		name = Caubvick_Piugattuk
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_67109224
+			cost = 150
+		}
+	}
+	Z31_67111784 = {
+		name = Caubvick_Evaloarjuk
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_67111784
+			cost = 150
+		}
+	}
+}

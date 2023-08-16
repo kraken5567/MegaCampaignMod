@@ -1,0 +1,31 @@
+state = {
+	id = 360
+	name = "STATE_360"
+	manpower = 1904500
+	resources = {
+		aluminium = 18
+		steel = 32
+	}
+
+	state_category = rural
+
+	history = {
+		owner = Z95
+		victory_points = {
+			603 20
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 0
+			arms_factory = 0
+			11584 = {
+				naval_base = 1
+			}
+		}
+		add_core_of = Z95
+	}
+
+	provinces = {
+		603 628 3604 3657 6656 9582 9613 11584 
+	}
+}

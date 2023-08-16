@@ -1,0 +1,30 @@
+state = {
+	id = 466
+	name = "STATE_466"
+	manpower = 410396
+	resources = {
+		oil = 8
+	}
+
+	state_category = town
+
+	history = {
+		owner = PRU
+		victory_points = {
+			8199 1
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 0
+			arms_factory = 1
+			8199 = {
+				naval_base = 1
+			}
+		}
+		add_core_of = PRU
+	}
+
+	provinces = {
+		2156 5162 8199 12969 
+	}
+}

@@ -1,0 +1,126 @@
+characters = {
+	Z86_33554937 = {
+		name = Jos_Kolano
+		portraits = {
+			civilian = {
+				large = GFX_portrait_unknown
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			traits = {  }
+		}
+	}
+	Z86_33554868 = {
+		name = Jordao_Lilipaly
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33554868
+			cost = 150
+		}
+	}
+	Z86_50332041 = {
+		name = Ellyas_Kolano
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50332041
+			cost = 150
+		}
+	}
+	Z86_50332060 = {
+		name = Denny_Kolano
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50332060
+			cost = 150
+		}
+	}
+	Z86_50332071 = {
+		name = Edinho_Kolano
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50332071
+			cost = 150
+		}
+	}
+	Z86_50332093 = {
+		name = Denny_Pattinama
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50332093
+			cost = 150
+		}
+	}
+	Z86_50332103 = {
+		name = Levi_Bouma
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50332103
+			cost = 150
+		}
+	}
+	Z86_83886493 = {
+		name = Jordao_Sjah
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_83886493
+			cost = 150
+		}
+	}
+	Z86_134218097 = {
+		name = Mohammad_Sjah
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_134218097
+			cost = 150
+		}
+	}
+}

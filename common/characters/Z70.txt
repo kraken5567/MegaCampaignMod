@@ -1,0 +1,140 @@
+characters = {
+	Z70_16780122 = {
+		name = Ignacio_de_Cespedes
+		portraits = {
+			civilian = {
+				large = GFX_portrait_south_america_generic_8
+			}
+		}
+		country_leader = {
+			ideology = oligarchism
+			traits = {  }
+		}
+	}
+	Z70_16778424 = {
+		name = Fulgencio_Colon
+		portraits = {
+			navy = {
+				large = GFX_Portrait_South_America_Generic_navy_2
+				small = GFX_Portrait_South_America_Generic_navy_2_small
+			}
+			civilian = {
+			}
+		}
+		navy_leader = {
+			traits = {  }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			maneuvering_skill = 1
+			coordination_skill = 1
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16778424
+			cost = 150
+		}
+	}
+	Z70_16780472 = {
+		name = Jacobo_Mendez
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16780472
+			cost = 150
+		}
+	}
+	Z70_33555194 = {
+		name = Alberto_Mendez
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33555194
+			cost = 150
+		}
+	}
+	Z70_33557768 = {
+		name = Osvaldo_Cisneros
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33557768
+			cost = 150
+		}
+	}
+	Z70_50332479 = {
+		name = Jacobo_de_Rojas
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50332479
+			cost = 150
+		}
+	}
+	Z70_50334006 = {
+		name = Fulgencio_Moncada
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50334006
+			cost = 150
+		}
+	}
+	Z70_67110353 = {
+		name = Manuel_de_Rojas
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_67110353
+			cost = 150
+		}
+	}
+	Z70_83889048 = {
+		name = Romas_Maceo
+		portraits = {
+			army = {
+				large = GFX_Portrait_South_America_Generic_land_5
+				small = GFX_Portrait_South_America_Generic_land_5_small
+			}
+		}
+		corps_commander = {
+			traits = { naval_invader old_guard }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+}

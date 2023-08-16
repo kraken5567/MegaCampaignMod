@@ -1,0 +1,29 @@
+state = {
+	id = 96
+	name = "STATE_96"
+	manpower = 1935915
+	resources = {
+		aluminium = 49
+		chromium = 45
+		steel = 1
+	}
+
+	state_category = town
+
+	history = {
+		owner = ALB
+		victory_points = {
+			9890 1
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 0
+			arms_factory = 1
+		}
+		add_core_of = ALB
+	}
+
+	provinces = {
+		3922 6940 6953 9849 9874 9890 9906 11832 11857 11868 11887 
+	}
+}

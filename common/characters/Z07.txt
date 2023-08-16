@@ -1,0 +1,140 @@
+characters = {
+	Z07_4554 = {
+		name = Maniema_Lukeni
+		portraits = {
+			civilian = {
+				large = GFX_portrait_unknown
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			traits = {  }
+		}
+	}
+	Z07_16777267 = {
+		name = Waranankong_Nambing
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16777267
+			cost = 150
+		}
+	}
+	Z07_16778200 = {
+		name = Mushidi_Mbili
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16778200
+			cost = 150
+		}
+	}
+	Z07_16778239 = {
+		name = Mushidi_Futa
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16778239
+			cost = 150
+		}
+	}
+	Z07_16778914 = {
+		name = Waranankong_Muteba
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16778914
+			cost = 150
+		}
+	}
+	Z07_16779483 = {
+		name = Cikombe_Mbili
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16779483
+			cost = 150
+		}
+	}
+	Z07_33554731 = {
+		name = Cimbindu_Kamong
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33554731
+			cost = 150
+		}
+	}
+	Z07_33555297 = {
+		name = Kisula_Lukeni
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33555297
+			cost = 150
+		}
+	}
+	Z07_33555857 = {
+		name = Mudib_Isot
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33555857
+			cost = 150
+		}
+	}
+	Z07_50335989 = {
+		name = Mudib_Namwan
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50335989
+			cost = 150
+		}
+	}
+}

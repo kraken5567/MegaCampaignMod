@@ -1,0 +1,140 @@
+characters = {
+	CHI_16779002 = {
+		name = Hsia_Shimazu
+		portraits = {
+			civilian = {
+				large = GFX_portrait_unknown
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			traits = {  }
+		}
+	}
+	CHI_16777769 = {
+		name = Prince_Gong_Aisin_Gioro
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16777769
+			cost = 150
+		}
+	}
+	CHI_16777987 = {
+		name = Hsia_Ma
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16777987
+			cost = 150
+		}
+	}
+	CHI_16777988 = {
+		name = Li_Zhang
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16777988
+			cost = 150
+		}
+	}
+	CHI_16777989 = {
+		name = Liu_Ma
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16777989
+			cost = 150
+		}
+	}
+	CHI_33554793 = {
+		name = Zhang_Zhang
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33554793
+			cost = 150
+		}
+	}
+	CHI_33555988 = {
+		name = Sonin_Xingde
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33555988
+			cost = 150
+		}
+	}
+	CHI_33556855 = {
+		name = Kong_Shimazu
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33556855
+			cost = 150
+		}
+	}
+	CHI_67109784 = {
+		name = Fu_Fu
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_67109784
+			cost = 150
+		}
+	}
+	CHI_67112877 = {
+		name = Songgotu_Xiangying
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_67112877
+			cost = 150
+		}
+	}
+}

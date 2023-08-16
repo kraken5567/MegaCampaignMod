@@ -1,0 +1,112 @@
+characters = {
+	Z99_50332311 = {
+		name = Jaroslav_Jirecek
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_europe_generic_7
+			}
+		}
+		country_leader = {
+			ideology = liberalism
+			traits = {  }
+		}
+	}
+	Z99_16778079 = {
+		name = Jiri_Fibich
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16778079
+			cost = 150
+		}
+	}
+	Z99_33557150 = {
+		name = Jindrich_Lichnovsky
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33557150
+			cost = 150
+		}
+	}
+	Z99_50332571 = {
+		name = Cenek_Albert
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50332571
+			cost = 150
+		}
+	}
+	Z99_50335979 = {
+		name = Cenek_z_Bubna
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50335979
+			cost = 150
+		}
+	}
+	Z99_67110360 = {
+		name = Drahoslav_Clary_Aldringen
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_67110360
+			cost = 150
+		}
+	}
+	Z99_67111759 = {
+		name = Abraham_Tyl
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_67111759
+			cost = 150
+		}
+	}
+	Z99_67112796 = {
+		name = Otakar_Kucera
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_67112796
+			cost = 150
+		}
+	}
+}

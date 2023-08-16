@@ -1,0 +1,30 @@
+state = {
+	id = 403
+	name = "STATE_403"
+	manpower = 2030405
+	resources = {
+		aluminium = 32
+	}
+
+	state_category = town
+
+	history = {
+		owner = BRA
+		victory_points = {
+			10513 1
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			arms_factory = 0
+			5112 = {
+				naval_base = 1
+			}
+		}
+		add_core_of = BRA
+	}
+
+	provinces = {
+		1583 5112 5167 5186 7553 7636 10432 10513 10947 10994 11003 11008 12438 12937 12972 
+	}
+}

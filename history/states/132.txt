@@ -1,0 +1,27 @@
+state = {
+	id = 132
+	name = "STATE_132"
+	manpower = 6900988
+	resources = {
+		steel = 2
+		tungsten = 2
+	}
+
+	state_category = town
+
+	history = {
+		owner = JAP
+		victory_points = {
+			2028 1
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 0
+			arms_factory = 1
+		}
+	}
+
+	provinces = {
+		1778 2028 2099 4888 5057 5076 5100 7971 7997 12327 12596 12732 
+	}
+}

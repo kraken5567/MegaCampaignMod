@@ -1,0 +1,140 @@
+characters = {
+	Z36_16779246 = {
+		name = Hungulu_Kaza
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_South_Africa_Political_Leader_Generic
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			traits = {  }
+		}
+	}
+	Z36_16779458 = {
+		name = Kinya_Kiapungo
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16779458
+			cost = 150
+		}
+	}
+	Z36_16779547 = {
+		name = Nguvenge_Kapusukusu
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16779547
+			cost = 150
+		}
+	}
+	Z36_33556589 = {
+		name = Ciponge_Kaza
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33556589
+			cost = 150
+		}
+	}
+	Z36_33557782 = {
+		name = Kayangula_Kanene
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33557782
+			cost = 150
+		}
+	}
+	Z36_33558266 = {
+		name = Kakembembe_Matamba
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33558266
+			cost = 150
+		}
+	}
+	Z36_50332656 = {
+		name = Vilombo_Mbande
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50332656
+			cost = 150
+		}
+	}
+	Z36_50333727 = {
+		name = Nguvenge_Matamba
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50333727
+			cost = 150
+		}
+	}
+	Z36_50335992 = {
+		name = Ngelo_Kaneketela
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50335992
+			cost = 150
+		}
+	}
+	Z36_83889695 = {
+		name = Livonge_Kaza
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_83889695
+			cost = 150
+		}
+	}
+}

@@ -1,0 +1,7254 @@
+focus_tree = {
+
+	id = polishlituania-focus
+	continuous_focus_position = { x = 340 y = 1180 } 
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = Z45
+		}
+	}
+
+	# Military Tree #
+	focus = { 
+		id = POL_military_modernization
+		icon = GFX_goal_unknown
+		x = 25
+		y = 10
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		ai_will_do = { factor = 1 }
+		completion_reward = {			
+			add_war_support = 0.05
+			army_experience = 25
+		}
+	}
+	# Motorized Modern
+	focus = {
+		id = POL_Mot_1
+		prerequisite = { focus = POL_military_modernization  }
+		mutually_exclusive = { focus = POL_Cav_1 }
+		x = 23
+		y = 11
+		cost = 5
+	}
+
+	# Cavalry Modern
+	focus = {
+		id = POL_Cav_1
+		prerequisite = { focus = POL_military_modernization  }
+		mutually_exclusive = { focus = POL_Mot_1 }
+		x = 27
+		y = 11
+		cost = 5
+	}
+
+	# Political Tree # 
+	#A New Direction
+	focus = {
+		id = POL_a_new_direction
+		icon = GFX_focus_generic_polish_deal
+		x = 13
+		y = 10
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_stability = 0.2
+			
+			add_war_support = 0.2
+			
+			add_political_power = 50
+			
+			
+		}
+	}
+
+	#The West
+	focus = {
+		id = POL_the_west
+		icon = GFX_goal_unknown
+		x = 11
+		y = 11
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = POL_a_new_direction  }
+		bypass = {
+			has_war_with = ger
+		}
+		select_effect = {
+			add_political_power = 100
+						}
+	}
+
+	#The East
+	focus = {
+		id = POL_the_east
+		icon = GFX_focus_BUL_prussia_of_the_balkans
+		x = 15
+		y = 11
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = POL_a_new_direction  }
+		bypass = {
+			has_war_with = RUS
+			
+			
+		}
+		completion_reward = {
+			add_political_power = 100
+			
+		}
+	}
+
+	#Ally Germany
+	focus = {
+		id = POL_ally_germany
+		icon = GFX_focus_chi_mission_to_germany
+		x = 8
+		y = 13
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = POL_the_west  }
+		mutually_exclusive = { focus = POL_ally_russia }
+		available = {
+			NOT = { is_at_war_with = Z68 }
+		}
+		completion_reward = {
+			add_opinion_modifier = {
+			    target = Z68
+			    modifier = 100
+			}
+		}
+	}
+
+	#Villanize Germany
+	focus = {
+		id = POL_villanize_germany
+		icon = GFX_focus_attack_germany
+		x = 11
+		y = 12
+		cost = 10
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = POL_the_west  }
+		mutually_exclusive = { focus = POL_ally_germany  }
+		ai_will_do = { factor = 1 }
+		available = {
+			country_exists = Z68
+		}
+		bypass = {
+			is_at_war_with = Z68
+			
+			
+		}
+		completion_reward = {
+			create_wargoal = {
+			    type = puppet_wargoal_focus
+			    target = Z68
+			}
+			add_state_claim = 40, 68, 321
+			
+			
+			
+		}
+		will_lead_to_war_with = Z68
+	}
+
+	#Ally Russia
+	focus = {
+		id = POL_ally_russia
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		x = 18
+		y = 13
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = POL_the_east  }
+		mutually_exclusive = { focus = POL_villanize_germany  }
+		available = {
+			NOT = { is_at_war_with = SOV }
+			
+			
+		}
+		completion_reward = {
+			add_opinion_modifier = {
+			    target = SOV
+			    modifier = 100
+			}
+			
+			
+			
+		}
+	}
+
+	#Villainize Russia
+	focus = {
+		id = POL_villainize_russia
+		icon = GFX_focus_rom_abdicate
+		x = 15
+		y = 12
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = POL_the_east  }
+		mutually_exclusive = { focus = POL_ally_russia  }
+	}
+
+	#Buffer States
+	focus = {
+		id = POL_buffer_states
+		icon = GFX_goal_unknown
+		x = 13
+		y = 14
+		cost = 12
+		search_filters = {
+			FOCUS_FILTER_FRA_POLITICAL_VIOLENCE
+		}
+		prerequisite = { focus = POL_the_west  } prerequisite = { focus = POL_the_east  }
+		available = {
+			date < 1940.01.01
+			
+			
+			has_government = fascism
+			
+			
+		}
+		completion_reward = {
+			target = { controller = Z45 }
+                which = surrounding_states
+		}
+	}
+
+	#Naval Effort
+	focus = {
+		id = POL_naval_effort
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 13
+		y = 0
+		cost = 5
+		ai_will_do = { factor = 1 }
+		search_filters = {
+			FOCUS_FILTER_NAVY_XPFOCUS_FILTER_INDUSTRY
+		}
+		available_if_capitulated = yes
+		available = {
+			
+						any_state = {
+							is_coastal = yes
+							is_controlled_by = ROOT
+						}
+					
+		}
+		completion_reward = {
+			
+						navy_experience = 10
+						if = {
+							limit = {
+								any_owned_state = {
+									free_building_slots = {
+										building = dockyard
+										size > 0
+										include_locked = yes
+									}
+								}
+							}
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = dockyard
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = dockyard
+									level = 1
+									instant_build = yes
+								}
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									any_owned_state = {
+										free_building_slots = {
+											building = dockyard
+											size > 0
+											include_locked = yes
+										}
+									}
+								}
+							}
+							random_state = {
+								limit = {
+									controller = { tag = ROOT }
+									free_building_slots = {
+										building = dockyard
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = dockyard
+									level = 1
+									instant_build = yes
+								}
+							}
+						}			
+					
+		}
+	}
+
+	#Fleet In Being
+	focus = {
+		id = POL_fleet_in_being
+		icon = GFX_POL_fleet_in_being-5616
+		x = 5
+		y = 1
+		prerequisite = { focus = POL_naval_effort  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		search_filters = {
+			FOCUS_FILTER_NAVY_XPFOCUS_FILTER_RESEARCH
+		}
+		bypass = {
+			 has_tech = fleet_in_being 
+		}
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						set_technology = {
+							fleet_in_being = 1
+						}
+						add_ideas = idea_fleet_in_being
+					
+						navy_experience = 10
+						if = {
+							limit = {
+								any_owned_state = {
+									free_building_slots = {
+										building = dockyard
+										size > 0
+										include_locked = yes
+									}
+								}
+							}
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = dockyard
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = dockyard
+									level = 1
+									instant_build = yes
+								}
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									any_owned_state = {
+										free_building_slots = {
+											building = dockyard
+											size > 0
+											include_locked = yes
+										}
+									}
+								}
+							}
+							random_state = {
+								limit = {
+									controller = { tag = ROOT }
+									free_building_slots = {
+										building = dockyard
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = dockyard
+									level = 1
+									instant_build = yes
+								}
+							}
+						}			
+					
+		}
+	}
+
+	#Cruiser Effort
+	focus = {
+		id = POL_cruiser_effort
+		icon = GFX_goal_unknown
+		x = 3
+		y = 2
+		prerequisite = { focus = POL_fleet_in_being  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		bypass = {
+			 has_tech = advanced_ship_hull_cruiser 
+		}
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						add_tech_bonus = {
+							name = ship_hull_cruiser
+							bonus = 1.0
+							uses = 1
+							category = ca_tech
+							category = cl_tech
+						}
+					
+		}
+	}
+
+	#Cruiser Experiment
+	focus = {
+		id = POL_cruiser_experiment
+		icon = GFX_goal_unknown
+		x = 3
+		y = 3
+		prerequisite = { focus = POL_cruiser_effort  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		available_if_capitulated = yes
+		available = {
+			
+						has_tech = basic_ship_hull_cruiser
+					
+		}
+		completion_reward = {
+			
+						if = {
+							limit = {
+								has_dlc = "Man the Guns"
+							}
+							custom_effect_tooltip = generic_screen_2_tt
+							hidden_effect = {				
+								create_equipment_variant = {
+									name = "1936 Light Class"
+									type = ship_hull_cruiser_2
+									parent_version = 0
+									modules = {
+										fixed_ship_battery_slot = ship_light_medium_battery_1
+										fixed_ship_anti_air_slot = ship_anti_air_1
+										fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+										fixed_ship_radar_slot = empty
+										fixed_ship_engine_slot = cruiser_ship_engine_2
+										fixed_ship_secondaries_slot = ship_secondaries_1
+										fixed_ship_armor_slot = ship_armor_cruiser_1
+										front_1_custom_slot = ship_light_medium_battery_1
+										mid_1_custom_slot = ship_light_medium_battery_1
+										mid_2_custom_slot = ship_light_medium_battery_1
+										rear_1_custom_slot = ship_light_medium_battery_1
+									}
+								}
+								add_equipment_production = {
+									equipment = {
+										type = ship_hull_cruiser_2
+										
+										version_name = "1936 Light Class"
+									}
+									requested_factories = 1
+									progress = 0.99
+									amount = 1
+								}
+							}						
+						}
+						else = {
+							add_equipment_production = {
+								equipment = {
+									type = light_cruiser_2
+									
+								}
+								requested_factories = 1
+								progress = 0.99
+								amount = 1
+							}
+						}
+					
+		}
+	}
+
+	#Cruiser Manufacture
+	focus = {
+		id = POL_cruiser_manufacture
+		icon = GFX_goal_unknown
+		x = 3
+		y = 4
+		prerequisite = { focus = POL_cruiser_experiment  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						custom_effect_tooltip = available_designer
+						show_ideas_tooltip = generic_cruiser_manufacture
+					
+		}
+	}
+
+	#Naional Cruiser
+	focus = {
+		id = POL_naional_cruiser
+		icon = GFX_goal_unknown
+		x = 3
+		y = 5
+		prerequisite = { focus = POL_cruiser_manufacture  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						add_ideas = idea_16_1
+					
+		}
+	}
+
+	#Improve Cruisers
+	focus = {
+		id = POL_improve_cruisers
+		icon = GFX_goal_unknown
+		x = 3
+		y = 6
+		prerequisite = { focus = POL_naional_cruiser  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		search_filters = {
+			FOCUS_FILTER_NAVY_XPFOCUS_FILTER_INDUSTRY
+		}
+		available_if_capitulated = yes
+		available = {
+			
+						has_tech = improved_ship_hull_cruiser
+					
+		}
+		completion_reward = {
+			
+						add_doctrine_cost_reduction = {
+							name = navy_doc_bonus
+							cost_reduction = 0.25
+							uses = 1
+							category = naval_doctrine
+						}
+					
+						navy_experience = 10
+						if = {
+							limit = {
+								any_owned_state = {
+									free_building_slots = {
+										building = dockyard
+										size > 0
+										include_locked = yes
+									}
+								}
+							}
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = dockyard
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = dockyard
+									level = 1
+									instant_build = yes
+								}
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									any_owned_state = {
+										free_building_slots = {
+											building = dockyard
+											size > 0
+											include_locked = yes
+										}
+									}
+								}
+							}
+							random_state = {
+								limit = {
+									controller = { tag = ROOT }
+									free_building_slots = {
+										building = dockyard
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = dockyard
+									level = 1
+									instant_build = yes
+								}
+							}
+						}			
+					}
+						if = {
+							limit = {
+								any_owned_state = {
+									free_building_slots = {
+										building = dockyard
+										size > 0
+										include_locked = yes
+									}
+								}
+							}
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = dockyard
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = dockyard
+									level = 1
+									instant_build = yes
+								}
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									any_owned_state = {
+										free_building_slots = {
+											building = dockyard
+											size > 0
+											include_locked = yes
+										}
+									}
+								}
+							}
+							random_state = {
+								limit = {
+									controller = { tag = ROOT }
+									free_building_slots = {
+										building = dockyard
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = dockyard
+									level = 1
+									instant_build = yes
+								}
+							}
+						}			
+					}
+						if = {
+							limit = {
+								has_dlc = "Man the Guns"
+							}
+							custom_effect_tooltip = generic_doctrine_effort_6_tt
+							hidden_effect = {
+								create_equipment_variant = {
+									name = "1940 Light Class"
+									type = ship_hull_cruiser_3
+									parent_version = 0
+									modules = {
+										fixed_ship_battery_slot = ship_light_medium_battery_1
+										fixed_ship_anti_air_slot = ship_anti_air_1
+										fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+										fixed_ship_radar_slot = empty
+										fixed_ship_engine_slot = cruiser_ship_engine_3
+										fixed_ship_secondaries_slot = ship_secondaries_1
+										fixed_ship_armor_slot = ship_armor_cruiser_1
+										front_1_custom_slot = ship_light_medium_battery_1
+										mid_1_custom_slot = ship_light_medium_battery_1
+										mid_2_custom_slot = ship_light_medium_battery_1
+										rear_1_custom_slot = ship_light_medium_battery_1
+										rear_2_custom_slot = ship_light_medium_battery_1
+									}
+								}
+								add_equipment_production = {
+									equipment = {
+										type = ship_hull_cruiser_3
+										
+										version_name = "1940 Light Class"
+									}
+									requested_factories = 1
+									progress = 0.50
+									amount = 1
+								}
+								add_equipment_production = {
+									equipment = {
+										type = ship_hull_cruiser_3
+										
+										version_name = "1940 Light Class"
+									}
+									requested_factories = 1
+									progress = 0.50
+									amount = 1
+								}					
+							}	
+						}
+						else = {
+							add_equipment_production = {
+								equipment = {
+									type = light_cruiser_3
+									
+								}
+								requested_factories = 1
+								progress = 0.50
+								amount = 2
+							}
+						}
+					
+	#Destroyer Effort
+	focus = {
+		id = POL_destroyer_effort
+		icon = GFX_goal_unknown
+		x = 7
+		y = 2
+		prerequisite = { focus = POL_fleet_in_being  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		bypass = {
+			 has_tech = advanced_ship_hull_light 
+		}
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						add_tech_bonus = {
+							name = dd_tech
+							bonus = 1.0
+							uses = 1
+							category = dd_tech
+						}
+					
+		}
+	}
+
+	#Destroyer Experiment
+	focus = {
+		id = POL_destroyer_experiment
+		icon = GFX_goal_unknown
+		x = 7
+		y = 3
+		prerequisite = { focus = POL_destroyer_effort  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		available_if_capitulated = yes
+		available = {
+			
+						has_tech = basic_ship_hull_light
+					
+		}
+		completion_reward = {
+			
+						if = {
+							limit = {
+								has_dlc = "Man the Guns"
+							}
+							custom_effect_tooltip = generic_screen_5_tt
+							hidden_effect = {
+								create_equipment_variant = {
+									name = "1936 Torpedo Class"
+									type = ship_hull_light_2
+									parent_version = 0
+									modules = {
+										fixed_ship_battery_slot = ship_light_battery_1
+										fixed_ship_anti_air_slot = ship_anti_air_1
+										fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+										fixed_ship_radar_slot = empty
+										fixed_ship_torpedo_slot = ship_torpedo_1
+										fixed_ship_engine_slot = light_ship_engine_2
+										mid_1_custom_slot = ship_depth_charge_1
+										rear_1_custom_slot = ship_torpedo_1
+									}
+								}
+								create_equipment_variant = {
+									name = "1936 Mine Class"
+									type = ship_hull_light_2
+									parent_version = 0
+									modules = {
+										fixed_ship_battery_slot = ship_light_battery_1
+										fixed_ship_anti_air_slot = ship_anti_air_1
+										fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+										fixed_ship_radar_slot = empty
+										fixed_ship_torpedo_slot = ship_torpedo_1
+										fixed_ship_engine_slot = light_ship_engine_2
+										mid_1_custom_slot = ship_mine_sweeper_1
+										rear_1_custom_slot = ship_mine_layer_1
+									}
+								}					
+								add_equipment_production = {
+									equipment = {
+										type = ship_hull_light_2
+										
+										version_name = "1936 Torpedo Class"
+									}
+									requested_factories = 1
+									progress = 0.8
+									amount = 1
+								}
+								add_equipment_production = {
+									equipment = {
+										type = ship_hull_light_2
+										
+										version_name = "1936 Torpedo Class"
+									}
+									requested_factories = 1
+									progress = 0.8
+									amount = 1
+								}
+								add_equipment_production = {
+									equipment = {
+										type = ship_hull_light_2
+										
+										version_name = "1936 Torpedo Class"
+									}
+									requested_factories = 1
+									progress = 0.8
+									amount = 1
+								}
+								add_equipment_production = {
+									equipment = {
+										type = ship_hull_light_2
+										
+										version_name = "1936 Mine Class"
+									}
+									requested_factories = 1
+									progress = 0.8
+									amount = 1
+								}
+								add_equipment_production = {
+									equipment = {
+										type = ship_hull_light_2
+										
+										version_name = "1936 Mine Class"
+									}
+									requested_factories = 1
+									progress = 0.8
+									amount = 1
+								}
+								add_equipment_production = {
+									equipment = {
+										type = ship_hull_light_2
+										
+										version_name = "1936 Mine Class"
+									}
+									requested_factories = 1
+									progress = 0.8
+									amount = 1
+								}																				
+							}	
+						}
+						else = {
+							add_equipment_production = {
+								equipment = {
+									type = destroyer_2
+									
+								}
+								requested_factories = 1
+								progress = 0.80
+								amount = 6
+							}
+						}
+					
+		}
+	}
+
+	#Destroyer Manufacture
+	focus = {
+		id = POL_destroyer_manufacture
+		icon = GFX_goal_generic_navy_cruiser
+		x = 7
+		y = 4
+		prerequisite = { focus = POL_destroyer_experiment  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						custom_effect_tooltip = available_designer
+						show_ideas_tooltip = generic_destroyer_manufacture
+					
+		}
+	}
+
+	#Naional Destroyer
+	focus = {
+		id = POL_naional_destroyer
+		icon = GFX_goal_unknown
+		x = 7
+		y = 5
+		prerequisite = { focus = POL_destroyer_manufacture  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						add_ideas = idea_17_1
+					
+		}
+	}
+
+	#Improve destroyers
+	focus = {
+		id = POL_improve_destroyers
+		icon = GFX_goal_unknown
+		x = 7
+		y = 6
+		prerequisite = { focus = POL_naional_destroyer  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		search_filters = {
+			FOCUS_FILTER_NAVY_XPFOCUS_FILTER_INDUSTRY
+		}
+		available_if_capitulated = yes
+		available = {
+			
+						has_tech = improved_ship_hull_light
+					
+		}
+		completion_reward = {
+			
+						add_doctrine_cost_reduction = {
+							name = navy_doc_bonus
+							cost_reduction = 0.25
+							uses = 1
+							category = naval_doctrine
+						}
+					
+						navy_experience = 10
+						if = {
+							limit = {
+								any_owned_state = {
+									free_building_slots = {
+										building = dockyard
+										size > 0
+										include_locked = yes
+									}
+								}
+							}
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = dockyard
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = dockyard
+									level = 1
+									instant_build = yes
+								}
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									any_owned_state = {
+										free_building_slots = {
+											building = dockyard
+											size > 0
+											include_locked = yes
+										}
+									}
+								}
+							}
+							random_state = {
+								limit = {
+									controller = { tag = ROOT }
+									free_building_slots = {
+										building = dockyard
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = dockyard
+									level = 1
+									instant_build = yes
+								}
+							}
+						}			
+					}
+						if = {
+							limit = {
+								any_owned_state = {
+									free_building_slots = {
+										building = dockyard
+										size > 0
+										include_locked = yes
+									}
+								}
+							}
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = dockyard
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = dockyard
+									level = 1
+									instant_build = yes
+								}
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									any_owned_state = {
+										free_building_slots = {
+											building = dockyard
+											size > 0
+											include_locked = yes
+										}
+									}
+								}
+							}
+							random_state = {
+								limit = {
+									controller = { tag = ROOT }
+									free_building_slots = {
+										building = dockyard
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = dockyard
+									level = 1
+									instant_build = yes
+								}
+							}
+						}			
+					}
+						if = {
+							limit = {
+								has_dlc = "Man the Guns"
+							}
+							custom_effect_tooltip = generic_doctrine_effort_7_tt
+							hidden_effect = {
+								create_equipment_variant = {
+									name = "1940 Torpedo Class"
+									type = ship_hull_light_3
+									parent_version = 0
+									modules = {
+										fixed_ship_battery_slot = ship_light_battery_1
+										fixed_ship_anti_air_slot = ship_anti_air_1
+										fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+										fixed_ship_radar_slot = empty
+										fixed_ship_torpedo_slot = ship_torpedo_1
+										fixed_ship_engine_slot = light_ship_engine_3
+										front_1_custom_slot = ship_depth_charge_1
+										mid_1_custom_slot = ship_torpedo_1
+										rear_1_custom_slot = ship_torpedo_1
+									}
+								}
+								create_equipment_variant = {
+									name = "1940 Mine Class"
+									type = ship_hull_light_3
+									parent_version = 0
+									modules = {
+										fixed_ship_battery_slot = ship_light_battery_1
+										fixed_ship_anti_air_slot = ship_anti_air_1
+										fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+										fixed_ship_radar_slot = empty
+										fixed_ship_torpedo_slot = ship_torpedo_1
+										fixed_ship_engine_slot = light_ship_engine_3
+										front_1_custom_slot = ship_depth_charge_1
+										mid_1_custom_slot = ship_mine_sweeper_1
+										rear_1_custom_slot = ship_mine_layer_1
+									}
+								}					
+								add_equipment_production = {
+									equipment = {
+										type = ship_hull_light_3
+										
+										version_name = "1940 Torpedo Class"
+									}
+									requested_factories = 1
+									progress = 0.50
+									amount = 1
+								}
+								add_equipment_production = {
+									equipment = {
+										type = ship_hull_light_3
+										
+										version_name = "1940 Torpedo Class"
+									}
+									requested_factories = 1
+									progress = 0.50
+									amount = 1
+								}
+								add_equipment_production = {
+									equipment = {
+										type = ship_hull_light_3
+										
+										version_name = "1940 Torpedo Class"
+									}
+									requested_factories = 1
+									progress = 0.50
+									amount = 1
+								}
+								add_equipment_production = {
+									equipment = {
+										type = ship_hull_light_3
+										
+										version_name = "1940 Torpedo Class"
+									}
+									requested_factories = 1
+									progress = 0.50
+									amount = 1
+								}
+								add_equipment_production = {
+									equipment = {
+										type = ship_hull_light_3
+										
+										version_name = "1940 Torpedo Class"
+									}
+									requested_factories = 1
+									progress = 0.50
+									amount = 1
+								}
+								add_equipment_production = {
+									equipment = {
+										type = ship_hull_light_3
+										
+										version_name = "1940 Mine Class"
+									}
+									requested_factories = 1
+									progress = 0.50
+									amount = 1
+								}
+								add_equipment_production = {
+									equipment = {
+										type = ship_hull_light_3
+										
+										version_name = "1940 Mine Class"
+									}
+									requested_factories = 1
+									progress = 0.50
+									amount = 1
+								}
+								add_equipment_production = {
+									equipment = {
+										type = ship_hull_light_3
+										
+										version_name = "1940 Mine Class"
+									}
+									requested_factories = 1
+									progress = 0.50
+									amount = 1
+								}
+								add_equipment_production = {
+									equipment = {
+										type = ship_hull_light_3
+										
+										version_name = "1940 Mine Class"
+									}
+									requested_factories = 1
+									progress = 0.50
+									amount = 1
+								}
+								add_equipment_production = {
+									equipment = {
+										type = ship_hull_light_3
+										
+										version_name = "1940 Mine Class"
+									}
+									requested_factories = 1
+									progress = 0.50
+									amount = 1
+								}																				
+							}	
+						}
+						else = {
+							add_equipment_production = {
+								equipment = {
+									type = destroyer_3
+									
+								}
+								requested_factories = 1
+								progress = 0.50
+								amount = 10
+							}
+						}
+
+	#Base Strike
+	focus = {
+		id = POL_base_strike
+		icon = GFX_POL_base_strike-5615
+		x = 21
+		y = 1
+		prerequisite = { focus = POL_naval_effort  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		bypass = {
+			 has_tech = base_strike 
+		}
+		search_filters = {
+			FOCUS_FILTER_NAVY_XPFOCUS_FILTER_RESEARCH
+		}
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						set_technology = {
+							base_strike = 1
+						}
+						add_ideas = idea_base_strike
+					
+						navy_experience = 10
+						if = {
+							limit = {
+								any_owned_state = {
+									free_building_slots = {
+										building = dockyard
+										size > 0
+										include_locked = yes
+									}
+								}
+							}
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = dockyard
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = dockyard
+									level = 1
+									instant_build = yes
+								}
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									any_owned_state = {
+										free_building_slots = {
+											building = dockyard
+											size > 0
+											include_locked = yes
+										}
+									}
+								}
+							}
+							random_state = {
+								limit = {
+									controller = { tag = ROOT }
+									free_building_slots = {
+										building = dockyard
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = dockyard
+									level = 1
+									instant_build = yes
+								}
+							}
+						}			
+					
+		}
+	}
+
+	#Battleship Effort
+	focus = {
+		id = POL_battleship_effort
+		icon = GFX_goal_unknown
+		x = 19
+		y = 2
+		prerequisite = { focus = POL_base_strike  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		bypass = {
+			 has_tech = advanced_ship_hull_heavy 
+		}
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						add_tech_bonus = {
+							name = ship_hull_heavy
+							bonus = 1.0
+							uses = 1
+							category = bb_tech
+							category = bc_tech
+						}
+					
+		}
+	}
+
+	#Battleship Experiment
+	focus = {
+		id = POL_battleship_experiment
+		icon = GFX_goal_unknown
+		x = 19
+		y = 3
+		prerequisite = { focus = POL_battleship_effort  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		available_if_capitulated = yes
+		available = {
+			
+						has_tech = basic_ship_hull_heavy
+					
+		}
+		completion_reward = {
+			
+						if = {
+							limit = {
+								has_dlc = "Man the Guns"
+							}
+							custom_effect_tooltip = generic_capital_2_tt
+							hidden_effect = {
+								create_equipment_variant = {
+									name = "1936 Heavy Class"
+									type = ship_hull_heavy_2
+									parent_version = 0
+									modules = {
+										fixed_ship_battery_slot = ship_heavy_battery_1
+										fixed_ship_anti_air_slot = ship_anti_air_1
+										fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+										fixed_ship_radar_slot = empty
+										fixed_ship_engine_slot = heavy_ship_engine_2
+										fixed_ship_secondaries_slot = ship_secondaries_1
+										fixed_ship_armor_slot = ship_armor_bb_1
+										front_1_custom_slot = ship_heavy_battery_1
+										mid_1_custom_slot = ship_heavy_battery_1
+										mid_2_custom_slot = ship_heavy_battery_1
+										rear_1_custom_slot = ship_secondaries_1
+									}
+								}
+								add_equipment_production = {
+									equipment = {
+										type = ship_hull_heavy_2
+										
+										version_name = "1936 Heavy Class"
+									}
+									requested_factories = 1
+									progress = 0.5
+									amount = 1
+								}
+							}	
+						}
+						else = {
+							add_equipment_production = {
+								equipment = {
+									type = battleship_2
+									
+								}
+								requested_factories = 1
+								progress = 0.5
+								amount = 1
+							}
+						}
+					
+		}
+	}
+
+	#Battleship Manufacture
+	focus = {
+		id = POL_battleship_manufacture
+		icon = GFX_goal_unknown
+		x = 19
+		y = 4
+		prerequisite = { focus = POL_battleship_experiment  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						custom_effect_tooltip = available_designer
+						show_ideas_tooltip = generic_capital_manufacture
+					
+		}
+	}
+
+	#Naional Battleship
+	focus = {
+		id = POL_naional_battleship
+		icon = GFX_goal_unknown
+		x = 19
+		y = 5
+		prerequisite = { focus = POL_battleship_manufacture  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						add_ideas = idea_18_1
+					
+		}
+	}
+
+	#Improve Battleships
+	focus = {
+		id = POL_improve_battleships
+		icon = GFX_goal_unknown
+		x = 19
+		y = 6
+		prerequisite = { focus = POL_naional_battleship  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		search_filters = {
+			FOCUS_FILTER_NAVY_XPFOCUS_FILTER_INDUSTRY
+		}
+		available_if_capitulated = yes
+		available = {
+			
+						has_tech = improved_ship_hull_heavy
+					
+		}
+		completion_reward = {
+			
+						add_doctrine_cost_reduction = {
+							name = navy_doc_bonus
+							cost_reduction = 0.25
+							uses = 1
+							category = naval_doctrine
+						}
+					
+						navy_experience = 10
+						if = {
+							limit = {
+								any_owned_state = {
+									free_building_slots = {
+										building = dockyard
+										size > 0
+										include_locked = yes
+									}
+								}
+							}
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = dockyard
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = dockyard
+									level = 1
+									instant_build = yes
+								}
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									any_owned_state = {
+										free_building_slots = {
+											building = dockyard
+											size > 0
+											include_locked = yes
+										}
+									}
+								}
+							}
+							random_state = {
+								limit = {
+									controller = { tag = ROOT }
+									free_building_slots = {
+										building = dockyard
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = dockyard
+									level = 1
+									instant_build = yes
+								}
+							}
+						}			
+					}
+						if = {
+							limit = {
+								any_owned_state = {
+									free_building_slots = {
+										building = dockyard
+										size > 0
+										include_locked = yes
+									}
+								}
+							}
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = dockyard
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = dockyard
+									level = 1
+									instant_build = yes
+								}
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									any_owned_state = {
+										free_building_slots = {
+											building = dockyard
+											size > 0
+											include_locked = yes
+										}
+									}
+								}
+							}
+							random_state = {
+								limit = {
+									controller = { tag = ROOT }
+									free_building_slots = {
+										building = dockyard
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = dockyard
+									level = 1
+									instant_build = yes
+								}
+							}
+						}			
+					}
+						if = {
+							limit = {
+								has_dlc = "Man the Guns"
+							}
+							custom_effect_tooltip = generic_doctrine_effort_8_tt
+							hidden_effect = {
+								create_equipment_variant = {
+									name = "1940 Heavy Class"
+									type = ship_hull_heavy_3
+									parent_version = 0
+									modules = {
+										fixed_ship_battery_slot = ship_heavy_battery_1
+										fixed_ship_anti_air_slot = ship_anti_air_1
+										fixed_ship_fire_control_system_slot = ship_fire_control_system_0
+										fixed_ship_radar_slot = empty
+										fixed_ship_engine_slot = heavy_ship_engine_3
+										fixed_ship_secondaries_slot = ship_secondaries_1
+										fixed_ship_armor_slot = ship_armor_bb_1
+										front_1_custom_slot = ship_heavy_battery_1
+										mid_1_custom_slot = ship_heavy_battery_1
+										mid_2_custom_slot = ship_heavy_battery_1
+										mid_3_custom_slot = ship_heavy_battery_1
+										rear_1_custom_slot = ship_heavy_battery_1
+									}
+								}
+								add_equipment_production = {
+									equipment = {
+										type = ship_hull_heavy_3
+										
+										version_name = "1940 Heavy Class"
+									}
+									requested_factories = 1
+									progress = 0.50
+									amount = 1
+								}
+							}	
+						}
+						else = {
+							add_equipment_production = {
+								equipment = {
+									type = battleship_3
+									
+								}
+								requested_factories = 1
+								progress = 0.50
+								amount = 1
+							}
+						}
+					
+	#Carrier Effort
+	focus = {
+		id = POL_carrier_effort
+		icon = GFX_POL_carrier_effort-73687
+		x = 23
+		y = 2
+		prerequisite = { focus = POL_base_strike  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		bypass = {
+			 has_tech = advanced_ship_hull_carrier 
+		}
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						add_tech_bonus = {
+							name = cv_tech
+							bonus = 1.0
+							uses = 1
+							category = cv_tech
+						}
+					
+		}
+	}
+
+	#Carrier Experiment
+	focus = {
+		id = POL_carrier_experiment
+		icon = GFX_goal_unknown
+		x = 23
+		y = 3
+		prerequisite = { focus = POL_carrier_effort  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		available_if_capitulated = yes
+		available = {
+			
+						has_tech = basic_ship_hull_carrier
+					
+		}
+		completion_reward = {
+			
+						if = {
+							limit = {
+								has_dlc = "Man the Guns"
+							}
+							custom_effect_tooltip = generic_capital_5_tt
+							hidden_effect = {
+								create_equipment_variant = {
+									name = "1936 Huge Class"
+									type = ship_hull_carrier_1
+									parent_version = 0
+									modules = {
+										fixed_ship_deck_slot_1 = ship_deck_space
+										fixed_ship_deck_slot_2 = ship_deck_space
+										fixed_ship_anti_air_slot = ship_anti_air_1
+										fixed_ship_radar_slot = empty
+										fixed_ship_engine_slot = carrier_ship_engine_2
+										fixed_ship_secondaries_slot = empty
+										front_1_custom_slot = ship_deck_space
+									}
+								}
+								add_equipment_production = {
+									equipment = {
+										type = ship_hull_carrier_1
+										
+										version_name = "1936 Huge Class"
+									}
+									requested_factories = 1
+									progress = 0.5
+									amount = 1
+								}
+							}	
+						}
+						else = {
+							add_equipment_production = {
+								equipment = {
+									type = carrier_2
+									
+								}
+								requested_factories = 1
+								progress = 0.5
+								amount = 1
+							}
+						}
+					
+		}
+	}
+
+	#Carrier Manufacture
+	focus = {
+		id = POL_carrier_manufacture
+		icon = GFX_goal_unknown
+		x = 23
+		y = 4
+		prerequisite = { focus = POL_carrier_experiment  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						custom_effect_tooltip = available_designer
+						show_ideas_tooltip = generic_carrier_manufacture
+					
+		}
+	}
+
+	#Naional Carrier
+	focus = {
+		id = POL_naional_carrier
+		icon = GFX_goal_unknown
+		x = 23
+		y = 5
+		prerequisite = { focus = POL_carrier_manufacture  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						add_ideas = idea_19_1
+					
+		}
+	}
+
+	#Improve Carriers
+	focus = {
+		id = POL_improve_carriers
+		icon = GFX_POL_improve_carriers-73687
+		x = 23
+		y = 6
+		prerequisite = { focus = POL_naional_carrier  }
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_NAVY_XPFOCUS_FILTER_INDUSTRY
+		}
+		ai_will_do = { factor = 1 }
+		available_if_capitulated = yes
+		available = {
+			
+						has_tech = improved_ship_hull_carrier
+					
+		}
+		completion_reward = {
+			
+						add_doctrine_cost_reduction = {
+							name = navy_doc_bonus
+							cost_reduction = 0.25
+							uses = 1
+							category = naval_doctrine
+						}
+					
+						navy_experience = 10
+						if = {
+							limit = {
+								any_owned_state = {
+									free_building_slots = {
+										building = dockyard
+										size > 0
+										include_locked = yes
+									}
+								}
+							}
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = dockyard
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = dockyard
+									level = 1
+									instant_build = yes
+								}
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									any_owned_state = {
+										free_building_slots = {
+											building = dockyard
+											size > 0
+											include_locked = yes
+										}
+									}
+								}
+							}
+							random_state = {
+								limit = {
+									controller = { tag = ROOT }
+									free_building_slots = {
+										building = dockyard
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = dockyard
+									level = 1
+									instant_build = yes
+								}
+							}
+						}			
+					}
+						if = {
+							limit = {
+								any_owned_state = {
+									free_building_slots = {
+										building = dockyard
+										size > 0
+										include_locked = yes
+									}
+								}
+							}
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = dockyard
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = dockyard
+									level = 1
+									instant_build = yes
+								}
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									any_owned_state = {
+										free_building_slots = {
+											building = dockyard
+											size > 0
+											include_locked = yes
+										}
+									}
+								}
+							}
+							random_state = {
+								limit = {
+									controller = { tag = ROOT }
+									free_building_slots = {
+										building = dockyard
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = dockyard
+									level = 1
+									instant_build = yes
+								}
+							}
+						}			
+					}
+						if = {
+							limit = {
+								has_dlc = "Man the Guns"
+							}
+							custom_effect_tooltip = generic_doctrine_effort_9_tt
+							hidden_effect = {
+								create_equipment_variant = {
+									name = "1940 Huge Class"
+									type = ship_hull_carrier_2
+									parent_version = 0
+									modules = {
+										fixed_ship_deck_slot_1 = ship_deck_space
+										fixed_ship_deck_slot_2 = ship_deck_space
+										fixed_ship_anti_air_slot = ship_anti_air_1
+										fixed_ship_radar_slot = empty
+										fixed_ship_engine_slot = carrier_ship_engine_3
+										fixed_ship_secondaries_slot = empty
+										front_1_custom_slot = ship_deck_space
+										mid_1_custom_slot = ship_deck_space
+									}
+								}
+								add_equipment_production = {
+									equipment = {
+										type = ship_hull_carrier_2
+										
+										version_name = "1940 Huge Class"
+									}
+									requested_factories = 1
+									progress = 0.50
+									amount = 1
+								}
+							}	
+						}
+						else = {
+							add_equipment_production = {
+								equipment = {
+									type = carrier_3
+									
+								}
+								requested_factories = 1
+								progress = 0.50
+								amount = 1
+							}
+						}
+
+
+	#Trade Interdiction
+	focus = {
+		id = POL_trade_interdiction
+		icon = GFX_POL_trade_interdiction-136503
+		x = 13
+		y = 1
+		prerequisite = { focus = POL_naval_effort  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		bypass = {
+			 has_tech = trade_interdiction 
+		}
+		search_filters = {
+			FOCUS_FILTER_NAVY_XPFOCUS_FILTER_RESEARCH
+		}
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						set_technology = {
+							trade_interdiction = 1
+						}	
+						add_ideas = idea_trade_interdiction
+					
+						navy_experience = 10
+						if = {
+							limit = {
+								any_owned_state = {
+									free_building_slots = {
+										building = dockyard
+										size > 0
+										include_locked = yes
+									}
+								}
+							}
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = dockyard
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = dockyard
+									level = 1
+									instant_build = yes
+								}
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									any_owned_state = {
+										free_building_slots = {
+											building = dockyard
+											size > 0
+											include_locked = yes
+										}
+									}
+								}
+							}
+							random_state = {
+								limit = {
+									controller = { tag = ROOT }
+									free_building_slots = {
+										building = dockyard
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = dockyard
+									level = 1
+									instant_build = yes
+								}
+							}
+						}			
+					
+		}
+	}
+
+	#Submarine Effort
+	focus = {
+		id = POL_submarine_effort
+		icon = GFX_goal_unknown
+		x = 13
+		y = 2
+		prerequisite = { focus = POL_trade_interdiction  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		bypass = {
+			 has_tech = advanced_ship_hull_submarine 
+		}
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						add_tech_bonus = {
+							name = ss_tech
+							bonus = 1.0
+							uses = 1
+							category = ss_tech
+						}
+					
+		}
+	}
+
+	#Submarine Experiment
+	focus = {
+		id = POL_submarine_experiment
+		icon = GFX_goal_unknown
+		x = 13
+		y = 3
+		prerequisite = { focus = POL_submarine_effort  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		available_if_capitulated = yes
+		available = {
+			
+						has_tech = basic_ship_hull_submarine
+					
+		}
+		completion_reward = {
+			
+						if = {
+							limit = {
+								has_dlc = "Man the Guns"
+							}
+							custom_effect_tooltip = generic_submarine_2_tt
+							hidden_effect = {
+								create_equipment_variant = {
+									name = "1936 Raider Class"
+									type = ship_hull_submarine_2
+									parent_version = 0
+									modules = {
+										fixed_ship_torpedo_slot = ship_torpedo_sub_2
+										fixed_ship_engine_slot = sub_ship_engine_2
+										rear_1_custom_slot = ship_mine_layer_sub
+									}
+								}
+								add_equipment_production = {
+									equipment = {
+										type = ship_hull_submarine_2
+										
+										version_name = "1936 Raider Class"
+									}
+									requested_factories = 1
+									progress = 0.99
+									amount = 1
+								}
+								add_equipment_production = {
+									equipment = {
+										type = ship_hull_submarine_2
+										
+										version_name = "1936 Raider Class"
+									}
+									requested_factories = 1
+									progress = 0.99
+									amount = 1
+								}
+								add_equipment_production = {
+									equipment = {
+										type = ship_hull_submarine_2
+										
+										version_name = "1936 Raider Class"
+									}
+									requested_factories = 1
+									progress = 0.99
+									amount = 1
+								}
+								add_equipment_production = {
+									equipment = {
+										type = ship_hull_submarine_2
+										
+										version_name = "1936 Raider Class"
+									}
+									requested_factories = 1
+									progress = 0.99
+									amount = 1
+								}
+								add_equipment_production = {
+									equipment = {
+										type = ship_hull_submarine_2
+										
+										version_name = "1936 Raider Class"
+									}
+									requested_factories = 1
+									progress = 0.99
+									amount = 1
+								}
+								add_equipment_production = {
+									equipment = {
+										type = ship_hull_submarine_2
+										
+										version_name = "1936 Raider Class"
+									}
+									requested_factories = 1
+									progress = 0.99
+									amount = 1
+								}
+								add_equipment_production = {
+									equipment = {
+										type = ship_hull_submarine_2
+										
+										version_name = "1936 Raider Class"
+									}
+									requested_factories = 1
+									progress = 0.99
+									amount = 1
+								}
+								add_equipment_production = {
+									equipment = {
+										type = ship_hull_submarine_2
+										
+										version_name = "1936 Raider Class"
+									}
+									requested_factories = 1
+									progress = 0.99
+									amount = 1
+								}
+								add_equipment_production = {
+									equipment = {
+										type = ship_hull_submarine_2
+										
+										version_name = "1936 Raider Class"
+									}
+									requested_factories = 1
+									progress = 0.99
+									amount = 1
+								}
+								add_equipment_production = {
+									equipment = {
+										type = ship_hull_submarine_2
+										
+										version_name = "1936 Raider Class"
+									}
+									requested_factories = 1
+									progress = 0.99
+									amount = 1
+								}
+							}	
+						}
+						else = {
+							add_equipment_production = {
+								equipment = {
+									type = submarine_2
+									
+								}
+								requested_factories = 1
+								progress = 0.99
+								amount = 10
+							}
+						}
+					
+		}
+	}
+
+	#Submarine Manufacture
+	focus = {
+		id = POL_submarine_manufacture
+		icon = GFX_goal_unknown
+		x = 13
+		y = 4
+		prerequisite = { focus = POL_submarine_experiment  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						custom_effect_tooltip = available_designer
+						show_ideas_tooltip = generic_submarine_manufacture
+					
+		}
+	}
+
+	#Naional Submarine
+	focus = {
+		id = POL_naional_submarine
+		icon = GFX_goal_unknown
+		x = 13
+		y = 5
+		prerequisite = { focus = POL_submarine_manufacture  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						add_ideas = idea_20_1
+					
+		}
+	}
+
+	#Improve Submarines
+	focus = {
+		id = POL_improve_submarines
+		icon = GFX_goal_unknown
+		x = 13
+		y = 6
+		prerequisite = { focus = POL_naional_submarine  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		search_filters = {
+			FOCUS_FILTER_NAVY_XPFOCUS_FILTER_INDUSTRY
+		}
+		available_if_capitulated = yes
+		available = {
+			
+						has_tech = improved_ship_hull_submarine
+					
+		}
+		completion_reward = {
+			
+						add_doctrine_cost_reduction = {
+							name = navy_doc_bonus
+							cost_reduction = 0.25
+							uses = 1
+							category = naval_doctrine
+						}
+					
+						navy_experience = 10
+						if = {
+							limit = {
+								any_owned_state = {
+									free_building_slots = {
+										building = dockyard
+										size > 0
+										include_locked = yes
+									}
+								}
+							}
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = dockyard
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = dockyard
+									level = 1
+									instant_build = yes
+								}
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									any_owned_state = {
+										free_building_slots = {
+											building = dockyard
+											size > 0
+											include_locked = yes
+										}
+									}
+								}
+							}
+							random_state = {
+								limit = {
+									controller = { tag = ROOT }
+									free_building_slots = {
+										building = dockyard
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = dockyard
+									level = 1
+									instant_build = yes
+								}
+							}
+						}			
+					}
+						if = {
+							limit = {
+								any_owned_state = {
+									free_building_slots = {
+										building = dockyard
+										size > 0
+										include_locked = yes
+									}
+								}
+							}
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = dockyard
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = dockyard
+									level = 1
+									instant_build = yes
+								}
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									any_owned_state = {
+										free_building_slots = {
+											building = dockyard
+											size > 0
+											include_locked = yes
+										}
+									}
+								}
+							}
+							random_state = {
+								limit = {
+									controller = { tag = ROOT }
+									free_building_slots = {
+										building = dockyard
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = dockyard
+									level = 1
+									instant_build = yes
+								}
+							}
+						}			
+					}
+						if = {
+							limit = {
+								has_dlc = "Man the Guns"
+							}
+							custom_effect_tooltip = generic_doctrine_effort_10_tt
+							hidden_effect = {
+								create_equipment_variant = {
+									name = "1940 Raider Class"
+									type = ship_hull_submarine_3
+									parent_version = 0
+									modules = {
+										fixed_ship_torpedo_slot = ship_torpedo_sub_3
+										fixed_ship_engine_slot = sub_ship_engine_3
+										front_1_custom_slot = ship_torpedo_sub_3
+										rear_1_custom_slot = ship_mine_layer_sub
+									}
+								}
+								add_equipment_production = {
+									equipment = {
+										type = ship_hull_submarine_3
+										
+										version_name = "1940 Raider Class"
+									}
+									requested_factories = 1
+									progress = 0.50
+									amount = 1
+								}
+								add_equipment_production = {
+									equipment = {
+										type = ship_hull_submarine_3
+										
+										version_name = "1940 Raider Class"
+									}
+									requested_factories = 1
+									progress = 0.50
+									amount = 1
+								}
+								add_equipment_production = {
+									equipment = {
+										type = ship_hull_submarine_3
+										
+										version_name = "1940 Raider Class"
+									}
+									requested_factories = 1
+									progress = 0.50
+									amount = 1
+								}
+								add_equipment_production = {
+									equipment = {
+										type = ship_hull_submarine_3
+										
+										version_name = "1940 Raider Class"
+									}
+									requested_factories = 1
+									progress = 0.50
+									amount = 1
+								}
+								add_equipment_production = {
+									equipment = {
+										type = ship_hull_submarine_3
+										
+										version_name = "1940 Raider Class"
+									}
+									requested_factories = 1
+									progress = 0.50
+									amount = 1
+								}
+								add_equipment_production = {
+									equipment = {
+										type = ship_hull_submarine_3
+										
+										version_name = "1940 Raider Class"
+									}
+									requested_factories = 1
+									progress = 0.50
+									amount = 1
+								}
+								add_equipment_production = {
+									equipment = {
+										type = ship_hull_submarine_3
+										
+										version_name = "1940 Raider Class"
+									}
+									requested_factories = 1
+									progress = 0.50
+									amount = 1
+								}
+								add_equipment_production = {
+									equipment = {
+										type = ship_hull_submarine_3
+										
+										version_name = "1940 Raider Class"
+									}
+									requested_factories = 1
+									progress = 0.50
+									amount = 1
+								}
+								add_equipment_production = {
+									equipment = {
+										type = ship_hull_submarine_3
+										
+										version_name = "1940 Raider Class"
+									}
+									requested_factories = 1
+									progress = 0.50
+									amount = 1
+								}
+								add_equipment_production = {
+									equipment = {
+										type = ship_hull_submarine_3
+										
+										version_name = "1940 Raider Class"
+									}
+									requested_factories = 1
+									progress = 0.50
+									amount = 1
+								}
+								add_equipment_production = {
+									equipment = {
+										type = ship_hull_submarine_3
+										
+										version_name = "1940 Raider Class"
+									}
+									requested_factories = 1
+									progress = 0.50
+									amount = 1
+								}
+								add_equipment_production = {
+									equipment = {
+										type = ship_hull_submarine_3
+										
+										version_name = "1940 Raider Class"
+									}
+									requested_factories = 1
+									progress = 0.50
+									amount = 1
+								}
+								add_equipment_production = {
+									equipment = {
+										type = ship_hull_submarine_3
+										
+										version_name = "1940 Raider Class"
+									}
+									requested_factories = 1
+									progress = 0.50
+									amount = 1
+								}
+								add_equipment_production = {
+									equipment = {
+										type = ship_hull_submarine_3
+										
+										version_name = "1940 Raider Class"
+									}
+									requested_factories = 1
+									progress = 0.50
+									amount = 1
+								}
+								add_equipment_production = {
+									equipment = {
+										type = ship_hull_submarine_3
+										
+										version_name = "1940 Raider Class"
+									}
+									requested_factories = 1
+									progress = 0.50
+									amount = 1
+								}
+								add_equipment_production = {
+									equipment = {
+										type = ship_hull_submarine_3
+										
+										version_name = "1940 Raider Class"
+									}
+									requested_factories = 1
+									progress = 0.50
+									amount = 1
+								}
+								add_equipment_production = {
+									equipment = {
+										type = ship_hull_submarine_3
+										
+										version_name = "1940 Raider Class"
+									}
+									requested_factories = 1
+									progress = 0.50
+									amount = 1
+								}
+								add_equipment_production = {
+									equipment = {
+										type = ship_hull_submarine_3
+										
+										version_name = "1940 Raider Class"
+									}
+									requested_factories = 1
+									progress = 0.50
+									amount = 1
+								}
+								add_equipment_production = {
+									equipment = {
+										type = ship_hull_submarine_3
+										
+										version_name = "1940 Raider Class"
+									}
+									requested_factories = 1
+									progress = 0.50
+									amount = 1
+								}
+								add_equipment_production = {
+									equipment = {
+										type = ship_hull_submarine_3
+										
+										version_name = "1940 Raider Class"
+									}
+									requested_factories = 1
+									progress = 0.50
+									amount = 1
+								}																																														
+							}	
+						}
+						else = {
+							add_equipment_production = {
+								equipment = {
+									type = submarine_3
+									
+								}
+								requested_factories = 1
+								progress = 0.50
+								amount = 20
+							}
+						}
+					
+		complete_tooltip = {
+			add_extra_state_shared_building_slots = 1
+			add_building_construction = {
+				type = dockyard
+				level = 1
+				instant_build = yes
+			}
+		}
+
+	#Module I
+	focus = {
+		id = POL_module_i
+		icon = GFX_goal_generic_production2
+		x = 1
+		y = 3
+		prerequisite = { focus = POL_cruiser_effort  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						add_tech_bonus = {
+							name = ship_modules_tech
+							bonus = 1.0
+							uses = 1
+							category = ship_modules_tech
+						}
+					
+		}
+	}
+
+	#Module II
+	focus = {
+		id = POL_module_ii
+		icon = GFX_goal_generic_production2
+		x = 1
+		y = 4
+		prerequisite = { focus = POL_module_i  } prerequisite = { focus = POL_cruiser_experiment  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						add_tech_bonus = {
+							name = ship_modules_tech
+							bonus = 1.0
+							uses = 1
+							category = ship_modules_tech
+						}
+					
+		}
+	}
+
+	#Module III
+	focus = {
+		id = POL_module_iii
+		icon = GFX_goal_generic_production2
+		x = 1
+		y = 5
+		prerequisite = { focus = POL_module_ii  } prerequisite = { focus = POL_cruiser_manufacture  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						add_tech_bonus = {
+							name = ship_modules_tech
+							bonus = 1.0
+							uses = 1
+							category = ship_modules_tech
+						}
+					
+		}
+	}
+
+	#Minesweeping Device I
+	focus = {
+		id = POL_minesweeping_device_i
+		icon = GFX_goal_unknown
+		x = 5
+		y = 3
+		prerequisite = { focus = POL_cruiser_effort  } prerequisite = { focus = POL_destroyer_effort  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						add_tech_bonus = {
+							name = naval_minesweeping
+							bonus = 1.0
+							uses = 1
+							category = naval_minesweeping
+						}
+					
+		}
+	}
+
+	#Minesweeping Device II
+	focus = {
+		id = POL_minesweeping_device_ii
+		icon = GFX_goal_unknown
+		x = 5
+		y = 4
+		prerequisite = { focus = POL_minesweeping_device_i  } prerequisite = { focus = POL_cruiser_experiment  } prerequisite = { focus = POL_destroyer_experiment  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						add_tech_bonus = {
+							name = naval_minesweeping
+							bonus = 1.0
+							uses = 1
+							category = naval_minesweeping
+						}
+					
+		}
+	}
+
+	#Module IV
+	focus = {
+		id = POL_module_iv
+		icon = GFX_goal_generic_production2
+		x = 5
+		y = 5
+		prerequisite = { focus = POL_minesweeping_device_ii  } prerequisite = { focus = POL_cruiser_manufacture  } prerequisite = { focus = POL_destroyer_manufacture  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						add_tech_bonus = {
+							name = ship_modules_tech
+							bonus = 1.0
+							uses = 1
+							category = ship_modules_tech
+						}
+					
+		}
+	}
+
+	#Mine warfare I
+	focus = {
+		id = POL_mine_warfare_i
+		icon = GFX_goal_unknown
+		x = 11
+		y = 3
+		prerequisite = { focus = POL_submarine_effort  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						add_tech_bonus = {
+							name = naval_mines
+							bonus = 1.0
+							uses = 1
+							category = naval_mines
+						}
+					
+		}
+	}
+
+	#Module VIII
+	focus = {
+		id = POL_module_viii
+		icon = GFX_goal_generic_production2
+		x = 11
+		y = 4
+		prerequisite = { focus = POL_mine_warfare_i  } prerequisite = { focus = POL_submarine_experiment  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						add_tech_bonus = {
+							name = ship_modules_tech
+							bonus = 1.0
+							uses = 1
+							category = ship_modules_tech
+						}
+					
+		}
+	}
+
+	#Module IX
+	focus = {
+		id = POL_module_ix
+		icon = GFX_goal_generic_production2
+		x = 11
+		y = 5
+		prerequisite = { focus = POL_module_viii  } prerequisite = { focus = POL_submarine_manufacture  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						add_tech_bonus = {
+							name = ship_modules_tech
+							bonus = 1.0
+							uses = 1
+							category = ship_modules_tech
+						}
+					
+		}
+	}
+
+	#Mine warfare II
+	focus = {
+		id = POL_mine_warfare_ii
+		icon = GFX_goal_unknown
+		x = 15
+		y = 3
+		prerequisite = { focus = POL_submarine_effort  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						add_tech_bonus = {
+							name = naval_mines
+							bonus = 1.0
+							uses = 1
+							category = naval_mines
+						}
+					
+		}
+	}
+
+	#Module X
+	focus = {
+		id = POL_module_x
+		icon = GFX_goal_generic_production2
+		x = 15
+		y = 4
+		prerequisite = { focus = POL_mine_warfare_ii  } prerequisite = { focus = POL_submarine_experiment  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						add_tech_bonus = {
+							name = ship_modules_tech
+							bonus = 1.0
+							uses = 1
+							category = ship_modules_tech
+						}
+					
+		}
+	}
+
+	#Module XI
+	focus = {
+		id = POL_module_xi
+		icon = GFX_goal_generic_production2
+		x = 15
+		y = 5
+		prerequisite = { focus = POL_module_x  } prerequisite = { focus = POL_submarine_manufacture  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						add_tech_bonus = {
+							name = ship_modules_tech
+							bonus = 1.0
+							uses = 1
+							category = ship_modules_tech
+						}
+					
+		}
+	}
+
+	#Transport I
+	focus = {
+		id = POL_transport_i
+		icon = GFX_goal_unknown
+		x = 21
+		y = 3
+		prerequisite = { focus = POL_carrier_effort  } prerequisite = { focus = POL_battleship_effort  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						add_tech_bonus = {
+							name = tp_tech
+							bonus = 1.0
+							uses = 1
+							category = tp_tech
+						}
+					
+		}
+	}
+
+	#Transport II
+	focus = {
+		id = POL_transport_ii
+		icon = GFX_goal_unknown
+		x = 21
+		y = 4
+		prerequisite = { focus = POL_transport_i  } prerequisite = { focus = POL_battleship_experiment  } prerequisite = { focus = POL_carrier_experiment  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						add_tech_bonus = {
+							name = tp_tech
+							bonus = 1.0
+							uses = 1
+							category = tp_tech
+						}
+					
+		}
+	}
+
+	#Module XV
+	focus = {
+		id = POL_module_xv
+		icon = GFX_goal_generic_production2
+		x = 21
+		y = 5
+		prerequisite = { focus = POL_transport_ii  } prerequisite = { focus = POL_carrier_manufacture  } prerequisite = { focus = POL_battleship_manufacture  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						add_tech_bonus = {
+							name = ship_modules_tech
+							bonus = 1.0
+							uses = 1
+							category = ship_modules_tech
+						}
+					
+		}
+	}
+
+	#Module XVI
+	focus = {
+		id = POL_module_xvi
+		icon = GFX_goal_generic_production2
+		x = 25
+		y = 3
+		prerequisite = { focus = POL_carrier_effort  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						add_tech_bonus = {
+							name = ship_modules_tech
+							bonus = 1.0
+							uses = 1
+							category = ship_modules_tech
+						}
+					
+		}
+	}
+
+	#Module XVII
+	focus = {
+		id = POL_module_xvii
+		icon = GFX_goal_generic_production2
+		x = 25
+		y = 4
+		prerequisite = { focus = POL_module_xvi  } prerequisite = { focus = POL_carrier_experiment  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						add_tech_bonus = {
+							name = ship_modules_tech
+							bonus = 1.0
+							uses = 1
+							category = ship_modules_tech
+						}
+					
+		}
+	}
+
+	#Module XVIII
+	focus = {
+		id = POL_module_xviii
+		icon = GFX_goal_generic_production2
+		x = 25
+		y = 5
+		prerequisite = { focus = POL_module_xvii  } prerequisite = { focus = POL_carrier_manufacture  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						add_tech_bonus = {
+							name = ship_modules_tech
+							bonus = 1.0
+							uses = 1
+							category = ship_modules_tech
+						}
+					
+		}
+	}
+
+	#Module V
+	focus = {
+		id = POL_module_v
+		icon = GFX_goal_generic_production2
+		x = 9
+		y = 3
+		prerequisite = { focus = POL_destroyer_effort  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						add_tech_bonus = {
+							name = ship_modules_tech
+							bonus = 1.0
+							uses = 1
+							category = ship_modules_tech
+						}
+					
+		}
+	}
+
+	#Module VI
+	focus = {
+		id = POL_module_vi
+		icon = GFX_goal_generic_production2
+		x = 9
+		y = 4
+		prerequisite = { focus = POL_module_v  } prerequisite = { focus = POL_destroyer_experiment  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						add_tech_bonus = {
+							name = ship_modules_tech
+							bonus = 1.0
+							uses = 1
+							category = ship_modules_tech
+						}
+					
+		}
+	}
+
+	#Module VII
+	focus = {
+		id = POL_module_vii
+		icon = GFX_goal_generic_production2
+		x = 9
+		y = 5
+		prerequisite = { focus = POL_module_vi  } prerequisite = { focus = POL_destroyer_manufacture  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						add_tech_bonus = {
+							name = ship_modules_tech
+							bonus = 1.0
+							uses = 1
+							category = ship_modules_tech
+						}
+					
+		}
+	}
+
+	#Module XII
+	focus = {
+		id = POL_module_xii
+		icon = GFX_goal_generic_production2
+		x = 17
+		y = 3
+		prerequisite = { focus = POL_battleship_effort  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						add_tech_bonus = {
+							name = ship_modules_tech
+							bonus = 1.0
+							uses = 1
+							category = ship_modules_tech
+						}
+					
+		}
+	}
+
+	#Module XIII
+	focus = {
+		id = POL_module_xiii
+		icon = GFX_goal_generic_production2
+		x = 17
+		y = 4
+		prerequisite = { focus = POL_module_xii  } prerequisite = { focus = POL_battleship_experiment  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						add_tech_bonus = {
+							name = ship_modules_tech
+							bonus = 1.0
+							uses = 1
+							category = ship_modules_tech
+						}
+					
+		}
+	}
+
+	#Module XIV
+	focus = {
+		id = POL_module_xiv
+		icon = GFX_goal_generic_production2
+		x = 17
+		y = 5
+		prerequisite = { focus = POL_module_xiii  } prerequisite = { focus = POL_battleship_manufacture  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						add_tech_bonus = {
+							name = ship_modules_tech
+							bonus = 1.0
+							uses = 1
+							category = ship_modules_tech
+						}
+					
+		}
+	}
+
+	#Defensive Leader
+	focus = {
+		id = POL_defensive_leader
+		icon = GFX_goal_unknown
+		x = 10
+		y = 7
+		prerequisite = { focus = POL_improve_cruisers  } prerequisite = { focus = POL_improve_destroyers  } prerequisite = { focus = POL_improve_battleships  } prerequisite = { focus = POL_improve_carriers  } prerequisite = { focus = POL_improve_submarines  }
+		cost = 5
+		mutually_exclusive = { focus = POL_farsighted_leader  focus = POL_offensive_leader  focus = POL_coordination_leader  }
+		ai_will_do = { factor = 1 }
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						add_ideas = idea_navy_general_1
+					
+		}
+	}
+
+	#Farsighted Leader
+	focus = {
+		id = POL_farsighted_leader
+		icon = GFX_goal_unknown
+		x = 12
+		y = 7
+		prerequisite = { focus = POL_improve_cruisers  } prerequisite = { focus = POL_improve_destroyers  } prerequisite = { focus = POL_improve_battleships  } prerequisite = { focus = POL_improve_carriers  } prerequisite = { focus = POL_improve_submarines  }
+		cost = 5
+		mutually_exclusive = { focus = POL_defensive_leader  focus = POL_offensive_leader  focus = POL_coordination_leader  }
+		ai_will_do = { factor = 1 }
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						add_ideas = idea_navy_general_2
+					
+		}
+	}
+
+	#Offensive Leader
+	focus = {
+		id = POL_offensive_leader
+		icon = GFX_goal_unknown
+		x = 14
+		y = 7
+		prerequisite = { focus = POL_improve_cruisers  } prerequisite = { focus = POL_improve_destroyers  } prerequisite = { focus = POL_improve_battleships  } prerequisite = { focus = POL_improve_carriers  } prerequisite = { focus = POL_improve_submarines  }
+		cost = 5
+		mutually_exclusive = { focus = POL_farsighted_leader  focus = POL_defensive_leader  focus = POL_coordination_leader  }
+		ai_will_do = { factor = 1 }
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						add_ideas = idea_navy_general_3
+					
+		}
+	}
+
+	#Coordination Leader
+	focus = {
+		id = POL_coordination_leader
+		icon = GFX_goal_unknown
+		x = 16
+		y = 7
+		prerequisite = { focus = POL_improve_cruisers  } prerequisite = { focus = POL_improve_destroyers  } prerequisite = { focus = POL_improve_battleships  } prerequisite = { focus = POL_improve_carriers  } prerequisite = { focus = POL_improve_submarines  }
+		cost = 5
+		mutually_exclusive = { focus = POL_farsighted_leader  focus = POL_offensive_leader  focus = POL_defensive_leader  }
+		ai_will_do = { factor = 1 }
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						add_ideas = idea_navy_general_4
+					
+		}
+	}
+
+	#Naval Idea
+	focus = {
+		id = POL_naval_idea
+		icon = GFX_goal_unknown
+		x = 13
+		y = 8
+		prerequisite = { focus = POL_coordination_leader  } prerequisite = { focus = POL_offensive_leader  } prerequisite = { focus = POL_farsighted_leader  } prerequisite = { focus = POL_defensive_leader  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						add_ideas = idea_reward_3
+					
+		}
+	}
+
+	#Industrial Effort
+	focus = {
+		id = POL_industrial_effort
+		icon = GFX_goal_unknown
+		x = 35
+		y = 0
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_INDUSTRYFOCUS_FILTER_RESEARCH
+		}
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						add_tech_bonus = {
+							name = industrial_bonus
+							bonus = 1.0
+							uses = 1
+							category = industry
+						}
+					
+						if = {
+							limit = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+								}
+							}
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									any_owned_state = {
+										free_building_slots = {
+											building = arms_factory
+											size > 0
+											include_locked = yes
+										}
+									}
+								}
+							}
+							random_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+							}
+						}			
+					
+		}
+		ai_will_do = { factor = 1 }
+	}
+
+	#Construction Effort I
+	focus = {
+		id = POL_construction_effort_i
+		icon = GFX_goal_unknown
+		x = 30
+		y = 1
+		prerequisite = { focus = POL_industrial_effort  }
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		available_if_capitulated = yes
+		ai_will_do = { factor = 1 }
+		bypass = {
+			
+						custom_trigger_tooltip = {
+							tooltip = construction_effort_tt
+							all_controlled_state = {
+								free_building_slots = {
+									building = industrial_complex
+									size < 1
+									include_locked = yes
+								}
+							}				
+						}
+					
+		}
+		completion_reward = {
+			
+						if = {
+							limit = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+								}
+							}
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									any_owned_state = {
+										free_building_slots = {
+											building = industrial_complex
+											size > 0
+											include_locked = yes
+										}
+									}
+								}
+							}
+							random_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}
+							}
+						}			
+					
+		}
+	}
+
+	#Construction Effort II
+	focus = {
+		id = POL_construction_effort_ii
+		icon = GFX_goal_unknown
+		x = 30
+		y = 2
+		prerequisite = { focus = POL_construction_effort_i  }
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		available_if_capitulated = yes
+		ai_will_do = { factor = 1 }
+		bypass = {
+			
+						custom_trigger_tooltip = {
+							tooltip = construction_effort_tt
+							all_controlled_state = {
+								free_building_slots = {
+									building = industrial_complex
+									size < 1
+									include_locked = yes
+								}
+							}				
+						}
+					
+		}
+		completion_reward = {
+			
+						if = {
+							limit = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+								}
+							}
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									any_owned_state = {
+										free_building_slots = {
+											building = industrial_complex
+											size > 0
+											include_locked = yes
+										}
+									}
+								}
+							}
+							random_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}
+							}
+						}			
+					
+		}
+	}
+
+	#Construction Effort III
+	focus = {
+		id = POL_construction_effort_iii
+		icon = GFX_goal_unknown
+		x = 30
+		y = 3
+		prerequisite = { focus = POL_construction_effort_ii  }
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		available_if_capitulated = yes
+		ai_will_do = { factor = 1 }
+		bypass = {
+			
+						custom_trigger_tooltip = {
+							tooltip = construction_effort_tt
+							all_controlled_state = {
+								free_building_slots = {
+									building = industrial_complex
+									size < 1
+									include_locked = yes
+								}
+							}				
+						}
+					
+		}
+		completion_reward = {
+			
+						if = {
+							limit = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+								}
+							}
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									any_owned_state = {
+										free_building_slots = {
+											building = industrial_complex
+											size > 0
+											include_locked = yes
+										}
+									}
+								}
+							}
+							random_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}
+							}
+						}			
+					
+		}
+	}
+
+	#Construction Effort IV
+	focus = {
+		id = POL_construction_effort_iv
+		icon = GFX_goal_unknown
+		x = 30
+		y = 4
+		prerequisite = { focus = POL_construction_effort_iii  }
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		available_if_capitulated = yes
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			
+						if = {
+							limit = {
+								any_owned_state = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+								}
+							}
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									any_owned_state = {
+										free_building_slots = {
+											building = industrial_complex
+											size > 0
+											include_locked = yes
+										}
+									}
+								}
+							}
+							random_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = industrial_complex
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = industrial_complex
+									level = 1
+									instant_build = yes
+								}
+							}
+						}			
+					
+						add_offsite_building = { type = industrial_complex level = 1 }
+					
+		}
+	}
+
+	#Armament Effort I
+	focus = {
+		id = POL_armament_effort_i
+		icon = GFX_POL_armament_effort_i-177633
+		x = 40
+		y = 1
+		prerequisite = { focus = POL_industrial_effort  }
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		available_if_capitulated = yes
+		ai_will_do = { factor = 1 }
+		bypass = {
+			
+						custom_trigger_tooltip = {
+							tooltip = production_effort_tt
+							all_controlled_state = {
+								free_building_slots = {
+									building = arms_factory
+									size < 1
+									include_locked = yes
+								}
+							}				
+						}
+					
+		}
+		completion_reward = {
+			
+						if = {
+							limit = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+								}
+							}
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = arms_factory
+									level = 1
+									instant_build = yes
+								}
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									any_owned_state = {
+										free_building_slots = {
+											building = arms_factory
+											size > 0
+											include_locked = yes
+										}
+									}
+								}
+							}
+							random_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = arms_factory
+									level = 1
+									instant_build = yes
+								}
+							}
+						}			
+					
+		}
+	}
+
+	#Armament Effort II
+	focus = {
+		id = POL_armament_effort_ii
+		icon = GFX_goal_unknown
+		x = 40
+		y = 2
+		prerequisite = { focus = POL_armament_effort_i  }
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		available_if_capitulated = yes
+		ai_will_do = { factor = 1 }
+		bypass = {
+			
+						custom_trigger_tooltip = {
+							tooltip = production_effort_tt
+							all_controlled_state = {
+								free_building_slots = {
+									building = arms_factory
+									size < 1
+									include_locked = yes
+								}
+							}				
+						}
+					
+		}
+		completion_reward = {
+			
+						if = {
+							limit = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+								}
+							}
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = arms_factory
+									level = 1
+									instant_build = yes
+								}
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									any_owned_state = {
+										free_building_slots = {
+											building = arms_factory
+											size > 0
+											include_locked = yes
+										}
+									}
+								}
+							}
+							random_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = arms_factory
+									level = 1
+									instant_build = yes
+								}
+							}
+						}			
+					
+		}
+	}
+
+	#Armament Effort III
+	focus = {
+		id = POL_armament_effort_iii
+		icon = GFX_goal_unknown
+		x = 40
+		y = 3
+		prerequisite = { focus = POL_armament_effort_ii  }
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		available_if_capitulated = yes
+		ai_will_do = { factor = 1 }
+		bypass = {
+			
+						custom_trigger_tooltip = {
+							tooltip = production_effort_tt
+							all_controlled_state = {
+								free_building_slots = {
+									building = arms_factory
+									size < 1
+									include_locked = yes
+								}
+							}				
+						}
+					
+		}
+		completion_reward = {
+			
+						if = {
+							limit = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+								}
+							}
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = arms_factory
+									level = 1
+									instant_build = yes
+								}
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									any_owned_state = {
+										free_building_slots = {
+											building = arms_factory
+											size > 0
+											include_locked = yes
+										}
+									}
+								}
+							}
+							random_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = arms_factory
+									level = 1
+									instant_build = yes
+								}
+							}
+						}			
+					
+		}
+	}
+
+	#Armament Effort IV
+	focus = {
+		id = POL_armament_effort_iv
+		icon = GFX_goal_unknown
+		x = 40
+		y = 4
+		prerequisite = { focus = POL_armament_effort_iii  }
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		ai_will_do = { factor = 1 }
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						if = {
+							limit = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+								}
+							}
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = arms_factory
+									level = 1
+									instant_build = yes
+								}
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									any_owned_state = {
+										free_building_slots = {
+											building = arms_factory
+											size > 0
+											include_locked = yes
+										}
+									}
+								}
+							}
+							random_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = arms_factory
+									level = 1
+									instant_build = yes
+								}
+							}
+						}			
+					
+						add_offsite_building = { type = arms_factory level = 1 }
+					
+		}
+
+	#Infrastructure Effort I
+	focus = {
+		id = POL_infrastructure_effort_i
+		icon = GFX_goal_unknown
+		x = 34
+		y = 1
+		prerequisite = { focus = POL_industrial_effort  }
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_INDUSTRYFOCUS_FILTER_RESEARCH
+		}
+		available_if_capitulated = yes
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			
+						if = {
+							limit = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+								}
+							}
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+								}
+								add_building_construction = {
+									type = infrastructure
+									level = 1
+									instant_build = yes
+								}
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									any_owned_state = {
+										free_building_slots = {
+											building = infrastructure
+											size > 0
+										}
+									}
+								}
+							}
+							random_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+								}
+								add_building_construction = {
+									type = infrastructure
+									level = 1
+									instant_build = yes
+								}
+							}
+						}			
+					
+						if = {
+							limit = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+								}
+							}
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+								}
+								add_building_construction = {
+									type = infrastructure
+									level = 1
+									instant_build = yes
+								}
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									any_owned_state = {
+										free_building_slots = {
+											building = infrastructure
+											size > 0
+										}
+									}
+								}
+							}
+							random_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+								}
+								add_building_construction = {
+									type = infrastructure
+									level = 1
+									instant_build = yes
+								}
+							}
+						}			
+					}
+						if = {
+							limit = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+								}
+							}
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									any_owned_state = {
+										free_building_slots = {
+											building = arms_factory
+											size > 0
+											include_locked = yes
+										}
+									}
+								}
+							}
+							random_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+							}
+						}			
+					}
+						add_tech_bonus = {
+							name = industrial_bonus
+							bonus = 0.5
+							uses = 1
+							category = industry
+						}
+					
+		}
+
+	#Infrastructure Effort II
+	focus = {
+		id = POL_infrastructure_effort_ii
+		icon = GFX_goal_unknown
+		x = 34
+		y = 2
+		prerequisite = { focus = POL_infrastructure_effort_i  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		search_filters = {
+			FOCUS_FILTER_INDUSTRYFOCUS_FILTER_RESEARCH
+		}
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						if = {
+							limit = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+								}
+							}
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+								}
+								add_building_construction = {
+									type = infrastructure
+									level = 1
+									instant_build = yes
+								}
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									any_owned_state = {
+										free_building_slots = {
+											building = infrastructure
+											size > 0
+										}
+									}
+								}
+							}
+							random_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+								}
+								add_building_construction = {
+									type = infrastructure
+									level = 1
+									instant_build = yes
+								}
+							}
+						}			
+					
+						if = {
+							limit = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+								}
+							}
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+								}
+								add_building_construction = {
+									type = infrastructure
+									level = 1
+									instant_build = yes
+								}
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									any_owned_state = {
+										free_building_slots = {
+											building = infrastructure
+											size > 0
+										}
+									}
+								}
+							}
+							random_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+								}
+								add_building_construction = {
+									type = infrastructure
+									level = 1
+									instant_build = yes
+								}
+							}
+						}			
+					}
+						if = {
+							limit = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+								}
+							}
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									any_owned_state = {
+										free_building_slots = {
+											building = arms_factory
+											size > 0
+											include_locked = yes
+										}
+									}
+								}
+							}
+							random_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+							}
+						}			
+					}
+						add_tech_bonus = {
+							name = industrial_bonus
+							bonus = 0.5
+							uses = 1
+							category = industry
+						}
+
+	#Infrastructure Effort III
+	focus = {
+		id = POL_infrastructure_effort_iii
+		icon = GFX_goal_unknown
+		x = 34
+		y = 3
+		prerequisite = { focus = POL_infrastructure_effort_ii  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		search_filters = {
+			FOCUS_FILTER_INDUSTRYFOCUS_FILTER_RESEARCH
+		}
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						if = {
+							limit = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+								}
+							}
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+								}
+								add_building_construction = {
+									type = infrastructure
+									level = 1
+									instant_build = yes
+								}
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									any_owned_state = {
+										free_building_slots = {
+											building = infrastructure
+											size > 0
+										}
+									}
+								}
+							}
+							random_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+								}
+								add_building_construction = {
+									type = infrastructure
+									level = 1
+									instant_build = yes
+								}
+							}
+						}			
+					
+						if = {
+							limit = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+								}
+							}
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+								}
+								add_building_construction = {
+									type = infrastructure
+									level = 1
+									instant_build = yes
+								}
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									any_owned_state = {
+										free_building_slots = {
+											building = infrastructure
+											size > 0
+										}
+									}
+								}
+							}
+							random_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+								}
+								add_building_construction = {
+									type = infrastructure
+									level = 1
+									instant_build = yes
+								}
+							}
+						}			
+					}
+						if = {
+							limit = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+								}
+							}
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									any_owned_state = {
+										free_building_slots = {
+											building = arms_factory
+											size > 0
+											include_locked = yes
+										}
+									}
+								}
+							}
+							random_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+							}
+						}			
+					}
+						add_tech_bonus = {
+							name = industrial_bonus
+							bonus = 0.5
+							uses = 1
+							category = industry
+						}
+
+	#Infrastructure Effort IV
+	focus = {
+		id = POL_infrastructure_effort_iv
+		icon = GFX_goal_unknown
+		x = 34
+		y = 4
+		prerequisite = { focus = POL_infrastructure_effort_iii  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		search_filters = {
+			FOCUS_FILTER_INDUSTRYFOCUS_FILTER_RESEARCH
+		}
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						if = {
+							limit = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+								}
+							}
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+								}
+								add_building_construction = {
+									type = infrastructure
+									level = 1
+									instant_build = yes
+								}
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									any_owned_state = {
+										free_building_slots = {
+											building = infrastructure
+											size > 0
+										}
+									}
+								}
+							}
+							random_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+								}
+								add_building_construction = {
+									type = infrastructure
+									level = 1
+									instant_build = yes
+								}
+							}
+						}			
+					
+						if = {
+							limit = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+								}
+							}
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+								}
+								add_building_construction = {
+									type = infrastructure
+									level = 1
+									instant_build = yes
+								}
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									any_owned_state = {
+										free_building_slots = {
+											building = infrastructure
+											size > 0
+										}
+									}
+								}
+							}
+							random_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+								}
+								add_building_construction = {
+									type = infrastructure
+									level = 1
+									instant_build = yes
+								}
+							}
+						}			
+					}
+						if = {
+							limit = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+								}
+							}
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+								}
+								add_building_construction = {
+									type = infrastructure
+									level = 1
+									instant_build = yes
+								}
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									any_owned_state = {
+										free_building_slots = {
+											building = infrastructure
+											size > 0
+										}
+									}
+								}
+							}
+							random_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+								}
+								add_building_construction = {
+									type = infrastructure
+									level = 1
+									instant_build = yes
+								}
+							}
+						}			
+					}
+						if = {
+							limit = {
+								any_owned_state = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+								}
+							}
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+								}
+								add_building_construction = {
+									type = infrastructure
+									level = 1
+									instant_build = yes
+								}
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									any_owned_state = {
+										free_building_slots = {
+											building = infrastructure
+											size > 0
+										}
+									}
+								}
+							}
+							random_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = infrastructure
+										size > 0
+									}
+								}
+								add_building_construction = {
+									type = infrastructure
+									level = 1
+									instant_build = yes
+								}
+							}
+						}
+
+						if = {
+							limit = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+								}
+							}
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+							}
+						}
+
+						if = {
+							limit = {
+								NOT = {
+									any_owned_state = {
+										free_building_slots = {
+											building = arms_factory
+											size > 0
+											include_locked = yes
+										}
+									}
+								}
+							}
+							random_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+							}
+						}			
+						if = {
+							limit = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+								}
+							}
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									any_owned_state = {
+										free_building_slots = {
+											building = arms_factory
+											size > 0
+											include_locked = yes
+										}
+									}
+								}
+							}
+							random_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+							}
+						}			
+						add_tech_bonus = {
+							name = industrial_bonus
+							bonus = 0.5
+							uses = 2
+							category = industry
+						}
+
+	#Naval Effort I
+	focus = {
+		id = POL_naval_effort_i
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 36
+		y = 1
+		prerequisite = { focus = POL_industrial_effort  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		available_if_capitulated = yes
+		available = {
+			
+						any_state = {
+							is_coastal = yes
+							is_controlled_by = ROOT
+						}
+					
+		}
+		completion_reward = {
+			
+						if = {
+							limit = {
+								any_owned_state = {
+									free_building_slots = {
+										building = dockyard
+										size > 0
+										include_locked = yes
+									}
+								}
+							}
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = dockyard
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = dockyard
+									level = 1
+									instant_build = yes
+								}
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									any_owned_state = {
+										free_building_slots = {
+											building = dockyard
+											size > 0
+											include_locked = yes
+										}
+									}
+								}
+							}
+							random_state = {
+								limit = {
+									controller = { tag = ROOT }
+									free_building_slots = {
+										building = dockyard
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = dockyard
+									level = 1
+									instant_build = yes
+								}
+							}
+						}			
+					
+		}
+	}
+
+	#Naval Effort II
+	focus = {
+		id = POL_naval_effort_ii
+		icon = GFX_goal_unknown
+		x = 36
+		y = 2
+		prerequisite = { focus = POL_naval_effort_i  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		available_if_capitulated = yes
+		available = {
+			
+						any_state = {
+							is_coastal = yes
+							is_controlled_by = ROOT
+						}
+					
+		}
+		completion_reward = {
+			
+						if = {
+							limit = {
+								any_owned_state = {
+									free_building_slots = {
+										building = dockyard
+										size > 0
+										include_locked = yes
+									}
+								}
+							}
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = dockyard
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = dockyard
+									level = 1
+									instant_build = yes
+								}
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									any_owned_state = {
+										free_building_slots = {
+											building = dockyard
+											size > 0
+											include_locked = yes
+										}
+									}
+								}
+							}
+							random_state = {
+								limit = {
+									controller = { tag = ROOT }
+									free_building_slots = {
+										building = dockyard
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = dockyard
+									level = 1
+									instant_build = yes
+								}
+							}
+						}			
+					
+		}
+	}
+
+	#Naval Effort III
+	focus = {
+		id = POL_naval_effort_iii
+		icon = GFX_goal_unknown
+		x = 36
+		y = 3
+		prerequisite = { focus = POL_naval_effort_ii  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		available_if_capitulated = yes
+		available = {
+			
+						any_state = {
+							is_coastal = yes
+							is_controlled_by = ROOT
+						}
+					
+		}
+		completion_reward = {
+			
+						if = {
+							limit = {
+								any_owned_state = {
+									free_building_slots = {
+										building = dockyard
+										size > 0
+										include_locked = yes
+									}
+								}
+							}
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = dockyard
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = dockyard
+									level = 1
+									instant_build = yes
+								}
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									any_owned_state = {
+										free_building_slots = {
+											building = dockyard
+											size > 0
+											include_locked = yes
+										}
+									}
+								}
+							}
+							random_state = {
+								limit = {
+									controller = { tag = ROOT }
+									free_building_slots = {
+										building = dockyard
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = dockyard
+									level = 1
+									instant_build = yes
+								}
+							}
+						}			
+					
+		}
+	}
+
+	#Naval Effort IV
+	focus = {
+		id = POL_naval_effort_iv
+		icon = GFX_goal_unknown
+		x = 36
+		y = 4
+		prerequisite = { focus = POL_naval_effort_iii  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		available_if_capitulated = yes
+		available = {
+			
+						any_state = {
+							is_coastal = yes
+							is_controlled_by = ROOT
+						}
+					
+		}
+		completion_reward = {
+			
+						if = {
+							limit = {
+								any_owned_state = {
+									free_building_slots = {
+										building = dockyard
+										size > 0
+										include_locked = yes
+									}
+								}
+							}
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = dockyard
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = dockyard
+									level = 1
+									instant_build = yes
+								}
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									any_owned_state = {
+										free_building_slots = {
+											building = dockyard
+											size > 0
+											include_locked = yes
+										}
+									}
+								}
+							}
+							random_state = {
+								limit = {
+									controller = { tag = ROOT }
+									free_building_slots = {
+										building = dockyard
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = dockyard
+									level = 1
+									instant_build = yes
+								}
+							}
+						}			
+					
+						if = {
+							limit = {
+								any_owned_state = {
+									free_building_slots = {
+										building = dockyard
+										size > 0
+										include_locked = yes
+									}
+								}
+							}
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = dockyard
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = dockyard
+									level = 1
+									instant_build = yes
+								}
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									any_owned_state = {
+										free_building_slots = {
+											building = dockyard
+											size > 0
+											include_locked = yes
+										}
+									}
+								}
+							}
+							random_state = {
+								limit = {
+									controller = { tag = ROOT }
+									free_building_slots = {
+										building = dockyard
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = dockyard
+									level = 1
+									instant_build = yes
+								}
+							}
+						}			
+					
+		}
+	}
+
+	#Extra Research Slot I
+	focus = {
+		id = POL_extra_research_slot_i
+		icon = GFX_goal_unknown
+		x = 35
+		y = 5
+		prerequisite = { focus = POL_infrastructure_effort_iv  } prerequisite = { focus = POL_construction_effort_iv  } prerequisite = { focus = POL_armament_effort_iv  } prerequisite = { focus = POL_naval_effort_iv  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						add_research_slot = 1
+					
+		}
+	}
+
+	#Extra Research Slot II
+	focus = {
+		id = POL_extra_research_slot_ii
+		icon = GFX_goal_unknown
+		x = 35
+		y = 9
+		prerequisite = { focus = POL_extra_research_slot_i  }
+		available = {
+			
+						num_of_factories > 50
+					
+		}
+		cancel_if_invalid = no
+		continue_if_invalid = yes
+		ai_will_do = { factor = 1 }
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						add_research_slot = 1
+					
+		}
+	}
+
+	#Synthetic Effort
+	focus = {
+		id = POL_synthetic_effort
+		icon = GFX_goal_unknown
+		x = 41
+		y = 6
+		prerequisite = { focus = POL_extra_research_slot_i  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						add_tech_bonus = {
+							name = synth_resources
+							bonus = 1.0
+							uses = 1
+							category = synth_resources
+						}
+					
+						add_ideas = idea_synthetic_0
+					
+		}
+	}
+
+	#Synthetic Effort I
+	focus = {
+		id = POL_synthetic_effort_i
+		icon = GFX_goal_unknown
+		x = 37
+		y = 7
+		prerequisite = { focus = POL_synthetic_effort  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						swap_ideas = {
+			    			remove_idea = idea_synthetic_0
+			    			add_idea = idea_synthetic_1
+						}
+					
+		}
+	}
+
+	#Synthetic Effort II
+	focus = {
+		id = POL_synthetic_effort_ii
+		icon = GFX_goal_unknown
+		x = 39
+		y = 7
+		prerequisite = { focus = POL_synthetic_effort  focus = POL_synthetic_effort_i  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						swap_ideas = {
+			    			remove_idea = idea_synthetic_1
+			    			add_idea = idea_synthetic_2
+						}
+					
+		}
+	}
+
+	#Synthetic Effort III
+	focus = {
+		id = POL_synthetic_effort_iii
+		icon = GFX_goal_unknown
+		x = 41
+		y = 7
+		prerequisite = { focus = POL_synthetic_effort  focus = POL_synthetic_effort_ii  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						swap_ideas = {
+			    			remove_idea = idea_synthetic_2
+			    			add_idea = idea_synthetic_3
+						}
+					
+		}
+	}
+
+	#Synthetic Effort IV
+	focus = {
+		id = POL_synthetic_effort_iv
+		icon = GFX_goal_unknown
+		x = 43
+		y = 7
+		prerequisite = { focus = POL_synthetic_effort  focus = POL_synthetic_effort_iii  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						swap_ideas = {
+			    			remove_idea = idea_synthetic_3
+			    			add_idea = idea_synthetic_4
+						}
+					
+		}
+	}
+
+	#Synthetic Effort V
+	focus = {
+		id = POL_synthetic_effort_v
+		icon = GFX_goal_unknown
+		x = 45
+		y = 7
+		prerequisite = { focus = POL_synthetic_effort  focus = POL_synthetic_effort_iv  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						swap_ideas = {
+			    			remove_idea = idea_synthetic_4
+			    			add_idea = idea_synthetic_5
+						}
+					
+		}
+	}
+
+	#Refinery Effort I
+	focus = {
+		id = POL_refinery_effort_i
+		icon = GFX_goal_unknown
+		x = 37
+		y = 8
+		prerequisite = { focus = POL_synthetic_effort_i  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		available = {
+			
+						has_tech = synth_oil_experiments
+						OR = {
+							AND = {
+								any_owned_state = {
+									free_building_slots = {
+										building = synthetic_refinery
+										size > 0
+										include_locked = yes
+									}
+								}
+								any_owned_state = {
+									free_building_slots = {
+										building = fuel_silo
+										size > 0
+										include_locked = yes
+									}
+								}
+							}
+							AND = {
+								any_controlled_state = {
+									free_building_slots = {
+										building = synthetic_refinery
+										size > 0
+										include_locked = yes
+									}
+								}
+								any_controlled_state = {
+									free_building_slots = {
+										building = fuel_silo
+										size > 0
+										include_locked = yes
+									}
+								}					
+							}						
+						}
+					
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		completion_reward = {
+			
+						if = {
+							limit = { NOT = { has_tech = synth_oil_experiments } }
+							custom_effect_tooltip = generic_synthetic_tt
+						}			
+						if = {
+							limit = {
+								any_owned_state = {
+									free_building_slots = {
+										building = synthetic_refinery
+										size > 1
+										include_locked = yes
+									}
+								}
+							}
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = synthetic_refinery
+										size > 1
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = synthetic_refinery
+									level = 1
+									instant_build = yes
+								}
+								add_building_construction = {
+									type = fuel_silo
+									level = 1
+									instant_build = yes
+								}	
+								add_resource = {
+									type = oil
+									amount = 2
+								}					
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									any_owned_state = {
+										free_building_slots = {
+											building = synthetic_refinery
+											size > 1
+											include_locked = yes
+										}
+									}
+								}
+							}
+							random_state = {
+								limit = {
+									controller = { tag = ROOT }
+									free_building_slots = {
+										building = synthetic_refinery
+										size > 1
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = synthetic_refinery
+									level = 1
+									instant_build = yes
+								}
+								add_building_construction = {
+									type = fuel_silo
+									level = 1
+									instant_build = yes
+								}	
+								add_resource = {
+									type = oil
+									amount = 2
+								}
+							}
+						}			
+					
+		}
+	}
+
+	#Refinery Effort II
+	focus = {
+		id = POL_refinery_effort_ii
+		icon = GFX_goal_unknown
+		x = 39
+		y = 8
+		prerequisite = { focus = POL_synthetic_effort_ii  } prerequisite = { focus = POL_synthetic_effort_i  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		available = {
+			
+						has_tech = synth_oil_experiments
+						OR = {
+							AND = {
+								any_owned_state = {
+									free_building_slots = {
+										building = synthetic_refinery
+										size > 0
+										include_locked = yes
+									}
+								}
+								any_owned_state = {
+									free_building_slots = {
+										building = fuel_silo
+										size > 0
+										include_locked = yes
+									}
+								}
+							}
+							AND = {
+								any_controlled_state = {
+									free_building_slots = {
+										building = synthetic_refinery
+										size > 0
+										include_locked = yes
+									}
+								}
+								any_controlled_state = {
+									free_building_slots = {
+										building = fuel_silo
+										size > 0
+										include_locked = yes
+									}
+								}					
+							}						
+						}
+					
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		completion_reward = {
+			
+						if = {
+							limit = { NOT = { has_tech = synth_oil_experiments } }
+							custom_effect_tooltip = generic_synthetic_tt
+						}			
+						if = {
+							limit = {
+								any_owned_state = {
+									free_building_slots = {
+										building = synthetic_refinery
+										size > 1
+										include_locked = yes
+									}
+								}
+							}
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = synthetic_refinery
+										size > 1
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = synthetic_refinery
+									level = 1
+									instant_build = yes
+								}
+								add_building_construction = {
+									type = fuel_silo
+									level = 1
+									instant_build = yes
+								}	
+								add_resource = {
+									type = oil
+									amount = 2
+								}					
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									any_owned_state = {
+										free_building_slots = {
+											building = synthetic_refinery
+											size > 1
+											include_locked = yes
+										}
+									}
+								}
+							}
+							random_state = {
+								limit = {
+									controller = { tag = ROOT }
+									free_building_slots = {
+										building = synthetic_refinery
+										size > 1
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = synthetic_refinery
+									level = 1
+									instant_build = yes
+								}
+								add_building_construction = {
+									type = fuel_silo
+									level = 1
+									instant_build = yes
+								}	
+								add_resource = {
+									type = oil
+									amount = 2
+								}
+							}
+						}			
+					
+		}
+	}
+
+	#Refinery Effort III
+	focus = {
+		id = POL_refinery_effort_iii
+		icon = GFX_goal_unknown
+		x = 41
+		y = 8
+		prerequisite = { focus = POL_synthetic_effort_iii  } prerequisite = { focus = POL_synthetic_effort_i  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		available = {
+			
+						has_tech = synth_oil_experiments
+						OR = {
+							AND = {
+								any_owned_state = {
+									free_building_slots = {
+										building = synthetic_refinery
+										size > 0
+										include_locked = yes
+									}
+								}
+								any_owned_state = {
+									free_building_slots = {
+										building = fuel_silo
+										size > 0
+										include_locked = yes
+									}
+								}
+							}
+							AND = {
+								any_controlled_state = {
+									free_building_slots = {
+										building = synthetic_refinery
+										size > 0
+										include_locked = yes
+									}
+								}
+								any_controlled_state = {
+									free_building_slots = {
+										building = fuel_silo
+										size > 0
+										include_locked = yes
+									}
+								}					
+							}						
+						}
+					
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		completion_reward = {
+			
+						if = {
+							limit = { NOT = { has_tech = synth_oil_experiments } }
+							custom_effect_tooltip = generic_synthetic_tt
+						}			
+						if = {
+							limit = {
+								any_owned_state = {
+									free_building_slots = {
+										building = synthetic_refinery
+										size > 1
+										include_locked = yes
+									}
+								}
+							}
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = synthetic_refinery
+										size > 1
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = synthetic_refinery
+									level = 1
+									instant_build = yes
+								}
+								add_building_construction = {
+									type = fuel_silo
+									level = 1
+									instant_build = yes
+								}	
+								add_resource = {
+									type = oil
+									amount = 2
+								}					
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									any_owned_state = {
+										free_building_slots = {
+											building = synthetic_refinery
+											size > 1
+											include_locked = yes
+										}
+									}
+								}
+							}
+							random_state = {
+								limit = {
+									controller = { tag = ROOT }
+									free_building_slots = {
+										building = synthetic_refinery
+										size > 1
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = synthetic_refinery
+									level = 1
+									instant_build = yes
+								}
+								add_building_construction = {
+									type = fuel_silo
+									level = 1
+									instant_build = yes
+								}	
+								add_resource = {
+									type = oil
+									amount = 2
+								}
+							}
+						}			
+					
+		}
+	}
+
+	#Refinery Effort IV
+	focus = {
+		id = POL_refinery_effort_iv
+		icon = GFX_goal_unknown
+		x = 43
+		y = 8
+		prerequisite = { focus = POL_synthetic_effort_iv  } prerequisite = { focus = POL_synthetic_effort_i  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		available = {
+			
+						has_tech = synth_oil_experiments
+						OR = {
+							AND = {
+								any_owned_state = {
+									free_building_slots = {
+										building = synthetic_refinery
+										size > 0
+										include_locked = yes
+									}
+								}
+								any_owned_state = {
+									free_building_slots = {
+										building = fuel_silo
+										size > 0
+										include_locked = yes
+									}
+								}
+							}
+							AND = {
+								any_controlled_state = {
+									free_building_slots = {
+										building = synthetic_refinery
+										size > 0
+										include_locked = yes
+									}
+								}
+								any_controlled_state = {
+									free_building_slots = {
+										building = fuel_silo
+										size > 0
+										include_locked = yes
+									}
+								}					
+							}						
+						}
+					
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		completion_reward = {
+			
+						if = {
+							limit = { NOT = { has_tech = synth_oil_experiments } }
+							custom_effect_tooltip = generic_synthetic_tt
+						}			
+						if = {
+							limit = {
+								any_owned_state = {
+									free_building_slots = {
+										building = synthetic_refinery
+										size > 1
+										include_locked = yes
+									}
+								}
+							}
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = synthetic_refinery
+										size > 1
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = synthetic_refinery
+									level = 1
+									instant_build = yes
+								}
+								add_building_construction = {
+									type = fuel_silo
+									level = 1
+									instant_build = yes
+								}	
+								add_resource = {
+									type = oil
+									amount = 2
+								}					
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									any_owned_state = {
+										free_building_slots = {
+											building = synthetic_refinery
+											size > 1
+											include_locked = yes
+										}
+									}
+								}
+							}
+							random_state = {
+								limit = {
+									controller = { tag = ROOT }
+									free_building_slots = {
+										building = synthetic_refinery
+										size > 1
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = synthetic_refinery
+									level = 1
+									instant_build = yes
+								}
+								add_building_construction = {
+									type = fuel_silo
+									level = 1
+									instant_build = yes
+								}	
+								add_resource = {
+									type = oil
+									amount = 2
+								}
+							}
+						}			
+					
+		}
+	}
+
+	#Refinery Effort V
+	focus = {
+		id = POL_refinery_effort_v
+		icon = GFX_goal_unknown
+		x = 45
+		y = 8
+		prerequisite = { focus = POL_synthetic_effort_v  } prerequisite = { focus = POL_synthetic_effort_i  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		available = {
+			
+						has_tech = synth_oil_experiments
+						OR = {
+							AND = {
+								any_owned_state = {
+									free_building_slots = {
+										building = synthetic_refinery
+										size > 0
+										include_locked = yes
+									}
+								}
+								any_owned_state = {
+									free_building_slots = {
+										building = fuel_silo
+										size > 0
+										include_locked = yes
+									}
+								}
+							}
+							AND = {
+								any_controlled_state = {
+									free_building_slots = {
+										building = synthetic_refinery
+										size > 0
+										include_locked = yes
+									}
+								}
+								any_controlled_state = {
+									free_building_slots = {
+										building = fuel_silo
+										size > 0
+										include_locked = yes
+									}
+								}					
+							}						
+						}
+					
+		}
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		completion_reward = {
+			
+						if = {
+							limit = { NOT = { has_tech = synth_oil_experiments } }
+							custom_effect_tooltip = generic_synthetic_tt
+						}			
+						if = {
+							limit = {
+								any_owned_state = {
+									free_building_slots = {
+										building = synthetic_refinery
+										size > 1
+										include_locked = yes
+									}
+								}
+							}
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = synthetic_refinery
+										size > 1
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = synthetic_refinery
+									level = 1
+									instant_build = yes
+								}
+								add_building_construction = {
+									type = fuel_silo
+									level = 1
+									instant_build = yes
+								}	
+								add_resource = {
+									type = oil
+									amount = 2
+								}					
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									any_owned_state = {
+										free_building_slots = {
+											building = synthetic_refinery
+											size > 1
+											include_locked = yes
+										}
+									}
+								}
+							}
+							random_state = {
+								limit = {
+									controller = { tag = ROOT }
+									free_building_slots = {
+										building = synthetic_refinery
+										size > 1
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 2
+								add_building_construction = {
+									type = synthetic_refinery
+									level = 1
+									instant_build = yes
+								}
+								add_building_construction = {
+									type = fuel_silo
+									level = 1
+									instant_build = yes
+								}	
+								add_resource = {
+									type = oil
+									amount = 2
+								}
+							}
+						}			
+					
+		}
+	}
+
+	#Mining Effort
+	focus = {
+		id = POL_mining_effort
+		icon = GFX_goal_unknown
+		x = 29
+		y = 6
+		prerequisite = { focus = POL_extra_research_slot_i  }
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		available_if_capitulated = yes
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			
+						add_tech_bonus = {
+							name = excavation_tech
+							bonus = 1.0
+							uses = 1
+							category = excavation_tech
+						}
+					
+						add_ideas = idea_mining_0
+					
+		}
+	}
+
+	#Mining Effort I
+	focus = {
+		id = POL_mining_effort_i
+		icon = GFX_goal_unknown
+		x = 25
+		y = 7
+		prerequisite = { focus = POL_mining_effort  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						swap_ideas = {
+			    			remove_idea = idea_mining_0
+			    			add_idea = idea_mining_1
+						}
+					
+		}
+	}
+
+	#Mining Effort II
+	focus = {
+		id = POL_mining_effort_ii
+		icon = GFX_focus_usa_focus_on_asia
+		x = 27
+		y = 7
+		prerequisite = { focus = POL_mining_effort  focus = POL_mining_effort_i  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						swap_ideas = {
+			    			remove_idea = idea_mining_1
+			    			add_idea = idea_mining_2
+						}
+					
+		}
+	}
+
+	#Mining Effort III
+	focus = {
+		id = POL_mining_effort_iii
+		icon = GFX_goal_unknown
+		x = 29
+		y = 7
+		prerequisite = { focus = POL_mining_effort  focus = POL_mining_effort_ii  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						swap_ideas = {
+			    			remove_idea = idea_mining_2
+			    			add_idea = idea_mining_3
+						}
+					
+		}
+	}
+
+	#Mining Effort IV
+	focus = {
+		id = POL_mining_effort_iv
+		icon = GFX_goal_unknown
+		x = 31
+		y = 7
+		prerequisite = { focus = POL_mining_effort_ii  focus = POL_mining_effort_iii  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						swap_ideas = {
+			    			remove_idea = idea_mining_3
+			    			add_idea = idea_mining_4
+						}
+					
+		}
+	}
+
+	#Mining Effort V
+	focus = {
+		id = POL_mining_effort_v
+		icon = GFX_goal_unknown
+		x = 33
+		y = 7
+		prerequisite = { focus = POL_mining_effort  focus = POL_mining_effort_iv  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						swap_ideas = {
+			    			remove_idea = idea_mining_4
+			    			add_idea = idea_mining_5
+						}
+					
+		}
+	}
+
+	#Tungsten Effort
+	focus = {
+		id = POL_tungsten_effort
+		icon = GFX_goal_unknown
+		x = 25
+		y = 8
+		prerequisite = { focus = POL_mining_effort_i  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		available_if_capitulated = yes
+		available = {
+			
+						OR = {
+							has_tech = excavation1
+							has_tech = excavation2
+							has_tech = excavation3
+							has_tech = excavation4
+							has_tech = excavation5
+						}
+						OR = {
+							any_owned_state = {
+								free_building_slots = {
+									building = arms_factory
+									size > 0
+									include_locked = yes
+								}
+							}
+							any_controlled_state = {
+								free_building_slots = {
+									building = arms_factory
+									size > 0
+									include_locked = yes
+								}
+							}						
+						}
+					
+		}
+		completion_reward = {
+			
+						if = {
+							limit = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+								}
+							}
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_resource = {
+									type = tungsten
+									amount = 8
+								}					
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									any_owned_state = {
+										free_building_slots = {
+											building = arms_factory
+											size > 0
+											include_locked = yes
+										}
+									}
+								}
+							}
+							random_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_resource = {
+									type = tungsten
+									amount = 8
+								}					
+							}
+						}			
+					
+		}
+	}
+
+	#Chromium Effort
+	focus = {
+		id = POL_chromium_effort
+		icon = GFX_goal_unknown
+		x = 27
+		y = 8
+		prerequisite = { focus = POL_mining_effort_ii  } prerequisite = { focus = POL_mining_effort_i  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		available_if_capitulated = yes
+		available = {
+			
+						OR = {
+							has_tech = excavation1
+							has_tech = excavation2
+							has_tech = excavation3
+							has_tech = excavation4
+							has_tech = excavation5
+						}
+						OR = {
+							any_owned_state = {
+								free_building_slots = {
+									building = arms_factory
+									size > 0
+									include_locked = yes
+								}
+							}
+							any_controlled_state = {
+								free_building_slots = {
+									building = arms_factory
+									size > 0
+									include_locked = yes
+								}
+							}						
+						}
+					
+		}
+		completion_reward = {
+			
+						if = {
+							limit = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+								}
+							}
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_resource = {
+									type = chromium
+									amount = 8
+								}					
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									any_owned_state = {
+										free_building_slots = {
+											building = arms_factory
+											size > 0
+											include_locked = yes
+										}
+									}
+								}
+							}
+							random_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_resource = {
+									type = tungsten
+									amount = 8
+								}					
+							}
+						}			
+					
+		}
+	}
+
+	#Aluminum Effort
+	focus = {
+		id = POL_aluminum_effort
+		icon = GFX_goal_unknown
+		x = 29
+		y = 8
+		prerequisite = { focus = POL_mining_effort_iii  } prerequisite = { focus = POL_mining_effort_i  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		available_if_capitulated = yes
+		available = {
+			
+						OR = {
+							has_tech = excavation1
+							has_tech = excavation2
+							has_tech = excavation3
+							has_tech = excavation4
+							has_tech = excavation5
+						}
+						OR = {
+							any_owned_state = {
+								free_building_slots = {
+									building = arms_factory
+									size > 0
+									include_locked = yes
+								}
+							}
+							any_controlled_state = {
+								free_building_slots = {
+									building = arms_factory
+									size > 0
+									include_locked = yes
+								}
+							}						
+						}
+					
+		}
+		completion_reward = {
+			
+						if = {
+							limit = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+								}
+							}
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_resource = {
+									type = aluminium
+									amount = 8
+								}					
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									any_owned_state = {
+										free_building_slots = {
+											building = arms_factory
+											size > 0
+											include_locked = yes
+										}
+									}
+								}
+							}
+							random_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_resource = {
+									type = tungsten
+									amount = 8
+								}					
+							}
+						}			
+					
+		}
+	}
+
+	#Steel Effort
+	focus = {
+		id = POL_steel_effort
+		icon = GFX_goal_unknown
+		x = 31
+		y = 8
+		prerequisite = { focus = POL_mining_effort_iv  } prerequisite = { focus = POL_mining_effort_i  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		available_if_capitulated = yes
+		available = {
+			
+						OR = {
+							has_tech = excavation1
+							has_tech = excavation2
+							has_tech = excavation3
+							has_tech = excavation4
+							has_tech = excavation5
+						}
+						OR = {
+							any_owned_state = {
+								free_building_slots = {
+									building = arms_factory
+									size > 0
+									include_locked = yes
+								}
+							}
+							any_controlled_state = {
+								free_building_slots = {
+									building = arms_factory
+									size > 0
+									include_locked = yes
+								}
+							}						
+						}
+					
+		}
+		completion_reward = {
+			
+						if = {
+							limit = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+								}
+							}
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_resource = {
+									type = steel
+									amount = 8
+								}					
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									any_owned_state = {
+										free_building_slots = {
+											building = arms_factory
+											size > 0
+											include_locked = yes
+										}
+									}
+								}
+							}
+							random_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_resource = {
+									type = tungsten
+									amount = 8
+								}					
+							}
+						}			
+					
+		}
+	}
+
+	#Rubber Effort
+	focus = {
+		id = POL_rubber_effort
+		icon = GFX_goal_unknown
+		x = 33
+		y = 8
+		prerequisite = { focus = POL_mining_effort_v  } prerequisite = { focus = POL_mining_effort_i  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		available_if_capitulated = yes
+		available = {
+			
+						OR = {
+							has_tech = excavation1
+							has_tech = excavation2
+							has_tech = excavation3
+							has_tech = excavation4
+							has_tech = excavation5
+						}
+						OR = {
+							any_owned_state = {
+								free_building_slots = {
+									building = arms_factory
+									size > 0
+									include_locked = yes
+								}
+							}
+							any_controlled_state = {
+								free_building_slots = {
+									building = arms_factory
+									size > 0
+									include_locked = yes
+								}
+							}						
+						}
+					
+		}
+		completion_reward = {
+			
+						if = {
+							limit = {
+								any_owned_state = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+								}
+							}
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_resource = {
+									type = rubber
+									amount = 8
+								}					
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									any_owned_state = {
+										free_building_slots = {
+											building = arms_factory
+											size > 0
+											include_locked = yes
+										}
+									}
+								}
+							}
+							random_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = arms_factory
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_resource = {
+									type = tungsten
+									amount = 8
+								}					
+							}
+						}			
+					
+		}
+	}
+
+	#Rocketry Effort I
+	focus = {
+		id = POL_rocketry_effort_i
+		icon = GFX_goal_unknown
+		x = 33
+		y = 10
+		prerequisite = { focus = POL_extra_research_slot_ii  }
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		bypass = {
+			 has_tech = advanced_rocket_engines 
+		}
+		ai_will_do = { factor = 1 }
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						add_tech_bonus = {
+							name = electronics
+							bonus = 1.0
+							uses = 1
+							category = rocketry
+						}
+					
+		}
+	}
+
+	#Rocketry Effort II
+	focus = {
+		id = POL_rocketry_effort_ii
+		icon = GFX_goal_unknown
+		x = 33
+		y = 11
+		prerequisite = { focus = POL_rocketry_effort_i  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		available = {
+			
+						has_tech = experimental_rockets
+						OR = {
+							any_owned_state = {
+								free_building_slots = {
+									building = rocket_site
+									size > 0
+									include_locked = yes
+								}
+							}
+							any_controlled_state = {
+								free_building_slots = {
+									building = rocket_site
+									size > 0
+									include_locked = yes
+								}
+							}						
+						}
+					
+		}
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						if = {
+							limit = {
+								any_owned_state = {
+									free_building_slots = {
+										building = rocket_site
+										size > 0
+										include_locked = yes
+									}
+								}
+							}
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = rocket_site
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = rocket_site
+									level = 1
+									instant_build = yes
+								}
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									any_owned_state = {
+										free_building_slots = {
+											building = rocket_site
+											size > 0
+											include_locked = yes
+										}
+									}
+								}
+							}
+							random_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = rocket_site
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = rocket_site
+									level = 1
+									instant_build = yes
+								}
+							}
+						}			
+					
+		}
+	}
+
+	#Nuclear Effort I
+	focus = {
+		id = POL_nuclear_effort_i
+		icon = GFX_goal_unknown
+		x = 37
+		y = 10
+		prerequisite = { focus = POL_extra_research_slot_ii  }
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_RESEARCH
+		}
+		bypass = {
+			 has_tech = nukes 
+		}
+		ai_will_do = { factor = 1 }
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						add_tech_bonus = {
+							name = nuclear
+							bonus = 1.0
+							uses = 1
+							category = nuclear
+						}
+					
+		}
+	}
+
+	#Nuclear Effort II
+	focus = {
+		id = POL_nuclear_effort_ii
+		icon = GFX_goal_unknown
+		x = 37
+		y = 11
+		prerequisite = { focus = POL_nuclear_effort_i  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		available = {
+			
+						has_tech = nuclear_reactor
+						OR = {
+							any_owned_state = {
+								free_building_slots = {
+									building = nuclear_reactor
+									size > 0
+									include_locked = yes
+								}
+							}
+							any_controlled_state = {
+								free_building_slots = {
+									building = nuclear_reactor
+									size > 0
+									include_locked = yes
+								}
+							}						
+						}
+					
+		}
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						if = {
+							limit = {
+								any_owned_state = {
+									free_building_slots = {
+										building = nuclear_reactor
+										size > 0
+										include_locked = yes
+									}
+								}
+							}
+							random_owned_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = nuclear_reactor
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = nuclear_reactor
+									level = 1
+									instant_build = yes
+								}
+							}
+						}
+						if = {
+							limit = {
+								NOT = {
+									any_owned_state = {
+										free_building_slots = {
+											building = nuclear_reactor
+											size > 0
+											include_locked = yes
+										}
+									}
+								}
+							}
+							random_controlled_state = {
+								limit = {
+									free_building_slots = {
+										building = nuclear_reactor
+										size > 0
+										include_locked = yes
+									}
+								}
+								add_extra_state_shared_building_slots = 1
+								add_building_construction = {
+									type = nuclear_reactor
+									level = 1
+									instant_build = yes
+								}
+							}
+						}			
+					
+		}
+	}
+
+	#Civil Idea I
+	focus = {
+		id = POL_civil_idea_i
+		icon = GFX_goal_unknown
+		x = 28
+		y = 2
+		prerequisite = { focus = POL_construction_effort_i  focus = POL_construction_effort_ii  focus = POL_construction_effort_iii  }
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		available_if_capitulated = yes
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			
+						add_ideas = idea_complex_1_1
+					
+		}
+	}
+
+	#Civil Idea II
+	focus = {
+		id = POL_civil_idea_ii
+		icon = GFX_goal_unknown
+		x = 28
+		y = 3
+		prerequisite = { focus = POL_civil_idea_i  }
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		ai_will_do = { factor = 1 }
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						swap_ideas = {
+			    			remove_idea = idea_complex_1_1
+			    			add_idea = idea_complex_2_1
+						}
+					
+		}
+	}
+
+	#Civil Idea III
+	focus = {
+		id = POL_civil_idea_iii
+		icon = GFX_goal_unknown
+		x = 28
+		y = 4
+		prerequisite = { focus = POL_civil_idea_ii  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						swap_ideas = {
+			    			remove_idea = idea_complex_2_1
+			    			add_idea = idea_complex_3_1
+						}
+					
+		}
+	}
+
+	#Civil Idea IV
+	focus = {
+		id = POL_civil_idea_iv
+		icon = GFX_goal_unknown
+		x = 28
+		y = 5
+		prerequisite = { focus = POL_civil_idea_iii  }
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		ai_will_do = { factor = 1 }
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						swap_ideas = {
+			    			remove_idea = idea_complex_3_1
+			    			add_idea = idea_complex_4_1
+						}
+					
+		}
+	}
+
+	#Infrastructure Idea I
+	focus = {
+		id = POL_infrastructure_idea_i
+		icon = GFX_goal_unknown
+		x = 32
+		y = 2
+		prerequisite = { focus = POL_infrastructure_effort_i  focus = POL_infrastructure_effort_ii  focus = POL_infrastructure_effort_iii  }
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		ai_will_do = { factor = 1 }
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						add_ideas = idea_infrastructure_1_1
+					
+		}
+	}
+
+	#Infrastructure Idea II
+	focus = {
+		id = POL_infrastructure_idea_ii
+		icon = GFX_goal_unknown
+		x = 32
+		y = 3
+		prerequisite = { focus = POL_infrastructure_idea_i  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						swap_ideas = {
+			    			remove_idea = idea_infrastructure_1_1
+			    			add_idea = idea_infrastructure_2_1
+						}
+					
+		}
+	}
+
+	#Infrastructure Idea III
+	focus = {
+		id = POL_infrastructure_idea_iii
+		icon = GFX_goal_unknown
+		x = 32
+		y = 4
+		prerequisite = { focus = POL_infrastructure_idea_ii  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						swap_ideas = {
+			    			remove_idea = idea_infrastructure_2_1
+			    			add_idea = idea_infrastructure_3_1
+						}
+					
+		}
+	}
+
+	#Naval Idea I
+	focus = {
+		id = POL_naval_idea_i
+		icon = GFX_POL_naval_idea_i-5616
+		x = 38
+		y = 2
+		prerequisite = { focus = POL_naval_effort_i  focus = POL_naval_effort_ii  focus = POL_naval_effort_iii  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						add_ideas = idea_naval_1_1
+					
+		}
+	}
+
+	#Naval Idea II
+	focus = {
+		id = POL_naval_idea_ii
+		icon = GFX_goal_unknown
+		x = 38
+		y = 3
+		prerequisite = { focus = POL_naval_idea_i  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						swap_ideas = {
+			    			remove_idea = idea_naval_1_1
+			    			add_idea = idea_naval_2_1
+						}
+					
+		}
+	}
+
+	#Naval Idea III
+	focus = {
+		id = POL_naval_idea_iii
+		icon = GFX_goal_unknown
+		x = 38
+		y = 4
+		prerequisite = { focus = POL_naval_idea_ii  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						swap_ideas = {
+			    			remove_idea = idea_naval_2_1
+			    			add_idea = idea_naval_3_1
+						}
+					
+		}
+	}
+
+	#Armament Idea I
+	focus = {
+		id = POL_armament_idea_i
+		icon = GFX_goal_unknown
+		x = 42
+		y = 2
+		prerequisite = { focus = POL_armament_effort_i  focus = POL_armament_effort_ii  focus = POL_armament_effort_iii  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						add_ideas = idea_arm_1_1
+					
+		}
+	}
+
+	#Armament Idea II
+	focus = {
+		id = POL_armament_idea_ii
+		icon = GFX_goal_unknown
+		x = 42
+		y = 3
+		prerequisite = { focus = POL_armament_idea_i  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						swap_ideas = {
+			    			remove_idea = idea_arm_1_1
+			    			add_idea = idea_arm_2_1
+						}
+					
+		}
+	}
+
+	#Armament Idea III
+	focus = {
+		id = POL_armament_idea_iii
+		icon = GFX_goal_unknown
+		x = 42
+		y = 4
+		prerequisite = { focus = POL_armament_idea_ii  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						swap_ideas = {
+			    			remove_idea = idea_arm_2_1
+			    			add_idea = idea_arm_3_1
+						}
+					
+		}
+	}
+
+	#Armament Idea IV
+	focus = {
+		id = POL_armament_idea_iv
+		icon = GFX_goal_unknown
+		x = 42
+		y = 5
+		prerequisite = { focus = POL_armament_idea_iii  }
+		cost = 5
+		ai_will_do = { factor = 1 }
+		search_filters = {
+			FOCUS_FILTER_INDUSTRY
+		}
+		available_if_capitulated = yes
+		completion_reward = {
+			
+						swap_ideas = {
+			    			remove_idea = idea_arm_3_1
+			    			add_idea = idea_arm_4_1
+						}
+					
+		}
+	}
+}

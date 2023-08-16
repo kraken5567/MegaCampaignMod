@@ -1,0 +1,7 @@
+﻿l_polish:
+ news.2891.t:0 "[TAN.GetName] dołącza do frakcji [CHI.GetFactionName]"
+ news.2891.d:0 "W dzisiejszym wspólnym oświadczeniu [CHI.GetName] i [TAN.GetName] poinformowały, że drugi z tych krajów uzyskał oficjalnie członkostwo we frakcji [CHI.GetFactionName]. Jeszcze nie wiadomo, czy to partnerstwo posłuży celom ofensywnym, czy obronnym, ale bez wątpienia trwa przygotowywanie wspólnych planów militarnych."
+ news.2892.t:0 "[MON.GetName] dołącza do frakcji [CHI.GetFactionName]"
+ news.2892.d:0 "W dzisiejszym wspólnym oświadczeniu [CHI.GetName] i [MON.GetName] poinformowały, że drugi z tych krajów uzyskał oficjalnie członkostwo we frakcji [CHI.GetFactionName]. Jeszcze nie wiadomo, czy to partnerstwo posłuży celom ofensywnym, czy obronnym, ale bez wątpienia trwa przygotowywanie wspólnych planów militarnych."
+ news.2893.t:0 "[TIB.GetName] dołącza do frakcji [CHI.GetFactionName]"
+ news.2893.d:0 "W dzisiejszym wspólnym oświadczeniu [CHI.GetName] i [TIB.GetName] poinformowały, że drugi z tych krajów uzyskał oficjalnie członkostwo we frakcji [CHI.GetFactionName]. Jeszcze nie wiadomo, czy to partnerstwo posłuży celom ofensywnym, czy obronnym, ale bez wątpienia trwa przygotowywanie wspólnych planów militarnych."

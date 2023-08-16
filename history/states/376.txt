@@ -1,0 +1,26 @@
+state = {
+	id = 376
+	name = "STATE_376"
+	manpower = 2056155
+	resources = {
+		aluminium = 4
+	}
+
+	state_category = rural
+
+	history = {
+		owner = Z68
+		victory_points = {
+			11499 1
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 0
+			arms_factory = 0
+		}
+	}
+
+	provinces = {
+		519 694 3690 6555 9517 9545 9655 11486 11499 
+	}
+}

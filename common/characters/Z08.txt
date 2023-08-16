@@ -1,0 +1,119 @@
+characters = {
+	Z08_0 = {
+		name = _
+		portraits = {
+		}
+	}
+	Z08_16777252 = {
+		name = Simeonie_Nutarak
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16777252
+			cost = 150
+		}
+	}
+	Z08_16778178 = {
+		name = Pitseolak_Atagotaaluk
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16778178
+			cost = 150
+		}
+	}
+	Z08_16778448 = {
+		name = Peter_Enuaraq
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16778448
+			cost = 150
+		}
+	}
+	Z08_33555111 = {
+		name = Peter_Tullaugaq
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33555111
+			cost = 150
+		}
+	}
+	Z08_33555241 = {
+		name = David_Kusugak
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33555241
+			cost = 150
+		}
+	}
+	Z08_33555655 = {
+		name = Markoosie_Ashoona
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33555655
+			cost = 150
+		}
+	}
+	Z08_33558992 = {
+		name = Jose_2_Kusugak
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33558992
+			cost = 150
+		}
+	}
+	Z08_50331975 = {
+		name = Caubvick_Irgittuq
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50331975
+			cost = 150
+		}
+	}
+}

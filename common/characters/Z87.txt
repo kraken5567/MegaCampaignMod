@@ -1,0 +1,112 @@
+characters = {
+	Z87_16777940 = {
+		name = Jurgen_zu_Stolberg-Wernigerode
+		portraits = {
+			civilian = {
+				large = GFX_portrait_europe_generic_5
+			}
+		}
+		country_leader = {
+			ideology = conservatism
+			traits = {  }
+		}
+	}
+	Z87_33555602 = {
+		name = Michael_Vogel_von_Falkenstein
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33555602
+			cost = 150
+		}
+	}
+	Z87_33555809 = {
+		name = Ruprecht_Nohl
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33555809
+			cost = 150
+		}
+	}
+	Z87_33555990 = {
+		name = Haubold_Stahlschmidt
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33555990
+			cost = 150
+		}
+	}
+	Z87_50332471 = {
+		name = Stefan_von_Madai
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50332471
+			cost = 150
+		}
+	}
+	Z87_67109739 = {
+		name = Oskar_von_Spee
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_67109739
+			cost = 150
+		}
+	}
+	Z87_67113230 = {
+		name = Johann_Ludendorff
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_67113230
+			cost = 150
+		}
+	}
+	Z87_83890540 = {
+		name = Peter_von_Hennig
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_83890540
+			cost = 150
+		}
+	}
+}

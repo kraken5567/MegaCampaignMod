@@ -1,0 +1,138 @@
+characters = {
+	Z84_50335743 = {
+		name = David_Peabody
+		portraits = {
+			army = {
+				large = GFX_Portrait_USA_Generic_land_5
+				small = GFX_Portrait_USA_Generic_land_5_small
+			}
+			civilian = {
+				large = GFX_Portrait_USA_Generic_land_5
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			traits = {  }
+		}
+		field_marshal = {
+			traits = { defensive_doctrine infantry_officer }
+			skill = 3
+			attack_skill = 2
+			defense_skill = 4
+			planning_skill = 1
+			logistics_skill = 3
+		}
+	}
+	Z84_33554860 = {
+		name = Purley_Thorndike
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33554860
+			cost = 150
+		}
+	}
+	Z84_33558752 = {
+		name = Nelson_Bennett
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33558752
+			cost = 150
+		}
+	}
+	Z84_50332715 = {
+		name = Gordon_Norris
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50332715
+			cost = 150
+		}
+	}
+	Z84_50333125 = {
+		name = Irving_Griffin
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50333125
+			cost = 150
+		}
+	}
+	Z84_50333734 = {
+		name = Alton_Martindale
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50333734
+			cost = 150
+		}
+	}
+	Z84_50334823 = {
+		name = Cephas_Granger
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50334823
+			cost = 150
+		}
+	}
+	Z84_50335641 = {
+		name = Ulysses_Boylston
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50335641
+			cost = 150
+		}
+	}
+	Z84_83886434 = {
+		name = Daniel_Winthrop
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_83886434
+			cost = 150
+		}
+	}
+}

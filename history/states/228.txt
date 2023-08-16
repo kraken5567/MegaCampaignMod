@@ -1,0 +1,27 @@
+state = {
+	id = 228
+	name = "STATE_228"
+	manpower = 1807103
+	resources = {
+		steel = 10
+	}
+
+	state_category = town
+
+	history = {
+		owner = HUN
+		victory_points = {
+			6573 1
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			arms_factory = 0
+		}
+		add_core_of = HUN
+	}
+
+	provinces = {
+		555 3548 3565 3581 6571 6573 6586 9537 9563 11536 11691 
+	}
+}

@@ -1,0 +1,18 @@
+POL = {
+	male = {
+		names = {
+			"Aleksander" "Bartłomiej" "Cezary" "Damian" "Emil" "Filip" "Grzegorz" "Henryk" "Ignacy" "Jan" "Kacper" "Łukasz" "Maciej" "Norbert" "Oskar" "Piotr" "Radosław" "Szymon" "Tomasz" "Władysław" "Xavier" "Yuri" "Zbigniew" "Adam" "Bartosz" "Cyprian" "Dawid" "Ernest" "Franciszek" "Gracjan" "Henryk" "Iwo" "Jakub" "Kazimierz" "Lech" "Marcin" "Mikołaj" "Nikodem" "Oliwier" "Patryk" "Quirin" "Ryszard" "Sylwester" "Teodor" "Urban" "Wacław" "Xawery" "Yannick" "Ziemowit" "Żygmunt" 
+		}
+	}
+	female = {
+		names = {
+			"Agata" "Beata" "Cecylia" "Danuta" "Elżbieta" "Franciszka" "Gabriela" "Helena" "Izabela" "Joanna" "Kamila" "Łucja" "Magdalena" "Natalia" "Oliwia" "Paulina" "Rozalia" "Stanisława" "Teresa" "Wiktoria" "Zofia" "Ada" "Basia" "Celina" "Daria" "Ewa" "Felicja" "Grażyna" "Helena" "Irena" "Jagoda" "Kamelia" "Lena" "Magda" "Natalia" "Ola" "Patrycja" "Regina" "Sylwia" "Tamara" "Urszula" "Weronika" "Xena" "Yolanta" "Zuzanna" "Adrianna" "Beata" "Czesława" "Dobrosława" "Edyta" 
+		}
+	}
+	surnames = {
+		"Adamczyk" "Bąk" "Czarnecki" "Dąbrowski" "Górski" "Hałas" "Iwański" "Jankowski" "Kowalski" "Lewandowski" "Majewski" "Nowak" "Olszewski" "Piotrowski" "Rogowski" "Szymański" "Tomczak" "Urbański" "Wójcik" "Zając" "Abramowicz" "Baran" "Cieślak" "Duda" "Głowacki" "Jasiński" "Kaczmarek" "Łukasik" "Mikołajczyk" "Nowicki" "Olszewska" "Pająk" "Różewicz" "Sokołowski" "Tokarczyk" "Urbańczyk" "Wałęsa" "Zalewski" "Adamska" "Bartkowiak" "Cieślik" "Dębski" "Głowacka" "Jabłoński" "Kania" "Kaczorowski" "Łukaszewicz" "Mikołajewska" "Nowakowska" "Olszewska" 
+	}
+	callsigns = {
+		"Thunderbolt" "Phoenixfire" "Wolfhound" "Viperstrike" "Ironclad" "Falconwing" "Shadowcat" "Ghostprowler" "Blizzard" "Warhammer" 
+	}
+}

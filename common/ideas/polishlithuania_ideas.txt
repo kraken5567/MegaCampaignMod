@@ -1,0 +1,110 @@
+ideas = {
+	mobilization_laws = {
+}
+
+	economy = {
+}
+
+	political_advisor = {
+}
+
+	tank_manufacturer = {
+}
+
+	naval_manufacturer = {
+}
+
+	aircraft_manufacturer = {
+}
+
+	materiel_manufacturer = {
+}
+
+	industrial_concern = {
+}
+
+	theorist = {
+}
+
+	army_chief = {
+}
+
+	navy_chief = {
+}
+
+	air_chief = {
+}
+
+	high_command = {
+}
+
+    country = {
+        army_motorized_training = {
+            focus = army_motorized_path
+
+            motorized_bonuses = {
+                movement_speed = 0.15
+                attack = 0.05
+                }
+
+            modifier = {
+                add_army_experience = 50
+            }
+        }
+
+        army_motorized_logistics_buff = {
+            focus = army_motorized_logistics
+
+            motorized_bonuses = {
+                supply_consumption = -0.10
+                supply_grace = 0.10
+                }
+            }
+
+        army_motorized_tactics_buff = {
+            focus = army_motorized_divisions
+
+            add_doctrine_cost_reduction = {
+                name = my_idea_name
+                category = mobile_warfare
+                cost_reduction = 0.1
+                }
+
+            modifier = {
+                add_army_experience = 90
+            }  
+        }
+        
+
+        army_cavalry_training = {
+            focus = army_cavalry_path
+
+                cavalry_bonuses = {
+                movement_speed = 0.05
+				supply_consumption = 0.05
+				defense = 0.05
+                attack = 0.10
+                }
+            }
+
+        army_cavalry_tactics_buff = {
+            focus = army_cavalry_training
+
+            cavalry_bonuses = {
+                movement_speed = 0.05
+                breakthrough = 0.1
+                soft_attack = 0.05
+                }
+        }
+        
+        army_combined_arms_mastery = {
+            OR = {
+                focus = army_motorized_divisions
+                focus = army_cavalry_training
+            }
+            modifier = {
+                add_equipment_capture_factor = 0.2
+            }
+        }
+    }
+}

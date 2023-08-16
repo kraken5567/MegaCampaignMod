@@ -1,0 +1,23 @@
+state = {
+	id = 549
+	name = "STATE_549"
+	manpower = 650896
+
+	state_category = rural
+
+	history = {
+		owner = HUN
+		victory_points = {
+			11577 1
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 0
+			arms_factory = 0
+		}
+	}
+
+	provinces = {
+		3627 6647 9595 11577 11580 11594 
+	}
+}

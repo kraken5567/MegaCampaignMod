@@ -1,0 +1,33 @@
+state = {
+	id = 401
+	name = "STATE_401"
+	manpower = 610481
+	resources = {
+		aluminium = 14
+		chromium = 2
+		steel = 5
+		tungsten = 24
+	}
+
+	state_category = rural
+
+	history = {
+		owner = ENG
+		victory_points = {
+			9161 1
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 0
+			arms_factory = 0
+			11064 = {
+				naval_base = 1
+			}
+		}
+		add_core_of = ENG
+	}
+
+	provinces = {
+		131 284 3159 3178 3373 6046 6062 6104 6196 6205 6385 9075 9090 9161 11055 11064 11161 11266 11306 
+	}
+}

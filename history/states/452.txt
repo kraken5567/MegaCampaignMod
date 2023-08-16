@@ -1,0 +1,30 @@
+state = {
+	id = 452
+	name = "STATE_452"
+	manpower = 1127438
+	resources = {
+		aluminium = 5
+		rubber = 2
+	}
+
+	state_category = town
+
+	history = {
+		owner = SPR
+		victory_points = {
+			12742 1
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 0
+			arms_factory = 1
+			10862 = {
+				naval_base = 1
+			}
+		}
+	}
+
+	provinces = {
+		8039 8096 10862 12742 12787 
+	}
+}

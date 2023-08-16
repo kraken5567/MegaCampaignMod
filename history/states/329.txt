@@ -1,0 +1,28 @@
+state = {
+	id = 329
+	name = "STATE_329"
+	manpower = 1228962
+	resources = {
+		aluminium = 45
+		chromium = 91
+	}
+
+	state_category = rural
+
+	history = {
+		owner = ALB
+		victory_points = {
+			3882 1
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 0
+			arms_factory = 0
+		}
+		add_core_of = ALB
+	}
+
+	provinces = {
+		833 867 907 974 3833 3865 3882 6886 11856 
+	}
+}

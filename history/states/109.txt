@@ -1,0 +1,25 @@
+state = {
+	id = 109
+	name = "STATE_109"
+	manpower = 956067
+	resources = {
+		rubber = 0
+		steel = 1
+	}
+
+	state_category = rural
+
+	history = {
+		owner = JAP
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 0
+			arms_factory = 0
+		}
+		add_core_of = JAP
+	}
+
+	provinces = {
+		4130 
+	}
+}

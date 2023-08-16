@@ -1,0 +1,30 @@
+state = {
+	id = 160
+	name = "STATE_160"
+	manpower = 2853974
+	resources = {
+		aluminium = 12
+		chromium = 32
+		steel = 10
+		tungsten = 3
+	}
+
+	state_category = town
+
+	history = {
+		owner = Z60
+		victory_points = {
+			10671 1
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 0
+			arms_factory = 1
+		}
+		add_core_of = Z60
+	}
+
+	provinces = {
+		1216 1384 1532 1554 1573 1623 4488 4499 4629 4636 4686 7501 7507 7639 7682 7775 7777 10148 10205 10366 10420 10470 10601 10671 11687 12161 12218 12239 12722 
+	}
+}

@@ -1,0 +1,8 @@
+﻿l_english:
+ news.2891.t:0 "[TAN.GetNameDef] joins the [CHI.GetFactionName]"
+ news.2891.d:0 "\nEarlier today, [CHI.GetNameDef] and [TAN.GetNameDef] issued a joint statement that the latter has now been formally granted member status of the [CHI.GetFactionName]. Whether this partnership will be used for offensive or defensive purposes remains to be seen, but undoubtedly extensive joint military planning is already under way."
+ news.2892.t:0 "[MON.GetNameDef] joins the [CHI.GetFactionName]"
+ news.2892.d:0 "\nEarlier today, [CHI.GetNameDef] and [MON.GetNameDef] issued a joint statement that the latter has now been formally granted member status of the [CHI.GetFactionName]. Whether this partnership will be used for offensive or defensive purposes remains to be seen, but undoubtedly extensive joint military planning is already under way."
+ news.2893.t:0 "[TIB.GetNameDef] joins the [CHI.GetFactionName]"
+ news.2893.d:0 "\nEarlier today, [CHI.GetNameDef] and [TIB.GetNameDef] issued a joint statement that the latter has now been formally granted member status of the [CHI.GetFactionName]. Whether this partnership will be used for offensive or defensive purposes remains to be seen, but undoubtedly extensive joint military planning is already under way."
+

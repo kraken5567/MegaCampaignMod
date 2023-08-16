@@ -1,0 +1,27 @@
+state = {
+	id = 524
+	name = "STATE_524"
+	manpower = 206040
+	resources = {
+		aluminium = 0
+		steel = 0
+	}
+
+	state_category = rural
+
+	history = {
+		owner = USA
+		victory_points = {
+			11830 1
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 0
+			arms_factory = 0
+		}
+	}
+
+	provinces = {
+		9832 11830 
+	}
+}

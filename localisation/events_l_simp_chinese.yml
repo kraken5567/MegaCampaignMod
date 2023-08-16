@@ -1,0 +1,7 @@
+﻿l_simp_chinese:
+ news.2891.t:0 "[TAN.GetNameDefCap]加入了[CHI.GetFactionName]"
+ news.2891.d:0 "\n今天早些时候，[CHI.GetNameDef]与[TAN.GetNameDef]发表了联合声明，声明表示后者现在正式以会员国身份加入[CHI.GetFactionName]。这种伙伴关系适用于进攻还是防御目前还不得而知，但可以预见的是双方间广泛的军事合作及规划已经开始。"
+ news.2892.t:0 "[MON.GetNameDefCap]加入了[CHI.GetFactionName]"
+ news.2892.d:0 "\n今天早些时候，[CHI.GetNameDef]与[MON.GetNameDef]发表了联合声明，声明表示后者现在正式以会员国身份加入[CHI.GetFactionName]。这种伙伴关系适用于进攻还是防御目前还不得而知，但可以预见的是双方间广泛的军事合作及规划已经开始。"
+ news.2893.t:0 "[TIB.GetNameDefCap]加入了[CHI.GetFactionName]"
+ news.2893.d:0 "\n今天早些时候，[CHI.GetNameDef]与[TIB.GetNameDef]发表了联合声明，声明表示后者现在正式以会员国身份加入[CHI.GetFactionName]。这种伙伴关系适用于进攻还是防御目前还不得而知，但可以预见的是双方间广泛的军事合作及规划已经开始。"

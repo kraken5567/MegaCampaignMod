@@ -1,0 +1,112 @@
+characters = {
+	Z81_16778338 = {
+		name = Abraham_Hood
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_South_Africa_Political_Leader_Generic_2
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			traits = {  }
+		}
+	}
+	Z81_33555549 = {
+		name = Jermain_Preston
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33555549
+			cost = 150
+		}
+	}
+	Z81_33555780 = {
+		name = Stephen_Moorman
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33555780
+			cost = 150
+		}
+	}
+	Z81_33558539 = {
+		name = Anthony_Putnam
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33558539
+			cost = 150
+		}
+	}
+	Z81_50332710 = {
+		name = Michael_Forten
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50332710
+			cost = 150
+		}
+	}
+	Z81_83887013 = {
+		name = Esau_Delaney
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_83887013
+			cost = 150
+		}
+	}
+	Z81_83889906 = {
+		name = Michael_Weems
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_83889906
+			cost = 150
+		}
+	}
+	Z81_83890518 = {
+		name = Gordon_Chester
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_83890518
+			cost = 150
+		}
+	}
+}

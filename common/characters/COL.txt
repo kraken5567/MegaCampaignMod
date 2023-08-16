@@ -1,0 +1,180 @@
+characters = {
+	COL_16781474 = {
+		name = no_Edvard_dyn_no_Albrigtsen
+		portraits = {
+			civilian = {
+				large = GFX_portrait_Johan_Nygaardsvold
+			}
+		}
+		country_leader = {
+			ideology = conservatism
+			traits = {  }
+		}
+	}
+	COL_16778122 = {
+		name = no_Adel_dyn_no_Gundersen
+		portraits = {
+			army = {
+				large = GFX_portrait_FIN_carl_mannerheim
+				small = GFX_portrait_FIN_carl_mannerheim_small
+			}
+		}
+		corps_commander = {
+			traits = { engineer_officer harsh_leader trait_mountaineer }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 3
+		}
+	}
+	COL_16780882 = {
+		name = no_Torfinn_dyn_no_Solberg
+		portraits = {
+			army = {
+				large = GFX_portrait_europe_generic_land_13
+				small = GFX_portrait_europe_generic_land_13_small
+			}
+		}
+		corps_commander = {
+			traits = { armor_officer brilliant_strategist engineer_officer fortress_buster old_guard }
+			skill = 3
+			attack_skill = 4
+			defense_skill = 3
+			planning_skill = 2
+			logistics_skill = 3
+		}
+	}
+	COL_33554717 = {
+		name = no_Ingolf_dyn_no_Rambo
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33554717
+			cost = 150
+		}
+	}
+	COL_33554746 = {
+		name = no_Magnar_dyn_no_Johnsen
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33554746
+			cost = 150
+		}
+	}
+	COL_33555216 = {
+		name = no_Ivar_dyn_no_Staff
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33555216
+			cost = 150
+		}
+	}
+	COL_33555675 = {
+		name = no_Eivind_dyn_no_Alver
+		portraits = {
+			army = {
+				large = GFX_Portrait_europe_generic_land_6
+				small = GFX_Portrait_europe_generic_land_6_small
+			}
+		}
+		corps_commander = {
+			traits = { infantry_officer ranger }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 1
+		}
+	}
+	COL_33555778 = {
+		name = no_Evald_dyn_no_Anwar
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33555778
+			cost = 150
+		}
+	}
+	COL_33557411 = {
+		name = no_Gudbrand_dyn_no_Sorensen
+		portraits = {
+			navy = {
+				large = GFX_Portrait_Europe_Generic_navy_2
+				small = GFX_Portrait_Europe_Generic_navy_2_small
+			}
+		}
+		navy_leader = {
+			traits = { seawolf superior_tactician }
+			skill = 3
+			attack_skill = 4
+			defense_skill = 2
+			maneuvering_skill = 3
+			coordination_skill = 3
+		}
+	}
+	COL_33558114 = {
+		name = no_Erling_dyn_no_Petersen
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33558114
+			cost = 150
+		}
+	}
+	COL_67113328 = {
+		name = no_Jorn_dyn_no_Svendsen
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_67113328
+			cost = 150
+		}
+	}
+	COL_83889317 = {
+		name = no_Arvid_dyn_no_Keilhau
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_83889317
+			cost = 150
+		}
+	}
+}

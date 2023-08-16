@@ -1,0 +1,29 @@
+state = {
+	id = 679
+	name = "STATE_679"
+	manpower = 20278
+	resources = {
+		aluminium = 0
+		steel = 2
+		tungsten = 12
+	}
+
+	state_category = rural
+
+	history = {
+		owner = ARG
+		victory_points = {
+			2209 1
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 0
+			arms_factory = 0
+		}
+		add_core_of = ARG
+	}
+
+	provinces = {
+		2195 2209 5165 8203 10973 12922 12943 
+	}
+}

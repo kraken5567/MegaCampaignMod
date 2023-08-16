@@ -1,0 +1,26 @@
+state = {
+	id = 647
+	name = "STATE_647"
+	manpower = 113224
+
+	state_category = rural
+
+	history = {
+		owner = AST
+		victory_points = {
+			7302 1
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 0
+			arms_factory = 0
+			4286 = {
+				naval_base = 1
+			}
+		}
+	}
+
+	provinces = {
+		4286 7302 12159 
+	}
+}

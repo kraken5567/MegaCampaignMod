@@ -1,0 +1,126 @@
+characters = {
+	Z85_50331719 = {
+		name = Manuel_Bonifacio
+		portraits = {
+			civilian = {
+				large = GFX_portrait_unknown
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			traits = {  }
+		}
+	}
+	Z85_33554441 = {
+		name = Deodato_del_Pilar
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33554441
+			cost = 150
+		}
+	}
+	Z85_33554442 = {
+		name = Artemio_Diwa
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33554442
+			cost = 150
+		}
+	}
+	Z85_50331648 = {
+		name = Santiago_Rizal
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50331648
+			cost = 150
+		}
+	}
+	Z85_50331695 = {
+		name = Antonio_Mangubat
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50331695
+			cost = 150
+		}
+	}
+	Z85_50331717 = {
+		name = Artemio_Bonifacio
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50331717
+			cost = 150
+		}
+	}
+	Z85_83886084 = {
+		name = Teodoro_Bonifacio
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_83886084
+			cost = 150
+		}
+	}
+	Z85_83886132 = {
+		name = Arcadio_Jacinto
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_83886132
+			cost = 150
+		}
+	}
+	Z85_83886147 = {
+		name = Marcelo_Jacinto
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_83886147
+			cost = 150
+		}
+	}
+}

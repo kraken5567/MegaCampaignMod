@@ -1,0 +1,32 @@
+state = {
+	id = 169
+	name = "STATE_169"
+	manpower = 1379282
+	resources = {
+		aluminium = 2
+		steel = 31
+		tungsten = 4
+	}
+
+	state_category = town
+
+	history = {
+		owner = ENG
+		victory_points = {
+			9392 1
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 0
+			arms_factory = 1
+			200 = {
+				naval_base = 1
+			}
+		}
+		add_core_of = ENG
+	}
+
+	provinces = {
+		159 200 3150 3273 6300 6320 6350 6395 9237 9314 9350 9383 9392 11136 11207 11218 11378 
+	}
+}

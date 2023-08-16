@@ -1,0 +1,26 @@
+state = {
+	id = 692
+	name = "STATE_692"
+	manpower = 16868
+
+	state_category = rural
+
+	history = {
+		owner = EGY
+		victory_points = {
+			10007 1
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 0
+			arms_factory = 0
+			7003 = {
+				naval_base = 1
+			}
+		}
+	}
+
+	provinces = {
+		7003 10007 
+	}
+}

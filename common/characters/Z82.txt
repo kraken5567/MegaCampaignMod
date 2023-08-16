@@ -1,0 +1,98 @@
+characters = {
+	Z82_16777874 = {
+		name = Hugh_Wood
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_Europe_Generic_3
+			}
+		}
+		country_leader = {
+			ideology = centrism
+			traits = {  }
+		}
+	}
+	Z82_16779854 = {
+		name = Roger_Endicott
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16779854
+			cost = 150
+		}
+	}
+	Z82_33555417 = {
+		name = Ormsby_Dana
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33555417
+			cost = 150
+		}
+	}
+	Z82_33555610 = {
+		name = Robert_Wigglesworth
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33555610
+			cost = 150
+		}
+	}
+	Z82_33558218 = {
+		name = Sylvester_Seitz
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33558218
+			cost = 150
+		}
+	}
+	Z82_50335539 = {
+		name = Roger_Dana
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50335539
+			cost = 150
+		}
+	}
+	Z82_50335911 = {
+		name = Zebulon_Chaffee
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50335911
+			cost = 150
+		}
+	}
+}

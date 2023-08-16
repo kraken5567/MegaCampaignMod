@@ -1,0 +1,28 @@
+state = {
+	id = 450
+	name = "STATE_450"
+	manpower = 530414
+	resources = {
+		chromium = 2
+		oil = 1
+	}
+
+	state_category = town
+
+	history = {
+		owner = ETH
+		victory_points = {
+			2016 1
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			arms_factory = 0
+		}
+		add_core_of = ETH
+	}
+
+	provinces = {
+		2016 8084 10827 10851 12744 
+	}
+}

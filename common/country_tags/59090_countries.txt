@@ -1,0 +1,3 @@
+POL = "countries/Polish-Lithuania.txt"
+JAP = "countries/The United States of Japan.txt"
+GER = "countries/Lotharingia.txt"

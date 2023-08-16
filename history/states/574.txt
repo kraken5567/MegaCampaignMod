@@ -1,0 +1,30 @@
+state = {
+	id = 574
+	name = "STATE_574"
+	manpower = 141741
+	resources = {
+		chromium = 4
+	}
+
+	state_category = rural
+
+	history = {
+		owner = GRE
+		victory_points = {
+			3401 20
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 0
+			arms_factory = 0
+			3401 = {
+				naval_base = 1
+			}
+		}
+		add_core_of = GRE
+	}
+
+	provinces = {
+		3401 
+	}
+}
