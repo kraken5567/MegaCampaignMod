@@ -1,0 +1,77 @@
+country_event = {
+    id = Z45_gov_weak
+    title = "Weak Government"
+    desc = "Our government has gone a passive route. How pathetic..."
+    picture = GFX_report_event_generic_election
+
+    trigger = {
+        AND = {
+            has_country_flag = ally_rus
+            has_country_flag = ally_ger
+            }
+        }
+
+    mean_time_to_happen = {
+        days = 1  # Adjust this timing as needed
+    }
+
+    option = {
+        name = "For shame..."
+        add_ideas = Gov_Weak
+        # Other reward-related commands can be added here
+    }
+}
+
+country_event = {
+    id = Z45_gov_legit
+    title = "Legitamate Government"
+    desc = "Our government has gone a moderate route. Wise..."
+    picture = GFX_report_event_generic_election
+
+    trigger = {
+        OR = {
+            AND = {
+                has_country_flag = villan_rus
+                has_country_flag = ally_ger
+                }
+            AND = {
+                has_country_flag = villan_ger
+                has_country_flag = ally_rus
+                }
+            }   
+        }
+
+    mean_time_to_happen = {
+        days = 1  # Adjust this timing as needed
+    }
+
+    option = {
+        name = "Good..."
+        add_ideas = Gov_Legit
+        # Other reward-related commands can be added here
+    }
+}
+
+country_event = {
+    id = Z45_gov_strong
+    title = "Strong Government"
+    desc = "Our government has gone an aggressive route. I hope they know what they are doing..."
+    picture = GFX_report_event_generic_election
+
+    trigger = {
+        AND = {
+            has_country_flag = villan_ger
+            has_country_flag = villan_rus
+            }
+        }
+
+    mean_time_to_happen = {
+        days = 1  # Adjust this timing as needed
+    }
+
+    option = {
+        name = "For the greater good?"
+        add_ideas = Gov_Strong
+        # Other reward-related commands can be added here
+    }
+}

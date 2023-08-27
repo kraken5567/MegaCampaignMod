@@ -1,3 +1,7 @@
+version="0"
+tags={
+	"Gameplay"
+}
 name = "Mega Campaign Mod"
 replace_path="common/countries"
 replace_path="common/national_focus"
