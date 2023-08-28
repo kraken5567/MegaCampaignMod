@@ -1,16 +1,4 @@
 characters = {
-	Z45_16778990 = {
-		name = Karol_von_Cilli
-		portraits = {
-			civilian = {
-				large = GFX_portrait_unknown
-			}
-		}
-		country_leader = {
-			ideology = despotism
-			traits = {  }
-		}
-	}
 	Z45_16777610 = {
 		name = Marian_Bem
 		portraits = {
