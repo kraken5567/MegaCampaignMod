@@ -39,87 +39,30 @@ ideas = {
 }
 
     country = {
-        # Civillian Factory Ideas
-        POL_industrial_Ca = {
-            focus = POL_industrial_C_1
-            modifier = {
-                production_speed_industrial_complex_factor = 0.1
-                production_speed_arms_factory_factor = -0.05
-            }
-        }
-        POL_industrial_Cb = {
-            focus = POL_industrial_C_2
-            modifier = {
-                production_speed_industrial_complex_factor = 0.2
-                production_speed_arms_factory_factor = -0.1
-            }
-        }
-        POL_industrial_Cc = {
-            focus = POL_industrial_C_3
-            modifier = {
-                production_speed_industrial_complex_factor = 0.3
-                production_speed_arms_factory_factor = -0.25
-            }
-        }
-        POL_industrial_Cd = {
-            focus = POL_industrial_C_4
-            modifier = {
-                production_speed_industrial_complex_factor = 0.4
-                production_speed_arms_factory_factor = -0.4
-            }
-        }
-
-        # Military Factory Ideas
-        POL_industrial_Ma = {
-            focus = POL_industrial_M_1
-            modifier = {
-                production_speed_industrial_complex_factor = -0.05
-                production_speed_arms_factory_factor = 0.1
-            }
-        }
-        POL_industrial_Mb = {
-            focus = POL_industrial_M_2
-            modifier = {
-                production_speed_industrial_complex_factor = -0.1
-                production_speed_arms_factory_factor = 0.2
-            }
-        }
-        POL_industrial_Mc = {
-            focus = POL_industrial_M_3
-            modifier = {
-                production_speed_industrial_complex_factor = -0.25
-                production_speed_arms_factory_factor = 0.3
-            }
-        }
-        POL_industrial_Md = {
-            focus = POL_industrial_M_4
-            modifier = {
-                production_speed_industrial_complex_factor = -0.4
-                production_speed_arms_factory_factor = 0.4
-            }
-        }
+        # Military
+        #https://hoi4-modding.fandom.com/wiki/Modifiers
 
         army_motorized_training = {
             focus = POL_Mot_1
 
-            motorized_bonuses = {
-                movement_speed = 0.15
-                attack = 0.05
-                }
-
             modifier = {
+                motorized_bonuses = {
+                    movement_speed = 0.15
+                    attack = 0.05
+                    }
                 add_army_experience = 50
             }
         }
 
         army_motorized_logistics_buff = {
             focus = POL_Mot_2
-
-            motorized_bonuses = {
-                supply_consumption = -0.10
-                supply_grace = 0.10
+            modifier = {
+                motorized_bonuses = {
+                    supply_consumption = -0.10
+                    supply_grace = 0.10
+                    }
                 }
-            }
+        }
 
         army_motorized_tactics_buff = {
             focus = POL_Mot_3
@@ -138,23 +81,25 @@ ideas = {
 
         army_cavalry_training = {
             focus = POL_Cav_1
-
+            modifier = {
                 cavalry_bonuses = {
-                movement_speed = 0.05
-				supply_consumption = 0.05
-				defense = 0.05
-                attack = 0.10
+                    movement_speed = 0.05
+                    supply_consumption = 0.05
+                    defense = 0.05
+                    attack = 0.10
+                    }
                 }
             }
 
         army_cavalry_tactics_buff = {
             focus = POL_Cav_2
-
-            cavalry_bonuses = {
-                movement_speed = 0.05
-                breakthrough = 0.1
-                soft_attack = 0.05
-                }
+            modifier = {
+                cavalry_bonuses = {
+                    movement_speed = 0.05
+                    breakthrough = 0.1
+                    soft_attack = 0.05
+                    }
+            }
         }
         
         army_combined_arms_mastery = {
@@ -165,6 +110,116 @@ ideas = {
             }
             modifier = {
                 add_equipment_capture_factor = 0.2
+            }
+        }
+        
+        # Government
+        POL_weak_government = {
+            potential = {
+                OR = {
+                    has_country_flag = ally_ger
+                    has_country_flag = ally_rus
+                }
+            }
+            allowed = {
+                always = yes
+            }
+            modifier = {
+                consumer_goods_factor = 0.075
+                justify_war_goal_time = 0.34
+            }
+        }
+    
+        POL_legitimate_government = {
+            potential = {
+                OR = {
+                    AND = {
+                        has_country_flag = villan_rus
+                        has_country_flag = ally_ger
+                    }
+                    AND = {
+                        has_country_flag = villan_ger
+                        has_country_flag = ally_rus
+                    }
+                }
+            }
+            allowed = {
+                always = yes
+            }
+            modifier = {
+                consumer_goods_factor = -0.025
+                add_war_support = 0.1
+                add_stability = 0.1
+                justify_war_goal_time = -0.34
+            }
+        }
+    
+        POL_strong_government = {
+            potential = {
+                has_country_flag = villan_ger
+                has_country_flag = villan_rus
+            }
+            allowed = {
+                always = yes
+            }
+            modifier = {
+                consumer_goods_factor = -0.05
+                surrender_limit = 0.9
+                stability_weekly = 0.025
+                political_power_gain = 0.25
+                add_political_power = 150
+            }
+        }
+         
+        # Civillian Factory Ideas
+        POL_industrial_Ca = {
+            focus = POL_industrial_C_1
+            modifier = {
+                production_speed_industrial_complex_factor = 0.05
+            }
+        }
+        POL_industrial_Cb = {
+            focus = POL_industrial_C_2
+            modifier = {
+                production_speed_industrial_complex_factor = 0.1
+            }
+        }
+        POL_industrial_Cc = {
+            focus = POL_industrial_C_3
+            modifier = {
+                production_speed_industrial_complex_factor = 0.15
+            }
+        }
+        POL_industrial_Cd = {
+            focus = POL_industrial_C_4
+            modifier = {
+                production_speed_industrial_complex_factor = 0.2
+            }
+        }
+
+        # Military Factory Ideas
+        POL_industrial_Ma = {
+            focus = POL_industrial_M_1
+            modifier = {
+                production_speed_arms_factory_factor = 0.05
+            }
+        }
+        POL_industrial_Mb = {
+            focus = POL_industrial_M_2
+            modifier = {
+                production_speed_arms_factory_factor = 0.1
+            }
+        }
+        POL_industrial_Mc = {
+            focus = POL_industrial_M_3
+            modifier = {
+                production_speed_arms_factory_factor = 0.15
+            }
+        }
+        POL_industrial_Md = {
+            focus = POL_industrial_M_4
+            modifier = {
+                production_speed_arms_factory_factor = 0.2
             }
         }
     }

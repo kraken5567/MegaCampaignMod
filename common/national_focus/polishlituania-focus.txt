@@ -129,13 +129,7 @@ focus_tree = {
 		}
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			add_stability = 0.2
-			
-			add_war_support = 0.2
-			
 			add_political_power = 50
-			
-			
 		}
 	}
 
@@ -152,8 +146,8 @@ focus_tree = {
 		bypass = {
 			has_war_with = ger
 		}
-		select_effect = {
-			add_political_power = 100
+		completion_reward = {
+			add_political_power = 10
 						}
 	}
 
@@ -173,7 +167,7 @@ focus_tree = {
 			
 		}
 		completion_reward = {
-			add_political_power = 100
+			add_political_power = 10
 			
 		}
 	}
@@ -189,13 +183,14 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = POL_the_west  }
-		mutually_exclusive = { focus = POL_villanize_germany }
+		mutually_exclusive = { focus = POL_villainize_germany }
+
 		available = {
 			NOT = { is_at_war_with = Z68 }
 		}
 		completion_reward = {
 
-			add_country_flag = ally_ger
+			set_country_flag = ally_ger
 
 			add_opinion_modifier = {
 			    target = Z68
@@ -206,7 +201,7 @@ focus_tree = {
 
 	#Villanize Germany
 	focus = {
-		id = POL_villanize_germany
+		id = POL_villainize_germany
 		icon = GFX_focus_attack_germany
 		x = 14
 		y = 2
@@ -222,20 +217,127 @@ focus_tree = {
 		}
 		bypass = {
 			is_at_war_with = Z68
-			
-			
 		}
 		completion_reward = {
 			create_wargoal = {
 			    type = puppet_wargoal_focus
 			    target = Z68
 			}
-			add_state_claim = 40, 68, 321
+			add_state_claim = 40 
+			add_state_claim = 68 
+			add_state_claim = 321
 			
-			add_country_flag = villan_ger
+			set_country_flag = villan_ger
 		}
 		will_lead_to_war_with = Z68
 	}
+
+	# Villanize Bohemia
+	focus = {
+		id = POL_villainize_bohemia
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 14
+		y = 4
+		cost = 7.143 #50 days
+
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = POL_villainize_germany focus = POL_ally_germany }
+		mutually_exclusive = { focus = POL_ally_bohemia }
+
+		bypass = {
+			is_at_war_with = Z05
+		}
+		completion_reward = {
+			create_wargoal = {
+			    type = puppet_wargoal_focus
+			    target = Z05
+			}
+			add_state_claim = 148
+			add_state_claim = 154
+
+		}
+		will_lead_to_war_with = Z05
+	}
+
+	focus = {
+		id = POL_ally_hungary
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		x = 14
+		y = 5
+		cost = 5
+		prerequisite = { focus = POL_villainize_bohemia }
+
+	}
+
+	# Ally Bohemia
+	focus = {
+		id = POL_ally_bohemia
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		x = 12
+		y = 4
+		cost = 5
+
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = POL_villainize_germany focus = POL_ally_germany }
+		mutually_exclusive = { focus = POL_villainize_bohemia }
+
+		available = {
+			NOT = { is_at_war_with = Z05 }
+		}
+
+		completion_reward = {
+
+			add_opinion_modifier = {
+			    target = Z05
+			    modifier = huge_increase
+			}
+		}
+	}
+
+	# Attack Hungary
+	focus = {
+		id = POL_attack_hungary
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 12
+		y = 5
+		cost = 5
+
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = POL_ally_bohemia }
+
+		available = {
+		 NOT = { is_ally_with = HUN }
+		}
+
+		completion_reward = {
+
+			add_opinion_modifier = {
+			    target = Z05
+			    modifier = huge_increase
+			}
+
+			# Bohemia Claims
+			Z05 = {add_state_claim = 112}
+			Z05 = {add_state_claim = 366}
+			Z05 = {add_state_claim = 222}
+
+			# Poland Claims
+			Z45 = {add_state_core = 228}
+			Z45 = {add_state_claim = 215}
+
+			# Romanian Claims
+			ROM = {add_state_claim = 549}
+			ROM = {add_state_claim = 261}
+		}
+	}
+
+	# EAST #
 
 	#Ally Russia
 	focus = {
@@ -248,14 +350,14 @@ focus_tree = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = POL_the_east  }
+		mutually_exclusive = { focus = POL_villainize_russia }
+
 		available = {
 			NOT = { is_at_war_with = SOV }
 		}
 		completion_reward = {
 			
-		completion_reward = {
-			add_country_flag = ally_rus
-		}
+			set_country_flag = ally_rus
 
 			add_opinion_modifier = {
 			    target = SOV
@@ -276,9 +378,24 @@ focus_tree = {
 		prerequisite = { focus = POL_the_east  }
 		mutually_exclusive = { focus = POL_ally_russia }
 		
-		completion_reward = {
-			add_country_flag = villan_rus
+		bypass = {
+			is_at_war_with = SOV
 		}
+		completion_reward = {
+			create_wargoal = {
+			    type = puppet_wargoal_focus
+			    target = SOV
+			}
+			add_state_claim = 498 
+			add_state_claim = 311 
+			add_state_claim = 164 
+			add_state_claim = 207 
+			add_state_claim = 563 
+			add_state_claim = 330
+			
+			set_country_flag = villan_rus
+		}
+		will_lead_to_war_with = SOV
 	}
 
 	#Buffer States
@@ -291,51 +408,186 @@ focus_tree = {
 		search_filters = {
 			FOCUS_FILTER_FRA_POLITICAL_VIOLENCE
 		}
-		prerequisite = { focus = POL_villanize_germany } 
-		prerequisite = { focus = POL_villainize_russia }
+		prerequisite = {
+			focus = POL_villainize_germany
+			focus = POL_villainize_russia
+		} 
 		available = {
-			date < 1940.01.01
-			
+			date > 1940.01.01
 			has_government = fascism
 		}
 		completion_reward = {
-			target = { controller = Z45 }
-                which = surrounding_states
+			custom_effect = {
+				target = {
+					controller = Z45
+				}
+				which = surrounding_states
+				scripted_effect = {
+					id = add_claim_scripted_effect
+				}
+			}
 		}
 	}
+
+	# Villanize Denmark
+	focus = {
+		id = POL_villainize_denmark
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 16
+		y = 4
+		cost = 7.143 #50 days
+
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = POL_villainize_russia focus = POL_ally_russia  }
+		mutually_exclusive = { focus = POL_ally_denmark }
+		
+		bypass = {
+			is_at_war_with = DEN
+		}
+		completion_reward = {
+			create_wargoal = {
+			    type = puppet_wargoal_focus
+			    target = DEN
+			}
+			add_state_claim = 277
+			add_state_claim = 435
+			
+			add_country_flag = villan_rus
+		}
+		will_lead_to_war_with = DEN
+	}
+
+	# Ally Denmark
+	focus = {
+		id = POL_ally_denmark
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		x = 18
+		y = 4
+		cost = 5
+
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = POL_villainize_russia focus = POL_ally_russia  }
+		mutually_exclusive = { focus = POL_villainize_denmark }
+		available = {
+			NOT = { is_at_war_with = DEN }
+		}
+		completion_reward = {
+			add_country_flag = ally_rus
+
+			add_opinion_modifier = {
+			    target = SOV
+			    modifier = huge_increase
+			}
+		}
+	}
+
 
 	# Government
 
-	# Strong
 	focus = {
-		id = POL_Gov_Strong
+		id = POL_Gov_Options
 		icon = GFX_goal_unknown
-
 		x = 15
-		y = 5
-
+		y = 6
+		prerequisite = { focus = POL_villainize_denmark focus = POL_ally_denmark  }
+		prerequisite = { focus = POL_attack_hungary focus = POL_ally_hungary  }
+	
+		completion_reward = {
+			if = {
+				limit = {
+					has_country_flag = villan_ger
+					has_country_flag = villan_rus
+				}
+				add_ideas = POL_strong_government
+				#immediate
+				add_stability = 0.2
+				add_war_support = 0.2
+				# flag
+				set_country_flag = Gov_Strong
+			}
+			else_if = {
+				limit = {
+					OR = {
+						AND = {
+							has_country_flag = villan_rus
+							has_country_flag = ally_ger
+						}
+						AND = {
+							has_country_flag = villan_ger
+							has_country_flag = ally_rus
+						}
+					}
+				}
+				add_ideas = POL_legitimate_government
+				#immediate
+				add_stability = 0.1
+				add_war_support = 0.1
+				# flag
+				set_country_flag = Gov_Legitimate
+			}
+			else_if = {
+				limit = {
+					has_country_flag = ally_ger
+					has_country_flag = ally_rus
+				}
+				add_ideas = POL_weak_government
+				#immediate
+                add_stability = -0.3
+				add_war_support = -0.3
+				# flag
+				set_country_flag = Gov_Weak
+			}
 		}
-
-	# Legitamate
-	focus = {
-		id = POL_Gov_Legitamate
-		icon = GFX_goal_unknown
-
-		x = 15
-		y = 5
-
 	}
 
-	# Weak
+	# Government Established
 	focus = {
 		id = POL_Gov_Weak
 		icon = GFX_goal_unknown
+		x = 13
+		y = 7
+		prerequisite = { focus = POL_Gov_Options }
+		mutually_exclusive = { focus = POL_Gov_Legitimate }
+		mutually_exclusive = { focus = POL_Gov_Strong }
+		available = {
+			if{
+			has_country_flag = Gov_Weak
+			}
+		}
+	}
 
+	focus = {
+		id = POL_Gov_Legitimate
+		icon = GFX_goal_unknown
 		x = 15
-		y = 5
+		y = 7
+		prerequisite = { focus = POL_Gov_Options }
+		mutually_exclusive = { focus = POL_Gov_Weak }
+		mutually_exclusive = { focus = POL_Gov_Strong }
+		available = {
+			if{
+			has_country_flag = Gov_Legitimate
+			}
+		}
+	}
 
-		
-
+	focus = {
+		id = POL_Gov_Strong
+		icon = GFX_goal_unknown
+		x = 17
+		y = 7
+		prerequisite = { focus = POL_Gov_Options }
+		mutually_exclusive = { focus = POL_Gov_Legitimate }
+		mutually_exclusive = { focus = POL_Gov_Weak }
+		available = {
+			if{
+			has_country_flag = Gov_Strong
+			}
+		}
 	}
 
 
@@ -343,7 +595,7 @@ focus_tree = {
 	focus = {
 		id = POL_industrial_1
 		icon = GFX_goal_generic_industrial_production
-		x = 26
+		x = 24
 		y = 0
 		cost = 10
 		completion_reward = {
@@ -361,12 +613,13 @@ focus_tree = {
 	focus = {
 		id = POL_industrial_T_1
 		icon = GFX_goal_generic_industrial_production
-		x = 26
+		x = 24
 		y = 3
 		prerequisite = {focus = POL_industrial_M_2 focus = POL_industrial_C_2}
 		mutually_exclusive = {}
 		cost = 10
 		completion_reward = {
+			set_country_flag = Industrial_T_Completed
 			add_building_construction_speed = 0.1
 			add_building = {
 				type = military_factory
@@ -389,7 +642,7 @@ focus_tree = {
 	focus = {
 		id = POL_industrial_M_1
 		icon = GFX_goal_generic_industrial_production
-		x = 30
+		x = 26
 		y = 1
 		prerequisite = {focus = POL_industrial_1}
 		mutually_exclusive = {focus = POL_industrial_C_1}
@@ -408,13 +661,13 @@ focus_tree = {
 	focus = {
 		id = POL_industrial_M_2
 		icon = GFX_goal_generic_industrial_production
-		x = 30
+		x = 26
 		y = 2
 		prerequisite = {focus = POL_industrial_M_1}
 		cost = 10
 		completion_reward = {
 			
-			set_country_flag = "Industrial_M_Completed"
+			set_country_flag = Industrial_M_Completed
 
 			add_building_construction_speed = 0.1
 			add_building = {
@@ -433,7 +686,7 @@ focus_tree = {
 	focus = {
 		id = POL_industrial_M_3
 		icon = GFX_goal_generic_industrial_production
-		x = 30
+		x = 26
 		y = 4
 		prerequisite = {focus = POL_industrial_M_2 focus = POL_industrial_T_1}
 		
@@ -458,7 +711,7 @@ focus_tree = {
 	focus = {
 		id = POL_industrial_M_4
 		icon = GFX_goal_generic_industrial_production
-		x = 30
+		x = 26
 		y = 5
 		prerequisite = {focus = POL_industrial_M_3}
 		cost = 10
@@ -507,7 +760,7 @@ focus_tree = {
 		cost = 10
 		completion_reward = {
 
-			set_country_flag = "Industrial_C_Completed"
+			set_country_flag = Industrial_C_Completed
 
 			add_building_construction_speed = 0.1
 			add_building = {
@@ -529,15 +782,17 @@ focus_tree = {
 		x = 22
 		y = 4
 
+		mutually_exclusive = {focus = POL_industrial_M_3}
+
 		available = {
 			OR = {
 				AND = {
-					has_country_flag = "Industrial_M_Completed"
-					has_country_flag = "Industrial_T_Completed"
+					has_country_flag = Industrial_M_Completed
+					has_country_flag = Industrial_T_Completed
 					}
 				AND = {
-					has_country_flag = "Industrial_C_Completed"
-					NOT = { has_country_flag = Industrial_T_Completed}
+					has_country_flag = Industrial_C_Completed
+					NOT = { has_country_flag = Industrial_T_Completed
 					}
 				}
 			}

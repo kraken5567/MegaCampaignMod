@@ -1,0 +1,25 @@
+﻿l_english: 
+
+# Economic
+POL_industrial_Ca:0 "PIA Civillian Focus"
+POL_industrial_Cb:0 "PIA Civillian Focus"
+POL_industrial_Cc:0 "PIA Civillian Focus"
+POL_industrial_Cd:0 "PIA Civillian Focus"
+
+POL_industrial_Ma:0 "PIA Military Focus"
+POL_industrial_Mb:0 "PIA Military Focus"
+POL_industrial_Mc:0 "PIA Military Focus"
+POL_industrial_Md:0 "PIA Military Focus"
+
+#desc
+POL_industrial_Ca_desc:0 "Polish Industrial Administration"
+POL_industrial_Cb_desc:0 "Polish Industrial Administration"
+POL_industrial_Cc_desc:0 "Polish Industrial Administration"
+POL_industrial_Cd_desc:0 "Polish Industrial Administration"
+
+POL_industrial_Ma_desc:0 "Polish Industrial Administration"
+POL_industrial_Mb_desc:0 "Polish Industrial Administration"
+POL_industrial_Mc_desc:0 "Polish Industrial Administration"
+POL_industrial_Md_desc:0 "Polish Industrial Administration"
+
+# Military
