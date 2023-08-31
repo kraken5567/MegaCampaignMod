@@ -42,29 +42,25 @@ ideas = {
         # Military
         #https://hoi4-modding.fandom.com/wiki/Modifiers
 
-        army_motorized_training = {
+        POL_motorized_training = {
             focus = POL_Mot_1
 
             modifier = {
-                motorized_bonuses = {
-                    movement_speed = 0.15
-                    attack = 0.05
-                    }
+                motorized_movement_speed = 0.15
+                motorized_attack_factor = 0.05
                 add_army_experience = 50
             }
         }
 
-        army_motorized_logistics_buff = {
+        POL_motorized_logistics_buff = {
             focus = POL_Mot_2
             modifier = {
-                motorized_bonuses = {
-                    supply_consumption = -0.10
-                    supply_grace = 0.10
-                    }
+                motorized_supply_consumption_factor = -0.10
+                motorized_supply_grace = 0.10
                 }
         }
 
-        army_motorized_tactics_buff = {
+        POL_motorized_tactics_buff = {
             focus = POL_Mot_3
 
             add_doctrine_cost_reduction = {
@@ -77,32 +73,38 @@ ideas = {
                 add_army_experience = 90
             }  
         }
+
+        POL_tank_tactics = {
+            focus = POL_Mot_4
+
+            modifier = {
+                army_armor_attack_factor  = 0.1
+                army_armor_defence_factor = 0.05
+                army_armor_speed_factor   = 0.05
+            }
+
+        }
         
 
-        army_cavalry_training = {
+        POL_cavalry_training = {
             focus = POL_Cav_1
             modifier = {
-                cavalry_bonuses = {
-                    movement_speed = 0.05
-                    supply_consumption = 0.05
-                    defense = 0.05
-                    attack = 0.10
+                    cavalry_speed = 0.05
+                    cavalry_supply_consumption = 0.05
+                    cavalry_defense = 0.05
+                    cavalry_attack = 0.10
                     }
                 }
             }
 
-        army_cavalry_tactics_buff = {
+        POL_cavalry_tactics_buff = {
             focus = POL_Cav_2
             modifier = {
-                cavalry_bonuses = {
-                    movement_speed = 0.05
-                    breakthrough = 0.1
-                    soft_attack = 0.05
-                    }
-            }
+                cavalry_speed_factor = 0.15
+                }
         }
         
-        army_combined_arms_mastery = {
+        POL_combined_arms_mastery = {
             focus = POL_ModernMil_2
             OR = {
                 focus = army_motorized_divisions
@@ -114,6 +116,60 @@ ideas = {
         }
         
         # Government
+        POL_remove_fascism = {
+            modifier = {
+                fascism_drift = -0.25
+            }
+        }
+
+        POL_government_stall = {
+            modifier ={
+                war_support_factor = -0.2
+                stability_factor = -0.1
+                political_power_gain = -1
+                recruitable_population_factor = -0.25
+                industrial_capacity_factory = -0.2
+                research_speed_factor = 0.1
+                justify_war_goal_time = 0.2
+                }
+            }
+
+        POL_gov_republic = {
+            modifier = {
+                democratic_drift = 0.02
+                surrender_limit = -0.05
+                consumer_goods_factor = -0.05
+                conscription = -0.01
+                non_core_manpower = 0.2
+                research_bonus = 0.05
+            }
+        }
+
+        POL_gov_king = {
+            modifier = {
+                neutrality_drift = 0.02
+                surrender_limit = 0.1
+                consumer_goods_factor = -0.035
+                conscription = 0.025
+                non_core_manpower = -0.05
+                supply_consumption_factor = 0.01
+                research_bonus = -0.01
+            }
+        }
+        
+        POL_gov_people = {
+            modifier = {
+                communism_drift = 0.02
+                surrender_limit = 0.05
+                consumer_goods_factor = -0.025
+                conscription = 0.01
+                non_core_manpower = 0.05
+                supply_consumption_factor = -0.025
+                research_bonus = -0.05
+            }
+        }
+
+            # actions
         POL_weak_government = {
             potential = {
                 OR = {

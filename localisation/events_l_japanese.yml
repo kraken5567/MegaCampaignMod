@@ -1,7 +1,0 @@
-﻿l_japanese:
- news.2891.t:0 "[TAN.GetNameDefCap]が[CHI.GetFactionName]に加盟"
- news.2891.d:0 "\n本日未明、[CHI.GetNameDef]と[TAN.GetNameDef]が共同声明を発表し、正式に[CHI.GetFactionName]へ加盟した事を明らかにした。この友好関係が攻撃的なものか守備的なものかは経過を見る余地があるが、しかし広範に渡る共同軍事計画が進行中であるのは疑いようもない。"
- news.2892.t:0 "[MON.GetNameDefCap]が[CHI.GetFactionName]に加盟"
- news.2892.d:0 "\n本日未明、[CHI.GetNameDef]と[MON.GetNameDef]が共同声明を発表し、正式に[CHI.GetFactionName]へ加盟した事を明らかにした。この友好関係が攻撃的なものか守備的なものかは経過を見る余地があるが、しかし広範に渡る共同軍事計画が進行中であるのは疑いようもない。"
- news.2893.t:0 "[TIB.GetNameDefCap]が[CHI.GetFactionName]に加盟"
- news.2893.d:0 "\n本日未明、[CHI.GetNameDef]と[TIB.GetNameDef]が共同声明を発表し、正式に[CHI.GetFactionName]へ加盟した事を明らかにした。この友好関係が攻撃的なものか守備的なものかは経過を見る余地があるが、しかし広範に渡る共同軍事計画が進行中であるのは疑いようもない。"

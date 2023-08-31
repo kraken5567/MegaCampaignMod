@@ -10,6 +10,20 @@ POL_buffer_states_desc:0 "Claim land around for core state buffer"
 POL_Gov_Options:0 "Reformed Government"
 POL_Gov_Options_desc:0 "Reshape the government based on our actions"
 
+POL_civil_reorginization:0 "Civil Disruption"
+POL_civil_reorginization_desc:0 "Cause chaos in the faltering government"
+
+# Reformed Government Focuses
+
+POL_Gov_Weak:0 "Pathetic Polish Government"
+POL_Gov_Weak_desc:0 "Signs of weakness are everywhere! God help us..."
+
+POL_Gov_Legitimate:0 "Legitimate Polish Leadership"
+POL_Gov_Legitimate_desc:0 "We stand together!"
+
+POL_Gov_Strong:0 "Righteous Polish Leadership"
+POL_Gov_Strong_desc:0 "Stong, we stand together!"
+
 # WEST
 POL_the_west:0 "The West"
 POL_the_west_desc:0 "germany"
@@ -17,10 +31,10 @@ POL_the_west_desc:0 "germany"
   # Germany
 
 POL_ally_germany:0 "Ally Germany"
-POL_ally_germany_desc:0 "friend germany"
+POL_ally_germany_desc:0 "Befriending an enemy makes one less enemy"
 
 POL_villainize_germany:0 "Villanize Germany"
-POL_villainize_germany_desc:0 "germ bad"
+POL_villainize_germany_desc:0 "Germany is a threat to Poland"
 
   # Bohemia
 
@@ -45,10 +59,10 @@ POL_the_east_desc:0 "russia"
   # Russia
 
 POL_ally_russia:0 "Ally Russia"
-POL_ally_russia_desc:0 "russia frend"
+POL_ally_russia_desc:0 "Befriending an enemy makes one less enemy"
 
 POL_villainize_russia:0 "Villainize Russia"
-POL_villainize_russia_desc:0 "russia die"
+POL_villainize_russia_desc:0 "Russia has been out military playground. We shall make them a territory of Poland"
 
   # Denmark
 

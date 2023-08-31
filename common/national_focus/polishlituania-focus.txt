@@ -15,7 +15,7 @@ focus_tree = {
 	focus = { 
 		id = POL_ModernMil_1
 		icon = GFX_goal_unknown
-		x = 5
+		x = 2
 		y = 0
 		cost = 5
 		search_filters = {
@@ -34,27 +34,36 @@ focus_tree = {
 		icon = GFX_goal_unknown
 		prerequisite = { focus = POL_ModernMil_1  }
 		mutually_exclusive = { focus = POL_Cav_1 }
-		x = 4
+		x = 1
 		y = 1
 		cost = 5
+		completion_reward = {
+			add_ideas = POL_motorized_training
+		}
 	}
 
 	focus = {
 		id = POL_Mot_2
 		icon = GFX_goal_unknown
 		prerequisite = { focus = POL_Mot_1 }
-		x = 4
+		x = 1
 		y = 2
 		cost = 5
+		completion_reward = {
+			add_ideas = POL_motorized_tactics_buff
+		}
 	}
 
 	focus = {
 		id = POL_Mot_3
 		icon = GFX_goal_unknown
 		prerequisite = {focus = POL_Mot_2}
-		x = 4
+		x = 1
 		y = 3
 		cost = 10
+		completion_reward = {
+			add_ideas = POL_motorized_logistics_buff
+		}
 	}
 
 	focus = {
@@ -62,9 +71,19 @@ focus_tree = {
 		icon = GFX_goal_unknown
 		prerequisite = { focus = POL_ModernMil_2 }
 		prerequisite = { focus = POL_Mot_3 }
-		x = 3
+		x = 1
 		y = 5
 		cost = 5
+		completion_reward = {
+			add_ideas = POL_tank_tactics
+
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.25
+				name = mobile_warfare
+			}
+
+			add_army_experience = 75
+		}
 	}
 
 	# Cavalry Modern
@@ -73,18 +92,24 @@ focus_tree = {
 		icon = GFX_goal_unknown
 		prerequisite = { focus = POL_ModernMil_1  }
 		mutually_exclusive = { focus = POL_Mot_1 }
-		x = 6
+		x = 3
 		y = 1
 		cost = 5
+		completion_reward = {
+			add_ideas = POL_cavalry_training
+		}
 	}
 
 	focus = {
 		id = POL_Cav_2
 		icon = GFX_goal_unknown
 		prerequisite = { focus = POL_Cav_1 }
-		x = 6
+		x = 3
 		y = 3 
 		cost = 5
+		completion_reward = {
+			add_ideas = POL_cavalry_tactics_buff
+		}
 	}
 
 	focus = {
@@ -92,7 +117,7 @@ focus_tree = {
 		icon = GFX_goal_unknown
 		prerequisite = { focus = POL_ModernMil_2 }
 		prerequisite = { focus = POL_Cav_2 }
-		x = 7
+		x = 3
 		y = 5
 		cost = 5
 	}
@@ -101,7 +126,7 @@ focus_tree = {
 		id = POL_ModernMil_2
 		icon = GFX_goal_unknown
 		prerequisite = { focus = POL_Cav_2 focus = POL_Mot_3 }
-		x = 5
+		x = 2
 		y = 4
 		cost = 5
 		search_filters = {
@@ -121,9 +146,12 @@ focus_tree = {
 	focus = {
 		id = POL_a_new_direction
 		icon = GFX_focus_generic_polish_deal
-		x = 15
+		x = 16
 		y = 0
 		cost = 5
+		mutually_exclusive = {
+			focus = POL_civil_reorginization
+		}
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
 		}
@@ -133,12 +161,259 @@ focus_tree = {
 		}
 	}
 
+	#Alternate Path
+
+	focus = {
+		id = POL_civil_reorginization
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		x = 7
+		y = 0
+		cost = 5
+		mutually_exclusive = {
+			focus = POL_a_new_direction
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_political_power = 50
+			add_stability = -0.25
+			add_war_support = 0.25
+			set_political_party = {
+				ideology = neutrality
+				popularity = 0.50
+			}
+			set_political_party = {
+				ideology = fascism
+				popularity = -0.50
+			}
+			start_civil_war = {
+				ruling_party = neutrality
+				ideology = fascism
+				size = 0.35
+				capital = 14
+				states = {
+					32 4 90 198 479 8 323 293 71 293 63 15 14 271
+				}
+			}
+		}
+	}
+
+	#Communism
+	focus = {
+		id = POL_gov_c
+		icon = GFX_focus_chi_cooperation_with_the_communists
+		cost = 7.143 #50
+		x = 6
+		y = 1
+		mutually_exclusive = {
+			focus = POL_gov_d
+		}
+		available = {
+			has_civil_war = no
+		}
+		prerequisite = {
+			focus = POL_civil_reorginization
+		}
+		completion_reward = { 
+			add_stability = 0.50
+			add_popularity = {
+				ideology = communism
+				popularity = 0.4
+			}
+			set_politics = {
+				ruling_party = communism
+			}
+		}
+	}
+
+	focus = {
+		id = POL_gov_c_strengthen
+		icon = GFX_goal_support_communism
+		cost = 7.143 #50
+		x = 6
+		y = 2
+		prerequisite = {
+			focus = POL_gov_c
+		}
+		completion_reward = { 
+			add_ideas = POL_gov_people
+		}
+	}
+
+	focus = {
+		id = POL_gov_f_ban
+		icon = GFX_focus_POL_ban_nazi_party
+		cost = 7.143 #50
+		x = 8
+		y = 4
+		prerequisite = {
+			focus = POL_gov_c_strengthen
+			focus = POL_gov_d_strengthen
+			focus = POL_gov_m_strengthen
+		}
+		completion_reward = { 
+			add_ideas = POL_remove_fascism
+		}
+	}
+
+	# Democracy
+	focus = {
+		id = POL_gov_d
+		icon = GFX_goal_support_democracy
+		cost = 7.143 #50
+		x = 9
+		y = 1
+		available = {
+			has_civil_war = no
+		}
+		mutually_exclusive = {
+			focus = POL_gov_c
+		}
+		prerequisite = {
+			focus = POL_civil_reorginization
+		}
+		completion_reward = {
+			add_stability = 0.50
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.2
+			}
+		}
+	}
+
+	focus = {
+		id = POL_gov_d_strengthen
+		icon = GFX_goal_support_democracy
+		cost = 7.143 #50
+		x = 8
+		y = 2
+		mutually_exclusive = {
+			focus = POL_gov_m
+		}
+		prerequisite = {
+			focus = POL_gov_d
+		}
+		completion_reward = { 
+			add_ideas = POL_gov_republic
+			set_politics = {
+				ruling_party = democratic
+
+			}
+		}
+	}
+
+	# MONARCH
+	focus = {
+		id =  POL_gov_m
+		icon = GFX_focus_generic_monarchy_2
+		cost = 7.143 #50
+		x = 10
+		y = 2
+		prerequisite = {
+			focus = POL_gov_d
+		}
+		completion_reward = {
+			add_ideas = POL_gov_king
+
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.05
+			}
+		}
+	}
+
+	focus = {
+		id = POL_gov_m_strengthen
+		icon = GFX_focus_POL_cossack_king
+		cost = 14.286 #100
+		x = 10
+		y = 3
+		prerequisite = {
+			focus = POL_gov_m
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.25
+			}
+			create_country_leader = {
+				name = "King Stanisław IV"
+				ideology = despotism
+				traits = {
+					Dictator
+					Hawk
+					POL_cossack_king
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = POL_invade_Russia
+		icon = GFX_focus_attack_soviet
+		cost = 14.286 #100
+		x = 10
+		y = 5
+		prerequisite = { focus = POL_gov_m_strengthen }
+		prerequisite = { focus = POL_gov_f_ban }
+		completion_reward = { 
+			declare_war_on = {
+				target = SOV 
+			}
+
+			every_state = {
+				limit = { is_core_of = SOV }
+				add_core_of = ROOT
+			}
+
+		}
+	}
+
+	focus = {
+		id = POL_ROM_invasion
+		icon = GFX_focus_BUL_prussia_of_the_balkans
+		cost = 10
+		x = 10
+		y = 6
+		prerequisite = {
+			focus = POL_invade_Russia
+		}
+		completion_reward = { 
+			add_state_core = 204
+
+			create_wargoal = {
+				target = ROM
+				type = puppet_wargoal_focus
+			}
+		}
+	}
+
+	focus = {
+		id = POL_GBF
+		icon = GFX_focus_BUL_prussia_of_the_balkans
+		cost = 10
+		x = 10
+		y = 7
+		available = {
+			ROM = { is_puppet_of = Z45 }
+		}
+		prerequisite = {
+			focus = POL_ROM_invasion
+		}
+		completion_reward = { 
+			ROM = { set_cosmetic_tag = GBF }
+			}
+		}
+
 	#The West
 	focus = {
 		id = POL_the_west
-		icon = GFX_goal_unknown
+		icon = GFX_focus_generic_spread_fascism
 		x = 13
 		y = 1
+		cost = 0.143
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
 		}
@@ -148,23 +423,22 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_political_power = 10
-						}
+			}
 	}
 
 	#The East
 	focus = {
 		id = POL_the_east
-		icon = GFX_focus_BUL_prussia_of_the_balkans
+		icon = GFX_focus_SOV_patriarch_of_all_russia
 		x = 17
 		y = 1
+		cost = 0.143
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = POL_a_new_direction  }
 		bypass = {
-			has_war_with = RUS
-			
-			
+			has_war_with = SOV
 		}
 		completion_reward = {
 			add_political_power = 10
@@ -190,6 +464,8 @@ focus_tree = {
 		}
 		completion_reward = {
 
+			add_to_faction = Z68
+
 			set_country_flag = ally_ger
 
 			add_opinion_modifier = {
@@ -202,10 +478,10 @@ focus_tree = {
 	#Villanize Germany
 	focus = {
 		id = POL_villainize_germany
-		icon = GFX_focus_attack_germany
+		icon = GFX_focus_POL_reassert_silesian_claims
 		x = 14
 		y = 2
-		cost = 10
+		cost = 7.143 #50 days
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
 		}
@@ -243,7 +519,7 @@ focus_tree = {
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
 		}
-		prerequisite = { focus = POL_villainize_germany focus = POL_ally_germany }
+		prerequisite = { focus = POL_Gov_Options }
 		mutually_exclusive = { focus = POL_ally_bohemia }
 
 		bypass = {
@@ -268,6 +544,9 @@ focus_tree = {
 		y = 5
 		cost = 5
 		prerequisite = { focus = POL_villainize_bohemia }
+		completion_reward = {
+			add_to_faction = HUN
+		}
 
 	}
 
@@ -282,7 +561,7 @@ focus_tree = {
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
 		}
-		prerequisite = { focus = POL_villainize_germany focus = POL_ally_germany }
+		prerequisite = { focus = POL_Gov_Options }
 		mutually_exclusive = { focus = POL_villainize_bohemia }
 
 		available = {
@@ -290,6 +569,8 @@ focus_tree = {
 		}
 
 		completion_reward = {
+		
+			add_to_faction = Z05
 
 			add_opinion_modifier = {
 			    target = Z05
@@ -356,6 +637,8 @@ focus_tree = {
 			NOT = { is_at_war_with = SOV }
 		}
 		completion_reward = {
+
+			add_to_faction = SOV
 			
 			set_country_flag = ally_rus
 
@@ -372,6 +655,7 @@ focus_tree = {
 		icon = GFX_focus_rom_abdicate
 		x = 16
 		y = 2
+		cost = 7.143 #50 days
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
 		}
@@ -399,35 +683,35 @@ focus_tree = {
 	}
 
 	#Buffer States
-	focus = {
-		id = POL_buffer_states
-		icon = GFX_goal_unknown
-		x = 15
-		y = 3
-		cost = 12
-		search_filters = {
-			FOCUS_FILTER_FRA_POLITICAL_VIOLENCE
-		}
-		prerequisite = {
-			focus = POL_villainize_germany
-			focus = POL_villainize_russia
-		} 
-		available = {
-			date > 1940.01.01
-			has_government = fascism
-		}
-		completion_reward = {
-			custom_effect = {
-				target = {
-					controller = Z45
-				}
-				which = surrounding_states
-				scripted_effect = {
-					id = add_claim_scripted_effect
-				}
-			}
-		}
-	}
+	#focus = {
+	#	id = POL_buffer_states
+	#	icon = GFX_goal_unknown
+	#	x = 15
+	#	y = 3
+	#	cost = 12
+	#	search_filters = {
+	#		FOCUS_FILTER_FRA_POLITICAL_VIOLENCE
+	#	}
+	#	prerequisite = {
+	#		focus = POL_villainize_germany
+	#		focus = POL_villainize_russia
+	#	} 
+	#	available = {
+	#		date > 1940.01.01
+	#		has_government = fascism
+	#	}
+	#	completion_reward = {
+	#		custom_effect = {
+	#			target = {
+	#				controller = Z45
+	#			}
+	#			which = surrounding_states
+	#			scripted_effect = {
+	#				id = add_claim_scripted_effect
+	#			}
+	#		}
+	#	}
+	#}
 
 	# Villanize Denmark
 	focus = {
@@ -440,7 +724,7 @@ focus_tree = {
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
 		}
-		prerequisite = { focus = POL_villainize_russia focus = POL_ally_russia  }
+		prerequisite = { focus = POL_Gov_Options }
 		mutually_exclusive = { focus = POL_ally_denmark }
 		
 		bypass = {
@@ -470,18 +754,20 @@ focus_tree = {
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
 		}
-		prerequisite = { focus = POL_villainize_russia focus = POL_ally_russia  }
+		prerequisite = { focus = POL_Gov_Options }
 		mutually_exclusive = { focus = POL_villainize_denmark }
 		available = {
 			NOT = { is_at_war_with = DEN }
 		}
 		completion_reward = {
-			add_country_flag = ally_rus
+
+			add_to_faction = DEN
 
 			add_opinion_modifier = {
-			    target = SOV
+			    target = DEN
 			    modifier = huge_increase
 			}
+
 		}
 	}
 
@@ -490,13 +776,16 @@ focus_tree = {
 
 	focus = {
 		id = POL_Gov_Options
-		icon = GFX_goal_unknown
+		icon = GFX_focus_POL_common_organization_of_society
 		x = 15
-		y = 6
-		prerequisite = { focus = POL_villainize_denmark focus = POL_ally_denmark  }
-		prerequisite = { focus = POL_attack_hungary focus = POL_ally_hungary  }
+		y = 3
+		cost = 3.572 #25 days
+		prerequisite = { focus = POL_villainize_germany focus = POL_ally_germany  }
+		prerequisite = { focus = POL_villainize_russia focus = POL_ally_russia  }
 	
 		completion_reward = {
+			remove_ideas = { POL_government_stall }
+
 			if = {
 				limit = {
 					has_country_flag = villan_ger
@@ -550,7 +839,7 @@ focus_tree = {
 		icon = GFX_goal_unknown
 		x = 13
 		y = 7
-		prerequisite = { focus = POL_Gov_Options }
+		cost = 1
 		mutually_exclusive = { focus = POL_Gov_Legitimate }
 		mutually_exclusive = { focus = POL_Gov_Strong }
 		available = {
@@ -565,7 +854,7 @@ focus_tree = {
 		icon = GFX_goal_unknown
 		x = 15
 		y = 7
-		prerequisite = { focus = POL_Gov_Options }
+		cost = 1
 		mutually_exclusive = { focus = POL_Gov_Weak }
 		mutually_exclusive = { focus = POL_Gov_Strong }
 		available = {
@@ -580,7 +869,7 @@ focus_tree = {
 		icon = GFX_goal_unknown
 		x = 17
 		y = 7
-		prerequisite = { focus = POL_Gov_Options }
+		cost = 1
 		mutually_exclusive = { focus = POL_Gov_Legitimate }
 		mutually_exclusive = { focus = POL_Gov_Weak }
 		available = {
@@ -796,6 +1085,7 @@ focus_tree = {
 					}
 				}
 			}
+		}
 
 		prerequisite = {focus = POL_industrial_C_2 focus = POL_industrial_T_1}
 		cost = 10

@@ -407,3 +407,12 @@
  Z99:0 "Bohemia"
  Z99_ADJ:0 "Bohemian"
  Z99_DEF:0 "Bohemia"
+
+# Modded Extras
+
+# POLAND Focus Tree #
+GBF:0 "Greater Balkan Empire"
+GBF_ADJ:0 "Empiric-Balkanian"
+GBF_DEF:0 "Balkan Empire"
+
+# ___ #
