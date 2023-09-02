@@ -33,7 +33,7 @@ POL_the_west_desc:0 "germany"
 POL_ally_germany:0 "Ally Germany"
 POL_ally_germany_desc:0 "Befriending an enemy makes one less enemy"
 
-POL_villainize_germany:0 "Villanize Germany"
+POL_villainize_germany:0 "Pacify Germany"
 POL_villainize_germany_desc:0 "Germany is a threat to Poland"
 
   # Bohemia
@@ -41,7 +41,7 @@ POL_villainize_germany_desc:0 "Germany is a threat to Poland"
 POL_ally_bohemia:0 "Ally Bohemia"
 POL_ally_bohemia_desc:0 "Align ourselves with our western neighbor"
 
-POL_villainize_bohemia:0 "Villainize Bohemia"
+POL_villainize_bohemia:0 "Conquer Bohemia"
 POL_villainize_bohemia_desc:0 "They shall exist no more!"
 
   # Hungary
@@ -61,7 +61,7 @@ POL_the_east_desc:0 "russia"
 POL_ally_russia:0 "Ally Russia"
 POL_ally_russia_desc:0 "Befriending an enemy makes one less enemy"
 
-POL_villainize_russia:0 "Villainize Russia"
+POL_villainize_russia:0 "Destroy Russia"
 POL_villainize_russia_desc:0 "Russia has been out military playground. We shall make them a territory of Poland"
 
   # Denmark
@@ -69,7 +69,7 @@ POL_villainize_russia_desc:0 "Russia has been out military playground. We shall 
 POL_ally_denmark:0 "Ally Denmark"
 POL_ally_denmark_desc:0 "Claim land around for core state buffer"
 
-POL_villainize_denmark:0 "Villainize Denmark"
+POL_villainize_denmark:0 "Humiliate Denmark"
 POL_villainize_denmark_desc:0 "We shall spread our influence to the inferior parts of Scandinavia"
 
 

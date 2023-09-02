@@ -188,3 +188,151 @@ division_template = {
 	}
 	priority = 2
 }
+
+units = {
+	division = {
+		division_name = {
+			is_name_ordered = no
+		}
+		location = "247"
+		division_template = "Light Infantry Brigade"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1 
+	}
+	division = {
+		division_name = {
+			is_name_ordered = no
+		}
+		location = "671"
+		division_template = "Light Infantry Brigade"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1 
+	}
+	division = {
+		division_name = {
+			is_name_ordered = no
+		}
+		location = "9458"
+		division_template = "Light Infantry Brigade"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1 
+	}
+	division = {
+		division_name = {
+			is_name_ordered = no
+		}
+		location = "526"
+		division_template = "Light Infantry Brigade"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1 
+	}
+	division = {
+		division_name = {
+			is_name_ordered = no
+		}
+		location = "480"
+		division_template = "Light Infantry Brigade"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1 
+	}
+	division = {
+		division_name = {
+			is_name_ordered = no
+		}
+		location = "564"
+		division_template = "Light Infantry Brigade"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1 
+	}
+	division = {
+		division_name = {
+			is_name_ordered = no
+		}
+		location = "3546"
+		division_template = "Light Infantry Brigade"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1 
+	}
+	division = {
+		division_name = {
+			is_name_ordered = no
+		}
+		location = "521"
+		division_template = "Light Infantry Brigade"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1 
+	}
+	division = {
+		division_name = {
+			is_name_ordered = no
+		}
+		location = "9335"
+		division_template = "Light Infantry Brigade"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1 
+	}
+	division = {
+		division_name = {
+			is_name_ordered = no
+		}
+		location = "516"
+		division_template = "Light Infantry Brigade"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1 
+	}
+	division = {
+		division_name = {
+			is_name_ordered = no
+		}
+		location = "9471"
+		division_template = "Light Infantry Brigade"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1 
+	}
+	division = {
+		division_name = {
+			is_name_ordered = no
+		}
+		location = "3522"
+		division_template = "Light Infantry Brigade"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1 
+	}
+	division = {
+		division_name = {
+			is_name_ordered = no
+		}
+		location = "571"
+		division_template = "Light Infantry Brigade"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1 
+	}
+	division = {
+		division_name = {
+			is_name_ordered = no
+		}
+		location = "309"
+		division_template = "Light Infantry Brigade"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1 
+	}
+	division = {
+		division_name = {
+			is_name_ordered = no
+		}
+		location = "495"
+		division_template = "Light Infantry Brigade"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1 
+	}
+	division = {
+		division_name = {
+			is_name_ordered = no
+		}
+		location = "11470"
+		division_template = "Light Infantry Brigade"
+		start_experience_factor = 0.3
+		start_equipment_factor = 1 
+	}
+	
+}

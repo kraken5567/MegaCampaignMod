@@ -39,6 +39,53 @@ ideas = {
 }
 
     country = {
+        # air
+        POL_air_1 = {
+            modifier = {
+                air_air_superiority_attack_factor = 0.1
+                air_air_superiority_defence_factor = 0.1
+                }
+        }
+         
+        POL_air_2 = {
+            # How do?
+            modifier = {
+                equipment_bonus = { fighter_equipment = { build_cost_ic = -0.1 instant = yes } }
+                equipment_bonus = { CAS_equipment = { build_cost_ic = -0.125 instant = yes } }
+                equipment_bonus = { strat_bomber_equipment = { build_cost_ic = -0.2 instant = yes } }
+                }
+            }
+        }
+         
+        POL_air_3 = {
+            modifier = {
+                air_strategic_bomber_agility_factor = 0.1
+                air_strategic_bomber_attack_factor = 0.1
+                air_strategic_bomber_bombing_factor = 0.1
+                air_strategic_bomber_defence_factor = 0.1
+            }
+        }
+
+        # navy
+        POL_navy_1 = {
+            modifier = {
+
+            }
+        }
+
+        POL_navy_2 = {
+            modifier = {
+                
+            }
+        }
+
+        POL_navy_3 = {
+            modifier = {
+                
+            }
+        }
+
+
         # Military
         #https://hoi4-modding.fandom.com/wiki/Modifiers
 
@@ -95,7 +142,6 @@ ideas = {
                     cavalry_attack = 0.10
                     }
                 }
-            }
 
         POL_cavalry_tactics_buff = {
             focus = POL_Cav_2
