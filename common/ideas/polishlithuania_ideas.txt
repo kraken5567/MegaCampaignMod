@@ -149,6 +149,13 @@ ideas = {
                 cavalry_speed_factor = 0.15
                 }
         }
+
+        POL_Master_Cav = {
+            focus = POL_Cav_3
+            modifier = {
+                cavalry_attack 
+            }
+        }
         
         POL_combined_arms_mastery = {
             focus = POL_ModernMil_2
