@@ -1,0 +1,158 @@
+add_namespace = Z45
+
+country_event = {
+    id = Z45.weak
+    title = "Weak Government"
+    desc = "Our government is pathetic!"
+
+    trigger = {
+        AND = {
+            has_country_flag = ally_ger
+            has_country_flag = ally_rus
+        }
+    }
+
+    is_triggered_only = yes
+
+    mean_time_to_happen = {
+        days = 1  
+    }
+
+    option = {
+        name = "This is disasterous"
+        country_event = {
+            id = Z45.weakCivil days = 90
+        }
+    }
+}
+
+country_event = {
+    id = Z45.weakCivil
+    title = "Turmoil!"
+    desc = "There is nothing but arguing over what to do next. What's might be next could be disaterous."
+
+    trigger = {
+    }
+
+    is_triggered_only = yes
+
+    mean_time_to_happen = {
+        days = 2  
+    }
+
+    option = {
+        set_temp_variable = { year = 365}
+        name = "Prepare for the worst..."
+        if = {
+            limit = { AND = {chance > .1 chance = .1}}
+            country_event = { id = Z45.weakCivilWar days = {multiply_temp_variable = { year = random } } }
+        }
+        else = {
+            country_event = { id = Z45.weakCivilnon days = 91 } 
+            }
+        }
+
+    option = {
+        name = "Let it resolve itself."
+
+        set_temp_variable = { chance = random }
+        if = {
+            limit = { AND = {chance > .5 chance = .5}}
+            country_event = { id = Z45.weakCivilWar days = {multiply_temp_variable = { year = chance } } }
+        }
+        
+        country_event = { id = Z45.weakCivilnon days = 91 }
+    }
+}
+
+country_event = {
+    id = Z45.weakCivilnon
+    title = "Internal Peace!"
+    desc = "There is no longer a political divide in our country!"
+
+    trigger = {
+    }
+
+    is_triggered_only = yes
+
+    mean_time_to_happen = {
+        days = 2  
+    }
+
+    option = {
+        name = "TOGETHER WE STAND!"
+    }
+}
+
+country_event = {
+    id = Z45.weakCivilWar
+    title = "People Revolt!"
+    desc = "Our government is in shambles and all we can do now is fight for it or against it!"
+
+    trigger = {
+    }
+
+    is_triggered_only = yes
+
+    mean_time_to_happen = {
+        days = 2  
+    }
+
+    option = {
+        name = "Stand our ground!"
+    }
+
+    option = {
+        name = "Join the Opposition!"
+    }
+}
+
+country_event = {
+    id = Z45.legit
+    title = "Legitamate Government"
+    desc = "Our government has gone a moderate route. Wise..."
+
+    trigger = {
+        OR = {
+            AND = {
+                has_country_flag = villan_rus
+                has_country_flag = ally_ger
+                }
+            AND = {
+                has_country_flag = villan_ger
+                has_country_flag = ally_rus
+                }
+            }   
+        }
+
+    mean_time_to_happen = {
+        days = 1  
+    }
+
+    option = {
+        name = "Good"
+        add_ideas = Gov_Legit
+    }
+}
+
+country_event = {
+    id = Z45.strong
+    title = "Strong Government"
+    desc = "Our government has gone an aggressive route. I hope they know what they are doing..."
+
+    trigger = {
+        AND = {
+            has_country_flag = villan_ger
+            has_country_flag = villan_rus
+            }
+        }
+
+    mean_time_to_happen = {
+        days = 1  
+    }
+
+    option = {
+        name = "For the greater good?"
+        add_ideas = Gov_Strong
+    }
+}
