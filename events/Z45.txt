@@ -1,7 +1,8 @@
 add_namespace = Z45
 
+#WEAK
 country_event = {
-    id = Z45.weak
+    id = Z45.100
     title = "Weak Government"
     desc = "Our government is pathetic!"
 
@@ -21,13 +22,13 @@ country_event = {
     option = {
         name = "This is disasterous"
         country_event = {
-            id = Z45.weakCivil days = 90
+            id = Z45.101 days = 90
         }
     }
 }
 
 country_event = {
-    id = Z45.weakCivil
+    id = Z45.101
     title = "Turmoil!"
     desc = "There is nothing but arguing over what to do next. What's might be next could be disaterous."
 
@@ -45,10 +46,10 @@ country_event = {
         name = "Prepare for the worst..."
         if = {
             limit = { AND = {chance > .1 chance = .1}}
-            country_event = { id = Z45.weakCivilWar days = {multiply_temp_variable = { year = random } } }
+            country_event = { id = Z45.103 days = {multiply_temp_variable = { year = random } } }
         }
         else = {
-            country_event = { id = Z45.weakCivilnon days = 91 } 
+            country_event = { id = Z45.102 days = 91 } 
             }
         }
 
@@ -58,15 +59,15 @@ country_event = {
         set_temp_variable = { chance = random }
         if = {
             limit = { AND = {chance > .5 chance = .5}}
-            country_event = { id = Z45.weakCivilWar days = {multiply_temp_variable = { year = chance } } }
+            country_event = { id = Z45.103 days = {multiply_temp_variable = { year = chance } } }
         }
         
-        country_event = { id = Z45.weakCivilnon days = 91 }
+        country_event = { id = Z45.102 days = 91 }
     }
 }
 
 country_event = {
-    id = Z45.weakCivilnon
+    id = Z45.102
     title = "Internal Peace!"
     desc = "There is no longer a political divide in our country!"
 
@@ -85,7 +86,7 @@ country_event = {
 }
 
 country_event = {
-    id = Z45.weakCivilWar
+    id = Z45.103
     title = "People Revolt!"
     desc = "Our government is in shambles and all we can do now is fight for it or against it!"
 
@@ -107,8 +108,9 @@ country_event = {
     }
 }
 
+#LEGITAMATE
 country_event = {
-    id = Z45.legit
+    id = Z45.200
     title = "Legitamate Government"
     desc = "Our government has gone a moderate route. Wise..."
 
@@ -132,11 +134,14 @@ country_event = {
     option = {
         name = "Good"
         add_ideas = Gov_Legit
+
+        country_event = { id = Z45.102 days = 30}
     }
 }
 
+#STRONG
 country_event = {
-    id = Z45.strong
+    id = Z45.300
     title = "Strong Government"
     desc = "Our government has gone an aggressive route. I hope they know what they are doing..."
 
