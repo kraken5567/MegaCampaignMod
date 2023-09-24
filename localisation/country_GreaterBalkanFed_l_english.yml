@@ -8,18 +8,14 @@ GBF_neutrality_party_long:0 "Monarchist"
 
 
 
-GBF_democratic:5 "Balkan Democratic Union"
 GBF_democratic_DEF:5 "Balkan Democratic Federation"
 GBF_democratic_ADJ:5 "Balkan citizen"
 
-GBF_fascism:5 "Romanian Unitist Faction"
 GBF_fascism_DEF:5 "Unitist Faction"
 GBF_fascism_ADJ:5 "Romanian"
 
-GBF_communism:5 "Balkan Commonwealth"
 GBF_communism_DEF:5 "Commonwealth"
 GBF_communism_ADJ:5 "Commonwealthian"
 
-GBF_neutrality:5 "Greater Balkan Empire"
 GBF_neutrality_DEF:5 "United Balkan Monarchies"
 GBF_neutrality_ADJ:5 "Empiric-Balkanian"

@@ -676,52 +676,6 @@ focus_tree = {
 		}
 	}
 
-	# Government Established
-	focus = {
-		id = POL_Gov_Weak
-		icon = GFX_goal_anschluss
-		x = 13
-		y = 7
-		cost = 1
-		mutually_exclusive = { focus = POL_Gov_Legitimate }
-		mutually_exclusive = { focus = POL_Gov_Strong }
-		available = {
-			if{
-			has_country_flag = Gov_Weak
-			}
-		}
-	}
-
-	focus = {
-		id = POL_Gov_Legitimate
-		icon = GFX_goal_demand_sudetenland
-		x = 15
-		y = 7
-		cost = 1
-		mutually_exclusive = { focus = POL_Gov_Weak }
-		mutually_exclusive = { focus = POL_Gov_Strong }
-		available = {
-			if{
-			has_country_flag = Gov_Legitimate
-			}
-		}
-	}
-
-	focus = {
-		id = POL_Gov_Strong
-		icon = GFX_focus_rom_royal_dictatorship
-		x = 17
-		y = 7
-		cost = 1
-		mutually_exclusive = { focus = POL_Gov_Legitimate }
-		mutually_exclusive = { focus = POL_Gov_Weak }
-		available = {
-			if{
-			has_country_flag = Gov_Strong
-			}
-		}
-	}
-
 	#Alternate Path
 
 	focus = {
@@ -813,7 +767,7 @@ focus_tree = {
 			focus = POL_gov_c_strengthen
 		}
 		completion_reward = { 
-			add_core_of = every_country
+			country_event = { id = Z45.000 days = 0 }
 		}
 	}
 
@@ -933,12 +887,11 @@ focus_tree = {
 		y = 4
 		prerequisite = { focus = POL_gov_m_strengthen }
 		completion_reward = { 
+			every_state = { limit = { is_controlled_by = SOV } ROOT = { add_state_core = PREV } }
 			declare_war_on = {
 				target = SOV 
+				type = take_state id = { every_state = { limit = { is_controlled_by = SOV } } }
 			}
-
-			every_state = { limit = { is_controlled_by = SOV } ROOT = { add_state_core = PREV } }
-
 		}
 	}
 
@@ -1016,6 +969,7 @@ focus_tree = {
 		y = 1
 		cost = 10
 		prerequisite = { focus = POL_industrial_N }
+		prerequisite = { focus = POL_industrial_1 }
 		completion_reward = { 
 			random_owned_controlled_state = {
 				add_extra_state_shared_building_slots = 2
@@ -1069,7 +1023,7 @@ focus_tree = {
 		id = POL_industrial_T_1
 		icon = GFX_goal_generic_oil_refinery
 		x = 24
-		y = 3
+		y = 2
 		prerequisite = {focus = POL_industrial_M_2 focus = POL_industrial_C_2}
 		mutually_exclusive = {}
 		cost = 10
@@ -1196,6 +1150,20 @@ focus_tree = {
 		prerequisite = {focus = POL_industrial_M_2 }
 		
 		mutually_exclusive = {focus = POL_industrial_C_3}
+
+		available = {
+			OR = {
+				AND = {
+					has_country_flag = Industrial_C_Completed
+					has_country_flag = Industrial_T_Completed
+					}
+				AND = {
+					has_country_flag = Industrial_M_Completed
+					NOT = { has_country_flag = Industrial_T_Completed
+					}
+				}
+			}
+		}
 		
 		cost = 10
 		completion_reward = {

@@ -1,5 +1,38 @@
 add_namespace = Z45
 
+#For Focus Rewards
+country_event = {
+    id = Z45.000
+    title = "Spread the Revolution"
+    desc = "Communism is the people's liberator"
+
+    trigger = {
+    }
+
+    is_triggered_only = yes
+
+    mean_time_to_happen = {
+        days = 1 # 
+    }
+
+    option = {
+        name = "Workers RISE AGAINST YOUR OPPRESSORS!"
+
+        ROOT = {
+            create_wargoal = {
+                type = puppet_wargoal_focus
+                target = every_other_country = {
+                            limit = {  
+                                has_government = democratic
+                                has_government = fascism
+                                has_government = neutrality 
+                                }
+                            }
+                    }
+            }
+        }
+}
+
 #WEAK
 country_event = {
     id = Z45.100
@@ -21,8 +54,10 @@ country_event = {
 
     option = {
         name = "This is disasterous"
+
+        set_temp_variable = { chance = random }
         country_event = {
-            id = Z45.101 days = 90
+            id = Z45.101 days = multiply_temp_variable = { value = 90 var = chance }
         }
     }
 }
@@ -42,11 +77,13 @@ country_event = {
     }
 
     option = {
-        set_temp_variable = { year = 365}
         name = "Prepare for the worst..."
+
+        set_temp_variable = { year = 365}
+        set_temp_variable = { chance = random }
         if = {
             limit = { AND = {chance > .1 chance = .1}}
-            country_event = { id = Z45.103 days = {multiply_temp_variable = { year = random } } }
+            country_event = { id = Z45.103 days = {multiply_temp_variable = { var = chance value = year } } }
         }
         else = {
             country_event = { id = Z45.102 days = 91 } 
@@ -56,10 +93,11 @@ country_event = {
     option = {
         name = "Let it resolve itself."
 
+        set_temp_variable = { year = 365}
         set_temp_variable = { chance = random }
         if = {
             limit = { AND = {chance > .5 chance = .5}}
-            country_event = { id = Z45.103 days = {multiply_temp_variable = { year = chance } } }
+            country_event = { id = Z45.103 days = {multiply_temp_variable = { var = chance value = year } } }
         }
         
         country_event = { id = Z45.102 days = 91 }
