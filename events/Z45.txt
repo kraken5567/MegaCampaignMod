@@ -18,20 +18,19 @@ country_event = {
     option = {
         name = "Workers RISE AGAINST YOUR OPPRESSORS!"
 
-        ROOT = {
-            create_wargoal = {
-                type = puppet_wargoal_focus
-                target = every_other_country = {
-                            limit = {  
-                                has_government = democratic
-                                has_government = fascism
-                                has_government = neutrality 
-                                }
-                            }
+        country_event = {id = Z45.000 days = 730}
+
+        every_other_country = { 
+            limit = { NOT = { has_government = communist } } 
+            Z45 = {
+                create_wargoal = {
+                    type = puppet_wargoal_focus
+                    target = PREV
                     }
+                }
             }
-        }
-}
+        } 
+    }
 
 #WEAK
 country_event = {
@@ -57,7 +56,7 @@ country_event = {
 
         set_temp_variable = { chance = random }
         country_event = {
-            id = Z45.101 days = multiply_temp_variable = { value = 90 var = chance }
+            id = Z45.101 days = { multiply_temp_variable = { value = 90 var = chance } }
         }
     }
 }
@@ -197,5 +196,5 @@ country_event = {
     option = {
         name = "For the greater good?"
         add_ideas = Gov_Strong
+        }
     }
-}

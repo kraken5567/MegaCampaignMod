@@ -23,3 +23,26 @@ POL_industrial_Mc_desc:0 "Polish Industrial Administration"
 POL_industrial_Md_desc:0 "Polish Industrial Administration"
 
 # Military
+
+POL_motorized_training:0 "Modern Cavalry Training"
+POL_motorized_logistics_buff:0 "Truck Logistic Re-Organization"
+POL_motorized_tactics_buff:0 "Motorized Tactics Research"
+POL_tank_tactics:0 "Mobile Tactics"
+
+POL_cavalry_training:0 "Cavalry Training"
+POL_cavalry_tactics_buff:0 "New Cavalry Tactics"
+#POL_Master_Cav:0 ""
+
+POL_combined_arms_mastery:0 "Modernized Armies"
+
+# Political
+POL_remove_fascism:0 "Banned The Nationalists"
+
+POL_government_stall:0 "Government Stagnation"
+POL_gov_republic:0 "Polish Democracy"
+POL_gov_king:0 "Polish Cossack Monarchy"
+POL_gov_people:0 "Polish Commonwealth of Peoples"
+
+POL_strong_government:0 "Warmongering Government"
+POL_legitimate_government:0 "Moderate Administration"
+POL_weak_government:0 "Weak Self-Assertive Government"

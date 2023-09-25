@@ -1,43 +1,4 @@
 ideas = {
-	mobilization_laws = {
-}
-
-	economy = {
-}
-
-	political_advisor = {
-}
-
-	tank_manufacturer = {
-}
-
-	naval_manufacturer = {
-}
-
-	aircraft_manufacturer = {
-}
-
-	materiel_manufacturer = {
-}
-
-	industrial_concern = {
-}
-
-	theorist = {
-}
-
-	army_chief = {
-}
-
-	navy_chief = {
-}
-
-	air_chief = {
-}
-
-	high_command = {
-}
-
     country = {
         # air
         POL_air_1 = {
@@ -47,15 +8,14 @@ ideas = {
                 }
         }
          
-        POL_air_2 = {
-            # How do?
-            modifier = {
-                equipment_bonus = { fighter_equipment = { build_cost_ic = -0.1 instant = yes } }
-                equipment_bonus = { CAS_equipment = { build_cost_ic = -0.125 instant = yes } }
-                equipment_bonus = { strat_bomber_equipment = { build_cost_ic = -0.2 instant = yes } }
-                }
-            }
-        }
+        #POL_air_2 = {
+        #    # How do?
+        #    modifier = {
+        #        equipment_bonus = {fighter_equipment = { build_cost_ic = -0.1 instant = yes } }
+        #        equipment_bonus = { CAS_equipment = { build_cost_ic = -0.125 instant = yes } }
+        #        equipment_bonus = { strat_bomber_equipment = { build_cost_ic = -0.2 instant = yes } }
+        #        }
+        #     }
          
         POL_air_3 = {
             modifier = {
@@ -90,7 +50,6 @@ ideas = {
         #https://hoi4-modding.fandom.com/wiki/Modifiers
 
         POL_motorized_training = {
-            focus = POL_Mot_1
 
             modifier = {
                 motorized_movement_speed = 0.15
@@ -100,7 +59,7 @@ ideas = {
         }
 
         POL_motorized_logistics_buff = {
-            focus = POL_Mot_2
+
             modifier = {
                 motorized_supply_consumption_factor = -0.10
                 motorized_supply_grace = 0.10
@@ -108,13 +67,6 @@ ideas = {
         }
 
         POL_motorized_tactics_buff = {
-            focus = POL_Mot_3
-
-            add_doctrine_cost_reduction = {
-                name = my_idea_name
-                category = mobile_warfare
-                cost_reduction = 0.1
-                }
 
             modifier = {
                 add_army_experience = 90
@@ -122,7 +74,6 @@ ideas = {
         }
 
         POL_tank_tactics = {
-            focus = POL_Mot_4
 
             modifier = {
                 army_armor_attack_factor  = 0.1
@@ -132,9 +83,7 @@ ideas = {
 
         }
         
-
         POL_cavalry_training = {
-            focus = POL_Cav_1
             modifier = {
                     cavalry_speed = 0.05
                     cavalry_supply_consumption = 0.05
@@ -144,25 +93,19 @@ ideas = {
                 }
 
         POL_cavalry_tactics_buff = {
-            focus = POL_Cav_2
             modifier = {
                 cavalry_speed_factor = 0.15
                 }
         }
 
-        POL_Master_Cav = {
-            focus = POL_Cav_3
-            modifier = {
-                cavalry_attack 
-            }
-        }
+        #POL_Master_Cav = {
+        #    modifier = {
+        #        cavalry_attack 
+        #    }
+        #}
         
         POL_combined_arms_mastery = {
-            focus = POL_ModernMil_2
-            OR = {
-                focus = army_motorized_divisions
-                focus = army_cavalry_training
-            }
+
             modifier = {
                 add_equipment_capture_factor = 0.2
             }
@@ -176,13 +119,13 @@ ideas = {
         }
 
         POL_government_stall = {
-            modifier ={
+            modifier = {
                 war_support_factor = -0.2
                 stability_factor = -0.1
-                political_power_gain = -1
+                political_power_gain = -2.5
                 recruitable_population_factor = -0.25
                 industrial_capacity_factory = -0.2
-                research_speed_factor = 0.1
+                research_speed_factor = -0.1
                 justify_war_goal_time = 0.2
                 }
             }
@@ -224,12 +167,6 @@ ideas = {
 
             # actions
         POL_weak_government = {
-            potential = {
-                OR = {
-                    has_country_flag = ally_ger
-                    has_country_flag = ally_rus
-                }
-            }
             allowed = {
                 always = yes
             }
@@ -240,18 +177,6 @@ ideas = {
         }
     
         POL_legitimate_government = {
-            potential = {
-                OR = {
-                    AND = {
-                        has_country_flag = villan_rus
-                        has_country_flag = ally_ger
-                    }
-                    AND = {
-                        has_country_flag = villan_ger
-                        has_country_flag = ally_rus
-                    }
-                }
-            }
             allowed = {
                 always = yes
             }
@@ -264,10 +189,6 @@ ideas = {
         }
     
         POL_strong_government = {
-            potential = {
-                has_country_flag = villan_ger
-                has_country_flag = villan_rus
-            }
             allowed = {
                 always = yes
             }
@@ -282,25 +203,21 @@ ideas = {
          
         # Civillian Factory Ideas
         POL_industrial_Ca = {
-            focus = POL_industrial_C_1
             modifier = {
                 production_speed_industrial_complex_factor = 0.05
             }
         }
         POL_industrial_Cb = {
-            focus = POL_industrial_C_2
             modifier = {
                 production_speed_industrial_complex_factor = 0.1
             }
         }
         POL_industrial_Cc = {
-            focus = POL_industrial_C_3
             modifier = {
                 production_speed_industrial_complex_factor = 0.15
             }
         }
         POL_industrial_Cd = {
-            focus = POL_industrial_C_4
             modifier = {
                 production_speed_industrial_complex_factor = 0.2
             }
@@ -308,25 +225,21 @@ ideas = {
 
         # Military Factory Ideas
         POL_industrial_Ma = {
-            focus = POL_industrial_M_1
             modifier = {
                 production_speed_arms_factory_factor = 0.05
             }
         }
         POL_industrial_Mb = {
-            focus = POL_industrial_M_2
             modifier = {
                 production_speed_arms_factory_factor = 0.1
             }
         }
         POL_industrial_Mc = {
-            focus = POL_industrial_M_3
             modifier = {
                 production_speed_arms_factory_factor = 0.15
             }
         }
         POL_industrial_Md = {
-            focus = POL_industrial_M_4
             modifier = {
                 production_speed_arms_factory_factor = 0.2
             }
