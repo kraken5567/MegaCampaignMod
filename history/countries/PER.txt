@@ -53,7 +53,7 @@ set_politics = {
 }
 
 set_popularities = {
-	neutrality = 100
+	democratic = 100
 }
 
 # DIPLOMACY

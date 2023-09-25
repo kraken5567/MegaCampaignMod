@@ -17,6 +17,29 @@ if = {
 	limit = { has_dlc = "La Resistance" }
 }
 
+create_country_leader = {
+	name = "Alexandru 'Vladstock'"
+	desc = "A Fascist Pioneer of Romania"
+	ideology = fascism_ideology
+	expire = "1943.5.31"
+	traits = { 
+		hawk
+		dictator
+		fascist_orchestrator
+	}
+}
+
+create_country_leader = {
+	name = "King Alexandru I"
+	desc = "Wait, this guy seems familiar..."
+	ideology = despotism
+	expire = "1943.5.31"
+	traits = { 
+		monarchist_puppet
+		disgraced_monarch
+	}
+}
+
 set_politics = {
 	ruling_party = neutrality
 	last_election = "1933.1.1"
@@ -25,7 +48,10 @@ set_politics = {
 }
 
 set_popularities = {
-	neutrality = 100
+	fascism = 80
+	neutrality = 15
+	democratic = 5
+	communism = 0
 }
 
 add_ideas = {

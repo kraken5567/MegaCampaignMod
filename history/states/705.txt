@@ -9,7 +9,7 @@ state = {
 	state_category = rural
 
 	history = {
-		owner = SPR
+		owner = Z68
 		victory_points = {
 			10978 1
 		}

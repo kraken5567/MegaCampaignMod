@@ -1,109 +1,247 @@
 ideas = {
-	mobilization_laws = {
-}
-
-	economy = {
-}
-
-	political_advisor = {
-}
-
-	tank_manufacturer = {
-}
-
-	naval_manufacturer = {
-}
-
-	aircraft_manufacturer = {
-}
-
-	materiel_manufacturer = {
-}
-
-	industrial_concern = {
-}
-
-	theorist = {
-}
-
-	army_chief = {
-}
-
-	navy_chief = {
-}
-
-	air_chief = {
-}
-
-	high_command = {
-}
-
     country = {
-        army_motorized_training = {
-            focus = army_motorized_path
-
-            motorized_bonuses = {
-                movement_speed = 0.15
-                attack = 0.05
+        # air
+        POL_air_1 = {
+            modifier = {
+                air_air_superiority_attack_factor = 0.1
+                air_air_superiority_defence_factor = 0.1
                 }
+        }
+         
+        #POL_air_2 = {
+        #    # How do?
+        #    modifier = {
+        #        equipment_bonus = {fighter_equipment = { build_cost_ic = -0.1 instant = yes } }
+        #        equipment_bonus = { CAS_equipment = { build_cost_ic = -0.125 instant = yes } }
+        #        equipment_bonus = { strat_bomber_equipment = { build_cost_ic = -0.2 instant = yes } }
+        #        }
+        #     }
+         
+        POL_air_3 = {
+            modifier = {
+                air_strategic_bomber_agility_factor = 0.1
+                air_strategic_bomber_attack_factor = 0.1
+                air_strategic_bomber_bombing_factor = 0.1
+                air_strategic_bomber_defence_factor = 0.1
+            }
+        }
+
+        # navy
+        POL_navy_1 = {
+            modifier = {
+
+            }
+        }
+
+        POL_navy_2 = {
+            modifier = {
+                
+            }
+        }
+
+        POL_navy_3 = {
+            modifier = {
+                
+            }
+        }
+
+
+        # Military
+        #https://hoi4-modding.fandom.com/wiki/Modifiers
+
+        POL_motorized_training = {
 
             modifier = {
+                motorized_movement_speed = 0.15
+                motorized_attack_factor = 0.05
                 add_army_experience = 50
             }
         }
 
-        army_motorized_logistics_buff = {
-            focus = army_motorized_logistics
+        POL_motorized_logistics_buff = {
 
-            motorized_bonuses = {
-                supply_consumption = -0.10
-                supply_grace = 0.10
+            modifier = {
+                motorized_supply_consumption_factor = -0.10
+                motorized_supply_grace = 0.10
                 }
-            }
+        }
 
-        army_motorized_tactics_buff = {
-            focus = army_motorized_divisions
-
-            add_doctrine_cost_reduction = {
-                name = my_idea_name
-                category = mobile_warfare
-                cost_reduction = 0.1
-                }
+        POL_motorized_tactics_buff = {
 
             modifier = {
                 add_army_experience = 90
             }  
         }
-        
 
-        army_cavalry_training = {
-            focus = army_cavalry_path
+        POL_tank_tactics = {
 
-                cavalry_bonuses = {
-                movement_speed = 0.05
-				supply_consumption = 0.05
-				defense = 0.05
-                attack = 0.10
-                }
+            modifier = {
+                army_armor_attack_factor  = 0.1
+                army_armor_defence_factor = 0.05
+                army_armor_speed_factor   = 0.05
             }
 
-        army_cavalry_tactics_buff = {
-            focus = army_cavalry_training
-
-            cavalry_bonuses = {
-                movement_speed = 0.05
-                breakthrough = 0.1
-                soft_attack = 0.05
-                }
         }
         
-        army_combined_arms_mastery = {
-            OR = {
-                focus = army_motorized_divisions
-                focus = army_cavalry_training
-            }
+        POL_cavalry_training = {
+            modifier = {
+                    cavalry_speed = 0.05
+                    cavalry_supply_consumption = 0.05
+                    cavalry_defense = 0.05
+                    cavalry_attack = 0.10
+                    }
+                }
+
+        POL_cavalry_tactics_buff = {
+            modifier = {
+                cavalry_speed_factor = 0.15
+                }
+        }
+
+        #POL_Master_Cav = {
+        #    modifier = {
+        #        cavalry_attack 
+        #    }
+        #}
+        
+        POL_combined_arms_mastery = {
+
             modifier = {
                 add_equipment_capture_factor = 0.2
+            }
+        }
+        
+        # Government
+        POL_remove_fascism = {
+            modifier = {
+                fascism_drift = -0.25
+            }
+        }
+
+        POL_government_stall = {
+            modifier = {
+                war_support_factor = -0.2
+                stability_factor = -0.1
+                political_power_gain = -2.5
+                recruitable_population_factor = -0.25
+                industrial_capacity_factory = -0.2
+                research_speed_factor = -0.1
+                justify_war_goal_time = 0.2
+                }
+            }
+
+        POL_gov_republic = {
+            modifier = {
+                democratic_drift = 0.02
+                surrender_limit = -0.05
+                consumer_goods_factor = -0.05
+                conscription = -0.01
+                non_core_manpower = 0.2
+                research_bonus = 0.05
+            }
+        }
+
+        POL_gov_king = {
+            modifier = {
+                neutrality_drift = 0.02
+                surrender_limit = 0.1
+                consumer_goods_factor = -0.035
+                conscription = 0.025
+                non_core_manpower = -0.05
+                supply_consumption_factor = 0.01
+                research_bonus = -0.01
+            }
+        }
+        
+        POL_gov_people = {
+            modifier = {
+                communism_drift = 0.02
+                surrender_limit = 0.05
+                consumer_goods_factor = -0.025
+                conscription = 0.01
+                non_core_manpower = 0.05
+                supply_consumption_factor = -0.025
+                research_bonus = -0.05
+            }
+        }
+
+            # actions
+        POL_weak_government = {
+            allowed = {
+                always = yes
+            }
+            modifier = {
+                consumer_goods_factor = 0.075
+                justify_war_goal_time = 0.34
+            }
+        }
+    
+        POL_legitimate_government = {
+            allowed = {
+                always = yes
+            }
+            modifier = {
+                consumer_goods_factor = -0.025
+                add_war_support = 0.1
+                add_stability = 0.1
+                justify_war_goal_time = -0.34
+            }
+        }
+    
+        POL_strong_government = {
+            allowed = {
+                always = yes
+            }
+            modifier = {
+                consumer_goods_factor = -0.05
+                surrender_limit = 0.9
+                stability_weekly = 0.025
+                political_power_gain = 0.25
+                add_political_power = 150
+            }
+        }
+         
+        # Civillian Factory Ideas
+        POL_industrial_Ca = {
+            modifier = {
+                production_speed_industrial_complex_factor = 0.05
+            }
+        }
+        POL_industrial_Cb = {
+            modifier = {
+                production_speed_industrial_complex_factor = 0.1
+            }
+        }
+        POL_industrial_Cc = {
+            modifier = {
+                production_speed_industrial_complex_factor = 0.15
+            }
+        }
+        POL_industrial_Cd = {
+            modifier = {
+                production_speed_industrial_complex_factor = 0.2
+            }
+        }
+
+        # Military Factory Ideas
+        POL_industrial_Ma = {
+            modifier = {
+                production_speed_arms_factory_factor = 0.05
+            }
+        }
+        POL_industrial_Mb = {
+            modifier = {
+                production_speed_arms_factory_factor = 0.1
+            }
+        }
+        POL_industrial_Mc = {
+            modifier = {
+                production_speed_arms_factory_factor = 0.15
+            }
+        }
+        POL_industrial_Md = {
+            modifier = {
+                production_speed_arms_factory_factor = 0.2
             }
         }
     }

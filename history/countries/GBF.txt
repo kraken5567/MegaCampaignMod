@@ -1,61 +1,33 @@
-capital = 162
+capital = 248
 
-oob = "Z68_1936"
-set_research_slots = 3
-set_convoys = 0
-
-recruit_character = Z68_16777565
-recruit_character = Z68_16777357
-recruit_character = Z68_16778321
-recruit_character = Z68_16780371
-recruit_character = Z68_33554438
-recruit_character = Z68_33554448
-recruit_character = Z68_33554631
-recruit_character = Z68_33555032
-recruit_character = Z68_33555652
-recruit_character = Z68_33555719
-recruit_character = Z68_33555954
-recruit_character = Z68_33555987
-recruit_character = Z68_33556013
-recruit_character = Z68_33556907
-recruit_character = Z68_33557129
-recruit_character = Z68_33557532
-recruit_character = Z68_50332233
-recruit_character = Z68_50332579
-recruit_character = Z68_50334939
-recruit_character = Z68_50335717
-recruit_character = Z68_67109738
-recruit_character = Z68_83889327
-if = {
-	limit = { has_dlc = "La Resistance" }
-}
+set_research_slots = 2
+set_stability = 0.33
+set_war_support = 1
+set_convoys = 23
 
 set_politics = {
-	ruling_party = democratic
-	last_election = "1935.3.5"
-	election_frequency = 48
-	elections_allowed = yes
+	ruling_party = neutrality
+	last_election = "0.1.1"
+	election_frequency = 0
+	elections_allowed = no
 }
 
 set_popularities = {
-	neutrality = 100
+	neutrality = 60
+	fascism = 10
+	democratic = 25
+	communism = 5
 }
 
-add_ideas = {
-	limited_conscription
-	civilian_economy
-	export_focus
-}
-set_stability = 0.60
-set_war_support = 0.60
-
-# Starting tech
-set_technology = {
-	fuel_refining = 1
-	fuel_silos = 1
-	gw_artillery = 1
-	infantry_weapons = 1
-	tech_support = 1
+create_country_leader = {
+	name = "King Alexandru I"
+	desc = "Leader of the Greater Balkan Federation, a puppet federation of Polish-Lithiania"
+	ideology = despotism
+	expire = "1943.5.31"
+	traits = { 
+		monarchist_puppet
+		disgraced_monarch
+	}
 }
 
 if = {
@@ -344,7 +316,4 @@ if = {
 	}
 		obsolete = no
 	}
-}
-if = {
-	limit = { has_dlc = "No Step Back" }
 }

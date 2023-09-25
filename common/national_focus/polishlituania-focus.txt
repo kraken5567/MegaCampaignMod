@@ -1,7 +1,8 @@
 focus_tree = {
 
 	id = polishlituania-focus
-	continuous_focus_position = { x = 340 y = 1180 } 
+	continuous_focus_position = { x = 0 y = 1500 }
+	mark_focus_tree_layout_dirty = yes 
 	country = {
 		factor = 0
 		modifier = {
@@ -12,10 +13,10 @@ focus_tree = {
 
 	# Military Tree #
 	focus = { 
-		id = POL_military_modernization
-		icon = GFX_goal_unknown
-		x = 25
-		y = 10
+		id = POL_ModernMil_1
+		icon = GFX_focus_chi_army_reform
+		x = 2
+		y = 0
 		cost = 5
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
@@ -26,55 +27,231 @@ focus_tree = {
 			army_experience = 25
 		}
 	}
+
 	# Motorized Modern
 	focus = {
 		id = POL_Mot_1
-		prerequisite = { focus = POL_military_modernization  }
+		icon = GFX_goal_generic_army_motorized
+		prerequisite = { focus = POL_ModernMil_1  }
 		mutually_exclusive = { focus = POL_Cav_1 }
-		x = 23
-		y = 11
+		x = 1
+		y = 1
 		cost = 5
+		completion_reward = {
+			add_ideas = POL_motorized_training
+		}
+	}
+
+	focus = {
+		id = POL_Mot_2
+		icon = GFX_focus_SOV_organize_wreckers
+		prerequisite = { focus = POL_Mot_1 }
+		x = 1
+		y = 2
+		cost = 5
+		completion_reward = {
+			add_ideas = POL_motorized_tactics_buff
+		}
+	}
+
+	focus = {
+		id = POL_Mot_3
+		icon = GFX_focus_generic_truck
+		prerequisite = {focus = POL_Mot_2}
+		x = 1
+		y = 3
+		cost = 10
+		completion_reward = {
+			add_ideas = POL_motorized_logistics_buff
+		}
+	}
+
+	focus = {
+		id = POL_Mot_4
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = POL_ModernMil_2 }
+		prerequisite = { focus = POL_Mot_3 }
+		x = 1
+		y = 5
+		cost = 5
+		completion_reward = {
+			add_ideas = POL_tank_tactics
+
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.25
+				name = mobile_warfare
+			}
+
+			add_army_experience = 75
+		}
 	}
 
 	# Cavalry Modern
 	focus = {
 		id = POL_Cav_1
-		prerequisite = { focus = POL_military_modernization  }
+		icon = GFX_goal_generic_cavalry
+		prerequisite = { focus = POL_ModernMil_1  }
 		mutually_exclusive = { focus = POL_Mot_1 }
-		x = 27
-		y = 11
+		x = 3
+		y = 1
 		cost = 5
+		completion_reward = {
+			add_ideas = POL_cavalry_training
+		}
 	}
+
+	focus = {
+		id = POL_Cav_2
+		icon = GFX_goal_generic_cavalry
+		prerequisite = { focus = POL_Cav_1 }
+		x = 3
+		y = 3 
+		cost = 5
+		completion_reward = {
+			add_ideas = POL_cavalry_tactics_buff
+		}
+	}
+
+	focus = {
+		id = POL_Cav_3
+		icon = GFX_focus_SOV_restore_cossack_units
+		prerequisite = { focus = POL_ModernMil_2 }
+		prerequisite = { focus = POL_Cav_2 }
+		x = 3
+		y = 5
+		cost = 5
+		completion_reward = {
+			
+		}
+	}
+
+	focus = { 
+		id = POL_ModernMil_2
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = POL_Cav_2 focus = POL_Mot_3 }
+		x = 2
+		y = 4
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		ai_will_do = { factor = 1 }
+		completion_reward = {			
+			add_war_support = 0.05
+			army_experience = 25
+		}
+	}
+
+	# Naval 
+	focus = { 
+		id = POL_naval_1
+		icon = GFX_goal_generic_navy_carrier
+		x = 32
+		y = 1
+		cost = 5
+		prerequisite = { focus = POL_industrial_N }
+		completion_reward = {			
+			add_war_support = 0.05
+			army_experience = 25
+		}
+	}
+	focus = { 
+		id = POL_naval_2
+		icon = GFX_goal_generic_navy_submarine
+		x = 32
+		y = 2
+		cost = 5
+		prerequisite = { focus = POL_industrial_N }
+		completion_reward = {			
+			add_war_support = 0.05
+			army_experience = 25
+		}
+	}
+	focus = { 
+		id = POL_naval_3
+		icon = GFX_goal_generic_navy_battleship
+		x = 32
+		y = 3
+		cost = 5
+		prerequisite = { focus = POL_industrial_N }
+		completion_reward = {			
+			add_war_support = 0.05
+			army_experience = 25
+		}
+	}
+	# Air
+	focus = { 
+		id = POL_air_1
+		icon = GFX_goal_generic_air_fighter2
+		x = 30
+		y = 2
+		cost = 5
+		prerequisite = { focus = POL_naval_1 }
+		completion_reward = {			
+			air_experience = 25
+			add_ideas = {
+				POL_air_1
+			}
+		}
+	}
+	focus = { 
+		id = POL_air_2
+		icon = GFX_goal_generic_air_fighter
+		x = 30
+		y = 3
+		cost = 5
+		prerequisite = { focus = POL_air_1 }
+		completion_reward = {			
+			air_experience = 25
+			add_ideas = {
+				POL_air_2
+			}
+		}
+	}
+	focus = { 
+		id = POL_air_3
+		icon = GFX_focus_generic_aircraft_production
+		x = 30
+		y = 4
+		cost = 5
+		prerequisite = { focus = POL_air_2 }
+		completion_reward = {			
+			air_experience = 25
+			add_ideas = {
+				POL_air_3
+			}
+		}
+	}
+
+###############################################
 
 	# Political Tree # 
 	#A New Direction
 	focus = {
 		id = POL_a_new_direction
 		icon = GFX_focus_generic_polish_deal
-		x = 13
-		y = 10
+		x = 16
+		y = 0
 		cost = 5
+		mutually_exclusive = {
+			focus = POL_civil_reorginization
+		}
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
 		}
 		ai_will_do = { factor = 1 }
 		completion_reward = {
-			add_stability = 0.2
-			
-			add_war_support = 0.2
-			
 			add_political_power = 50
-			
-			
 		}
 	}
 
 	#The West
 	focus = {
 		id = POL_the_west
-		icon = GFX_goal_unknown
-		x = 11
-		y = 11
+		icon = GFX_focus_generic_spread_fascism
+		x = 13
+		y = 1
+		cost = 0.143
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
 		}
@@ -82,28 +259,27 @@ focus_tree = {
 		bypass = {
 			has_war_with = ger
 		}
-		select_effect = {
-			add_political_power = 100
-						}
-	}
+		completion_reward = {
+			add_political_power = 10
+			}
+		}
 
 	#The East
 	focus = {
 		id = POL_the_east
-		icon = GFX_focus_BUL_prussia_of_the_balkans
-		x = 15
-		y = 11
+		icon = GFX_focus_SOV_patriarch_of_all_russia
+		x = 17
+		y = 1
+		cost = 0.143
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = POL_a_new_direction  }
 		bypass = {
-			has_war_with = RUS
-			
-			
+			has_war_with = SOV
 		}
 		completion_reward = {
-			add_political_power = 100
+			add_political_power = 10
 			
 		}
 	}
@@ -112,32 +288,38 @@ focus_tree = {
 	focus = {
 		id = POL_ally_germany
 		icon = GFX_focus_chi_mission_to_germany
-		x = 8
-		y = 13
+		x = 12
+		y = 2
 		cost = 5
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = POL_the_west  }
-		mutually_exclusive = { focus = POL_ally_russia }
+		mutually_exclusive = { focus = POL_villainize_germany }
+
 		available = {
 			NOT = { is_at_war_with = Z68 }
 		}
 		completion_reward = {
+
+			add_to_faction = Z68
+
+			set_country_flag = ally_ger
+
 			add_opinion_modifier = {
 			    target = Z68
-			    modifier = 100
+			    modifier = huge_increase
 			}
 		}
 	}
 
 	#Villanize Germany
 	focus = {
-		id = POL_villanize_germany
-		icon = GFX_focus_attack_germany
-		x = 11
-		y = 12
-		cost = 10
+		id = POL_villainize_germany
+		icon = GFX_focus_POL_reassert_silesian_claims
+		x = 14
+		y = 2
+		cost = 7.143 #50 days
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
 		}
@@ -149,47 +331,159 @@ focus_tree = {
 		}
 		bypass = {
 			is_at_war_with = Z68
-			
-			
 		}
 		completion_reward = {
 			create_wargoal = {
 			    type = puppet_wargoal_focus
 			    target = Z68
 			}
-			add_state_claim = 40, 68, 321
+			add_state_claim = 40 
+			add_state_claim = 68 
+			add_state_claim = 321
 			
-			
-			
+			set_country_flag = villan_ger
 		}
 		will_lead_to_war_with = Z68
 	}
+
+	# Villanize Bohemia
+	focus = {
+		id = POL_villainize_bohemia
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 14
+		y = 4
+		cost = 7.143 #50 days
+
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = POL_Gov_Options }
+		mutually_exclusive = { focus = POL_ally_bohemia }
+
+		bypass = {
+			is_at_war_with = Z05
+		}
+		completion_reward = {
+			create_wargoal = {
+			    type = puppet_wargoal_focus
+			    target = Z05
+			}
+			add_state_claim = 148
+			add_state_claim = 154
+
+		}
+		will_lead_to_war_with = Z05
+	}
+
+	focus = {
+		id = POL_ally_hungary
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		x = 14
+		y = 5
+		cost = 5
+		prerequisite = { focus = POL_villainize_bohemia }
+		completion_reward = {
+			add_to_faction = HUN
+		}
+
+	}
+
+	# Ally Bohemia
+	focus = {
+		id = POL_ally_bohemia
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		x = 12
+		y = 4
+		cost = 5
+
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = POL_Gov_Options }
+		mutually_exclusive = { focus = POL_villainize_bohemia }
+
+		available = {
+			NOT = { is_at_war_with = Z05 }
+		}
+
+		completion_reward = {
+		
+			add_to_faction = Z05
+
+			add_opinion_modifier = {
+			    target = Z05
+			    modifier = huge_increase
+			}
+		}
+	}
+
+	# Attack Hungary
+	focus = {
+		id = POL_attack_hungary
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 12
+		y = 5
+		cost = 5
+
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = POL_ally_bohemia }
+
+		available = {
+		 NOT = { is_ally_with = HUN }
+		}
+
+		completion_reward = {
+
+			add_opinion_modifier = {
+			    target = Z05
+			    modifier = huge_increase
+			}
+
+			# Bohemia Claims
+			Z05 = {add_state_claim = 112}
+			Z05 = {add_state_claim = 366}
+			Z05 = {add_state_claim = 222}
+
+			# Poland Claims
+			Z45 = {add_state_core = 228}
+			Z45 = {add_state_claim = 215}
+
+			# Romanian Claims
+			ROM = {add_state_claim = 549}
+			ROM = {add_state_claim = 261}
+		}
+	}
+
+	# EAST #
 
 	#Ally Russia
 	focus = {
 		id = POL_ally_russia
 		icon = GFX_goal_tfv_strengthen_commonwealth_ties
 		x = 18
-		y = 13
+		y = 2
 		cost = 5
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = POL_the_east  }
-		mutually_exclusive = { focus = POL_villanize_germany  }
+		mutually_exclusive = { focus = POL_villainize_russia }
+
 		available = {
 			NOT = { is_at_war_with = SOV }
-			
-			
 		}
 		completion_reward = {
+
+			add_to_faction = SOV
+			
+			set_country_flag = ally_rus
+
 			add_opinion_modifier = {
 			    target = SOV
-			    modifier = 100
+			    modifier = huge_increase
 			}
-			
-			
-			
 		}
 	}
 
@@ -197,7058 +491,838 @@ focus_tree = {
 	focus = {
 		id = POL_villainize_russia
 		icon = GFX_focus_rom_abdicate
-		x = 15
-		y = 12
+		x = 16
+		y = 2
+		cost = 7.143 #50 days
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
 		}
 		prerequisite = { focus = POL_the_east  }
-		mutually_exclusive = { focus = POL_ally_russia  }
+		mutually_exclusive = { focus = POL_ally_russia }
+		
+		bypass = {
+			is_at_war_with = SOV
+		}
+		completion_reward = {
+			create_wargoal = {
+			    type = puppet_wargoal_focus
+			    target = SOV
+			}
+			add_state_claim = 498 
+			add_state_claim = 311 
+			add_state_claim = 164 
+			add_state_claim = 207 
+			add_state_claim = 563 
+			add_state_claim = 330
+			
+			set_country_flag = villan_rus
+		}
+		will_lead_to_war_with = SOV
 	}
 
 	#Buffer States
+	#focus = {
+	#	id = POL_buffer_states
+	#	icon = GFX_goal_unknown
+	#	x = 15
+	#	y = 3
+	#	cost = 12
+	#	search_filters = {
+	#		FOCUS_FILTER_FRA_POLITICAL_VIOLENCE
+	#	}
+	#	prerequisite = {
+	#		focus = POL_villainize_germany
+	#		focus = POL_villainize_russia
+	#	} 
+	#	available = {
+	#		date > 1940.01.01
+	#		has_government = fascism
+	#	}
+	#	completion_reward = {
+	#		custom_effect = {
+	#			target = {
+	#				controller = Z45
+	#			}
+	#			which = surrounding_states
+	#			scripted_effect = {
+	#				id = add_claim_scripted_effect
+	#			}
+	#		}
+	#	}
+	#}
+
+	# Villanize Denmark
 	focus = {
-		id = POL_buffer_states
-		icon = GFX_goal_unknown
-		x = 13
-		y = 14
-		cost = 12
+		id = POL_villainize_denmark
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 16
+		y = 4
+		cost = 7.143 #50 days
+
 		search_filters = {
-			FOCUS_FILTER_FRA_POLITICAL_VIOLENCE
+			FOCUS_FILTER_POLITICAL
 		}
-		prerequisite = { focus = POL_the_west  } prerequisite = { focus = POL_the_east  }
-		available = {
-			date < 1940.01.01
-			
-			
-			has_government = fascism
-			
-			
+		prerequisite = { focus = POL_Gov_Options }
+		mutually_exclusive = { focus = POL_ally_denmark }
+		
+		bypass = {
+			is_at_war_with = DEN
 		}
 		completion_reward = {
-			target = { controller = Z45 }
-                which = surrounding_states
+			create_wargoal = {
+			    type = puppet_wargoal_focus
+			    target = DEN
+			}
+			add_state_claim = 277
+			add_state_claim = 435
+			
+			add_country_flag = villan_rus
+		}
+		will_lead_to_war_with = DEN
+	}
+
+	# Ally Denmark
+	focus = {
+		id = POL_ally_denmark
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		x = 18
+		y = 4
+		cost = 5
+
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = POL_Gov_Options }
+		mutually_exclusive = { focus = POL_villainize_denmark }
+		available = {
+			NOT = { is_at_war_with = DEN }
+		}
+		completion_reward = {
+
+			add_to_faction = DEN
+
+			add_opinion_modifier = {
+			    target = DEN
+			    modifier = huge_increase
+			}
+
 		}
 	}
 
-	#Naval Effort
+
+	# Government
+
 	focus = {
-		id = POL_naval_effort
-		icon = GFX_goal_generic_construct_naval_dockyard
-		x = 13
+		id = POL_Gov_Options
+		icon = GFX_focus_POL_common_organization_of_society
+		x = 15
+		y = 3
+		cost = 3.572 #25 days
+		prerequisite = { focus = POL_villainize_germany focus = POL_ally_germany  }
+		prerequisite = { focus = POL_villainize_russia focus = POL_ally_russia  }
+	
+		completion_reward = {
+			remove_ideas = { POL_government_stall }
+
+			if = {
+				limit = {
+					has_country_flag = villan_ger
+					has_country_flag = villan_rus
+				}
+				add_ideas = POL_strong_government
+				#immediate
+				add_stability = 0.2
+				add_war_support = 0.2
+				# flag
+				set_country_flag = Gov_Strong
+				Z45 = { trigger_event = { id = Z45_gov_strong days = 2} }
+			}
+
+			else_if = {
+				limit = {
+					OR = {
+						AND = {
+							has_country_flag = villan_rus
+							has_country_flag = ally_ger
+						}
+						AND = {
+							has_country_flag = villan_ger
+							has_country_flag = ally_rus
+						}
+					}
+				}
+				add_ideas = POL_legitimate_government
+				#immediate
+				add_stability = 0.1
+				add_war_support = 0.1
+				# flag
+				set_country_flag = Gov_Legitimate
+				Z45 = { trigger_event = { id = Z45_gov_legit days = 2} }
+			}
+
+			else_if = {
+				limit = {
+					has_country_flag = ally_ger
+					has_country_flag = ally_rus
+				}
+				add_ideas = POL_weak_government
+				#immediate
+                add_stability = -0.3
+				add_war_support = -0.3
+				# flag
+				set_country_flag = Gov_Weak
+				Z45 = { trigger_event = { id = Z45_gov_weak days = 2 } }
+			}
+		}
+	}
+
+	#Alternate Path
+
+	focus = {
+		id = POL_civil_reorginization
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		x = 7
 		y = 0
 		cost = 5
-		ai_will_do = { factor = 1 }
+		mutually_exclusive = {
+			focus = POL_a_new_direction
+		}
 		search_filters = {
-			FOCUS_FILTER_NAVY_XPFOCUS_FILTER_INDUSTRY
+			FOCUS_FILTER_POLITICAL
 		}
-		available_if_capitulated = yes
-		available = {
-			
-						any_state = {
-							is_coastal = yes
-							is_controlled_by = ROOT
-						}
-					
-		}
+		ai_will_do = { factor = 1 }
 		completion_reward = {
-			
-						navy_experience = 10
-						if = {
-							limit = {
-								any_owned_state = {
-									free_building_slots = {
-										building = dockyard
-										size > 0
-										include_locked = yes
-									}
-								}
-							}
-							random_owned_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = dockyard
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_building_construction = {
-									type = dockyard
-									level = 1
-									instant_build = yes
-								}
-							}
-						}
-						if = {
-							limit = {
-								NOT = {
-									any_owned_state = {
-										free_building_slots = {
-											building = dockyard
-											size > 0
-											include_locked = yes
-										}
-									}
-								}
-							}
-							random_state = {
-								limit = {
-									controller = { tag = ROOT }
-									free_building_slots = {
-										building = dockyard
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_building_construction = {
-									type = dockyard
-									level = 1
-									instant_build = yes
-								}
-							}
-						}			
-					
+			add_political_power = 50
+			add_stability = -0.25
+			add_war_support = 0.25
+			set_political_party = {
+				ideology = neutrality
+				popularity = 0.50
+			}
+			set_political_party = {
+				ideology = fascism
+				popularity = -0.50
+			}
+			start_civil_war = {
+				ruling_party = neutrality
+				ideology = fascism
+				size = 0.35
+				capital = 14
+				states = {
+					32 4 90 198 479 8 323 293 71 293 63 15 14 271
+				}
+			}
 		}
 	}
 
-	#Fleet In Being
+	#Communism
 	focus = {
-		id = POL_fleet_in_being
-		icon = GFX_POL_fleet_in_being-5616
-		x = 5
+		id = POL_gov_c
+		icon = GFX_focus_chi_cooperation_with_the_communists
+		cost = 7.143 #50
+		x = 6
 		y = 1
-		prerequisite = { focus = POL_naval_effort  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		search_filters = {
-			FOCUS_FILTER_NAVY_XPFOCUS_FILTER_RESEARCH
+		mutually_exclusive = {
+			focus = POL_gov_d
 		}
-		bypass = {
-			 has_tech = fleet_in_being 
+		available = {
+			has_civil_war = no
 		}
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						set_technology = {
-							fleet_in_being = 1
-						}
-						add_ideas = idea_fleet_in_being
-					
-						navy_experience = 10
-						if = {
-							limit = {
-								any_owned_state = {
-									free_building_slots = {
-										building = dockyard
-										size > 0
-										include_locked = yes
-									}
-								}
-							}
-							random_owned_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = dockyard
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_building_construction = {
-									type = dockyard
-									level = 1
-									instant_build = yes
-								}
-							}
-						}
-						if = {
-							limit = {
-								NOT = {
-									any_owned_state = {
-										free_building_slots = {
-											building = dockyard
-											size > 0
-											include_locked = yes
-										}
-									}
-								}
-							}
-							random_state = {
-								limit = {
-									controller = { tag = ROOT }
-									free_building_slots = {
-										building = dockyard
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_building_construction = {
-									type = dockyard
-									level = 1
-									instant_build = yes
-								}
-							}
-						}			
-					
+		prerequisite = {
+			focus = POL_civil_reorginization
+		}
+		completion_reward = { 
+			add_stability = 0.50
+			add_popularity = {
+				ideology = communism
+				popularity = 0.4
+			}
+			set_politics = {
+				ruling_party = communism
+			}
 		}
 	}
 
-	#Cruiser Effort
 	focus = {
-		id = POL_cruiser_effort
-		icon = GFX_goal_unknown
-		x = 3
+		id = POL_gov_c_strengthen
+		icon = GFX_goal_support_communism
+		cost = 7.143 #50
+		x = 6
 		y = 2
-		prerequisite = { focus = POL_fleet_in_being  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		bypass = {
-			 has_tech = advanced_ship_hull_cruiser 
+		prerequisite = {
+			focus = POL_gov_c
 		}
-		search_filters = {
-			FOCUS_FILTER_RESEARCH
-		}
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						add_tech_bonus = {
-							name = ship_hull_cruiser
-							bonus = 1.0
-							uses = 1
-							category = ca_tech
-							category = cl_tech
-						}
-					
+		completion_reward = { 
+			add_ideas = POL_gov_people
 		}
 	}
 
-	#Cruiser Experiment
 	focus = {
-		id = POL_cruiser_experiment
-		icon = GFX_goal_unknown
-		x = 3
+		id = POL_gov_c_spread
+		icon = GFX_focus_SOV_the_glory_of_the_red_army_communism
+		cost = 7.143 #50
+		x = 6
 		y = 3
-		prerequisite = { focus = POL_cruiser_effort  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		available_if_capitulated = yes
-		available = {
-			
-						has_tech = basic_ship_hull_cruiser
-					
+		prerequisite = {
+			focus = POL_gov_c_strengthen
 		}
-		completion_reward = {
-			
-						if = {
-							limit = {
-								has_dlc = "Man the Guns"
-							}
-							custom_effect_tooltip = generic_screen_2_tt
-							hidden_effect = {				
-								create_equipment_variant = {
-									name = "1936 Light Class"
-									type = ship_hull_cruiser_2
-									parent_version = 0
-									modules = {
-										fixed_ship_battery_slot = ship_light_medium_battery_1
-										fixed_ship_anti_air_slot = ship_anti_air_1
-										fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-										fixed_ship_radar_slot = empty
-										fixed_ship_engine_slot = cruiser_ship_engine_2
-										fixed_ship_secondaries_slot = ship_secondaries_1
-										fixed_ship_armor_slot = ship_armor_cruiser_1
-										front_1_custom_slot = ship_light_medium_battery_1
-										mid_1_custom_slot = ship_light_medium_battery_1
-										mid_2_custom_slot = ship_light_medium_battery_1
-										rear_1_custom_slot = ship_light_medium_battery_1
-									}
-								}
-								add_equipment_production = {
-									equipment = {
-										type = ship_hull_cruiser_2
-										
-										version_name = "1936 Light Class"
-									}
-									requested_factories = 1
-									progress = 0.99
-									amount = 1
-								}
-							}						
-						}
-						else = {
-							add_equipment_production = {
-								equipment = {
-									type = light_cruiser_2
-									
-								}
-								requested_factories = 1
-								progress = 0.99
-								amount = 1
-							}
-						}
-					
+		completion_reward = { 
+			country_event = { id = Z45.000 days = 0 }
 		}
 	}
 
-	#Cruiser Manufacture
 	focus = {
-		id = POL_cruiser_manufacture
-		icon = GFX_goal_unknown
-		x = 3
+		id = POL_gov_f_ban
+		icon = GFX_focus_POL_ban_nazi_party
+		cost = 7.143 #50
+		x = 8
 		y = 4
-		prerequisite = { focus = POL_cruiser_experiment  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						custom_effect_tooltip = available_designer
-						show_ideas_tooltip = generic_cruiser_manufacture
-					
+		prerequisite = {
+			focus = POL_gov_c_strengthen
+			focus = POL_gov_d_strengthen
+			focus = POL_gov_m_strengthen
+		}
+		completion_reward = { 
+			add_ideas = POL_remove_fascism
 		}
 	}
 
-	#Naional Cruiser
+	# Democracy
 	focus = {
-		id = POL_naional_cruiser
-		icon = GFX_goal_unknown
-		x = 3
-		y = 5
-		prerequisite = { focus = POL_cruiser_manufacture  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						add_ideas = idea_16_1
-					
-		}
-	}
-
-	#Improve Cruisers
-	focus = {
-		id = POL_improve_cruisers
-		icon = GFX_goal_unknown
-		x = 3
-		y = 6
-		prerequisite = { focus = POL_naional_cruiser  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		search_filters = {
-			FOCUS_FILTER_NAVY_XPFOCUS_FILTER_INDUSTRY
-		}
-		available_if_capitulated = yes
-		available = {
-			
-						has_tech = improved_ship_hull_cruiser
-					
-		}
-		completion_reward = {
-			
-						add_doctrine_cost_reduction = {
-							name = navy_doc_bonus
-							cost_reduction = 0.25
-							uses = 1
-							category = naval_doctrine
-						}
-					
-						navy_experience = 10
-						if = {
-							limit = {
-								any_owned_state = {
-									free_building_slots = {
-										building = dockyard
-										size > 0
-										include_locked = yes
-									}
-								}
-							}
-							random_owned_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = dockyard
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_building_construction = {
-									type = dockyard
-									level = 1
-									instant_build = yes
-								}
-							}
-						}
-						if = {
-							limit = {
-								NOT = {
-									any_owned_state = {
-										free_building_slots = {
-											building = dockyard
-											size > 0
-											include_locked = yes
-										}
-									}
-								}
-							}
-							random_state = {
-								limit = {
-									controller = { tag = ROOT }
-									free_building_slots = {
-										building = dockyard
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_building_construction = {
-									type = dockyard
-									level = 1
-									instant_build = yes
-								}
-							}
-						}			
-					}
-						if = {
-							limit = {
-								any_owned_state = {
-									free_building_slots = {
-										building = dockyard
-										size > 0
-										include_locked = yes
-									}
-								}
-							}
-							random_owned_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = dockyard
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_building_construction = {
-									type = dockyard
-									level = 1
-									instant_build = yes
-								}
-							}
-						}
-						if = {
-							limit = {
-								NOT = {
-									any_owned_state = {
-										free_building_slots = {
-											building = dockyard
-											size > 0
-											include_locked = yes
-										}
-									}
-								}
-							}
-							random_state = {
-								limit = {
-									controller = { tag = ROOT }
-									free_building_slots = {
-										building = dockyard
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_building_construction = {
-									type = dockyard
-									level = 1
-									instant_build = yes
-								}
-							}
-						}			
-					}
-						if = {
-							limit = {
-								has_dlc = "Man the Guns"
-							}
-							custom_effect_tooltip = generic_doctrine_effort_6_tt
-							hidden_effect = {
-								create_equipment_variant = {
-									name = "1940 Light Class"
-									type = ship_hull_cruiser_3
-									parent_version = 0
-									modules = {
-										fixed_ship_battery_slot = ship_light_medium_battery_1
-										fixed_ship_anti_air_slot = ship_anti_air_1
-										fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-										fixed_ship_radar_slot = empty
-										fixed_ship_engine_slot = cruiser_ship_engine_3
-										fixed_ship_secondaries_slot = ship_secondaries_1
-										fixed_ship_armor_slot = ship_armor_cruiser_1
-										front_1_custom_slot = ship_light_medium_battery_1
-										mid_1_custom_slot = ship_light_medium_battery_1
-										mid_2_custom_slot = ship_light_medium_battery_1
-										rear_1_custom_slot = ship_light_medium_battery_1
-										rear_2_custom_slot = ship_light_medium_battery_1
-									}
-								}
-								add_equipment_production = {
-									equipment = {
-										type = ship_hull_cruiser_3
-										
-										version_name = "1940 Light Class"
-									}
-									requested_factories = 1
-									progress = 0.50
-									amount = 1
-								}
-								add_equipment_production = {
-									equipment = {
-										type = ship_hull_cruiser_3
-										
-										version_name = "1940 Light Class"
-									}
-									requested_factories = 1
-									progress = 0.50
-									amount = 1
-								}					
-							}	
-						}
-						else = {
-							add_equipment_production = {
-								equipment = {
-									type = light_cruiser_3
-									
-								}
-								requested_factories = 1
-								progress = 0.50
-								amount = 2
-							}
-						}
-					
-	#Destroyer Effort
-	focus = {
-		id = POL_destroyer_effort
-		icon = GFX_goal_unknown
-		x = 7
-		y = 2
-		prerequisite = { focus = POL_fleet_in_being  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		bypass = {
-			 has_tech = advanced_ship_hull_light 
-		}
-		search_filters = {
-			FOCUS_FILTER_RESEARCH
-		}
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						add_tech_bonus = {
-							name = dd_tech
-							bonus = 1.0
-							uses = 1
-							category = dd_tech
-						}
-					
-		}
-	}
-
-	#Destroyer Experiment
-	focus = {
-		id = POL_destroyer_experiment
-		icon = GFX_goal_unknown
-		x = 7
-		y = 3
-		prerequisite = { focus = POL_destroyer_effort  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		available_if_capitulated = yes
-		available = {
-			
-						has_tech = basic_ship_hull_light
-					
-		}
-		completion_reward = {
-			
-						if = {
-							limit = {
-								has_dlc = "Man the Guns"
-							}
-							custom_effect_tooltip = generic_screen_5_tt
-							hidden_effect = {
-								create_equipment_variant = {
-									name = "1936 Torpedo Class"
-									type = ship_hull_light_2
-									parent_version = 0
-									modules = {
-										fixed_ship_battery_slot = ship_light_battery_1
-										fixed_ship_anti_air_slot = ship_anti_air_1
-										fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-										fixed_ship_radar_slot = empty
-										fixed_ship_torpedo_slot = ship_torpedo_1
-										fixed_ship_engine_slot = light_ship_engine_2
-										mid_1_custom_slot = ship_depth_charge_1
-										rear_1_custom_slot = ship_torpedo_1
-									}
-								}
-								create_equipment_variant = {
-									name = "1936 Mine Class"
-									type = ship_hull_light_2
-									parent_version = 0
-									modules = {
-										fixed_ship_battery_slot = ship_light_battery_1
-										fixed_ship_anti_air_slot = ship_anti_air_1
-										fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-										fixed_ship_radar_slot = empty
-										fixed_ship_torpedo_slot = ship_torpedo_1
-										fixed_ship_engine_slot = light_ship_engine_2
-										mid_1_custom_slot = ship_mine_sweeper_1
-										rear_1_custom_slot = ship_mine_layer_1
-									}
-								}					
-								add_equipment_production = {
-									equipment = {
-										type = ship_hull_light_2
-										
-										version_name = "1936 Torpedo Class"
-									}
-									requested_factories = 1
-									progress = 0.8
-									amount = 1
-								}
-								add_equipment_production = {
-									equipment = {
-										type = ship_hull_light_2
-										
-										version_name = "1936 Torpedo Class"
-									}
-									requested_factories = 1
-									progress = 0.8
-									amount = 1
-								}
-								add_equipment_production = {
-									equipment = {
-										type = ship_hull_light_2
-										
-										version_name = "1936 Torpedo Class"
-									}
-									requested_factories = 1
-									progress = 0.8
-									amount = 1
-								}
-								add_equipment_production = {
-									equipment = {
-										type = ship_hull_light_2
-										
-										version_name = "1936 Mine Class"
-									}
-									requested_factories = 1
-									progress = 0.8
-									amount = 1
-								}
-								add_equipment_production = {
-									equipment = {
-										type = ship_hull_light_2
-										
-										version_name = "1936 Mine Class"
-									}
-									requested_factories = 1
-									progress = 0.8
-									amount = 1
-								}
-								add_equipment_production = {
-									equipment = {
-										type = ship_hull_light_2
-										
-										version_name = "1936 Mine Class"
-									}
-									requested_factories = 1
-									progress = 0.8
-									amount = 1
-								}																				
-							}	
-						}
-						else = {
-							add_equipment_production = {
-								equipment = {
-									type = destroyer_2
-									
-								}
-								requested_factories = 1
-								progress = 0.80
-								amount = 6
-							}
-						}
-					
-		}
-	}
-
-	#Destroyer Manufacture
-	focus = {
-		id = POL_destroyer_manufacture
-		icon = GFX_goal_generic_navy_cruiser
-		x = 7
-		y = 4
-		prerequisite = { focus = POL_destroyer_experiment  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						custom_effect_tooltip = available_designer
-						show_ideas_tooltip = generic_destroyer_manufacture
-					
-		}
-	}
-
-	#Naional Destroyer
-	focus = {
-		id = POL_naional_destroyer
-		icon = GFX_goal_unknown
-		x = 7
-		y = 5
-		prerequisite = { focus = POL_destroyer_manufacture  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						add_ideas = idea_17_1
-					
-		}
-	}
-
-	#Improve destroyers
-	focus = {
-		id = POL_improve_destroyers
-		icon = GFX_goal_unknown
-		x = 7
-		y = 6
-		prerequisite = { focus = POL_naional_destroyer  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		search_filters = {
-			FOCUS_FILTER_NAVY_XPFOCUS_FILTER_INDUSTRY
-		}
-		available_if_capitulated = yes
-		available = {
-			
-						has_tech = improved_ship_hull_light
-					
-		}
-		completion_reward = {
-			
-						add_doctrine_cost_reduction = {
-							name = navy_doc_bonus
-							cost_reduction = 0.25
-							uses = 1
-							category = naval_doctrine
-						}
-					
-						navy_experience = 10
-						if = {
-							limit = {
-								any_owned_state = {
-									free_building_slots = {
-										building = dockyard
-										size > 0
-										include_locked = yes
-									}
-								}
-							}
-							random_owned_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = dockyard
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_building_construction = {
-									type = dockyard
-									level = 1
-									instant_build = yes
-								}
-							}
-						}
-						if = {
-							limit = {
-								NOT = {
-									any_owned_state = {
-										free_building_slots = {
-											building = dockyard
-											size > 0
-											include_locked = yes
-										}
-									}
-								}
-							}
-							random_state = {
-								limit = {
-									controller = { tag = ROOT }
-									free_building_slots = {
-										building = dockyard
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_building_construction = {
-									type = dockyard
-									level = 1
-									instant_build = yes
-								}
-							}
-						}			
-					}
-						if = {
-							limit = {
-								any_owned_state = {
-									free_building_slots = {
-										building = dockyard
-										size > 0
-										include_locked = yes
-									}
-								}
-							}
-							random_owned_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = dockyard
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_building_construction = {
-									type = dockyard
-									level = 1
-									instant_build = yes
-								}
-							}
-						}
-						if = {
-							limit = {
-								NOT = {
-									any_owned_state = {
-										free_building_slots = {
-											building = dockyard
-											size > 0
-											include_locked = yes
-										}
-									}
-								}
-							}
-							random_state = {
-								limit = {
-									controller = { tag = ROOT }
-									free_building_slots = {
-										building = dockyard
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_building_construction = {
-									type = dockyard
-									level = 1
-									instant_build = yes
-								}
-							}
-						}			
-					}
-						if = {
-							limit = {
-								has_dlc = "Man the Guns"
-							}
-							custom_effect_tooltip = generic_doctrine_effort_7_tt
-							hidden_effect = {
-								create_equipment_variant = {
-									name = "1940 Torpedo Class"
-									type = ship_hull_light_3
-									parent_version = 0
-									modules = {
-										fixed_ship_battery_slot = ship_light_battery_1
-										fixed_ship_anti_air_slot = ship_anti_air_1
-										fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-										fixed_ship_radar_slot = empty
-										fixed_ship_torpedo_slot = ship_torpedo_1
-										fixed_ship_engine_slot = light_ship_engine_3
-										front_1_custom_slot = ship_depth_charge_1
-										mid_1_custom_slot = ship_torpedo_1
-										rear_1_custom_slot = ship_torpedo_1
-									}
-								}
-								create_equipment_variant = {
-									name = "1940 Mine Class"
-									type = ship_hull_light_3
-									parent_version = 0
-									modules = {
-										fixed_ship_battery_slot = ship_light_battery_1
-										fixed_ship_anti_air_slot = ship_anti_air_1
-										fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-										fixed_ship_radar_slot = empty
-										fixed_ship_torpedo_slot = ship_torpedo_1
-										fixed_ship_engine_slot = light_ship_engine_3
-										front_1_custom_slot = ship_depth_charge_1
-										mid_1_custom_slot = ship_mine_sweeper_1
-										rear_1_custom_slot = ship_mine_layer_1
-									}
-								}					
-								add_equipment_production = {
-									equipment = {
-										type = ship_hull_light_3
-										
-										version_name = "1940 Torpedo Class"
-									}
-									requested_factories = 1
-									progress = 0.50
-									amount = 1
-								}
-								add_equipment_production = {
-									equipment = {
-										type = ship_hull_light_3
-										
-										version_name = "1940 Torpedo Class"
-									}
-									requested_factories = 1
-									progress = 0.50
-									amount = 1
-								}
-								add_equipment_production = {
-									equipment = {
-										type = ship_hull_light_3
-										
-										version_name = "1940 Torpedo Class"
-									}
-									requested_factories = 1
-									progress = 0.50
-									amount = 1
-								}
-								add_equipment_production = {
-									equipment = {
-										type = ship_hull_light_3
-										
-										version_name = "1940 Torpedo Class"
-									}
-									requested_factories = 1
-									progress = 0.50
-									amount = 1
-								}
-								add_equipment_production = {
-									equipment = {
-										type = ship_hull_light_3
-										
-										version_name = "1940 Torpedo Class"
-									}
-									requested_factories = 1
-									progress = 0.50
-									amount = 1
-								}
-								add_equipment_production = {
-									equipment = {
-										type = ship_hull_light_3
-										
-										version_name = "1940 Mine Class"
-									}
-									requested_factories = 1
-									progress = 0.50
-									amount = 1
-								}
-								add_equipment_production = {
-									equipment = {
-										type = ship_hull_light_3
-										
-										version_name = "1940 Mine Class"
-									}
-									requested_factories = 1
-									progress = 0.50
-									amount = 1
-								}
-								add_equipment_production = {
-									equipment = {
-										type = ship_hull_light_3
-										
-										version_name = "1940 Mine Class"
-									}
-									requested_factories = 1
-									progress = 0.50
-									amount = 1
-								}
-								add_equipment_production = {
-									equipment = {
-										type = ship_hull_light_3
-										
-										version_name = "1940 Mine Class"
-									}
-									requested_factories = 1
-									progress = 0.50
-									amount = 1
-								}
-								add_equipment_production = {
-									equipment = {
-										type = ship_hull_light_3
-										
-										version_name = "1940 Mine Class"
-									}
-									requested_factories = 1
-									progress = 0.50
-									amount = 1
-								}																				
-							}	
-						}
-						else = {
-							add_equipment_production = {
-								equipment = {
-									type = destroyer_3
-									
-								}
-								requested_factories = 1
-								progress = 0.50
-								amount = 10
-							}
-						}
-
-	#Base Strike
-	focus = {
-		id = POL_base_strike
-		icon = GFX_POL_base_strike-5615
-		x = 21
+		id = POL_gov_d
+		icon = GFX_goal_support_democracy
+		cost = 7.143 #50
+		x = 9
 		y = 1
-		prerequisite = { focus = POL_naval_effort  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		bypass = {
-			 has_tech = base_strike 
+		available = {
+			has_civil_war = no
 		}
-		search_filters = {
-			FOCUS_FILTER_NAVY_XPFOCUS_FILTER_RESEARCH
+		mutually_exclusive = {
+			focus = POL_gov_c
 		}
-		available_if_capitulated = yes
+		prerequisite = {
+			focus = POL_civil_reorginization
+		}
 		completion_reward = {
-			
-						set_technology = {
-							base_strike = 1
-						}
-						add_ideas = idea_base_strike
-					
-						navy_experience = 10
-						if = {
-							limit = {
-								any_owned_state = {
-									free_building_slots = {
-										building = dockyard
-										size > 0
-										include_locked = yes
-									}
-								}
-							}
-							random_owned_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = dockyard
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_building_construction = {
-									type = dockyard
-									level = 1
-									instant_build = yes
-								}
-							}
-						}
-						if = {
-							limit = {
-								NOT = {
-									any_owned_state = {
-										free_building_slots = {
-											building = dockyard
-											size > 0
-											include_locked = yes
-										}
-									}
-								}
-							}
-							random_state = {
-								limit = {
-									controller = { tag = ROOT }
-									free_building_slots = {
-										building = dockyard
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_building_construction = {
-									type = dockyard
-									level = 1
-									instant_build = yes
-								}
-							}
-						}			
-					
+			add_stability = 0.50
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.2
+			}
 		}
 	}
 
-	#Battleship Effort
 	focus = {
-		id = POL_battleship_effort
-		icon = GFX_goal_unknown
-		x = 19
+		id = POL_gov_d_strengthen
+		icon = GFX_goal_support_democracy
+		cost = 7.143 #50
+		x = 8
 		y = 2
-		prerequisite = { focus = POL_base_strike  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		bypass = {
-			 has_tech = advanced_ship_hull_heavy 
+		mutually_exclusive = {
+			focus = POL_gov_m
 		}
-		search_filters = {
-			FOCUS_FILTER_RESEARCH
+		prerequisite = {
+			focus = POL_gov_d
 		}
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						add_tech_bonus = {
-							name = ship_hull_heavy
-							bonus = 1.0
-							uses = 1
-							category = bb_tech
-							category = bc_tech
-						}
-					
+		completion_reward = { 
+			add_ideas = POL_gov_republic
+			set_politics = {
+				ruling_party = democratic
+
+			}
 		}
 	}
 
-	#Battleship Experiment
+	# MONARCH
 	focus = {
-		id = POL_battleship_experiment
-		icon = GFX_goal_unknown
-		x = 19
-		y = 3
-		prerequisite = { focus = POL_battleship_effort  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		available_if_capitulated = yes
-		available = {
-			
-						has_tech = basic_ship_hull_heavy
-					
-		}
-		completion_reward = {
-			
-						if = {
-							limit = {
-								has_dlc = "Man the Guns"
-							}
-							custom_effect_tooltip = generic_capital_2_tt
-							hidden_effect = {
-								create_equipment_variant = {
-									name = "1936 Heavy Class"
-									type = ship_hull_heavy_2
-									parent_version = 0
-									modules = {
-										fixed_ship_battery_slot = ship_heavy_battery_1
-										fixed_ship_anti_air_slot = ship_anti_air_1
-										fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-										fixed_ship_radar_slot = empty
-										fixed_ship_engine_slot = heavy_ship_engine_2
-										fixed_ship_secondaries_slot = ship_secondaries_1
-										fixed_ship_armor_slot = ship_armor_bb_1
-										front_1_custom_slot = ship_heavy_battery_1
-										mid_1_custom_slot = ship_heavy_battery_1
-										mid_2_custom_slot = ship_heavy_battery_1
-										rear_1_custom_slot = ship_secondaries_1
-									}
-								}
-								add_equipment_production = {
-									equipment = {
-										type = ship_hull_heavy_2
-										
-										version_name = "1936 Heavy Class"
-									}
-									requested_factories = 1
-									progress = 0.5
-									amount = 1
-								}
-							}	
-						}
-						else = {
-							add_equipment_production = {
-								equipment = {
-									type = battleship_2
-									
-								}
-								requested_factories = 1
-								progress = 0.5
-								amount = 1
-							}
-						}
-					
-		}
-	}
-
-	#Battleship Manufacture
-	focus = {
-		id = POL_battleship_manufacture
-		icon = GFX_goal_unknown
-		x = 19
-		y = 4
-		prerequisite = { focus = POL_battleship_experiment  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						custom_effect_tooltip = available_designer
-						show_ideas_tooltip = generic_capital_manufacture
-					
-		}
-	}
-
-	#Naional Battleship
-	focus = {
-		id = POL_naional_battleship
-		icon = GFX_goal_unknown
-		x = 19
-		y = 5
-		prerequisite = { focus = POL_battleship_manufacture  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						add_ideas = idea_18_1
-					
-		}
-	}
-
-	#Improve Battleships
-	focus = {
-		id = POL_improve_battleships
-		icon = GFX_goal_unknown
-		x = 19
-		y = 6
-		prerequisite = { focus = POL_naional_battleship  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		search_filters = {
-			FOCUS_FILTER_NAVY_XPFOCUS_FILTER_INDUSTRY
-		}
-		available_if_capitulated = yes
-		available = {
-			
-						has_tech = improved_ship_hull_heavy
-					
-		}
-		completion_reward = {
-			
-						add_doctrine_cost_reduction = {
-							name = navy_doc_bonus
-							cost_reduction = 0.25
-							uses = 1
-							category = naval_doctrine
-						}
-					
-						navy_experience = 10
-						if = {
-							limit = {
-								any_owned_state = {
-									free_building_slots = {
-										building = dockyard
-										size > 0
-										include_locked = yes
-									}
-								}
-							}
-							random_owned_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = dockyard
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_building_construction = {
-									type = dockyard
-									level = 1
-									instant_build = yes
-								}
-							}
-						}
-						if = {
-							limit = {
-								NOT = {
-									any_owned_state = {
-										free_building_slots = {
-											building = dockyard
-											size > 0
-											include_locked = yes
-										}
-									}
-								}
-							}
-							random_state = {
-								limit = {
-									controller = { tag = ROOT }
-									free_building_slots = {
-										building = dockyard
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_building_construction = {
-									type = dockyard
-									level = 1
-									instant_build = yes
-								}
-							}
-						}			
-					}
-						if = {
-							limit = {
-								any_owned_state = {
-									free_building_slots = {
-										building = dockyard
-										size > 0
-										include_locked = yes
-									}
-								}
-							}
-							random_owned_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = dockyard
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_building_construction = {
-									type = dockyard
-									level = 1
-									instant_build = yes
-								}
-							}
-						}
-						if = {
-							limit = {
-								NOT = {
-									any_owned_state = {
-										free_building_slots = {
-											building = dockyard
-											size > 0
-											include_locked = yes
-										}
-									}
-								}
-							}
-							random_state = {
-								limit = {
-									controller = { tag = ROOT }
-									free_building_slots = {
-										building = dockyard
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_building_construction = {
-									type = dockyard
-									level = 1
-									instant_build = yes
-								}
-							}
-						}			
-					}
-						if = {
-							limit = {
-								has_dlc = "Man the Guns"
-							}
-							custom_effect_tooltip = generic_doctrine_effort_8_tt
-							hidden_effect = {
-								create_equipment_variant = {
-									name = "1940 Heavy Class"
-									type = ship_hull_heavy_3
-									parent_version = 0
-									modules = {
-										fixed_ship_battery_slot = ship_heavy_battery_1
-										fixed_ship_anti_air_slot = ship_anti_air_1
-										fixed_ship_fire_control_system_slot = ship_fire_control_system_0
-										fixed_ship_radar_slot = empty
-										fixed_ship_engine_slot = heavy_ship_engine_3
-										fixed_ship_secondaries_slot = ship_secondaries_1
-										fixed_ship_armor_slot = ship_armor_bb_1
-										front_1_custom_slot = ship_heavy_battery_1
-										mid_1_custom_slot = ship_heavy_battery_1
-										mid_2_custom_slot = ship_heavy_battery_1
-										mid_3_custom_slot = ship_heavy_battery_1
-										rear_1_custom_slot = ship_heavy_battery_1
-									}
-								}
-								add_equipment_production = {
-									equipment = {
-										type = ship_hull_heavy_3
-										
-										version_name = "1940 Heavy Class"
-									}
-									requested_factories = 1
-									progress = 0.50
-									amount = 1
-								}
-							}	
-						}
-						else = {
-							add_equipment_production = {
-								equipment = {
-									type = battleship_3
-									
-								}
-								requested_factories = 1
-								progress = 0.50
-								amount = 1
-							}
-						}
-					
-	#Carrier Effort
-	focus = {
-		id = POL_carrier_effort
-		icon = GFX_POL_carrier_effort-73687
-		x = 23
+		id =  POL_gov_m
+		icon = GFX_focus_generic_monarchy_2
+		cost = 7.143 #50
+		x = 10
 		y = 2
-		prerequisite = { focus = POL_base_strike  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		bypass = {
-			 has_tech = advanced_ship_hull_carrier 
+		prerequisite = {
+			focus = POL_gov_d
 		}
-		search_filters = {
-			FOCUS_FILTER_RESEARCH
-		}
-		available_if_capitulated = yes
 		completion_reward = {
-			
-						add_tech_bonus = {
-							name = cv_tech
-							bonus = 1.0
-							uses = 1
-							category = cv_tech
-						}
-					
+			add_ideas = POL_gov_king
+
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.05
+			}
 		}
 	}
 
-	#Carrier Experiment
 	focus = {
-		id = POL_carrier_experiment
-		icon = GFX_goal_unknown
-		x = 23
+		id = POL_gov_m_strengthen
+		icon = GFX_focus_POL_cossack_king
+		cost = 14.286 #100
+		x = 10
 		y = 3
-		prerequisite = { focus = POL_carrier_effort  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		available_if_capitulated = yes
-		available = {
-			
-						has_tech = basic_ship_hull_carrier
-					
+		prerequisite = {
+			focus = POL_gov_m
 		}
 		completion_reward = {
-			
-						if = {
-							limit = {
-								has_dlc = "Man the Guns"
-							}
-							custom_effect_tooltip = generic_capital_5_tt
-							hidden_effect = {
-								create_equipment_variant = {
-									name = "1936 Huge Class"
-									type = ship_hull_carrier_1
-									parent_version = 0
-									modules = {
-										fixed_ship_deck_slot_1 = ship_deck_space
-										fixed_ship_deck_slot_2 = ship_deck_space
-										fixed_ship_anti_air_slot = ship_anti_air_1
-										fixed_ship_radar_slot = empty
-										fixed_ship_engine_slot = carrier_ship_engine_2
-										fixed_ship_secondaries_slot = empty
-										front_1_custom_slot = ship_deck_space
-									}
-								}
-								add_equipment_production = {
-									equipment = {
-										type = ship_hull_carrier_1
-										
-										version_name = "1936 Huge Class"
-									}
-									requested_factories = 1
-									progress = 0.5
-									amount = 1
-								}
-							}	
-						}
-						else = {
-							add_equipment_production = {
-								equipment = {
-									type = carrier_2
-									
-								}
-								requested_factories = 1
-								progress = 0.5
-								amount = 1
-							}
-						}
-					
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.25
+			}
+			create_country_leader = {
+				name = "King Stanisław IV"
+				ideology = despotism
+				traits = {
+					Dictator
+					Hawk
+					POL_cossack_king
+				}
+			}
 		}
 	}
 
-	#Carrier Manufacture
 	focus = {
-		id = POL_carrier_manufacture
-		icon = GFX_goal_unknown
-		x = 23
+		id = POL_invade_Russia
+		icon = GFX_focus_attack_soviet
+		cost = 14.286 #100
+		x = 10
 		y = 4
-		prerequisite = { focus = POL_carrier_experiment  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						custom_effect_tooltip = available_designer
-						show_ideas_tooltip = generic_carrier_manufacture
-					
+		prerequisite = { focus = POL_gov_m_strengthen }
+		completion_reward = { 
+			every_state = { limit = { is_controlled_by = SOV } ROOT = { add_state_core = PREV } }
+			declare_war_on = {
+				target = SOV 
+				type = take_state id = { every_state = { limit = { is_controlled_by = SOV } } }
+			}
 		}
 	}
 
-	#Naional Carrier
 	focus = {
-		id = POL_naional_carrier
-		icon = GFX_goal_unknown
-		x = 23
+		id = POL_ROM_invasion
+		icon = GFX_focus_BUL_prussia_of_the_balkans
+		cost = 10
+		x = 10
 		y = 5
-		prerequisite = { focus = POL_carrier_manufacture  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						add_ideas = idea_19_1
-					
+		prerequisite = { focus = POL_invade_Russia }
+		completion_reward = { 
+			add_state_core = 204
+	
+			Z45 = {	create_wargoal = { target = ROM type = puppet_wargoal_focus } }
 		}
 	}
 
-	#Improve Carriers
 	focus = {
-		id = POL_improve_carriers
-		icon = GFX_POL_improve_carriers-73687
-		x = 23
+		id = POL_GBF
+		icon = GFX_focus_BUL_prussia_of_the_balkans
+		cost = 10
+		x = 10
 		y = 6
-		prerequisite = { focus = POL_naional_carrier  }
-		cost = 5
-		search_filters = {
-			FOCUS_FILTER_NAVY_XPFOCUS_FILTER_INDUSTRY
-		}
-		ai_will_do = { factor = 1 }
-		available_if_capitulated = yes
 		available = {
-			
-						has_tech = improved_ship_hull_carrier
-					
+			ROM = { is_puppet_of = Z45 }
 		}
-		completion_reward = {
-			
-						add_doctrine_cost_reduction = {
-							name = navy_doc_bonus
-							cost_reduction = 0.25
-							uses = 1
-							category = naval_doctrine
-						}
-					
-						navy_experience = 10
-						if = {
-							limit = {
-								any_owned_state = {
-									free_building_slots = {
-										building = dockyard
-										size > 0
-										include_locked = yes
-									}
-								}
-							}
-							random_owned_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = dockyard
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_building_construction = {
-									type = dockyard
-									level = 1
-									instant_build = yes
-								}
-							}
-						}
-						if = {
-							limit = {
-								NOT = {
-									any_owned_state = {
-										free_building_slots = {
-											building = dockyard
-											size > 0
-											include_locked = yes
-										}
-									}
-								}
-							}
-							random_state = {
-								limit = {
-									controller = { tag = ROOT }
-									free_building_slots = {
-										building = dockyard
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_building_construction = {
-									type = dockyard
-									level = 1
-									instant_build = yes
-								}
-							}
-						}			
-					}
-						if = {
-							limit = {
-								any_owned_state = {
-									free_building_slots = {
-										building = dockyard
-										size > 0
-										include_locked = yes
-									}
-								}
-							}
-							random_owned_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = dockyard
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_building_construction = {
-									type = dockyard
-									level = 1
-									instant_build = yes
-								}
-							}
-						}
-						if = {
-							limit = {
-								NOT = {
-									any_owned_state = {
-										free_building_slots = {
-											building = dockyard
-											size > 0
-											include_locked = yes
-										}
-									}
-								}
-							}
-							random_state = {
-								limit = {
-									controller = { tag = ROOT }
-									free_building_slots = {
-										building = dockyard
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_building_construction = {
-									type = dockyard
-									level = 1
-									instant_build = yes
-								}
-							}
-						}			
-					}
-						if = {
-							limit = {
-								has_dlc = "Man the Guns"
-							}
-							custom_effect_tooltip = generic_doctrine_effort_9_tt
-							hidden_effect = {
-								create_equipment_variant = {
-									name = "1940 Huge Class"
-									type = ship_hull_carrier_2
-									parent_version = 0
-									modules = {
-										fixed_ship_deck_slot_1 = ship_deck_space
-										fixed_ship_deck_slot_2 = ship_deck_space
-										fixed_ship_anti_air_slot = ship_anti_air_1
-										fixed_ship_radar_slot = empty
-										fixed_ship_engine_slot = carrier_ship_engine_3
-										fixed_ship_secondaries_slot = empty
-										front_1_custom_slot = ship_deck_space
-										mid_1_custom_slot = ship_deck_space
-									}
-								}
-								add_equipment_production = {
-									equipment = {
-										type = ship_hull_carrier_2
-										
-										version_name = "1940 Huge Class"
-									}
-									requested_factories = 1
-									progress = 0.50
-									amount = 1
-								}
-							}	
-						}
-						else = {
-							add_equipment_production = {
-								equipment = {
-									type = carrier_3
-									
-								}
-								requested_factories = 1
-								progress = 0.50
-								amount = 1
-							}
-						}
-
-
-	#Trade Interdiction
-	focus = {
-		id = POL_trade_interdiction
-		icon = GFX_POL_trade_interdiction-136503
-		x = 13
-		y = 1
-		prerequisite = { focus = POL_naval_effort  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		bypass = {
-			 has_tech = trade_interdiction 
+		prerequisite = {
+			focus = POL_ROM_invasion
 		}
-		search_filters = {
-			FOCUS_FILTER_NAVY_XPFOCUS_FILTER_RESEARCH
-		}
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						set_technology = {
-							trade_interdiction = 1
-						}	
-						add_ideas = idea_trade_interdiction
-					
-						navy_experience = 10
-						if = {
-							limit = {
-								any_owned_state = {
-									free_building_slots = {
-										building = dockyard
-										size > 0
-										include_locked = yes
-									}
-								}
-							}
-							random_owned_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = dockyard
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_building_construction = {
-									type = dockyard
-									level = 1
-									instant_build = yes
-								}
-							}
-						}
-						if = {
-							limit = {
-								NOT = {
-									any_owned_state = {
-										free_building_slots = {
-											building = dockyard
-											size > 0
-											include_locked = yes
-										}
-									}
-								}
-							}
-							random_state = {
-								limit = {
-									controller = { tag = ROOT }
-									free_building_slots = {
-										building = dockyard
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_building_construction = {
-									type = dockyard
-									level = 1
-									instant_build = yes
-								}
-							}
-						}			
-					
-		}
-	}
-
-	#Submarine Effort
-	focus = {
-		id = POL_submarine_effort
-		icon = GFX_goal_unknown
-		x = 13
-		y = 2
-		prerequisite = { focus = POL_trade_interdiction  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		bypass = {
-			 has_tech = advanced_ship_hull_submarine 
-		}
-		search_filters = {
-			FOCUS_FILTER_RESEARCH
-		}
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						add_tech_bonus = {
-							name = ss_tech
-							bonus = 1.0
-							uses = 1
-							category = ss_tech
-						}
-					
-		}
-	}
-
-	#Submarine Experiment
-	focus = {
-		id = POL_submarine_experiment
-		icon = GFX_goal_unknown
-		x = 13
-		y = 3
-		prerequisite = { focus = POL_submarine_effort  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		available_if_capitulated = yes
-		available = {
-			
-						has_tech = basic_ship_hull_submarine
-					
-		}
-		completion_reward = {
-			
-						if = {
-							limit = {
-								has_dlc = "Man the Guns"
-							}
-							custom_effect_tooltip = generic_submarine_2_tt
-							hidden_effect = {
-								create_equipment_variant = {
-									name = "1936 Raider Class"
-									type = ship_hull_submarine_2
-									parent_version = 0
-									modules = {
-										fixed_ship_torpedo_slot = ship_torpedo_sub_2
-										fixed_ship_engine_slot = sub_ship_engine_2
-										rear_1_custom_slot = ship_mine_layer_sub
-									}
-								}
-								add_equipment_production = {
-									equipment = {
-										type = ship_hull_submarine_2
-										
-										version_name = "1936 Raider Class"
-									}
-									requested_factories = 1
-									progress = 0.99
-									amount = 1
-								}
-								add_equipment_production = {
-									equipment = {
-										type = ship_hull_submarine_2
-										
-										version_name = "1936 Raider Class"
-									}
-									requested_factories = 1
-									progress = 0.99
-									amount = 1
-								}
-								add_equipment_production = {
-									equipment = {
-										type = ship_hull_submarine_2
-										
-										version_name = "1936 Raider Class"
-									}
-									requested_factories = 1
-									progress = 0.99
-									amount = 1
-								}
-								add_equipment_production = {
-									equipment = {
-										type = ship_hull_submarine_2
-										
-										version_name = "1936 Raider Class"
-									}
-									requested_factories = 1
-									progress = 0.99
-									amount = 1
-								}
-								add_equipment_production = {
-									equipment = {
-										type = ship_hull_submarine_2
-										
-										version_name = "1936 Raider Class"
-									}
-									requested_factories = 1
-									progress = 0.99
-									amount = 1
-								}
-								add_equipment_production = {
-									equipment = {
-										type = ship_hull_submarine_2
-										
-										version_name = "1936 Raider Class"
-									}
-									requested_factories = 1
-									progress = 0.99
-									amount = 1
-								}
-								add_equipment_production = {
-									equipment = {
-										type = ship_hull_submarine_2
-										
-										version_name = "1936 Raider Class"
-									}
-									requested_factories = 1
-									progress = 0.99
-									amount = 1
-								}
-								add_equipment_production = {
-									equipment = {
-										type = ship_hull_submarine_2
-										
-										version_name = "1936 Raider Class"
-									}
-									requested_factories = 1
-									progress = 0.99
-									amount = 1
-								}
-								add_equipment_production = {
-									equipment = {
-										type = ship_hull_submarine_2
-										
-										version_name = "1936 Raider Class"
-									}
-									requested_factories = 1
-									progress = 0.99
-									amount = 1
-								}
-								add_equipment_production = {
-									equipment = {
-										type = ship_hull_submarine_2
-										
-										version_name = "1936 Raider Class"
-									}
-									requested_factories = 1
-									progress = 0.99
-									amount = 1
-								}
-							}	
-						}
-						else = {
-							add_equipment_production = {
-								equipment = {
-									type = submarine_2
-									
-								}
-								requested_factories = 1
-								progress = 0.99
-								amount = 10
-							}
-						}
-					
-		}
-	}
-
-	#Submarine Manufacture
-	focus = {
-		id = POL_submarine_manufacture
-		icon = GFX_goal_unknown
-		x = 13
-		y = 4
-		prerequisite = { focus = POL_submarine_experiment  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						custom_effect_tooltip = available_designer
-						show_ideas_tooltip = generic_submarine_manufacture
-					
-		}
-	}
-
-	#Naional Submarine
-	focus = {
-		id = POL_naional_submarine
-		icon = GFX_goal_unknown
-		x = 13
-		y = 5
-		prerequisite = { focus = POL_submarine_manufacture  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						add_ideas = idea_20_1
-					
-		}
-	}
-
-	#Improve Submarines
-	focus = {
-		id = POL_improve_submarines
-		icon = GFX_goal_unknown
-		x = 13
-		y = 6
-		prerequisite = { focus = POL_naional_submarine  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		search_filters = {
-			FOCUS_FILTER_NAVY_XPFOCUS_FILTER_INDUSTRY
-		}
-		available_if_capitulated = yes
-		available = {
-			
-						has_tech = improved_ship_hull_submarine
-					
-		}
-		completion_reward = {
-			
-						add_doctrine_cost_reduction = {
-							name = navy_doc_bonus
-							cost_reduction = 0.25
-							uses = 1
-							category = naval_doctrine
-						}
-					
-						navy_experience = 10
-						if = {
-							limit = {
-								any_owned_state = {
-									free_building_slots = {
-										building = dockyard
-										size > 0
-										include_locked = yes
-									}
-								}
-							}
-							random_owned_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = dockyard
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_building_construction = {
-									type = dockyard
-									level = 1
-									instant_build = yes
-								}
-							}
-						}
-						if = {
-							limit = {
-								NOT = {
-									any_owned_state = {
-										free_building_slots = {
-											building = dockyard
-											size > 0
-											include_locked = yes
-										}
-									}
-								}
-							}
-							random_state = {
-								limit = {
-									controller = { tag = ROOT }
-									free_building_slots = {
-										building = dockyard
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_building_construction = {
-									type = dockyard
-									level = 1
-									instant_build = yes
-								}
-							}
-						}			
-					}
-						if = {
-							limit = {
-								any_owned_state = {
-									free_building_slots = {
-										building = dockyard
-										size > 0
-										include_locked = yes
-									}
-								}
-							}
-							random_owned_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = dockyard
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_building_construction = {
-									type = dockyard
-									level = 1
-									instant_build = yes
-								}
-							}
-						}
-						if = {
-							limit = {
-								NOT = {
-									any_owned_state = {
-										free_building_slots = {
-											building = dockyard
-											size > 0
-											include_locked = yes
-										}
-									}
-								}
-							}
-							random_state = {
-								limit = {
-									controller = { tag = ROOT }
-									free_building_slots = {
-										building = dockyard
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_building_construction = {
-									type = dockyard
-									level = 1
-									instant_build = yes
-								}
-							}
-						}			
-					}
-						if = {
-							limit = {
-								has_dlc = "Man the Guns"
-							}
-							custom_effect_tooltip = generic_doctrine_effort_10_tt
-							hidden_effect = {
-								create_equipment_variant = {
-									name = "1940 Raider Class"
-									type = ship_hull_submarine_3
-									parent_version = 0
-									modules = {
-										fixed_ship_torpedo_slot = ship_torpedo_sub_3
-										fixed_ship_engine_slot = sub_ship_engine_3
-										front_1_custom_slot = ship_torpedo_sub_3
-										rear_1_custom_slot = ship_mine_layer_sub
-									}
-								}
-								add_equipment_production = {
-									equipment = {
-										type = ship_hull_submarine_3
-										
-										version_name = "1940 Raider Class"
-									}
-									requested_factories = 1
-									progress = 0.50
-									amount = 1
-								}
-								add_equipment_production = {
-									equipment = {
-										type = ship_hull_submarine_3
-										
-										version_name = "1940 Raider Class"
-									}
-									requested_factories = 1
-									progress = 0.50
-									amount = 1
-								}
-								add_equipment_production = {
-									equipment = {
-										type = ship_hull_submarine_3
-										
-										version_name = "1940 Raider Class"
-									}
-									requested_factories = 1
-									progress = 0.50
-									amount = 1
-								}
-								add_equipment_production = {
-									equipment = {
-										type = ship_hull_submarine_3
-										
-										version_name = "1940 Raider Class"
-									}
-									requested_factories = 1
-									progress = 0.50
-									amount = 1
-								}
-								add_equipment_production = {
-									equipment = {
-										type = ship_hull_submarine_3
-										
-										version_name = "1940 Raider Class"
-									}
-									requested_factories = 1
-									progress = 0.50
-									amount = 1
-								}
-								add_equipment_production = {
-									equipment = {
-										type = ship_hull_submarine_3
-										
-										version_name = "1940 Raider Class"
-									}
-									requested_factories = 1
-									progress = 0.50
-									amount = 1
-								}
-								add_equipment_production = {
-									equipment = {
-										type = ship_hull_submarine_3
-										
-										version_name = "1940 Raider Class"
-									}
-									requested_factories = 1
-									progress = 0.50
-									amount = 1
-								}
-								add_equipment_production = {
-									equipment = {
-										type = ship_hull_submarine_3
-										
-										version_name = "1940 Raider Class"
-									}
-									requested_factories = 1
-									progress = 0.50
-									amount = 1
-								}
-								add_equipment_production = {
-									equipment = {
-										type = ship_hull_submarine_3
-										
-										version_name = "1940 Raider Class"
-									}
-									requested_factories = 1
-									progress = 0.50
-									amount = 1
-								}
-								add_equipment_production = {
-									equipment = {
-										type = ship_hull_submarine_3
-										
-										version_name = "1940 Raider Class"
-									}
-									requested_factories = 1
-									progress = 0.50
-									amount = 1
-								}
-								add_equipment_production = {
-									equipment = {
-										type = ship_hull_submarine_3
-										
-										version_name = "1940 Raider Class"
-									}
-									requested_factories = 1
-									progress = 0.50
-									amount = 1
-								}
-								add_equipment_production = {
-									equipment = {
-										type = ship_hull_submarine_3
-										
-										version_name = "1940 Raider Class"
-									}
-									requested_factories = 1
-									progress = 0.50
-									amount = 1
-								}
-								add_equipment_production = {
-									equipment = {
-										type = ship_hull_submarine_3
-										
-										version_name = "1940 Raider Class"
-									}
-									requested_factories = 1
-									progress = 0.50
-									amount = 1
-								}
-								add_equipment_production = {
-									equipment = {
-										type = ship_hull_submarine_3
-										
-										version_name = "1940 Raider Class"
-									}
-									requested_factories = 1
-									progress = 0.50
-									amount = 1
-								}
-								add_equipment_production = {
-									equipment = {
-										type = ship_hull_submarine_3
-										
-										version_name = "1940 Raider Class"
-									}
-									requested_factories = 1
-									progress = 0.50
-									amount = 1
-								}
-								add_equipment_production = {
-									equipment = {
-										type = ship_hull_submarine_3
-										
-										version_name = "1940 Raider Class"
-									}
-									requested_factories = 1
-									progress = 0.50
-									amount = 1
-								}
-								add_equipment_production = {
-									equipment = {
-										type = ship_hull_submarine_3
-										
-										version_name = "1940 Raider Class"
-									}
-									requested_factories = 1
-									progress = 0.50
-									amount = 1
-								}
-								add_equipment_production = {
-									equipment = {
-										type = ship_hull_submarine_3
-										
-										version_name = "1940 Raider Class"
-									}
-									requested_factories = 1
-									progress = 0.50
-									amount = 1
-								}
-								add_equipment_production = {
-									equipment = {
-										type = ship_hull_submarine_3
-										
-										version_name = "1940 Raider Class"
-									}
-									requested_factories = 1
-									progress = 0.50
-									amount = 1
-								}
-								add_equipment_production = {
-									equipment = {
-										type = ship_hull_submarine_3
-										
-										version_name = "1940 Raider Class"
-									}
-									requested_factories = 1
-									progress = 0.50
-									amount = 1
-								}																																														
-							}	
-						}
-						else = {
-							add_equipment_production = {
-								equipment = {
-									type = submarine_3
-									
-								}
-								requested_factories = 1
-								progress = 0.50
-								amount = 20
-							}
-						}
-					
-		complete_tooltip = {
-			add_extra_state_shared_building_slots = 1
-			add_building_construction = {
-				type = dockyard
-				level = 1
-				instant_build = yes
+		completion_reward = { 
+			ROM = { set_cosmetic_tag = GBF }
 			}
 		}
 
-	#Module I
+	# Industry Tree
 	focus = {
-		id = POL_module_i
-		icon = GFX_goal_generic_production2
-		x = 1
-		y = 3
-		prerequisite = { focus = POL_cruiser_effort  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		search_filters = {
-			FOCUS_FILTER_RESEARCH
-		}
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						add_tech_bonus = {
-							name = ship_modules_tech
-							bonus = 1.0
-							uses = 1
-							category = ship_modules_tech
-						}
-					
-		}
-	}
-
-	#Module II
-	focus = {
-		id = POL_module_ii
-		icon = GFX_goal_generic_production2
-		x = 1
-		y = 4
-		prerequisite = { focus = POL_module_i  } prerequisite = { focus = POL_cruiser_experiment  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		search_filters = {
-			FOCUS_FILTER_RESEARCH
-		}
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						add_tech_bonus = {
-							name = ship_modules_tech
-							bonus = 1.0
-							uses = 1
-							category = ship_modules_tech
-						}
-					
-		}
-	}
-
-	#Module III
-	focus = {
-		id = POL_module_iii
-		icon = GFX_goal_generic_production2
-		x = 1
-		y = 5
-		prerequisite = { focus = POL_module_ii  } prerequisite = { focus = POL_cruiser_manufacture  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		search_filters = {
-			FOCUS_FILTER_RESEARCH
-		}
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						add_tech_bonus = {
-							name = ship_modules_tech
-							bonus = 1.0
-							uses = 1
-							category = ship_modules_tech
-						}
-					
-		}
-	}
-
-	#Minesweeping Device I
-	focus = {
-		id = POL_minesweeping_device_i
-		icon = GFX_goal_unknown
-		x = 5
-		y = 3
-		prerequisite = { focus = POL_cruiser_effort  } prerequisite = { focus = POL_destroyer_effort  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		search_filters = {
-			FOCUS_FILTER_RESEARCH
-		}
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						add_tech_bonus = {
-							name = naval_minesweeping
-							bonus = 1.0
-							uses = 1
-							category = naval_minesweeping
-						}
-					
-		}
-	}
-
-	#Minesweeping Device II
-	focus = {
-		id = POL_minesweeping_device_ii
-		icon = GFX_goal_unknown
-		x = 5
-		y = 4
-		prerequisite = { focus = POL_minesweeping_device_i  } prerequisite = { focus = POL_cruiser_experiment  } prerequisite = { focus = POL_destroyer_experiment  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		search_filters = {
-			FOCUS_FILTER_RESEARCH
-		}
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						add_tech_bonus = {
-							name = naval_minesweeping
-							bonus = 1.0
-							uses = 1
-							category = naval_minesweeping
-						}
-					
-		}
-	}
-
-	#Module IV
-	focus = {
-		id = POL_module_iv
-		icon = GFX_goal_generic_production2
-		x = 5
-		y = 5
-		prerequisite = { focus = POL_minesweeping_device_ii  } prerequisite = { focus = POL_cruiser_manufacture  } prerequisite = { focus = POL_destroyer_manufacture  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		search_filters = {
-			FOCUS_FILTER_RESEARCH
-		}
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						add_tech_bonus = {
-							name = ship_modules_tech
-							bonus = 1.0
-							uses = 1
-							category = ship_modules_tech
-						}
-					
-		}
-	}
-
-	#Mine warfare I
-	focus = {
-		id = POL_mine_warfare_i
-		icon = GFX_goal_unknown
-		x = 11
-		y = 3
-		prerequisite = { focus = POL_submarine_effort  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		search_filters = {
-			FOCUS_FILTER_RESEARCH
-		}
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						add_tech_bonus = {
-							name = naval_mines
-							bonus = 1.0
-							uses = 1
-							category = naval_mines
-						}
-					
-		}
-	}
-
-	#Module VIII
-	focus = {
-		id = POL_module_viii
-		icon = GFX_goal_generic_production2
-		x = 11
-		y = 4
-		prerequisite = { focus = POL_mine_warfare_i  } prerequisite = { focus = POL_submarine_experiment  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		search_filters = {
-			FOCUS_FILTER_RESEARCH
-		}
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						add_tech_bonus = {
-							name = ship_modules_tech
-							bonus = 1.0
-							uses = 1
-							category = ship_modules_tech
-						}
-					
-		}
-	}
-
-	#Module IX
-	focus = {
-		id = POL_module_ix
-		icon = GFX_goal_generic_production2
-		x = 11
-		y = 5
-		prerequisite = { focus = POL_module_viii  } prerequisite = { focus = POL_submarine_manufacture  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		search_filters = {
-			FOCUS_FILTER_RESEARCH
-		}
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						add_tech_bonus = {
-							name = ship_modules_tech
-							bonus = 1.0
-							uses = 1
-							category = ship_modules_tech
-						}
-					
-		}
-	}
-
-	#Mine warfare II
-	focus = {
-		id = POL_mine_warfare_ii
-		icon = GFX_goal_unknown
-		x = 15
-		y = 3
-		prerequisite = { focus = POL_submarine_effort  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		search_filters = {
-			FOCUS_FILTER_RESEARCH
-		}
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						add_tech_bonus = {
-							name = naval_mines
-							bonus = 1.0
-							uses = 1
-							category = naval_mines
-						}
-					
-		}
-	}
-
-	#Module X
-	focus = {
-		id = POL_module_x
-		icon = GFX_goal_generic_production2
-		x = 15
-		y = 4
-		prerequisite = { focus = POL_mine_warfare_ii  } prerequisite = { focus = POL_submarine_experiment  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		search_filters = {
-			FOCUS_FILTER_RESEARCH
-		}
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						add_tech_bonus = {
-							name = ship_modules_tech
-							bonus = 1.0
-							uses = 1
-							category = ship_modules_tech
-						}
-					
-		}
-	}
-
-	#Module XI
-	focus = {
-		id = POL_module_xi
-		icon = GFX_goal_generic_production2
-		x = 15
-		y = 5
-		prerequisite = { focus = POL_module_x  } prerequisite = { focus = POL_submarine_manufacture  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		search_filters = {
-			FOCUS_FILTER_RESEARCH
-		}
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						add_tech_bonus = {
-							name = ship_modules_tech
-							bonus = 1.0
-							uses = 1
-							category = ship_modules_tech
-						}
-					
-		}
-	}
-
-	#Transport I
-	focus = {
-		id = POL_transport_i
-		icon = GFX_goal_unknown
-		x = 21
-		y = 3
-		prerequisite = { focus = POL_carrier_effort  } prerequisite = { focus = POL_battleship_effort  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		search_filters = {
-			FOCUS_FILTER_RESEARCH
-		}
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						add_tech_bonus = {
-							name = tp_tech
-							bonus = 1.0
-							uses = 1
-							category = tp_tech
-						}
-					
-		}
-	}
-
-	#Transport II
-	focus = {
-		id = POL_transport_ii
-		icon = GFX_goal_unknown
-		x = 21
-		y = 4
-		prerequisite = { focus = POL_transport_i  } prerequisite = { focus = POL_battleship_experiment  } prerequisite = { focus = POL_carrier_experiment  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		search_filters = {
-			FOCUS_FILTER_RESEARCH
-		}
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						add_tech_bonus = {
-							name = tp_tech
-							bonus = 1.0
-							uses = 1
-							category = tp_tech
-						}
-					
-		}
-	}
-
-	#Module XV
-	focus = {
-		id = POL_module_xv
-		icon = GFX_goal_generic_production2
-		x = 21
-		y = 5
-		prerequisite = { focus = POL_transport_ii  } prerequisite = { focus = POL_carrier_manufacture  } prerequisite = { focus = POL_battleship_manufacture  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		search_filters = {
-			FOCUS_FILTER_RESEARCH
-		}
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						add_tech_bonus = {
-							name = ship_modules_tech
-							bonus = 1.0
-							uses = 1
-							category = ship_modules_tech
-						}
-					
-		}
-	}
-
-	#Module XVI
-	focus = {
-		id = POL_module_xvi
-		icon = GFX_goal_generic_production2
-		x = 25
-		y = 3
-		prerequisite = { focus = POL_carrier_effort  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		search_filters = {
-			FOCUS_FILTER_RESEARCH
-		}
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						add_tech_bonus = {
-							name = ship_modules_tech
-							bonus = 1.0
-							uses = 1
-							category = ship_modules_tech
-						}
-					
-		}
-	}
-
-	#Module XVII
-	focus = {
-		id = POL_module_xvii
-		icon = GFX_goal_generic_production2
-		x = 25
-		y = 4
-		prerequisite = { focus = POL_module_xvi  } prerequisite = { focus = POL_carrier_experiment  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		search_filters = {
-			FOCUS_FILTER_RESEARCH
-		}
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						add_tech_bonus = {
-							name = ship_modules_tech
-							bonus = 1.0
-							uses = 1
-							category = ship_modules_tech
-						}
-					
-		}
-	}
-
-	#Module XVIII
-	focus = {
-		id = POL_module_xviii
-		icon = GFX_goal_generic_production2
-		x = 25
-		y = 5
-		prerequisite = { focus = POL_module_xvii  } prerequisite = { focus = POL_carrier_manufacture  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		search_filters = {
-			FOCUS_FILTER_RESEARCH
-		}
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						add_tech_bonus = {
-							name = ship_modules_tech
-							bonus = 1.0
-							uses = 1
-							category = ship_modules_tech
-						}
-					
-		}
-	}
-
-	#Module V
-	focus = {
-		id = POL_module_v
-		icon = GFX_goal_generic_production2
-		x = 9
-		y = 3
-		prerequisite = { focus = POL_destroyer_effort  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		search_filters = {
-			FOCUS_FILTER_RESEARCH
-		}
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						add_tech_bonus = {
-							name = ship_modules_tech
-							bonus = 1.0
-							uses = 1
-							category = ship_modules_tech
-						}
-					
-		}
-	}
-
-	#Module VI
-	focus = {
-		id = POL_module_vi
-		icon = GFX_goal_generic_production2
-		x = 9
-		y = 4
-		prerequisite = { focus = POL_module_v  } prerequisite = { focus = POL_destroyer_experiment  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		search_filters = {
-			FOCUS_FILTER_RESEARCH
-		}
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						add_tech_bonus = {
-							name = ship_modules_tech
-							bonus = 1.0
-							uses = 1
-							category = ship_modules_tech
-						}
-					
-		}
-	}
-
-	#Module VII
-	focus = {
-		id = POL_module_vii
-		icon = GFX_goal_generic_production2
-		x = 9
-		y = 5
-		prerequisite = { focus = POL_module_vi  } prerequisite = { focus = POL_destroyer_manufacture  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		search_filters = {
-			FOCUS_FILTER_RESEARCH
-		}
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						add_tech_bonus = {
-							name = ship_modules_tech
-							bonus = 1.0
-							uses = 1
-							category = ship_modules_tech
-						}
-					
-		}
-	}
-
-	#Module XII
-	focus = {
-		id = POL_module_xii
-		icon = GFX_goal_generic_production2
-		x = 17
-		y = 3
-		prerequisite = { focus = POL_battleship_effort  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		search_filters = {
-			FOCUS_FILTER_RESEARCH
-		}
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						add_tech_bonus = {
-							name = ship_modules_tech
-							bonus = 1.0
-							uses = 1
-							category = ship_modules_tech
-						}
-					
-		}
-	}
-
-	#Module XIII
-	focus = {
-		id = POL_module_xiii
-		icon = GFX_goal_generic_production2
-		x = 17
-		y = 4
-		prerequisite = { focus = POL_module_xii  } prerequisite = { focus = POL_battleship_experiment  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		search_filters = {
-			FOCUS_FILTER_RESEARCH
-		}
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						add_tech_bonus = {
-							name = ship_modules_tech
-							bonus = 1.0
-							uses = 1
-							category = ship_modules_tech
-						}
-					
-		}
-	}
-
-	#Module XIV
-	focus = {
-		id = POL_module_xiv
-		icon = GFX_goal_generic_production2
-		x = 17
-		y = 5
-		prerequisite = { focus = POL_module_xiii  } prerequisite = { focus = POL_battleship_manufacture  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		search_filters = {
-			FOCUS_FILTER_RESEARCH
-		}
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						add_tech_bonus = {
-							name = ship_modules_tech
-							bonus = 1.0
-							uses = 1
-							category = ship_modules_tech
-						}
-					
-		}
-	}
-
-	#Defensive Leader
-	focus = {
-		id = POL_defensive_leader
-		icon = GFX_goal_unknown
-		x = 10
-		y = 7
-		prerequisite = { focus = POL_improve_cruisers  } prerequisite = { focus = POL_improve_destroyers  } prerequisite = { focus = POL_improve_battleships  } prerequisite = { focus = POL_improve_carriers  } prerequisite = { focus = POL_improve_submarines  }
-		cost = 5
-		mutually_exclusive = { focus = POL_farsighted_leader  focus = POL_offensive_leader  focus = POL_coordination_leader  }
-		ai_will_do = { factor = 1 }
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						add_ideas = idea_navy_general_1
-					
-		}
-	}
-
-	#Farsighted Leader
-	focus = {
-		id = POL_farsighted_leader
-		icon = GFX_goal_unknown
-		x = 12
-		y = 7
-		prerequisite = { focus = POL_improve_cruisers  } prerequisite = { focus = POL_improve_destroyers  } prerequisite = { focus = POL_improve_battleships  } prerequisite = { focus = POL_improve_carriers  } prerequisite = { focus = POL_improve_submarines  }
-		cost = 5
-		mutually_exclusive = { focus = POL_defensive_leader  focus = POL_offensive_leader  focus = POL_coordination_leader  }
-		ai_will_do = { factor = 1 }
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						add_ideas = idea_navy_general_2
-					
-		}
-	}
-
-	#Offensive Leader
-	focus = {
-		id = POL_offensive_leader
-		icon = GFX_goal_unknown
-		x = 14
-		y = 7
-		prerequisite = { focus = POL_improve_cruisers  } prerequisite = { focus = POL_improve_destroyers  } prerequisite = { focus = POL_improve_battleships  } prerequisite = { focus = POL_improve_carriers  } prerequisite = { focus = POL_improve_submarines  }
-		cost = 5
-		mutually_exclusive = { focus = POL_farsighted_leader  focus = POL_defensive_leader  focus = POL_coordination_leader  }
-		ai_will_do = { factor = 1 }
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						add_ideas = idea_navy_general_3
-					
-		}
-	}
-
-	#Coordination Leader
-	focus = {
-		id = POL_coordination_leader
-		icon = GFX_goal_unknown
-		x = 16
-		y = 7
-		prerequisite = { focus = POL_improve_cruisers  } prerequisite = { focus = POL_improve_destroyers  } prerequisite = { focus = POL_improve_battleships  } prerequisite = { focus = POL_improve_carriers  } prerequisite = { focus = POL_improve_submarines  }
-		cost = 5
-		mutually_exclusive = { focus = POL_farsighted_leader  focus = POL_offensive_leader  focus = POL_defensive_leader  }
-		ai_will_do = { factor = 1 }
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						add_ideas = idea_navy_general_4
-					
-		}
-	}
-
-	#Naval Idea
-	focus = {
-		id = POL_naval_idea
-		icon = GFX_goal_unknown
-		x = 13
-		y = 8
-		prerequisite = { focus = POL_coordination_leader  } prerequisite = { focus = POL_offensive_leader  } prerequisite = { focus = POL_farsighted_leader  } prerequisite = { focus = POL_defensive_leader  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						add_ideas = idea_reward_3
-					
-		}
-	}
-
-	#Industrial Effort
-	focus = {
-		id = POL_industrial_effort
-		icon = GFX_goal_unknown
-		x = 35
+		id = POL_industrial_1
+		icon = GFX_goal_generic_construct_civilian
+		x = 24
 		y = 0
-		cost = 5
-		search_filters = {
-			FOCUS_FILTER_INDUSTRYFOCUS_FILTER_RESEARCH
-		}
-		available_if_capitulated = yes
+		cost = 10
 		completion_reward = {
-			
-						add_tech_bonus = {
-							name = industrial_bonus
-							bonus = 1.0
-							uses = 1
-							category = industry
-						}
-					
-						if = {
-							limit = {
-								any_owned_state = {
-									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
-									}
-								}
-							}
-							random_owned_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-							}
-						}
-						if = {
-							limit = {
-								NOT = {
-									any_owned_state = {
-										free_building_slots = {
-											building = arms_factory
-											size > 0
-											include_locked = yes
-										}
-									}
-								}
-							}
-							random_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-							}
-						}			
-					
-		}
-		ai_will_do = { factor = 1 }
-	}
+			add_building_construction_speed = 0.1
+			add_building = {
+				type = civilian_factory
+				location = random_state
+				limit = 2
+				can_be_in_same_state = no
+				}
+        	}
+    	}
 
-	#Construction Effort I
 	focus = {
-		id = POL_construction_effort_i
-		icon = GFX_goal_unknown
+		id = POL_industrial_N
+		icon = GFX_goal_generic_build_navy
 		x = 30
-		y = 1
-		prerequisite = { focus = POL_industrial_effort  }
-		cost = 5
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
-		available_if_capitulated = yes
-		ai_will_do = { factor = 1 }
-		bypass = {
-			
-						custom_trigger_tooltip = {
-							tooltip = construction_effort_tt
-							all_controlled_state = {
-								free_building_slots = {
-									building = industrial_complex
-									size < 1
-									include_locked = yes
-								}
-							}				
-						}
-					
-		}
-		completion_reward = {
-			
-						if = {
-							limit = {
-								any_owned_state = {
-									free_building_slots = {
-										building = industrial_complex
-										size > 0
-										include_locked = yes
-									}
-								}
-							}
-							random_owned_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = industrial_complex
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_building_construction = {
-									type = industrial_complex
-									level = 1
-									instant_build = yes
-								}
-							}
-						}
-						if = {
-							limit = {
-								NOT = {
-									any_owned_state = {
-										free_building_slots = {
-											building = industrial_complex
-											size > 0
-											include_locked = yes
-										}
-									}
-								}
-							}
-							random_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = industrial_complex
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_building_construction = {
-									type = industrial_complex
-									level = 1
-									instant_build = yes
-								}
-							}
-						}			
-					
-		}
+		y = 0
+		cost = 10
+		completion_reward = { 
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+					}
+				}
+			}
 	}
-
-	#Construction Effort II
+	# Navy Industry
 	focus = {
-		id = POL_construction_effort_ii
-		icon = GFX_goal_unknown
-		x = 30
-		y = 2
-		prerequisite = { focus = POL_construction_effort_i  }
-		cost = 5
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
-		available_if_capitulated = yes
-		ai_will_do = { factor = 1 }
-		bypass = {
-			
-						custom_trigger_tooltip = {
-							tooltip = construction_effort_tt
-							all_controlled_state = {
-								free_building_slots = {
-									building = industrial_complex
-									size < 1
-									include_locked = yes
-								}
-							}				
-						}
-					
-		}
-		completion_reward = {
-			
-						if = {
-							limit = {
-								any_owned_state = {
-									free_building_slots = {
-										building = industrial_complex
-										size > 0
-										include_locked = yes
-									}
-								}
-							}
-							random_owned_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = industrial_complex
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_building_construction = {
-									type = industrial_complex
-									level = 1
-									instant_build = yes
-								}
-							}
-						}
-						if = {
-							limit = {
-								NOT = {
-									any_owned_state = {
-										free_building_slots = {
-											building = industrial_complex
-											size > 0
-											include_locked = yes
-										}
-									}
-								}
-							}
-							random_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = industrial_complex
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_building_construction = {
-									type = industrial_complex
-									level = 1
-									instant_build = yes
-								}
-							}
-						}			
-					
-		}
-	}
-
-	#Construction Effort III
-	focus = {
-		id = POL_construction_effort_iii
-		icon = GFX_goal_unknown
-		x = 30
-		y = 3
-		prerequisite = { focus = POL_construction_effort_ii  }
-		cost = 5
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
-		available_if_capitulated = yes
-		ai_will_do = { factor = 1 }
-		bypass = {
-			
-						custom_trigger_tooltip = {
-							tooltip = construction_effort_tt
-							all_controlled_state = {
-								free_building_slots = {
-									building = industrial_complex
-									size < 1
-									include_locked = yes
-								}
-							}				
-						}
-					
-		}
-		completion_reward = {
-			
-						if = {
-							limit = {
-								any_owned_state = {
-									free_building_slots = {
-										building = industrial_complex
-										size > 0
-										include_locked = yes
-									}
-								}
-							}
-							random_owned_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = industrial_complex
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_building_construction = {
-									type = industrial_complex
-									level = 1
-									instant_build = yes
-								}
-							}
-						}
-						if = {
-							limit = {
-								NOT = {
-									any_owned_state = {
-										free_building_slots = {
-											building = industrial_complex
-											size > 0
-											include_locked = yes
-										}
-									}
-								}
-							}
-							random_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = industrial_complex
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_building_construction = {
-									type = industrial_complex
-									level = 1
-									instant_build = yes
-								}
-							}
-						}			
-					
-		}
-	}
-
-	#Construction Effort IV
-	focus = {
-		id = POL_construction_effort_iv
-		icon = GFX_goal_unknown
-		x = 30
-		y = 4
-		prerequisite = { focus = POL_construction_effort_iii  }
-		cost = 5
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
-		available_if_capitulated = yes
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-			
-						if = {
-							limit = {
-								any_owned_state = {
-									free_building_slots = {
-										building = industrial_complex
-										size > 0
-										include_locked = yes
-									}
-								}
-							}
-							random_owned_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = industrial_complex
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_building_construction = {
-									type = industrial_complex
-									level = 1
-									instant_build = yes
-								}
-							}
-						}
-						if = {
-							limit = {
-								NOT = {
-									any_owned_state = {
-										free_building_slots = {
-											building = industrial_complex
-											size > 0
-											include_locked = yes
-										}
-									}
-								}
-							}
-							random_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = industrial_complex
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_building_construction = {
-									type = industrial_complex
-									level = 1
-									instant_build = yes
-								}
-							}
-						}			
-					
-						add_offsite_building = { type = industrial_complex level = 1 }
-					
-		}
-	}
-
-	#Armament Effort I
-	focus = {
-		id = POL_armament_effort_i
-		icon = GFX_POL_armament_effort_i-177633
-		x = 40
-		y = 1
-		prerequisite = { focus = POL_industrial_effort  }
-		cost = 5
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
-		available_if_capitulated = yes
-		ai_will_do = { factor = 1 }
-		bypass = {
-			
-						custom_trigger_tooltip = {
-							tooltip = production_effort_tt
-							all_controlled_state = {
-								free_building_slots = {
-									building = arms_factory
-									size < 1
-									include_locked = yes
-								}
-							}				
-						}
-					
-		}
-		completion_reward = {
-			
-						if = {
-							limit = {
-								any_owned_state = {
-									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
-									}
-								}
-							}
-							random_owned_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_building_construction = {
-									type = arms_factory
-									level = 1
-									instant_build = yes
-								}
-							}
-						}
-						if = {
-							limit = {
-								NOT = {
-									any_owned_state = {
-										free_building_slots = {
-											building = arms_factory
-											size > 0
-											include_locked = yes
-										}
-									}
-								}
-							}
-							random_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_building_construction = {
-									type = arms_factory
-									level = 1
-									instant_build = yes
-								}
-							}
-						}			
-					
-		}
-	}
-
-	#Armament Effort II
-	focus = {
-		id = POL_armament_effort_ii
-		icon = GFX_goal_unknown
-		x = 40
-		y = 2
-		prerequisite = { focus = POL_armament_effort_i  }
-		cost = 5
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
-		available_if_capitulated = yes
-		ai_will_do = { factor = 1 }
-		bypass = {
-			
-						custom_trigger_tooltip = {
-							tooltip = production_effort_tt
-							all_controlled_state = {
-								free_building_slots = {
-									building = arms_factory
-									size < 1
-									include_locked = yes
-								}
-							}				
-						}
-					
-		}
-		completion_reward = {
-			
-						if = {
-							limit = {
-								any_owned_state = {
-									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
-									}
-								}
-							}
-							random_owned_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_building_construction = {
-									type = arms_factory
-									level = 1
-									instant_build = yes
-								}
-							}
-						}
-						if = {
-							limit = {
-								NOT = {
-									any_owned_state = {
-										free_building_slots = {
-											building = arms_factory
-											size > 0
-											include_locked = yes
-										}
-									}
-								}
-							}
-							random_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_building_construction = {
-									type = arms_factory
-									level = 1
-									instant_build = yes
-								}
-							}
-						}			
-					
-		}
-	}
-
-	#Armament Effort III
-	focus = {
-		id = POL_armament_effort_iii
-		icon = GFX_goal_unknown
-		x = 40
-		y = 3
-		prerequisite = { focus = POL_armament_effort_ii  }
-		cost = 5
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
-		available_if_capitulated = yes
-		ai_will_do = { factor = 1 }
-		bypass = {
-			
-						custom_trigger_tooltip = {
-							tooltip = production_effort_tt
-							all_controlled_state = {
-								free_building_slots = {
-									building = arms_factory
-									size < 1
-									include_locked = yes
-								}
-							}				
-						}
-					
-		}
-		completion_reward = {
-			
-						if = {
-							limit = {
-								any_owned_state = {
-									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
-									}
-								}
-							}
-							random_owned_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_building_construction = {
-									type = arms_factory
-									level = 1
-									instant_build = yes
-								}
-							}
-						}
-						if = {
-							limit = {
-								NOT = {
-									any_owned_state = {
-										free_building_slots = {
-											building = arms_factory
-											size > 0
-											include_locked = yes
-										}
-									}
-								}
-							}
-							random_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_building_construction = {
-									type = arms_factory
-									level = 1
-									instant_build = yes
-								}
-							}
-						}			
-					
-		}
-	}
-
-	#Armament Effort IV
-	focus = {
-		id = POL_armament_effort_iv
-		icon = GFX_goal_unknown
-		x = 40
-		y = 4
-		prerequisite = { focus = POL_armament_effort_iii  }
-		cost = 5
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
-		ai_will_do = { factor = 1 }
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						if = {
-							limit = {
-								any_owned_state = {
-									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
-									}
-								}
-							}
-							random_owned_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_building_construction = {
-									type = arms_factory
-									level = 1
-									instant_build = yes
-								}
-							}
-						}
-						if = {
-							limit = {
-								NOT = {
-									any_owned_state = {
-										free_building_slots = {
-											building = arms_factory
-											size > 0
-											include_locked = yes
-										}
-									}
-								}
-							}
-							random_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_building_construction = {
-									type = arms_factory
-									level = 1
-									instant_build = yes
-								}
-							}
-						}			
-					
-						add_offsite_building = { type = arms_factory level = 1 }
-					
-		}
-
-	#Infrastructure Effort I
-	focus = {
-		id = POL_infrastructure_effort_i
-		icon = GFX_goal_unknown
-		x = 34
-		y = 1
-		prerequisite = { focus = POL_industrial_effort  }
-		cost = 5
-		search_filters = {
-			FOCUS_FILTER_INDUSTRYFOCUS_FILTER_RESEARCH
-		}
-		available_if_capitulated = yes
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-			
-						if = {
-							limit = {
-								any_owned_state = {
-									free_building_slots = {
-										building = infrastructure
-										size > 0
-									}
-								}
-							}
-							random_owned_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = infrastructure
-										size > 0
-									}
-								}
-								add_building_construction = {
-									type = infrastructure
-									level = 1
-									instant_build = yes
-								}
-							}
-						}
-						if = {
-							limit = {
-								NOT = {
-									any_owned_state = {
-										free_building_slots = {
-											building = infrastructure
-											size > 0
-										}
-									}
-								}
-							}
-							random_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = infrastructure
-										size > 0
-									}
-								}
-								add_building_construction = {
-									type = infrastructure
-									level = 1
-									instant_build = yes
-								}
-							}
-						}			
-					
-						if = {
-							limit = {
-								any_owned_state = {
-									free_building_slots = {
-										building = infrastructure
-										size > 0
-									}
-								}
-							}
-							random_owned_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = infrastructure
-										size > 0
-									}
-								}
-								add_building_construction = {
-									type = infrastructure
-									level = 1
-									instant_build = yes
-								}
-							}
-						}
-						if = {
-							limit = {
-								NOT = {
-									any_owned_state = {
-										free_building_slots = {
-											building = infrastructure
-											size > 0
-										}
-									}
-								}
-							}
-							random_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = infrastructure
-										size > 0
-									}
-								}
-								add_building_construction = {
-									type = infrastructure
-									level = 1
-									instant_build = yes
-								}
-							}
-						}			
-					}
-						if = {
-							limit = {
-								any_owned_state = {
-									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
-									}
-								}
-							}
-							random_owned_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-							}
-						}
-						if = {
-							limit = {
-								NOT = {
-									any_owned_state = {
-										free_building_slots = {
-											building = arms_factory
-											size > 0
-											include_locked = yes
-										}
-									}
-								}
-							}
-							random_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-							}
-						}			
-					}
-						add_tech_bonus = {
-							name = industrial_bonus
-							bonus = 0.5
-							uses = 1
-							category = industry
-						}
-					
-		}
-
-	#Infrastructure Effort II
-	focus = {
-		id = POL_infrastructure_effort_ii
-		icon = GFX_goal_unknown
-		x = 34
-		y = 2
-		prerequisite = { focus = POL_infrastructure_effort_i  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		search_filters = {
-			FOCUS_FILTER_INDUSTRYFOCUS_FILTER_RESEARCH
-		}
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						if = {
-							limit = {
-								any_owned_state = {
-									free_building_slots = {
-										building = infrastructure
-										size > 0
-									}
-								}
-							}
-							random_owned_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = infrastructure
-										size > 0
-									}
-								}
-								add_building_construction = {
-									type = infrastructure
-									level = 1
-									instant_build = yes
-								}
-							}
-						}
-						if = {
-							limit = {
-								NOT = {
-									any_owned_state = {
-										free_building_slots = {
-											building = infrastructure
-											size > 0
-										}
-									}
-								}
-							}
-							random_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = infrastructure
-										size > 0
-									}
-								}
-								add_building_construction = {
-									type = infrastructure
-									level = 1
-									instant_build = yes
-								}
-							}
-						}			
-					
-						if = {
-							limit = {
-								any_owned_state = {
-									free_building_slots = {
-										building = infrastructure
-										size > 0
-									}
-								}
-							}
-							random_owned_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = infrastructure
-										size > 0
-									}
-								}
-								add_building_construction = {
-									type = infrastructure
-									level = 1
-									instant_build = yes
-								}
-							}
-						}
-						if = {
-							limit = {
-								NOT = {
-									any_owned_state = {
-										free_building_slots = {
-											building = infrastructure
-											size > 0
-										}
-									}
-								}
-							}
-							random_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = infrastructure
-										size > 0
-									}
-								}
-								add_building_construction = {
-									type = infrastructure
-									level = 1
-									instant_build = yes
-								}
-							}
-						}			
-					}
-						if = {
-							limit = {
-								any_owned_state = {
-									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
-									}
-								}
-							}
-							random_owned_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-							}
-						}
-						if = {
-							limit = {
-								NOT = {
-									any_owned_state = {
-										free_building_slots = {
-											building = arms_factory
-											size > 0
-											include_locked = yes
-										}
-									}
-								}
-							}
-							random_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-							}
-						}			
-					}
-						add_tech_bonus = {
-							name = industrial_bonus
-							bonus = 0.5
-							uses = 1
-							category = industry
-						}
-
-	#Infrastructure Effort III
-	focus = {
-		id = POL_infrastructure_effort_iii
-		icon = GFX_goal_unknown
-		x = 34
-		y = 3
-		prerequisite = { focus = POL_infrastructure_effort_ii  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		search_filters = {
-			FOCUS_FILTER_INDUSTRYFOCUS_FILTER_RESEARCH
-		}
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						if = {
-							limit = {
-								any_owned_state = {
-									free_building_slots = {
-										building = infrastructure
-										size > 0
-									}
-								}
-							}
-							random_owned_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = infrastructure
-										size > 0
-									}
-								}
-								add_building_construction = {
-									type = infrastructure
-									level = 1
-									instant_build = yes
-								}
-							}
-						}
-						if = {
-							limit = {
-								NOT = {
-									any_owned_state = {
-										free_building_slots = {
-											building = infrastructure
-											size > 0
-										}
-									}
-								}
-							}
-							random_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = infrastructure
-										size > 0
-									}
-								}
-								add_building_construction = {
-									type = infrastructure
-									level = 1
-									instant_build = yes
-								}
-							}
-						}			
-					
-						if = {
-							limit = {
-								any_owned_state = {
-									free_building_slots = {
-										building = infrastructure
-										size > 0
-									}
-								}
-							}
-							random_owned_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = infrastructure
-										size > 0
-									}
-								}
-								add_building_construction = {
-									type = infrastructure
-									level = 1
-									instant_build = yes
-								}
-							}
-						}
-						if = {
-							limit = {
-								NOT = {
-									any_owned_state = {
-										free_building_slots = {
-											building = infrastructure
-											size > 0
-										}
-									}
-								}
-							}
-							random_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = infrastructure
-										size > 0
-									}
-								}
-								add_building_construction = {
-									type = infrastructure
-									level = 1
-									instant_build = yes
-								}
-							}
-						}			
-					}
-						if = {
-							limit = {
-								any_owned_state = {
-									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
-									}
-								}
-							}
-							random_owned_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-							}
-						}
-						if = {
-							limit = {
-								NOT = {
-									any_owned_state = {
-										free_building_slots = {
-											building = arms_factory
-											size > 0
-											include_locked = yes
-										}
-									}
-								}
-							}
-							random_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-							}
-						}			
-					}
-						add_tech_bonus = {
-							name = industrial_bonus
-							bonus = 0.5
-							uses = 1
-							category = industry
-						}
-
-	#Infrastructure Effort IV
-	focus = {
-		id = POL_infrastructure_effort_iv
-		icon = GFX_goal_unknown
-		x = 34
-		y = 4
-		prerequisite = { focus = POL_infrastructure_effort_iii  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		search_filters = {
-			FOCUS_FILTER_INDUSTRYFOCUS_FILTER_RESEARCH
-		}
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						if = {
-							limit = {
-								any_owned_state = {
-									free_building_slots = {
-										building = infrastructure
-										size > 0
-									}
-								}
-							}
-							random_owned_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = infrastructure
-										size > 0
-									}
-								}
-								add_building_construction = {
-									type = infrastructure
-									level = 1
-									instant_build = yes
-								}
-							}
-						}
-						if = {
-							limit = {
-								NOT = {
-									any_owned_state = {
-										free_building_slots = {
-											building = infrastructure
-											size > 0
-										}
-									}
-								}
-							}
-							random_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = infrastructure
-										size > 0
-									}
-								}
-								add_building_construction = {
-									type = infrastructure
-									level = 1
-									instant_build = yes
-								}
-							}
-						}			
-					
-						if = {
-							limit = {
-								any_owned_state = {
-									free_building_slots = {
-										building = infrastructure
-										size > 0
-									}
-								}
-							}
-							random_owned_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = infrastructure
-										size > 0
-									}
-								}
-								add_building_construction = {
-									type = infrastructure
-									level = 1
-									instant_build = yes
-								}
-							}
-						}
-						if = {
-							limit = {
-								NOT = {
-									any_owned_state = {
-										free_building_slots = {
-											building = infrastructure
-											size > 0
-										}
-									}
-								}
-							}
-							random_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = infrastructure
-										size > 0
-									}
-								}
-								add_building_construction = {
-									type = infrastructure
-									level = 1
-									instant_build = yes
-								}
-							}
-						}			
-					}
-						if = {
-							limit = {
-								any_owned_state = {
-									free_building_slots = {
-										building = infrastructure
-										size > 0
-									}
-								}
-							}
-							random_owned_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = infrastructure
-										size > 0
-									}
-								}
-								add_building_construction = {
-									type = infrastructure
-									level = 1
-									instant_build = yes
-								}
-							}
-						}
-						if = {
-							limit = {
-								NOT = {
-									any_owned_state = {
-										free_building_slots = {
-											building = infrastructure
-											size > 0
-										}
-									}
-								}
-							}
-							random_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = infrastructure
-										size > 0
-									}
-								}
-								add_building_construction = {
-									type = infrastructure
-									level = 1
-									instant_build = yes
-								}
-							}
-						}			
-					}
-						if = {
-							limit = {
-								any_owned_state = {
-									free_building_slots = {
-										building = infrastructure
-										size > 0
-									}
-								}
-							}
-							random_owned_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = infrastructure
-										size > 0
-									}
-								}
-								add_building_construction = {
-									type = infrastructure
-									level = 1
-									instant_build = yes
-								}
-							}
-						}
-						if = {
-							limit = {
-								NOT = {
-									any_owned_state = {
-										free_building_slots = {
-											building = infrastructure
-											size > 0
-										}
-									}
-								}
-							}
-							random_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = infrastructure
-										size > 0
-									}
-								}
-								add_building_construction = {
-									type = infrastructure
-									level = 1
-									instant_build = yes
-								}
-							}
-						}
-
-						if = {
-							limit = {
-								any_owned_state = {
-									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
-									}
-								}
-							}
-							random_owned_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-							}
-						}
-
-						if = {
-							limit = {
-								NOT = {
-									any_owned_state = {
-										free_building_slots = {
-											building = arms_factory
-											size > 0
-											include_locked = yes
-										}
-									}
-								}
-							}
-							random_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-							}
-						}			
-						if = {
-							limit = {
-								any_owned_state = {
-									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
-									}
-								}
-							}
-							random_owned_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-							}
-						}
-						if = {
-							limit = {
-								NOT = {
-									any_owned_state = {
-										free_building_slots = {
-											building = arms_factory
-											size > 0
-											include_locked = yes
-										}
-									}
-								}
-							}
-							random_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-							}
-						}			
-						add_tech_bonus = {
-							name = industrial_bonus
-							bonus = 0.5
-							uses = 2
-							category = industry
-						}
-
-	#Naval Effort I
-	focus = {
-		id = POL_naval_effort_i
+		id = POL_industrial_N_1
 		icon = GFX_goal_generic_construct_naval_dockyard
-		x = 36
+		x = 28
 		y = 1
-		prerequisite = { focus = POL_industrial_effort  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
-		available_if_capitulated = yes
-		available = {
-			
-						any_state = {
-							is_coastal = yes
-							is_controlled_by = ROOT
-						}
-					
-		}
-		completion_reward = {
-			
-						if = {
-							limit = {
-								any_owned_state = {
-									free_building_slots = {
-										building = dockyard
-										size > 0
-										include_locked = yes
-									}
-								}
-							}
-							random_owned_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = dockyard
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_building_construction = {
-									type = dockyard
-									level = 1
-									instant_build = yes
-								}
-							}
-						}
-						if = {
-							limit = {
-								NOT = {
-									any_owned_state = {
-										free_building_slots = {
-											building = dockyard
-											size > 0
-											include_locked = yes
-										}
-									}
-								}
-							}
-							random_state = {
-								limit = {
-									controller = { tag = ROOT }
-									free_building_slots = {
-										building = dockyard
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_building_construction = {
-									type = dockyard
-									level = 1
-									instant_build = yes
-								}
-							}
-						}			
-					
-		}
+		cost = 10
+		prerequisite = { focus = POL_industrial_N }
+		prerequisite = { focus = POL_industrial_1 }
+		completion_reward = { 
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+					}
+				}
+			}
 	}
-
-	#Naval Effort II
 	focus = {
-		id = POL_naval_effort_ii
-		icon = GFX_goal_unknown
-		x = 36
-		y = 2
-		prerequisite = { focus = POL_naval_effort_i  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
-		available_if_capitulated = yes
-		available = {
-			
-						any_state = {
-							is_coastal = yes
-							is_controlled_by = ROOT
-						}
-					
-		}
-		completion_reward = {
-			
-						if = {
-							limit = {
-								any_owned_state = {
-									free_building_slots = {
-										building = dockyard
-										size > 0
-										include_locked = yes
-									}
-								}
-							}
-							random_owned_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = dockyard
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_building_construction = {
-									type = dockyard
-									level = 1
-									instant_build = yes
-								}
-							}
-						}
-						if = {
-							limit = {
-								NOT = {
-									any_owned_state = {
-										free_building_slots = {
-											building = dockyard
-											size > 0
-											include_locked = yes
-										}
-									}
-								}
-							}
-							random_state = {
-								limit = {
-									controller = { tag = ROOT }
-									free_building_slots = {
-										building = dockyard
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_building_construction = {
-									type = dockyard
-									level = 1
-									instant_build = yes
-								}
-							}
-						}			
-					
-		}
-	}
-
-	#Naval Effort III
-	focus = {
-		id = POL_naval_effort_iii
-		icon = GFX_goal_unknown
-		x = 36
-		y = 3
-		prerequisite = { focus = POL_naval_effort_ii  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
-		available_if_capitulated = yes
-		available = {
-			
-						any_state = {
-							is_coastal = yes
-							is_controlled_by = ROOT
-						}
-					
-		}
-		completion_reward = {
-			
-						if = {
-							limit = {
-								any_owned_state = {
-									free_building_slots = {
-										building = dockyard
-										size > 0
-										include_locked = yes
-									}
-								}
-							}
-							random_owned_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = dockyard
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_building_construction = {
-									type = dockyard
-									level = 1
-									instant_build = yes
-								}
-							}
-						}
-						if = {
-							limit = {
-								NOT = {
-									any_owned_state = {
-										free_building_slots = {
-											building = dockyard
-											size > 0
-											include_locked = yes
-										}
-									}
-								}
-							}
-							random_state = {
-								limit = {
-									controller = { tag = ROOT }
-									free_building_slots = {
-										building = dockyard
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_building_construction = {
-									type = dockyard
-									level = 1
-									instant_build = yes
-								}
-							}
-						}			
-					
-		}
-	}
-
-	#Naval Effort IV
-	focus = {
-		id = POL_naval_effort_iv
-		icon = GFX_goal_unknown
-		x = 36
-		y = 4
-		prerequisite = { focus = POL_naval_effort_iii  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
-		available_if_capitulated = yes
-		available = {
-			
-						any_state = {
-							is_coastal = yes
-							is_controlled_by = ROOT
-						}
-					
-		}
-		completion_reward = {
-			
-						if = {
-							limit = {
-								any_owned_state = {
-									free_building_slots = {
-										building = dockyard
-										size > 0
-										include_locked = yes
-									}
-								}
-							}
-							random_owned_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = dockyard
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_building_construction = {
-									type = dockyard
-									level = 1
-									instant_build = yes
-								}
-							}
-						}
-						if = {
-							limit = {
-								NOT = {
-									any_owned_state = {
-										free_building_slots = {
-											building = dockyard
-											size > 0
-											include_locked = yes
-										}
-									}
-								}
-							}
-							random_state = {
-								limit = {
-									controller = { tag = ROOT }
-									free_building_slots = {
-										building = dockyard
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_building_construction = {
-									type = dockyard
-									level = 1
-									instant_build = yes
-								}
-							}
-						}			
-					
-						if = {
-							limit = {
-								any_owned_state = {
-									free_building_slots = {
-										building = dockyard
-										size > 0
-										include_locked = yes
-									}
-								}
-							}
-							random_owned_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = dockyard
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_building_construction = {
-									type = dockyard
-									level = 1
-									instant_build = yes
-								}
-							}
-						}
-						if = {
-							limit = {
-								NOT = {
-									any_owned_state = {
-										free_building_slots = {
-											building = dockyard
-											size > 0
-											include_locked = yes
-										}
-									}
-								}
-							}
-							random_state = {
-								limit = {
-									controller = { tag = ROOT }
-									free_building_slots = {
-										building = dockyard
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_building_construction = {
-									type = dockyard
-									level = 1
-									instant_build = yes
-								}
-							}
-						}			
-					
-		}
-	}
-
-	#Extra Research Slot I
-	focus = {
-		id = POL_extra_research_slot_i
-		icon = GFX_goal_unknown
-		x = 35
-		y = 5
-		prerequisite = { focus = POL_infrastructure_effort_iv  } prerequisite = { focus = POL_construction_effort_iv  } prerequisite = { focus = POL_armament_effort_iv  } prerequisite = { focus = POL_naval_effort_iv  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		search_filters = {
-			FOCUS_FILTER_RESEARCH
-		}
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						add_research_slot = 1
-					
-		}
-	}
-
-	#Extra Research Slot II
-	focus = {
-		id = POL_extra_research_slot_ii
-		icon = GFX_goal_unknown
-		x = 35
-		y = 9
-		prerequisite = { focus = POL_extra_research_slot_i  }
-		available = {
-			
-						num_of_factories > 50
-					
-		}
-		cancel_if_invalid = no
-		continue_if_invalid = yes
-		ai_will_do = { factor = 1 }
-		cost = 5
-		search_filters = {
-			FOCUS_FILTER_RESEARCH
-		}
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						add_research_slot = 1
-					
-		}
-	}
-
-	#Synthetic Effort
-	focus = {
-		id = POL_synthetic_effort
-		icon = GFX_goal_unknown
-		x = 41
-		y = 6
-		prerequisite = { focus = POL_extra_research_slot_i  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		search_filters = {
-			FOCUS_FILTER_RESEARCH
-		}
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						add_tech_bonus = {
-							name = synth_resources
-							bonus = 1.0
-							uses = 1
-							category = synth_resources
-						}
-					
-						add_ideas = idea_synthetic_0
-					
-		}
-	}
-
-	#Synthetic Effort I
-	focus = {
-		id = POL_synthetic_effort_i
-		icon = GFX_goal_unknown
-		x = 37
-		y = 7
-		prerequisite = { focus = POL_synthetic_effort  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						swap_ideas = {
-			    			remove_idea = idea_synthetic_0
-			    			add_idea = idea_synthetic_1
-						}
-					
-		}
-	}
-
-	#Synthetic Effort II
-	focus = {
-		id = POL_synthetic_effort_ii
-		icon = GFX_goal_unknown
-		x = 39
-		y = 7
-		prerequisite = { focus = POL_synthetic_effort  focus = POL_synthetic_effort_i  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						swap_ideas = {
-			    			remove_idea = idea_synthetic_1
-			    			add_idea = idea_synthetic_2
-						}
-					
-		}
-	}
-
-	#Synthetic Effort III
-	focus = {
-		id = POL_synthetic_effort_iii
-		icon = GFX_goal_unknown
-		x = 41
-		y = 7
-		prerequisite = { focus = POL_synthetic_effort  focus = POL_synthetic_effort_ii  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						swap_ideas = {
-			    			remove_idea = idea_synthetic_2
-			    			add_idea = idea_synthetic_3
-						}
-					
-		}
-	}
-
-	#Synthetic Effort IV
-	focus = {
-		id = POL_synthetic_effort_iv
-		icon = GFX_goal_unknown
-		x = 43
-		y = 7
-		prerequisite = { focus = POL_synthetic_effort  focus = POL_synthetic_effort_iii  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						swap_ideas = {
-			    			remove_idea = idea_synthetic_3
-			    			add_idea = idea_synthetic_4
-						}
-					
-		}
-	}
-
-	#Synthetic Effort V
-	focus = {
-		id = POL_synthetic_effort_v
-		icon = GFX_goal_unknown
-		x = 45
-		y = 7
-		prerequisite = { focus = POL_synthetic_effort  focus = POL_synthetic_effort_iv  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						swap_ideas = {
-			    			remove_idea = idea_synthetic_4
-			    			add_idea = idea_synthetic_5
-						}
-					
-		}
-	}
-
-	#Refinery Effort I
-	focus = {
-		id = POL_refinery_effort_i
-		icon = GFX_goal_unknown
-		x = 37
-		y = 8
-		prerequisite = { focus = POL_synthetic_effort_i  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		available = {
-			
-						has_tech = synth_oil_experiments
-						OR = {
-							AND = {
-								any_owned_state = {
-									free_building_slots = {
-										building = synthetic_refinery
-										size > 0
-										include_locked = yes
-									}
-								}
-								any_owned_state = {
-									free_building_slots = {
-										building = fuel_silo
-										size > 0
-										include_locked = yes
-									}
-								}
-							}
-							AND = {
-								any_controlled_state = {
-									free_building_slots = {
-										building = synthetic_refinery
-										size > 0
-										include_locked = yes
-									}
-								}
-								any_controlled_state = {
-									free_building_slots = {
-										building = fuel_silo
-										size > 0
-										include_locked = yes
-									}
-								}					
-							}						
-						}
-					
-		}
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
-		completion_reward = {
-			
-						if = {
-							limit = { NOT = { has_tech = synth_oil_experiments } }
-							custom_effect_tooltip = generic_synthetic_tt
-						}			
-						if = {
-							limit = {
-								any_owned_state = {
-									free_building_slots = {
-										building = synthetic_refinery
-										size > 1
-										include_locked = yes
-									}
-								}
-							}
-							random_owned_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = synthetic_refinery
-										size > 1
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 2
-								add_building_construction = {
-									type = synthetic_refinery
-									level = 1
-									instant_build = yes
-								}
-								add_building_construction = {
-									type = fuel_silo
-									level = 1
-									instant_build = yes
-								}	
-								add_resource = {
-									type = oil
-									amount = 2
-								}					
-							}
-						}
-						if = {
-							limit = {
-								NOT = {
-									any_owned_state = {
-										free_building_slots = {
-											building = synthetic_refinery
-											size > 1
-											include_locked = yes
-										}
-									}
-								}
-							}
-							random_state = {
-								limit = {
-									controller = { tag = ROOT }
-									free_building_slots = {
-										building = synthetic_refinery
-										size > 1
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 2
-								add_building_construction = {
-									type = synthetic_refinery
-									level = 1
-									instant_build = yes
-								}
-								add_building_construction = {
-									type = fuel_silo
-									level = 1
-									instant_build = yes
-								}	
-								add_resource = {
-									type = oil
-									amount = 2
-								}
-							}
-						}			
-					
-		}
-	}
-
-	#Refinery Effort II
-	focus = {
-		id = POL_refinery_effort_ii
-		icon = GFX_goal_unknown
-		x = 39
-		y = 8
-		prerequisite = { focus = POL_synthetic_effort_ii  } prerequisite = { focus = POL_synthetic_effort_i  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		available = {
-			
-						has_tech = synth_oil_experiments
-						OR = {
-							AND = {
-								any_owned_state = {
-									free_building_slots = {
-										building = synthetic_refinery
-										size > 0
-										include_locked = yes
-									}
-								}
-								any_owned_state = {
-									free_building_slots = {
-										building = fuel_silo
-										size > 0
-										include_locked = yes
-									}
-								}
-							}
-							AND = {
-								any_controlled_state = {
-									free_building_slots = {
-										building = synthetic_refinery
-										size > 0
-										include_locked = yes
-									}
-								}
-								any_controlled_state = {
-									free_building_slots = {
-										building = fuel_silo
-										size > 0
-										include_locked = yes
-									}
-								}					
-							}						
-						}
-					
-		}
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
-		completion_reward = {
-			
-						if = {
-							limit = { NOT = { has_tech = synth_oil_experiments } }
-							custom_effect_tooltip = generic_synthetic_tt
-						}			
-						if = {
-							limit = {
-								any_owned_state = {
-									free_building_slots = {
-										building = synthetic_refinery
-										size > 1
-										include_locked = yes
-									}
-								}
-							}
-							random_owned_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = synthetic_refinery
-										size > 1
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 2
-								add_building_construction = {
-									type = synthetic_refinery
-									level = 1
-									instant_build = yes
-								}
-								add_building_construction = {
-									type = fuel_silo
-									level = 1
-									instant_build = yes
-								}	
-								add_resource = {
-									type = oil
-									amount = 2
-								}					
-							}
-						}
-						if = {
-							limit = {
-								NOT = {
-									any_owned_state = {
-										free_building_slots = {
-											building = synthetic_refinery
-											size > 1
-											include_locked = yes
-										}
-									}
-								}
-							}
-							random_state = {
-								limit = {
-									controller = { tag = ROOT }
-									free_building_slots = {
-										building = synthetic_refinery
-										size > 1
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 2
-								add_building_construction = {
-									type = synthetic_refinery
-									level = 1
-									instant_build = yes
-								}
-								add_building_construction = {
-									type = fuel_silo
-									level = 1
-									instant_build = yes
-								}	
-								add_resource = {
-									type = oil
-									amount = 2
-								}
-							}
-						}			
-					
-		}
-	}
-
-	#Refinery Effort III
-	focus = {
-		id = POL_refinery_effort_iii
-		icon = GFX_goal_unknown
-		x = 41
-		y = 8
-		prerequisite = { focus = POL_synthetic_effort_iii  } prerequisite = { focus = POL_synthetic_effort_i  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		available = {
-			
-						has_tech = synth_oil_experiments
-						OR = {
-							AND = {
-								any_owned_state = {
-									free_building_slots = {
-										building = synthetic_refinery
-										size > 0
-										include_locked = yes
-									}
-								}
-								any_owned_state = {
-									free_building_slots = {
-										building = fuel_silo
-										size > 0
-										include_locked = yes
-									}
-								}
-							}
-							AND = {
-								any_controlled_state = {
-									free_building_slots = {
-										building = synthetic_refinery
-										size > 0
-										include_locked = yes
-									}
-								}
-								any_controlled_state = {
-									free_building_slots = {
-										building = fuel_silo
-										size > 0
-										include_locked = yes
-									}
-								}					
-							}						
-						}
-					
-		}
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
-		completion_reward = {
-			
-						if = {
-							limit = { NOT = { has_tech = synth_oil_experiments } }
-							custom_effect_tooltip = generic_synthetic_tt
-						}			
-						if = {
-							limit = {
-								any_owned_state = {
-									free_building_slots = {
-										building = synthetic_refinery
-										size > 1
-										include_locked = yes
-									}
-								}
-							}
-							random_owned_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = synthetic_refinery
-										size > 1
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 2
-								add_building_construction = {
-									type = synthetic_refinery
-									level = 1
-									instant_build = yes
-								}
-								add_building_construction = {
-									type = fuel_silo
-									level = 1
-									instant_build = yes
-								}	
-								add_resource = {
-									type = oil
-									amount = 2
-								}					
-							}
-						}
-						if = {
-							limit = {
-								NOT = {
-									any_owned_state = {
-										free_building_slots = {
-											building = synthetic_refinery
-											size > 1
-											include_locked = yes
-										}
-									}
-								}
-							}
-							random_state = {
-								limit = {
-									controller = { tag = ROOT }
-									free_building_slots = {
-										building = synthetic_refinery
-										size > 1
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 2
-								add_building_construction = {
-									type = synthetic_refinery
-									level = 1
-									instant_build = yes
-								}
-								add_building_construction = {
-									type = fuel_silo
-									level = 1
-									instant_build = yes
-								}	
-								add_resource = {
-									type = oil
-									amount = 2
-								}
-							}
-						}			
-					
-		}
-	}
-
-	#Refinery Effort IV
-	focus = {
-		id = POL_refinery_effort_iv
-		icon = GFX_goal_unknown
-		x = 43
-		y = 8
-		prerequisite = { focus = POL_synthetic_effort_iv  } prerequisite = { focus = POL_synthetic_effort_i  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		available = {
-			
-						has_tech = synth_oil_experiments
-						OR = {
-							AND = {
-								any_owned_state = {
-									free_building_slots = {
-										building = synthetic_refinery
-										size > 0
-										include_locked = yes
-									}
-								}
-								any_owned_state = {
-									free_building_slots = {
-										building = fuel_silo
-										size > 0
-										include_locked = yes
-									}
-								}
-							}
-							AND = {
-								any_controlled_state = {
-									free_building_slots = {
-										building = synthetic_refinery
-										size > 0
-										include_locked = yes
-									}
-								}
-								any_controlled_state = {
-									free_building_slots = {
-										building = fuel_silo
-										size > 0
-										include_locked = yes
-									}
-								}					
-							}						
-						}
-					
-		}
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
-		completion_reward = {
-			
-						if = {
-							limit = { NOT = { has_tech = synth_oil_experiments } }
-							custom_effect_tooltip = generic_synthetic_tt
-						}			
-						if = {
-							limit = {
-								any_owned_state = {
-									free_building_slots = {
-										building = synthetic_refinery
-										size > 1
-										include_locked = yes
-									}
-								}
-							}
-							random_owned_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = synthetic_refinery
-										size > 1
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 2
-								add_building_construction = {
-									type = synthetic_refinery
-									level = 1
-									instant_build = yes
-								}
-								add_building_construction = {
-									type = fuel_silo
-									level = 1
-									instant_build = yes
-								}	
-								add_resource = {
-									type = oil
-									amount = 2
-								}					
-							}
-						}
-						if = {
-							limit = {
-								NOT = {
-									any_owned_state = {
-										free_building_slots = {
-											building = synthetic_refinery
-											size > 1
-											include_locked = yes
-										}
-									}
-								}
-							}
-							random_state = {
-								limit = {
-									controller = { tag = ROOT }
-									free_building_slots = {
-										building = synthetic_refinery
-										size > 1
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 2
-								add_building_construction = {
-									type = synthetic_refinery
-									level = 1
-									instant_build = yes
-								}
-								add_building_construction = {
-									type = fuel_silo
-									level = 1
-									instant_build = yes
-								}	
-								add_resource = {
-									type = oil
-									amount = 2
-								}
-							}
-						}			
-					
-		}
-	}
-
-	#Refinery Effort V
-	focus = {
-		id = POL_refinery_effort_v
-		icon = GFX_goal_unknown
-		x = 45
-		y = 8
-		prerequisite = { focus = POL_synthetic_effort_v  } prerequisite = { focus = POL_synthetic_effort_i  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		available = {
-			
-						has_tech = synth_oil_experiments
-						OR = {
-							AND = {
-								any_owned_state = {
-									free_building_slots = {
-										building = synthetic_refinery
-										size > 0
-										include_locked = yes
-									}
-								}
-								any_owned_state = {
-									free_building_slots = {
-										building = fuel_silo
-										size > 0
-										include_locked = yes
-									}
-								}
-							}
-							AND = {
-								any_controlled_state = {
-									free_building_slots = {
-										building = synthetic_refinery
-										size > 0
-										include_locked = yes
-									}
-								}
-								any_controlled_state = {
-									free_building_slots = {
-										building = fuel_silo
-										size > 0
-										include_locked = yes
-									}
-								}					
-							}						
-						}
-					
-		}
-		cancel_if_invalid = yes
-		continue_if_invalid = no
-		available_if_capitulated = no
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
-		completion_reward = {
-			
-						if = {
-							limit = { NOT = { has_tech = synth_oil_experiments } }
-							custom_effect_tooltip = generic_synthetic_tt
-						}			
-						if = {
-							limit = {
-								any_owned_state = {
-									free_building_slots = {
-										building = synthetic_refinery
-										size > 1
-										include_locked = yes
-									}
-								}
-							}
-							random_owned_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = synthetic_refinery
-										size > 1
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 2
-								add_building_construction = {
-									type = synthetic_refinery
-									level = 1
-									instant_build = yes
-								}
-								add_building_construction = {
-									type = fuel_silo
-									level = 1
-									instant_build = yes
-								}	
-								add_resource = {
-									type = oil
-									amount = 2
-								}					
-							}
-						}
-						if = {
-							limit = {
-								NOT = {
-									any_owned_state = {
-										free_building_slots = {
-											building = synthetic_refinery
-											size > 1
-											include_locked = yes
-										}
-									}
-								}
-							}
-							random_state = {
-								limit = {
-									controller = { tag = ROOT }
-									free_building_slots = {
-										building = synthetic_refinery
-										size > 1
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 2
-								add_building_construction = {
-									type = synthetic_refinery
-									level = 1
-									instant_build = yes
-								}
-								add_building_construction = {
-									type = fuel_silo
-									level = 1
-									instant_build = yes
-								}	
-								add_resource = {
-									type = oil
-									amount = 2
-								}
-							}
-						}			
-					
-		}
-	}
-
-	#Mining Effort
-	focus = {
-		id = POL_mining_effort
-		icon = GFX_goal_unknown
-		x = 29
-		y = 6
-		prerequisite = { focus = POL_extra_research_slot_i  }
-		cost = 5
-		search_filters = {
-			FOCUS_FILTER_RESEARCH
-		}
-		available_if_capitulated = yes
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-			
-						add_tech_bonus = {
-							name = excavation_tech
-							bonus = 1.0
-							uses = 1
-							category = excavation_tech
-						}
-					
-						add_ideas = idea_mining_0
-					
-		}
-	}
-
-	#Mining Effort I
-	focus = {
-		id = POL_mining_effort_i
-		icon = GFX_goal_unknown
-		x = 25
-		y = 7
-		prerequisite = { focus = POL_mining_effort  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						swap_ideas = {
-			    			remove_idea = idea_mining_0
-			    			add_idea = idea_mining_1
-						}
-					
-		}
-	}
-
-	#Mining Effort II
-	focus = {
-		id = POL_mining_effort_ii
-		icon = GFX_focus_usa_focus_on_asia
-		x = 27
-		y = 7
-		prerequisite = { focus = POL_mining_effort  focus = POL_mining_effort_i  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						swap_ideas = {
-			    			remove_idea = idea_mining_1
-			    			add_idea = idea_mining_2
-						}
-					
-		}
-	}
-
-	#Mining Effort III
-	focus = {
-		id = POL_mining_effort_iii
-		icon = GFX_goal_unknown
-		x = 29
-		y = 7
-		prerequisite = { focus = POL_mining_effort  focus = POL_mining_effort_ii  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						swap_ideas = {
-			    			remove_idea = idea_mining_2
-			    			add_idea = idea_mining_3
-						}
-					
-		}
-	}
-
-	#Mining Effort IV
-	focus = {
-		id = POL_mining_effort_iv
-		icon = GFX_goal_unknown
-		x = 31
-		y = 7
-		prerequisite = { focus = POL_mining_effort_ii  focus = POL_mining_effort_iii  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						swap_ideas = {
-			    			remove_idea = idea_mining_3
-			    			add_idea = idea_mining_4
-						}
-					
-		}
-	}
-
-	#Mining Effort V
-	focus = {
-		id = POL_mining_effort_v
-		icon = GFX_goal_unknown
-		x = 33
-		y = 7
-		prerequisite = { focus = POL_mining_effort  focus = POL_mining_effort_iv  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						swap_ideas = {
-			    			remove_idea = idea_mining_4
-			    			add_idea = idea_mining_5
-						}
-					
-		}
-	}
-
-	#Tungsten Effort
-	focus = {
-		id = POL_tungsten_effort
-		icon = GFX_goal_unknown
-		x = 25
-		y = 8
-		prerequisite = { focus = POL_mining_effort_i  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
-		available_if_capitulated = yes
-		available = {
-			
-						OR = {
-							has_tech = excavation1
-							has_tech = excavation2
-							has_tech = excavation3
-							has_tech = excavation4
-							has_tech = excavation5
-						}
-						OR = {
-							any_owned_state = {
-								free_building_slots = {
-									building = arms_factory
-									size > 0
-									include_locked = yes
-								}
-							}
-							any_controlled_state = {
-								free_building_slots = {
-									building = arms_factory
-									size > 0
-									include_locked = yes
-								}
-							}						
-						}
-					
-		}
-		completion_reward = {
-			
-						if = {
-							limit = {
-								any_owned_state = {
-									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
-									}
-								}
-							}
-							random_owned_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_resource = {
-									type = tungsten
-									amount = 8
-								}					
-							}
-						}
-						if = {
-							limit = {
-								NOT = {
-									any_owned_state = {
-										free_building_slots = {
-											building = arms_factory
-											size > 0
-											include_locked = yes
-										}
-									}
-								}
-							}
-							random_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_resource = {
-									type = tungsten
-									amount = 8
-								}					
-							}
-						}			
-					
-		}
-	}
-
-	#Chromium Effort
-	focus = {
-		id = POL_chromium_effort
-		icon = GFX_goal_unknown
-		x = 27
-		y = 8
-		prerequisite = { focus = POL_mining_effort_ii  } prerequisite = { focus = POL_mining_effort_i  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
-		available_if_capitulated = yes
-		available = {
-			
-						OR = {
-							has_tech = excavation1
-							has_tech = excavation2
-							has_tech = excavation3
-							has_tech = excavation4
-							has_tech = excavation5
-						}
-						OR = {
-							any_owned_state = {
-								free_building_slots = {
-									building = arms_factory
-									size > 0
-									include_locked = yes
-								}
-							}
-							any_controlled_state = {
-								free_building_slots = {
-									building = arms_factory
-									size > 0
-									include_locked = yes
-								}
-							}						
-						}
-					
-		}
-		completion_reward = {
-			
-						if = {
-							limit = {
-								any_owned_state = {
-									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
-									}
-								}
-							}
-							random_owned_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_resource = {
-									type = chromium
-									amount = 8
-								}					
-							}
-						}
-						if = {
-							limit = {
-								NOT = {
-									any_owned_state = {
-										free_building_slots = {
-											building = arms_factory
-											size > 0
-											include_locked = yes
-										}
-									}
-								}
-							}
-							random_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_resource = {
-									type = tungsten
-									amount = 8
-								}					
-							}
-						}			
-					
-		}
-	}
-
-	#Aluminum Effort
-	focus = {
-		id = POL_aluminum_effort
-		icon = GFX_goal_unknown
-		x = 29
-		y = 8
-		prerequisite = { focus = POL_mining_effort_iii  } prerequisite = { focus = POL_mining_effort_i  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
-		available_if_capitulated = yes
-		available = {
-			
-						OR = {
-							has_tech = excavation1
-							has_tech = excavation2
-							has_tech = excavation3
-							has_tech = excavation4
-							has_tech = excavation5
-						}
-						OR = {
-							any_owned_state = {
-								free_building_slots = {
-									building = arms_factory
-									size > 0
-									include_locked = yes
-								}
-							}
-							any_controlled_state = {
-								free_building_slots = {
-									building = arms_factory
-									size > 0
-									include_locked = yes
-								}
-							}						
-						}
-					
-		}
-		completion_reward = {
-			
-						if = {
-							limit = {
-								any_owned_state = {
-									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
-									}
-								}
-							}
-							random_owned_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_resource = {
-									type = aluminium
-									amount = 8
-								}					
-							}
-						}
-						if = {
-							limit = {
-								NOT = {
-									any_owned_state = {
-										free_building_slots = {
-											building = arms_factory
-											size > 0
-											include_locked = yes
-										}
-									}
-								}
-							}
-							random_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_resource = {
-									type = tungsten
-									amount = 8
-								}					
-							}
-						}			
-					
-		}
-	}
-
-	#Steel Effort
-	focus = {
-		id = POL_steel_effort
-		icon = GFX_goal_unknown
-		x = 31
-		y = 8
-		prerequisite = { focus = POL_mining_effort_iv  } prerequisite = { focus = POL_mining_effort_i  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
-		available_if_capitulated = yes
-		available = {
-			
-						OR = {
-							has_tech = excavation1
-							has_tech = excavation2
-							has_tech = excavation3
-							has_tech = excavation4
-							has_tech = excavation5
-						}
-						OR = {
-							any_owned_state = {
-								free_building_slots = {
-									building = arms_factory
-									size > 0
-									include_locked = yes
-								}
-							}
-							any_controlled_state = {
-								free_building_slots = {
-									building = arms_factory
-									size > 0
-									include_locked = yes
-								}
-							}						
-						}
-					
-		}
-		completion_reward = {
-			
-						if = {
-							limit = {
-								any_owned_state = {
-									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
-									}
-								}
-							}
-							random_owned_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_resource = {
-									type = steel
-									amount = 8
-								}					
-							}
-						}
-						if = {
-							limit = {
-								NOT = {
-									any_owned_state = {
-										free_building_slots = {
-											building = arms_factory
-											size > 0
-											include_locked = yes
-										}
-									}
-								}
-							}
-							random_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_resource = {
-									type = tungsten
-									amount = 8
-								}					
-							}
-						}			
-					
-		}
-	}
-
-	#Rubber Effort
-	focus = {
-		id = POL_rubber_effort
-		icon = GFX_goal_unknown
-		x = 33
-		y = 8
-		prerequisite = { focus = POL_mining_effort_v  } prerequisite = { focus = POL_mining_effort_i  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
-		available_if_capitulated = yes
-		available = {
-			
-						OR = {
-							has_tech = excavation1
-							has_tech = excavation2
-							has_tech = excavation3
-							has_tech = excavation4
-							has_tech = excavation5
-						}
-						OR = {
-							any_owned_state = {
-								free_building_slots = {
-									building = arms_factory
-									size > 0
-									include_locked = yes
-								}
-							}
-							any_controlled_state = {
-								free_building_slots = {
-									building = arms_factory
-									size > 0
-									include_locked = yes
-								}
-							}						
-						}
-					
-		}
-		completion_reward = {
-			
-						if = {
-							limit = {
-								any_owned_state = {
-									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
-									}
-								}
-							}
-							random_owned_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_resource = {
-									type = rubber
-									amount = 8
-								}					
-							}
-						}
-						if = {
-							limit = {
-								NOT = {
-									any_owned_state = {
-										free_building_slots = {
-											building = arms_factory
-											size > 0
-											include_locked = yes
-										}
-									}
-								}
-							}
-							random_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_resource = {
-									type = tungsten
-									amount = 8
-								}					
-							}
-						}			
-					
-		}
-	}
-
-	#Rocketry Effort I
-	focus = {
-		id = POL_rocketry_effort_i
-		icon = GFX_goal_unknown
-		x = 33
-		y = 10
-		prerequisite = { focus = POL_extra_research_slot_ii  }
-		cost = 5
-		search_filters = {
-			FOCUS_FILTER_RESEARCH
-		}
-		bypass = {
-			 has_tech = advanced_rocket_engines 
-		}
-		ai_will_do = { factor = 1 }
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						add_tech_bonus = {
-							name = electronics
-							bonus = 1.0
-							uses = 1
-							category = rocketry
-						}
-					
-		}
-	}
-
-	#Rocketry Effort II
-	focus = {
-		id = POL_rocketry_effort_ii
-		icon = GFX_goal_unknown
-		x = 33
-		y = 11
-		prerequisite = { focus = POL_rocketry_effort_i  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
-		available = {
-			
-						has_tech = experimental_rockets
-						OR = {
-							any_owned_state = {
-								free_building_slots = {
-									building = rocket_site
-									size > 0
-									include_locked = yes
-								}
-							}
-							any_controlled_state = {
-								free_building_slots = {
-									building = rocket_site
-									size > 0
-									include_locked = yes
-								}
-							}						
-						}
-					
-		}
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						if = {
-							limit = {
-								any_owned_state = {
-									free_building_slots = {
-										building = rocket_site
-										size > 0
-										include_locked = yes
-									}
-								}
-							}
-							random_owned_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = rocket_site
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_building_construction = {
-									type = rocket_site
-									level = 1
-									instant_build = yes
-								}
-							}
-						}
-						if = {
-							limit = {
-								NOT = {
-									any_owned_state = {
-										free_building_slots = {
-											building = rocket_site
-											size > 0
-											include_locked = yes
-										}
-									}
-								}
-							}
-							random_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = rocket_site
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_building_construction = {
-									type = rocket_site
-									level = 1
-									instant_build = yes
-								}
-							}
-						}			
-					
-		}
-	}
-
-	#Nuclear Effort I
-	focus = {
-		id = POL_nuclear_effort_i
-		icon = GFX_goal_unknown
-		x = 37
-		y = 10
-		prerequisite = { focus = POL_extra_research_slot_ii  }
-		cost = 5
-		search_filters = {
-			FOCUS_FILTER_RESEARCH
-		}
-		bypass = {
-			 has_tech = nukes 
-		}
-		ai_will_do = { factor = 1 }
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						add_tech_bonus = {
-							name = nuclear
-							bonus = 1.0
-							uses = 1
-							category = nuclear
-						}
-					
-		}
-	}
-
-	#Nuclear Effort II
-	focus = {
-		id = POL_nuclear_effort_ii
-		icon = GFX_goal_unknown
-		x = 37
-		y = 11
-		prerequisite = { focus = POL_nuclear_effort_i  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
-		available = {
-			
-						has_tech = nuclear_reactor
-						OR = {
-							any_owned_state = {
-								free_building_slots = {
-									building = nuclear_reactor
-									size > 0
-									include_locked = yes
-								}
-							}
-							any_controlled_state = {
-								free_building_slots = {
-									building = nuclear_reactor
-									size > 0
-									include_locked = yes
-								}
-							}						
-						}
-					
-		}
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						if = {
-							limit = {
-								any_owned_state = {
-									free_building_slots = {
-										building = nuclear_reactor
-										size > 0
-										include_locked = yes
-									}
-								}
-							}
-							random_owned_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = nuclear_reactor
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_building_construction = {
-									type = nuclear_reactor
-									level = 1
-									instant_build = yes
-								}
-							}
-						}
-						if = {
-							limit = {
-								NOT = {
-									any_owned_state = {
-										free_building_slots = {
-											building = nuclear_reactor
-											size > 0
-											include_locked = yes
-										}
-									}
-								}
-							}
-							random_controlled_state = {
-								limit = {
-									free_building_slots = {
-										building = nuclear_reactor
-										size > 0
-										include_locked = yes
-									}
-								}
-								add_extra_state_shared_building_slots = 1
-								add_building_construction = {
-									type = nuclear_reactor
-									level = 1
-									instant_build = yes
-								}
-							}
-						}			
-					
-		}
-	}
-
-	#Civil Idea I
-	focus = {
-		id = POL_civil_idea_i
-		icon = GFX_goal_unknown
+		id = POL_industrial_N_2
+		icon = GFX_goal_generic_construct_naval_dockyard
 		x = 28
 		y = 2
-		prerequisite = { focus = POL_construction_effort_i  focus = POL_construction_effort_ii  focus = POL_construction_effort_iii  }
-		cost = 5
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
-		available_if_capitulated = yes
-		ai_will_do = { factor = 1 }
-		completion_reward = {
-			
-						add_ideas = idea_complex_1_1
-					
-		}
+		cost = 10
+		prerequisite = { focus = POL_industrial_N_1 }
+		completion_reward = { 
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+					}
+				}
+			}
 	}
-
-	#Civil Idea II
 	focus = {
-		id = POL_civil_idea_ii
-		icon = GFX_goal_unknown
+		id = POL_industrial_N_3
+		icon = GFX_goal_generic_construct_naval_dockyard
 		x = 28
 		y = 3
-		prerequisite = { focus = POL_civil_idea_i  }
-		cost = 5
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
-		ai_will_do = { factor = 1 }
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						swap_ideas = {
-			    			remove_idea = idea_complex_1_1
-			    			add_idea = idea_complex_2_1
-						}
-					
-		}
+		cost = 10
+		prerequisite = { focus = POL_industrial_N_2 }
+		completion_reward = { 
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+					}
+				}
+			}
 	}
 
-	#Civil Idea III
+	# Turning Point 
 	focus = {
-		id = POL_civil_idea_iii
-		icon = GFX_goal_unknown
-		x = 28
-		y = 4
-		prerequisite = { focus = POL_civil_idea_ii  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						swap_ideas = {
-			    			remove_idea = idea_complex_2_1
-			    			add_idea = idea_complex_3_1
-						}
-					
-		}
-	}
-
-	#Civil Idea IV
-	focus = {
-		id = POL_civil_idea_iv
-		icon = GFX_goal_unknown
-		x = 28
-		y = 5
-		prerequisite = { focus = POL_civil_idea_iii  }
-		cost = 5
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
-		ai_will_do = { factor = 1 }
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						swap_ideas = {
-			    			remove_idea = idea_complex_3_1
-			    			add_idea = idea_complex_4_1
-						}
-					
-		}
-	}
-
-	#Infrastructure Idea I
-	focus = {
-		id = POL_infrastructure_idea_i
-		icon = GFX_goal_unknown
-		x = 32
+		id = POL_industrial_T_1
+		icon = GFX_goal_generic_oil_refinery
+		x = 24
 		y = 2
-		prerequisite = { focus = POL_infrastructure_effort_i  focus = POL_infrastructure_effort_ii  focus = POL_infrastructure_effort_iii  }
-		cost = 5
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
-		ai_will_do = { factor = 1 }
-		available_if_capitulated = yes
+		prerequisite = {focus = POL_industrial_M_2 focus = POL_industrial_C_2}
+		mutually_exclusive = {}
+		cost = 10
+		completion_reward = {
+			set_country_flag = Industrial_T_Completed
+			
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = synthetic_refinery
+					level = 2
+					instant_build = yes
+				}
+			}
+
+			swap_ideas = {
+	
+				}
+        	}
+    	}
+
+		focus = {
+			id = POL_industrial_T_2
+			icon = GFX_goal_generic_oil_refinery
+			x = 24
+			y = 4
+			prerequisite = {focus = POL_industrial_T_1 }
+			mutually_exclusive = {}
+			cost = 10
+			completion_reward = {
+
+				random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = synthetic_refinery
+					level = 2
+					instant_build = yes
+				}
+			}
+				swap_ideas = {
+					
+					}
+				}
+			}
+	
+		focus = {
+			id = POL_industrial_T_3
+			icon = GFX_goal_generic_oil_refinery
+			x = 24
+			y = 5
+			prerequisite = {focus = POL_industrial_T_2 }
+			mutually_exclusive = {}
+			cost = 10
+			completion_reward = {
+
+				random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = synthetic_refinery
+					level = 2
+					instant_build = yes
+					}
+				}
+				swap_ideas = {
+					
+					}
+				}
+			}
+
+	# Militarist Focused
+	focus = {
+		id = POL_industrial_M_1
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 26
+		y = 1
+		prerequisite = {focus = POL_industrial_1}
+		cost = 10
 		completion_reward = {
 			
-						add_ideas = idea_infrastructure_1_1
-					
-		}
-	}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
 
-	#Infrastructure Idea II
+			add_ideas = POL_industrial_Ma
+        	}
+    	}
 	focus = {
-		id = POL_infrastructure_idea_ii
-		icon = GFX_goal_unknown
-		x = 32
-		y = 3
-		prerequisite = { focus = POL_infrastructure_idea_i  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						swap_ideas = {
-			    			remove_idea = idea_infrastructure_1_1
-			    			add_idea = idea_infrastructure_2_1
-						}
-					
-		}
-	}
-
-	#Infrastructure Idea III
-	focus = {
-		id = POL_infrastructure_idea_iii
-		icon = GFX_goal_unknown
-		x = 32
-		y = 4
-		prerequisite = { focus = POL_infrastructure_idea_ii  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						swap_ideas = {
-			    			remove_idea = idea_infrastructure_2_1
-			    			add_idea = idea_infrastructure_3_1
-						}
-					
-		}
-	}
-
-	#Naval Idea I
-	focus = {
-		id = POL_naval_idea_i
-		icon = GFX_POL_naval_idea_i-5616
-		x = 38
+		id = POL_industrial_M_2
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 26
 		y = 2
-		prerequisite = { focus = POL_naval_effort_i  focus = POL_naval_effort_ii  focus = POL_naval_effort_iii  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
-		available_if_capitulated = yes
+		prerequisite = {focus = POL_industrial_M_1}
+		cost = 10
 		completion_reward = {
 			
-						add_ideas = idea_naval_1_1
-					
-		}
-	}
+			set_country_flag = Industrial_M_Completed
 
-	#Naval Idea II
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			
+			swap_ideas = {
+    			remove_idea = POL_industrial_Ma
+    			add_idea = POL_industrial_Mb
+				}
+        	}
+    	}
+
 	focus = {
-		id = POL_naval_idea_ii
-		icon = GFX_goal_unknown
-		x = 38
+		id = POL_industrial_M_3
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 26
 		y = 3
-		prerequisite = { focus = POL_naval_idea_i  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						swap_ideas = {
-			    			remove_idea = idea_naval_1_1
-			    			add_idea = idea_naval_2_1
-						}
-					
-		}
-	}
+		prerequisite = {focus = POL_industrial_M_2 }
+		
+		mutually_exclusive = {focus = POL_industrial_C_3}
 
-	#Naval Idea III
+		available = {
+			OR = {
+				AND = {
+					has_country_flag = Industrial_C_Completed
+					has_country_flag = Industrial_T_Completed
+					}
+				AND = {
+					has_country_flag = Industrial_M_Completed
+					NOT = { has_country_flag = Industrial_T_Completed
+					}
+				}
+			}
+		}
+		
+		cost = 10
+		completion_reward = {
+
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+			}
+
+			swap_ideas = {
+    			remove_idea = POL_industrial_Mb
+    			add_idea = POL_industrial_Mc
+				}
+        	}
+    	}
+
 	focus = {
-		id = POL_naval_idea_iii
-		icon = GFX_goal_unknown
-		x = 38
+		id = POL_industrial_M_4
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 26
 		y = 4
-		prerequisite = { focus = POL_naval_idea_ii  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
-		available_if_capitulated = yes
+		prerequisite = {focus = POL_industrial_M_3}
+		cost = 10
 		completion_reward = {
-			
-						swap_ideas = {
-			    			remove_idea = idea_naval_2_1
-			    			add_idea = idea_naval_3_1
-						}
-					
-		}
-	}
 
-	#Armament Idea I
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = arms_factory
+					level = 4
+					instant_build = yes
+				}
+			}
+
+			swap_ideas = {
+    			remove_idea = POL_industrial_Mc
+    			add_idea = POL_industrial_Md
+				}
+        	}
+    	}
+
+	# Civilian Focused
 	focus = {
-		id = POL_armament_idea_i
-		icon = GFX_goal_unknown
-		x = 42
+		id = POL_industrial_C_1
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 22
+		y = 1
+		prerequisite = {focus = POL_industrial_1}
+		cost = 10
+		completion_reward = {
+
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+
+			add_ideas = POL_industrial_Ca
+    		}
+		}
+	
+	focus = {
+		id = POL_industrial_C_2
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 22
 		y = 2
-		prerequisite = { focus = POL_armament_effort_i  focus = POL_armament_effort_ii  focus = POL_armament_effort_iii  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
-		available_if_capitulated = yes
+		prerequisite = {focus = POL_industrial_C_1}
+		cost = 10
 		completion_reward = {
-			
-						add_ideas = idea_arm_1_1
-					
-		}
-	}
 
-	#Armament Idea II
+			set_country_flag = Industrial_C_Completed
+
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+
+			swap_ideas = {
+    			remove_idea = POL_industrial_Ca
+    			add_idea = POL_industrial_Cb
+				}
+			}
+    	}
+	
 	focus = {
-		id = POL_armament_idea_ii
-		icon = GFX_goal_unknown
-		x = 42
+		id = POL_industrial_C_3
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 22
 		y = 3
-		prerequisite = { focus = POL_armament_idea_i  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						swap_ideas = {
-			    			remove_idea = idea_arm_1_1
-			    			add_idea = idea_arm_2_1
-						}
-					
-		}
-	}
 
-	#Armament Idea III
+		mutually_exclusive = {focus = POL_industrial_M_3}
+
+		available = {
+			OR = {
+				AND = {
+					has_country_flag = Industrial_M_Completed
+					has_country_flag = Industrial_T_Completed
+					}
+				AND = {
+					has_country_flag = Industrial_C_Completed
+					NOT = { has_country_flag = Industrial_T_Completed
+					}
+				}
+			}
+		}
+
+		prerequisite = {focus = POL_industrial_C_2}
+		cost = 10
+		completion_reward = {
+	
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+			}
+
+			swap_ideas = {
+    			remove_idea = POL_industrial_Cb
+    			add_idea = POL_industrial_Cc
+				}
+    		}
+		}
+	
 	focus = {
-		id = POL_armament_idea_iii
-		icon = GFX_goal_unknown
-		x = 42
+		id = POL_industrial_C_4
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 22
 		y = 4
-		prerequisite = { focus = POL_armament_idea_ii  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
-		}
-		available_if_capitulated = yes
+		prerequisite = {focus = POL_industrial_C_3}
+		cost = 10
 		completion_reward = {
-			
-						swap_ideas = {
-			    			remove_idea = idea_arm_2_1
-			    			add_idea = idea_arm_3_1
-						}
-					
-		}
-	}
 
-	#Armament Idea IV
-	focus = {
-		id = POL_armament_idea_iv
-		icon = GFX_goal_unknown
-		x = 42
-		y = 5
-		prerequisite = { focus = POL_armament_idea_iii  }
-		cost = 5
-		ai_will_do = { factor = 1 }
-		search_filters = {
-			FOCUS_FILTER_INDUSTRY
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = industrial_complex
+					level = 4
+					instant_build = yes
+				}
+			}
+
+			swap_ideas = {
+    			remove_idea = POL_industrial_Cc
+    			add_idea = POL_industrial_Cd
+				}
+    		}
 		}
-		available_if_capitulated = yes
-		completion_reward = {
-			
-						swap_ideas = {
-			    			remove_idea = idea_arm_3_1
-			    			add_idea = idea_arm_4_1
-						}
-					
-		}
-	}
 }
