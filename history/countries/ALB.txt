@@ -1,8 +1,9 @@
-capital = 119
-
 oob = "ALB_1936"
+capital = 119
 set_research_slots = 3
-set_convoys = 0
+set_stability = 0.60
+set_war_support = 0.60
+set_convoys = 10
 
 recruit_character = ALB_16778948
 recruit_character = ALB_16777836
@@ -45,7 +46,10 @@ set_politics = {
 }
 
 set_popularities = {
-	neutrality = 100
+	neutrality = 6
+	fascism = 83.2
+	democratic = 0.8
+	communism = 10
 }
 
 add_ideas = {
@@ -53,8 +57,6 @@ add_ideas = {
 	civilian_economy
 	export_focus
 }
-set_stability = 0.60
-set_war_support = 0.60
 
 # Starting tech
 set_technology = {

@@ -2,7 +2,10 @@ capital = 26
 
 oob = "JAP_1936"
 set_research_slots = 3
+set_stability = 0.9
+set_war_support = 0.3
 set_convoys = 0
+create_faction = "Greater Asian Co-Prosperity Sphere"
 
 recruit_character = JAP_33558537
 recruit_character = JAP_16777518
@@ -47,7 +50,10 @@ set_politics = {
 }
 
 set_popularities = {
-	neutrality = 100
+	democratic = 50
+	fascism = 45
+	communism = 0
+	neutrality = 5
 }
 
 # DIPLOMACY
@@ -75,7 +81,7 @@ if = {
 }
 
 add_ideas = {
-	limited_conscription
+	disarmed_nation
 	civilian_economy
 	export_focus
 }
