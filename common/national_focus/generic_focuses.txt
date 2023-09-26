@@ -10,11 +10,11 @@ focus_tree = {
 		focus = generic_army_effort
 	}
 
-	# Military Tree #
+	# Political Tree #
 	focus = { 
-		id = generic_ModernMil_1
+		id = generic_Political_1
 		icon = GFX_focus_chi_army_reform
-		x = 2
+		x = 14
 		y = 0
 		cost = 5
 		search_filters = {
@@ -27,114 +27,413 @@ focus_tree = {
 		}
 	}
 
-	# Motorized Modern
-	focus = {
-		id = generic_Mot_1
-		icon = GFX_goal_generic_army_motorized
-		prerequisite = { focus = generic_ModernMil_1  }
-		mutually_exclusive = { focus = generic_Cav_1 }
-		x = 1
-		y = 1
-		cost = 5
-		completion_reward = {
-			add_ideas = generic_motorized_training
-		}
-	}
-
-	focus = {
-		id = generic_Mot_2
-		icon = GFX_focus_SOV_organize_wreckers
-		prerequisite = { focus = generic_Mot_1 }
-		x = 1
-		y = 2
-		cost = 5
-		completion_reward = {
-			add_ideas = generic_motorized_tactics_buff
-		}
-	}
-
-	focus = {
-		id = generic_Mot_3
-		icon = GFX_focus_generic_truck
-		prerequisite = {focus = generic_Mot_2}
-		x = 1
-		y = 3
-		cost = 10
-		completion_reward = {
-			add_ideas = generic_motorized_logistics_buff
-		}
-	}
-
-	focus = {
-		id = generic_Mot_4
-		icon = GFX_goal_generic_army_tanks
-		prerequisite = { focus = generic_ModernMil_2 }
-		prerequisite = { focus = generic_Mot_3 }
-		x = 1
-		y = 5
-		cost = 5
-		completion_reward = {
-			add_ideas = generic_tank_tactics
-
-			add_doctrine_cost_reduction = {
-				cost_reduction = 0.25
-				name = mobile_warfare
-			}
-
-			add_army_experience = 75
-		}
-	}
-
-	# Cavalry Modern
-	focus = {
-		id = generic_Cav_1
-		icon = GFX_goal_generic_cavalry
-		prerequisite = { focus = generic_ModernMil_1  }
-		mutually_exclusive = { focus = generic_Mot_1 }
-		x = 3
-		y = 1
-		cost = 5
-		completion_reward = {
-			add_ideas = generic_cavalry_training
-		}
-	}
-
-	focus = {
-		id = generic_Cav_2
-		icon = GFX_goal_generic_cavalry
-		prerequisite = { focus = generic_Cav_1 }
-		x = 3
-		y = 3 
-		cost = 5
-		completion_reward = {
-			add_ideas = generic_cavalry_tactics_buff
-		}
-	}
-
-	focus = {
-		id = generic_Cav_3
-		icon = GFX_focus_SOV_restore_cossack_units
-		prerequisite = { focus = generic_ModernMil_2 }
-		prerequisite = { focus = generic_Cav_2 }
-		x = 3
-		y = 5
-		cost = 5
-		completion_reward = {
-			
-		}
-	}
-
 	focus = { 
-		id = generic_ModernMil_2
-		icon = GFX_goal_generic_army_doctrines
-		prerequisite = { focus = generic_Cav_2 focus = generic_Mot_3 }
-		x = 2
+		id = generic_Political_2
+		icon = GFX_focus_chi_army_reform
+		x = 14
 		y = 4
 		cost = 5
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
 		}
 		ai_will_do = { factor = 1 }
+		prerequisite = { 
+			focus = generic_F_3 
+			focus = generic_D_3 
+			focus = generic_N_3 
+			focus = generic_C_3 
+			}
+		completion_reward = {			
+			add_war_support = 0.05
+			army_experience = 25
+		}
+	}
+
+	# Fascism
+	focus = { 
+		id = generic_F_1
+		icon = GFX_focus_chi_army_reform
+		x = 11
+		y = 1
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		ai_will_do = { factor = 1 }
+		prerequisite = { focus = generic_Political_1 }
+		completion_reward = {			
+			add_war_support = 0.05
+			army_experience = 25
+		}
+	}
+	focus = { 
+		id = generic_F_2
+		icon = GFX_focus_chi_army_reform
+		x = 11
+		y = 2
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		ai_will_do = { factor = 1 }
+		prerequisite = { focus = generic_F_1 }
+		completion_reward = {			
+			add_war_support = 0.05
+			army_experience = 25
+		}
+	}
+	focus = { 
+		id = generic_F_3
+		icon = GFX_focus_chi_army_reform
+		x = 11
+		y = 3
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		ai_will_do = { factor = 1 }
+		prerequisite = { focus = generic_F_2 }
+		completion_reward = {			
+			add_war_support = 0.05
+			army_experience = 25
+		}
+	}
+
+	# Democracy
+
+	focus = { 
+		id = generic_D_1
+		icon = GFX_focus_chi_army_reform
+		x = 13
+		y = 1
+		cost = 5
+		ai_will_do = { factor = 1 }
+		prerequisite = { focus = generic_Political_1 }
+		completion_reward = {			
+			add_war_support = 0.05
+			army_experience = 25
+		}
+	}
+	focus = { 
+		id = generic_D_2
+		icon = GFX_focus_chi_army_reform
+		x = 13
+		y = 2
+		cost = 5
+		ai_will_do = { factor = 1 }
+		prerequisite = { focus = generic_D_1 }
+		completion_reward = {			
+			add_war_support = 0.05
+			army_experience = 25
+		}
+	}
+	focus = { 
+		id = generic_D_3
+		icon = GFX_focus_chi_army_reform
+		x = 13
+		y = 3
+		cost = 5
+		ai_will_do = { factor = 1 }
+		prerequisite = { focus = generic_D_2 }
+		completion_reward = {			
+			add_war_support = 0.05
+			army_experience = 25
+		}
+	}
+
+	# Neutrality
+
+	focus = { 
+		id = generic_N_1
+		icon = GFX_focus_chi_army_reform
+		x = 15
+		y = 1
+		cost = 5
+		ai_will_do = { factor = 1 }
+		prerequisite = { focus = generic_Political_1 }
+		completion_reward = {			
+			add_war_support = 0.05
+			army_experience = 25
+		}
+	}
+	focus = { 
+		id = generic_N_2
+		icon = GFX_focus_chi_army_reform
+		x = 15
+		y = 2
+		cost = 5
+		ai_will_do = { factor = 1 }
+		prerequisite = { focus = generic_N_1 }
+		completion_reward = {			
+			add_war_support = 0.05
+			army_experience = 25
+		}
+	}
+	focus = { 
+		id = generic_N_3
+		icon = GFX_focus_chi_army_reform
+		x = 15
+		y = 3
+		cost = 5
+		ai_will_do = { factor = 1 }
+		prerequisite = { focus = generic_N_2 }
+		completion_reward = {			
+			add_war_support = 0.05
+			army_experience = 25
+		}
+	}
+
+	# Communism
+
+	focus = { 
+		id = generic_C_1
+		icon = GFX_focus_chi_army_reform
+		x = 17
+		y = 1
+		cost = 5
+		prerequisite = { focus = generic_Political_1 }
+		ai_will_do = { factor = 1 }
+		completion_reward = {			
+			add_war_support = 0.05
+			army_experience = 25
+		}
+	}
+	focus = { 
+		id = generic_C_2
+		icon = GFX_focus_chi_army_reform
+		x = 17
+		y = 2
+		cost = 5
+		ai_will_do = { factor = 1 }
+		prerequisite = { focus = generic_C_1 }
+		completion_reward = {			
+			add_war_support = 0.05
+			army_experience = 25
+		}
+	}
+	focus = { 
+		id = generic_C_3
+		icon = GFX_focus_chi_army_reform
+		x = 17
+		y = 3
+		cost = 5
+		ai_will_do = { factor = 1 }
+		prerequisite = { focus = generic_C_2 }
+		completion_reward = {			
+			add_war_support = 0.05
+			army_experience = 25
+		}
+	}
+
+	# Military Tree #
+	focus = { 
+		id = generic_ModernMil_1
+		icon = GFX_focus_chi_army_reform
+		x = 3
+		y = 0
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		ai_will_do = { factor = 1 }
+		completion_reward = {			
+			add_war_support = 0.05
+			army_experience = 25
+		}
+	}
+
+	focus = { 
+		id = generic_ModernMil_2
+		icon = GFX_focus_chi_army_reform
+		x = 3
+		y = 4
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		ai_will_do = { factor = 1 }
+		prerequisite = { 
+			focus = generic_Mobile_3 
+			focus = generic_Power_3 
+			focus = generic_Planning_3 
+			focus = generic_Mass_3 
+			}
+		completion_reward = {			
+			add_war_support = 0.05
+			army_experience = 25
+		}
+	}
+
+	# Mobile
+	focus = { 
+		id = generic_Mobile_1
+		icon = GFX_focus_chi_army_reform
+		x = 0
+		y = 1
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		ai_will_do = { factor = 1 }
+		prerequisite = { focus = generic_ModernMil_1 }
+		completion_reward = {			
+			add_war_support = 0.05
+			army_experience = 25
+		}
+	}
+	focus = { 
+		id = generic_Mobile_2
+		icon = GFX_focus_chi_army_reform
+		x = 0
+		y = 2
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		ai_will_do = { factor = 1 }
+		prerequisite = { focus = generic_Mobile_1 }
+		completion_reward = {			
+			add_war_support = 0.05
+			army_experience = 25
+		}
+	}
+	focus = { 
+		id = generic_Mobile_3
+		icon = GFX_focus_chi_army_reform
+		x = 0
+		y = 3
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		ai_will_do = { factor = 1 }
+		prerequisite = { focus = generic_Mobile_2 }
+		completion_reward = {			
+			add_war_support = 0.05
+			army_experience = 25
+		}
+	}
+
+	# Firepower
+
+	focus = { 
+		id = generic_Power_1
+		icon = GFX_focus_chi_army_reform
+		x = 2
+		y = 1
+		cost = 5
+		ai_will_do = { factor = 1 }
+		prerequisite = { focus = generic_ModernMil_1 }
+		completion_reward = {			
+			add_war_support = 0.05
+			army_experience = 25
+		}
+	}
+	focus = { 
+		id = generic_Power_2
+		icon = GFX_focus_chi_army_reform
+		x = 2
+		y = 2
+		cost = 5
+		ai_will_do = { factor = 1 }
+		prerequisite = { focus = generic_Power_1 }
+		completion_reward = {			
+			add_war_support = 0.05
+			army_experience = 25
+		}
+	}
+	focus = { 
+		id = generic_Power_3
+		icon = GFX_focus_chi_army_reform
+		x = 2
+		y = 3
+		cost = 5
+		ai_will_do = { factor = 1 }
+		prerequisite = { focus = generic_Power_2 }
+		completion_reward = {			
+			add_war_support = 0.05
+			army_experience = 25
+		}
+	}
+
+	# Grand battleplan
+
+	focus = { 
+		id = generic_Planning_1
+		icon = GFX_focus_chi_army_reform
+		x = 4
+		y = 1
+		cost = 5
+		ai_will_do = { factor = 1 }
+		prerequisite = { focus = generic_ModernMil_1 }
+		completion_reward = {			
+			add_war_support = 0.05
+			army_experience = 25
+		}
+	}
+	focus = { 
+		id = generic_Planning_2
+		icon = GFX_focus_chi_army_reform
+		x = 4
+		y = 2
+		cost = 5
+		ai_will_do = { factor = 1 }
+		prerequisite = { focus = generic_Planning_1 }
+		completion_reward = {			
+			add_war_support = 0.05
+			army_experience = 25
+		}
+	}
+	focus = { 
+		id = generic_Planning_3
+		icon = GFX_focus_chi_army_reform
+		x = 4
+		y = 3
+		cost = 5
+		ai_will_do = { factor = 1 }
+		prerequisite = { focus = generic_Planning_2 }
+		completion_reward = {			
+			add_war_support = 0.05
+			army_experience = 25
+		}
+	}
+
+	# Mass assault
+
+	focus = { 
+		id = generic_Mass_1
+		icon = GFX_focus_chi_army_reform
+		x = 6
+		y = 1
+		cost = 5
+		prerequisite = { focus = generic_ModernMil_1 }
+		ai_will_do = { factor = 1 }
+		completion_reward = {			
+			add_war_support = 0.05
+			army_experience = 25
+		}
+	}
+	focus = { 
+		id = generic_Mass_2
+		icon = GFX_focus_chi_army_reform
+		x = 6
+		y = 2
+		cost = 5
+		ai_will_do = { factor = 1 }
+		prerequisite = { focus = generic_Mass_1 }
+		completion_reward = {			
+			add_war_support = 0.05
+			army_experience = 25
+		}
+	}
+	focus = { 
+		id = generic_Mass_3
+		icon = GFX_focus_chi_army_reform
+		x = 6
+		y = 3
+		cost = 5
+		ai_will_do = { factor = 1 }
+		prerequisite = { focus = generic_Mass_2 }
 		completion_reward = {			
 			add_war_support = 0.05
 			army_experience = 25
