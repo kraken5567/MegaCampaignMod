@@ -1,7 +1,0 @@
-﻿l_spanish:
- news.2891.t:0 "[TAN.GetName] entra en [CHI.GetFactionName]"
- news.2891.d:0 "Hace unas horas, [CHI.GetName] y [TAN.GetName] han emitido una declaración conjunta en la que se concede a esta última el estatus de miembro de [CHI.GetFactionName]. Queda por ver si esta alianza se utilizará a efectos de ataque o de defensa, pero no hay duda de que ya están realizando una extensa planificación militar conjunta."
- news.2892.t:0 "[MON.GetName] entra en [CHI.GetFactionName]"
- news.2892.d:0 "Hace unas horas, [CHI.GetName] y [MON.GetName] han emitido una declaración conjunta en la que se concede a esta última el estatus de miembro de [CHI.GetFactionName]. Queda por ver si esta alianza se utilizará a efectos de ataque o de defensa, pero no hay duda de que ya están realizando una extensa planificación militar conjunta."
- news.2893.t:0 "[TIB.GetName] entra en [CHI.GetFactionName]"
- news.2893.d:0 "Hace unas horas, [CHI.GetName] y [TIB.GetName] han emitido una declaración conjunta en la que se concede a esta última el estatus de miembro de [CHI.GetFactionName]. Queda por ver si esta alianza se utilizará a efectos de ataque o de defensa, pero no hay duda de que ya están realizando una extensa planificación militar conjunta."

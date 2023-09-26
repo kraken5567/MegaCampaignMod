@@ -1,7 +1,0 @@
-﻿l_german:
- news.2891.t:0 "[TAN.GetName] tritt [CHI.GetFactionName] bei"
- news.2891.d:0 "[TAN.GetName] ist nun [CHI.GetFactionName]-Mitglied, wie heute in einer gemeinsamen Erklärung mit [CHI.GetName] bekanntgegeben. Ob diese Partnerschaft offensiven oder defensiven Zwecken dient, wird sich noch zeigen, doch es werden gewiss bereits umfangreiche militärische Planungen gemeinsam vorgenommen."
- news.2892.t:0 "[MON.GetName] tritt [CHI.GetFactionName] bei"
- news.2892.d:0 "[MON.GetName] ist nun [CHI.GetFactionName]-Mitglied, wie heute in einer gemeinsamen Erklärung mit [CHI.GetName] bekanntgegeben. Ob diese Partnerschaft offensiven oder defensiven Zwecken dient, wird sich noch zeigen, doch es werden gewiss bereits umfangreiche militärische Planungen gemeinsam vorgenommen."
- news.2893.t:0 "[TIB.GetName] tritt [CHI.GetFactionName] bei"
- news.2893.d:0 "[TIB.GetName] ist nun [CHI.GetFactionName]-Mitglied, wie heute in einer gemeinsamen Erklärung mit [CHI.GetName] bekanntgegeben. Ob diese Partnerschaft offensiven oder defensiven Zwecken dient, wird sich noch zeigen, doch es werden gewiss bereits umfangreiche militärische Planungen gemeinsam vorgenommen."
