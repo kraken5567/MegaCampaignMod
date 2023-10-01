@@ -1,0 +1,36 @@
+add_namespace = generic_focus
+
+country_event = {
+	id = generic_focus.001
+    title = "Modernized Military"
+    desc = "After a long time our military has worked at improving our tactics and now we have greatly improved!"
+
+    trigger = {
+    }
+
+    is_triggered_only = yes
+
+    mean_time_to_happen = {
+        days = 1 # 
+    }
+
+    option = {
+        name = "We shall be feared by our enemies!"
+
+		if = {
+			limit = {ROOT = {has_country_flag = picked_Mobile }
+			add_idea = generic_tank_tactics
+		}
+		else_if = {
+			limit = {ROOT = {has_country_flag = picked_Power } }
+			add_idea = generic_artillery_tactics
+        }
+		else_if = {
+			limit = {ROOT = {has_country_flag = picked_Planning } }
+			add_idea = generic_trench_tactics
+        }
+		else_if = {
+			limit = {ROOT = {has_country_flag = picked_Mass } }
+			add_idea = generic_push_tactics
+        }
+}
