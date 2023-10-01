@@ -23,6 +23,7 @@ state = {
 			}
 		}
 		add_core_of = Z68
+		add_claim_by = FRA
 	}
 
 	provinces = {
