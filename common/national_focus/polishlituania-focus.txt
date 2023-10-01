@@ -2,7 +2,7 @@ focus_tree = {
 
 	id = polishlituania-focus
 	continuous_focus_position = { x = 0 y = 1500 }
-	mark_focus_tree_layout_dirty = yes 
+	
 	country = {
 		factor = 0
 		modifier = {
@@ -629,13 +629,12 @@ focus_tree = {
 					has_country_flag = villan_ger
 					has_country_flag = villan_rus
 				}
-				add_ideas = POL_strong_government
 				#immediate
 				add_stability = 0.2
 				add_war_support = 0.2
 				# flag
 				set_country_flag = Gov_Strong
-				Z45 = { trigger_event = { id = Z45_gov_strong days = 2} }
+				Z45 = { country_event = { id = Z45.300 days = 2} }
 			}
 
 			else_if = {
@@ -651,13 +650,12 @@ focus_tree = {
 						}
 					}
 				}
-				add_ideas = POL_legitimate_government
 				#immediate
 				add_stability = 0.1
 				add_war_support = 0.1
 				# flag
 				set_country_flag = Gov_Legitimate
-				Z45 = { trigger_event = { id = Z45_gov_legit days = 2} }
+				Z45 = { country_event = { id = Z45.200 days = 2} }
 			}
 
 			else_if = {
@@ -665,13 +663,12 @@ focus_tree = {
 					has_country_flag = ally_ger
 					has_country_flag = ally_rus
 				}
-				add_ideas = POL_weak_government
 				#immediate
                 add_stability = -0.3
 				add_war_support = -0.3
 				# flag
 				set_country_flag = Gov_Weak
-				Z45 = { trigger_event = { id = Z45_gov_weak days = 2 } }
+				Z45 = { country_event = { id = Z45.100 days = 2 } }
 			}
 		}
 	}
