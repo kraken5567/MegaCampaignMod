@@ -40,52 +40,7 @@ focus_tree = {
 			}
 		completion_reward = {			
 			add_war_support = 0.05
-			
-			if = {
-				limit = {has_government = fascism}
-				add_ideas = generic_conquerAll
-			}
-			else_if = {
-				limit = {has_government = communism}
-				add_ideas = generic_puppetAll
-				every_other_country = {
-					limit = { 
-							NOT = { 
-								AND = {
-									is_ally_with = ROOT 
-									has_government = communism
-									is_subject_of = ROOT
-									has_opinion = { target = ROOT value > 50 }
-									}
-								}
-							}
-						}
-				ROOT = { create_wargoal = {
-					type = puppet_wargoal
-					target = PREV
-					} }
-				
-				}
-			else_if = {
-				limit = {has_government = democratic}
-				add_ideas = generic_releaseAll
-				every_other_country = {
-					limit = { 
-						NOT = { 
-							is_ally_with = ROOT 
-							has_government = democratic
-							is_subject_of = ROOT
-							has_opinion = { target = ROOT value > 50 } 
-							}
-						}
-					}
-				ROOT = { create_wargoal = { type = release target = PREV } }
-				}
-			else = {
-				add_ideas = generic_claimBorders
-				}
-
-
+			country_event = {id = generic_focus.002 days = 7}
 		}
 	}
 
@@ -106,7 +61,10 @@ focus_tree = {
 		mutually_exclusive = {focus = generic_D_1}
 		mutually_exclusive = {focus = generic_N_1}
 		
-		completion_reward = {			
+		completion_reward = {
+			set_politics = {
+				ruling_party = fascism
+			}			
 			add_popularity = {
 				ideology = fascism
 				popularity = 0.2
@@ -171,7 +129,10 @@ focus_tree = {
 		mutually_exclusive = {focus = generic_C_1}
 		mutually_exclusive = {focus = generic_F_1}
 		mutually_exclusive = {focus = generic_N_1}
-		completion_reward = {			
+		completion_reward = {	
+			set_politics = {
+				ruling_party = democratic
+			}		
 			add_popularity = {
 				ideology = democratic
 				popularity = 0.2
@@ -231,7 +192,10 @@ focus_tree = {
 		mutually_exclusive = {focus = generic_C_1}
 		mutually_exclusive = {focus = generic_D_1}
 		mutually_exclusive = {focus = generic_F_1}
-		completion_reward = {			
+		completion_reward = {		
+			set_politics = {
+				ruling_party = neutrality
+			}	
 			add_popularity = {
 				ideology = neutrality
 				popularity = 0.2
@@ -290,9 +254,16 @@ focus_tree = {
 		mutually_exclusive = {focus = generic_D_1}
 		mutually_exclusive = {focus = generic_F_1}
 		mutually_exclusive = {focus = generic_N_1}
-		completion_reward = {			
+		completion_reward = {
+			set_politics = {
+				ruling_party = communism
+			}			
+			add_popularity = {
+				ideology = communism
+				popularity = 0.2
+			}
 			add_war_support = 0.05
-			army_experience = 25
+			add_stability = 0.05
 		}
 	}
 	focus = { 
@@ -367,7 +338,7 @@ focus_tree = {
 			}
 		completion_reward = {			
 			add_war_support = 0.25
-			country_event = generic_focus.001
+			country_event = { id = generic_focus.001 days = 7}
 		}
 	}
 
@@ -815,11 +786,7 @@ focus_tree = {
 					type = synthetic_refinery
 					level = 2
 					instant_build = yes
-				}
-			}
-
-			swap_ideas = {
-	
+					}
 				}
         	}
     	}
@@ -840,13 +807,10 @@ focus_tree = {
 					type = synthetic_refinery
 					level = 2
 					instant_build = yes
-				}
-			}
-				swap_ideas = {
-					
 					}
 				}
 			}
+		}
 	
 		focus = {
 			id = generic_industrial_T_3
@@ -866,11 +830,8 @@ focus_tree = {
 					instant_build = yes
 					}
 				}
-				swap_ideas = {
-					
-					}
-				}
 			}
+		}
 
 	# Militarist Focused
 	focus = {

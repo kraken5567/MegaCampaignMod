@@ -18,14 +18,6 @@ ideas = {
             }
         }
 
-        generic_releaseAll = {
-
-        }
-
-        generic_claimBorders = {
-
-        }
-
         # air
         generic_air_1 = {
             modifier = {
@@ -33,15 +25,15 @@ ideas = {
                 air_air_superiority_defence_factor = 0.1
                 }
         }
-         
-        #generic_air_2 = {
-        #    # How do?
-        #    modifier = {
-        #        equipment_bonus = {fighter_equipment = { build_cost_ic = -0.1 instant = yes } }
-        #        equipment_bonus = { CAS_equipment = { build_cost_ic = -0.125 instant = yes } }
-        #        equipment_bonus = { strat_bomber_equipment = { build_cost_ic = -0.2 instant = yes } }
-        #        }
-        #     }
+        
+        generic_air_2 = {
+            # How do?
+            modifier = {
+                   air_close_air_support_attack_factor = 0.025
+                   air_close_air_support_defence_factor = 0.025
+                   air_accidents_factor = -0.01
+                }
+             }
          
         generic_air_3 = {
             modifier = {
@@ -116,6 +108,18 @@ ideas = {
             }
         }
 
+        # Nationalism Path
+
+        generic_F_army = {
+            modifier = {
+                army_org_factor = 0.05
+                army_speed_factor = 0.1
+                army_attack_factor = 0.033
+                army_fuel_consumption_factor = -0.1
+                supply_consumption_factor = 0.05
+            }
+        }
+
         generic_F_goals = {
             modifier = {
                 fascism_drift = 0.02
@@ -125,6 +129,18 @@ ideas = {
                 non_core_manpower = -1
                 research_bonus = 0.1
                 state_production_speed_arms_factory_factor = 0.05
+            }
+        }
+
+        # Democracy/Republic Path
+        
+        generic_D_army = {
+            modifier = {
+                army_org_factor = 0.1
+                army_speed_factor = 0.1
+                army_attack_factor = 0.033
+                army_fuel_consumption_factor = 0.05
+                supply_consumption_factor = 0.1
             }
         }
 
@@ -139,6 +155,18 @@ ideas = {
             }
         }
 
+        # Neutrality/Monarch Path
+
+        generic_N_army = {
+            modifier = {
+                army_org_factor = -0.05
+                army_speed_factor = -0.1
+                army_attack_factor = 0.033
+                army_fuel_consumption_factor = -0.1
+                supply_consumption_factor = -0.1
+            }
+        }
+
         generic_N_goals = {
             modifier = {
                 neutrality_drift = 0.02
@@ -148,6 +176,18 @@ ideas = {
                 non_core_manpower = -0.05
                 supply_consumption_factor = 0.01
                 research_bonus = -0.01
+            }
+        }
+
+        # Communism Path
+
+        generic_C_army = {
+            modifier = {
+                army_org_factor = -0.1
+                army_speed_factor = -0.1
+                army_attack_factor = 0.1
+                army_fuel_consumption_factor = 0.05
+                supply_consumption_factor = 0.15
             }
         }
         
