@@ -701,8 +701,7 @@ suppression_generic = {
 					OR = {
 						any_country = {
 							is_justifying_wargoal_against = ROOT
-							tag = GER
-							tag = ITA
+							tag = Z68
 						}
 					}
 				}			
@@ -760,7 +759,7 @@ suppression_generic = {
 			}
 			
 			regiments = {
-				cavalry = 25
+				cavalry = 24
 			}
 		}
 		
@@ -1777,24 +1776,6 @@ suppression_generic = {
 
 
 armored_generic = {
-
-	blocked_for = {
-		GER
-		JAP
-		ENG
-		USA
-		ITA
-		SOV
-		CHI
-		PRC 
-		GXC
-		YUN
-		SHX
-		XSM
-		SIK
-		MEN
-		MAN
-	}
 	
 	roles = {
 		armor
@@ -2444,24 +2425,6 @@ armored_generic = {
 }
 
 garrison_generic = {
-
-	blocked_for = {
-		GER
-		JAP
-		ENG
-		USA
-		ITA
-		SOV
-		CHI
-		PRC 
-		GXC
-		YUN
-		SHX
-		XSM
-		SIK
-		MEN
-		MAN
-	}
 	
 	roles = {
 		garrison
@@ -2566,24 +2529,6 @@ garrison_generic = {
 }
 	
 infantry_generic = {
-
-	blocked_for = {
-		GER
-		JAP
-		ENG
-		USA
-		ITA
-		SOV
-		CHI
-		PRC 
-		GXC
-		YUN
-		SHX
-		XSM
-		SIK
-		MEN
-		MAN
-	}
 	
 	roles = {
 		infantry
@@ -2688,24 +2633,6 @@ infantry_generic = {
 }
 
 mountaineers_generic = {
-
-	blocked_for = {
-		GER
-		JAP
-		ENG
-		USA
-		ITA
-		SOV
-		CHI
-		PRC 
-		GXC
-		YUN
-		SHX
-		XSM
-		SIK
-		MEN
-		MAN
-	}
 	
 	roles = {
 		mountaineers
@@ -2807,25 +2734,6 @@ mountaineers_generic = {
 }
 
 marines_generic = {
-
-	blocked_for = {
-		GER
-		JAP
-		ENG
-		USA
-		ITA
-		SOV
-		CHI
-		PRC 
-		GXC
-		YUN
-		SHX
-		XSM
-		SIK
-		MEN
-		MAN
-	}
-	
 	roles = {
 		marines
 	}
@@ -2923,24 +2831,6 @@ marines_generic = {
 
 
 paratroopers_generic = {
-
-	blocked_for = {
-		GER
-		JAP
-		ENG
-		USA
-		ITA
-		SOV
-		CHI
-		PRC 
-		GXC
-		YUN
-		SHX
-		XSM
-		SIK
-		MEN
-		MAN
-	}
 	
 	roles = {
 		paratrooper
@@ -3045,24 +2935,6 @@ paratroopers_generic = {
 
 
 anti_armor_generic = {
-
-	blocked_for = {
-		GER
-		JAP
-		ENG
-		USA
-		ITA
-		SOV
-		CHI
-		PRC 
-		GXC
-		YUN
-		SHX
-		XSM
-		SIK
-		MEN
-		MAN
-	}
 	
 	roles = {
 		motorized

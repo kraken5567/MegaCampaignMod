@@ -321,11 +321,11 @@ bba_air_prod_1 = {
 		value = 10
 	}
 
-	ai_strategy = {
-		type = unit_ratio
-		id = cv_naval_bomber
-		value = 10
-	}
+	#ai_strategy = {
+	#	type = unit_ratio
+	#	id = cv_naval_bomber
+	#	value = 10
+	#}
 
 }
 
@@ -749,13 +749,6 @@ default_stockpile_management = {
 
 
 dont_build_capitals_if_on_treaty = {
-	enable = {
-		has_idea = MTG_naval_treaty_adherent
-	}
-
-	abort = {
-		NOT = { has_idea = MTG_naval_treaty_adherent }
-	}
 
 	ai_strategy = {
 		type = unit_ratio
