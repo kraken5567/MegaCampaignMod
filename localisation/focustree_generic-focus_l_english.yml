@@ -1,51 +1,51 @@
 l_english:
 
 ## MILITARY ##
-generic_ModernMil1:0 "Replan Our Military"
-generic_ModernMil1_desc:0 "We have slacked our military, and it shows."
+generic_ModernMil_1:0 "Replan Our Military"
+generic_ModernMil_1_desc:0 "We have slacked our military, and it shows."
 
-generic_ModernMil2:0 "Finalize our Doctrine!"
-generic_ModernMil2_desc:0 "Our new found defender of our people shall be our sword and shield!"
+generic_ModernMil_2:0 "Finalize our Doctrine!"
+generic_ModernMil_2_desc:0 "Our new found defender of our people shall be our sword and shield!"
 
 # Mobile
-generic_Mobile1:0 "Tank Design Program"
-generic_Mobile1_desc:0 "We need to try and test any and all options, the upperhand shall be ours!"
+generic_Mobile_1:0 "Tank Design Program"
+generic_Mobile_1_desc:0 "We need to try and test any and all options, the upperhand shall be ours!"
 
-generic_Mobile2:0 "Tank Specialization"
-generic_Mobile2_desc:0 "We need to specialize the tanks!"
+generic_Mobile_2:0 "Tank Specialization"
+generic_Mobile_2_desc:0 "We need to specialize the tanks!"
 
-generic_Mobile3:0 "Tank Push Tactics"
-generic_Mobile3_desc:0 "Roll over their front lines!"
+generic_Mobile_3:0 "Tank Push Tactics"
+generic_Mobile_3_desc:0 "Roll over their front lines!"
 
 # Power
-generic_Power1:0 "Artilery Improvments"
-generic_Power1_desc:0 "Artillery is the artery of our strength!"
+generic_Power_1:0 "Artilery Improvments"
+generic_Power_1_desc:0 "Artillery is the artery of our strength!"
 
-generic_Power2:0 "Barrage Warfare"
-generic_Power2_desc:0 "Fire in waves to slow their push!"
+generic_Power_2:0 "Barrage Warfare"
+generic_Power_2_desc:0 "Fire in waves to slow their push!"
 
-generic_Power3:0 "Overwhelming Firepower"
-generic_Power3_desc:0 "The enemy shall know no mercy!"
+generic_Power_3:0 "Overwhelming Firepower"
+generic_Power_3_desc:0 "The enemy shall know no mercy!"
 
 # Planning
-generic_Planning1:0 "Defend the Homefront"
-generic_Planning1_desc:0 "Protect our country from invaders!"
+generic_Planning_1:0 "Defend the Homefront"
+generic_Planning_1_desc:0 "Protect our country from invaders!"
 
-generic_Planning2:0 "Fortify Our Borders"
-generic_Planning2_desc:0 "Forts will buy us valuable time and resources."
+generic_Planning_2:0 "Fortify Our Borders"
+generic_Planning_2_desc:0 "Forts will buy us valuable time and resources."
 
-generic_Planning3:0 "Protect Our Urban Centers"
-generic_Planning3_desc:0 "Defense is the new offense!"
+generic_Planning_3:0 "Protect Our Urban Centers"
+generic_Planning_3_desc:0 "Defense is the new offense!"
 
 # Mass
-generic_Mass1:0 "Red or Dead"
-generic_Mass1_desc:0 "Communism shall rise from the capitalist ashes!"
+generic_Mass_1:0 "Red or Dead"
+generic_Mass_1_desc:0 "Communism shall rise from the capitalist ashes!"
 
-generic_Mass2:0 "Air-Ground Combat"
-generic_Mass2_desc:0 "Planes and Infanrty combined equals victory!"
+generic_Mass_2:0 "Air-Ground Combat"
+generic_Mass_2_desc:0 "Planes and Infanrty combined equals victory!"
 
-generic_Mass3:0 "Human Wave"
-generic_Mass3_desc:0 "May we flow like the open ocean!"
+generic_Mass_3:0 "Human Wave"
+generic_Mass_3_desc:0 "May we flow like the open ocean!"
 
 ## Political ##
 
@@ -145,21 +145,21 @@ generic_industrial_N:0 "Land and Sea"
 generic_industrial_N_desc:0 ""
 
 # Air
-generic_industrial_air_1:0 "Fighter Focus"
-generic_industrial_air_1_desc:0 ""
+generic_air_1:0 "Fighter Focus"
+generic_air_1_desc:0 ""
 
-generic_industrial_air_2:0 "Close Air Support Focus"
-generic_industrial_air_2_desc:0 ""
+generic_air_2:0 "Close Air Support Focus"
+generic_air_2_desc:0 ""
 
-generic_industrial_air_3:0 "Strategic Strikes"
-generic_industrial_air_3_desc:0 ""
+generic_air_3:0 "Strategic Strikes"
+generic_air_3_desc:0 ""
 
 # Sea
-generic_industrial_naval_1:0 "Coastal Defense"
-generic_industrial_naval_1_desc:0 ""
+generic_naval_1:0 "Coastal Defense"
+generic_naval_1_desc:0 ""
 
-generic_industrial_naval_2:0 "Trade Strikes"
-generic_industrial_naval_2_desc:0 ""
+generic_naval_2:0 "Trade Strikes"
+generic_naval_2_desc:0 ""
 
-generic_industrial_naval_3:0 "Fleet Interception"
-generic_industrial_naval_3_desc:0 ""
+generic_naval_3:0 "Fleet Interception"
+generic_naval_3_desc:0 ""
