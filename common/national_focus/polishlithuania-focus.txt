@@ -1,6 +1,6 @@
 focus_tree = {
 
-	id = polishlituania-focus
+	id = polishlithuania-focus
 	continuous_focus_position = { x = 0 y = 1500 }
 	
 	country = {
@@ -151,8 +151,8 @@ focus_tree = {
 		cost = 5
 		prerequisite = { focus = POL_industrial_N }
 		completion_reward = {			
-			add_war_support = 0.05
-			army_experience = 25
+			navy_experience = 25
+			add_ideas = POL_navy_1
 		}
 	}
 	focus = { 
@@ -163,8 +163,8 @@ focus_tree = {
 		cost = 5
 		prerequisite = { focus = POL_industrial_N }
 		completion_reward = {			
-			add_war_support = 0.05
-			army_experience = 25
+			navy_experience = 25
+			add_ideas = POL_navy_2
 		}
 	}
 	focus = { 
@@ -175,8 +175,8 @@ focus_tree = {
 		cost = 5
 		prerequisite = { focus = POL_industrial_N }
 		completion_reward = {			
-			add_war_support = 0.05
-			army_experience = 25
+			navy_experience = 25
+			add_ideas = POL_navy_3
 		}
 	}
 	# Air
