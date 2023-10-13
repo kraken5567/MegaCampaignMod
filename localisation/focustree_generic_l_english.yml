@@ -1,4 +1,4 @@
-l_english:
+﻿l_english:
 
 ## MILITARY ##
 generic_ModernMil_1:0 "Replan Our Military"
@@ -97,69 +97,69 @@ generic_C_3_desc:0 "We must set our sights on spreading the revolution!"
 
 ## INDUSTRY ##
 generic_industrial_1:0 "Fund Economic Projects"
-generic_industrial_1_desc:0 ""
+generic_industrial_1_desc:0 "0"
 
 # Civillian
 generic_industrial_C_1:0 "Subsidize Public Factories"
-generic_industrial_C_1_desc:0 ""
+generic_industrial_C_1_desc:0 "0"
 
 generic_industrial_C_2:0 "Buy Bankrupt Factories"
-generic_industrial_C_2_desc:0 ""
+generic_industrial_C_2_desc:0 "0"
 
 generic_industrial_C_3:0 "Sieze Misused Production Assets"
-generic_industrial_C_3_desc:0 ""
+generic_industrial_C_3_desc:0 "0"
 
 # Refinery
 generic_industrial_T_1:0 "Invest in Synthetic Oil Ventures"
-generic_industrial_T_1_desc:0 ""
+generic_industrial_T_1_desc:0 "0"
 
 generic_industrial_T_2:0 "Subsidize Synthetic Oil Ventures"
-generic_industrial_T_2_desc:0 ""
+generic_industrial_T_2_desc:0 "0"
 
 generic_industrial_T_3:0 "Sieze Faltering Refineries"
-generic_industrial_T_3_desc:0 ""
+generic_industrial_T_3_desc:0 "0"
 
 # Military
 generic_industrial_M_1:0 "Push for Military Production"
-generic_industrial_M_1_desc:0 ""
+generic_industrial_M_1_desc:0 "0"
 
 generic_industrial_M_2:0 "Increase Military Spending"
-generic_industrial_M_2_desc:0 ""
+generic_industrial_M_2_desc:0 "0"
 
 generic_industrial_M_3:0 "Reorganize Military Expenses"
-generic_industrial_M_3_desc:0 ""
+generic_industrial_M_3_desc:0 "0"
 
 # Navy
 generic_industrial_N_1:0 "Build More Ports"
-generic_industrial_N_1_desc:0 ""
+generic_industrial_N_1_desc:0 "0"
 
 generic_industrial_N_2:0 "Fund Dockyard Projects"
-generic_industrial_N_2_desc:0 ""
+generic_industrial_N_2_desc:0 "0"
 
 generic_industrial_N_3:0 "Subsidize Public Trade Ports"
-generic_industrial_N_3_desc:0 ""
+generic_industrial_N_3_desc:0 "0"
 
 ## Air and Sea ##
 
 generic_industrial_N:0 "Land and Sea"
-generic_industrial_N_desc:0 ""
+generic_industrial_N_desc:0 "0"
 
 # Air
 generic_air_1:0 "Fighter Focus"
-generic_air_1_desc:0 ""
+generic_air_1_desc:0 "0"
 
 generic_air_2:0 "Close Air Support Focus"
-generic_air_2_desc:0 ""
+generic_air_2_desc:0 "0"
 
 generic_air_3:0 "Strategic Strikes"
-generic_air_3_desc:0 ""
+generic_air_3_desc:0 "0"
 
 # Sea
 generic_naval_1:0 "Coastal Defense"
-generic_naval_1_desc:0 ""
+generic_naval_1_desc:0 "0"
 
 generic_naval_2:0 "Trade Strikes"
-generic_naval_2_desc:0 ""
+generic_naval_2_desc:0 "0"
 
 generic_naval_3:0 "Fleet Interception"
-generic_naval_3_desc:0 ""
+generic_naval_3_desc:0 "0"
