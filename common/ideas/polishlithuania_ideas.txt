@@ -2,22 +2,24 @@ ideas = {
     country = {
         # air
         POL_air_1 = {
+            picture = generic_fighter_production_diverted
             modifier = {
                 air_air_superiority_attack_factor = 0.1
                 air_air_superiority_defence_factor = 0.1
                 }
         }
          
-        #POL_air_2 = {
-        #    # How do?
-        #    modifier = {
-        #        equipment_bonus = {fighter_equipment = { build_cost_ic = -0.1 instant = yes } }
-        #        equipment_bonus = { CAS_equipment = { build_cost_ic = -0.125 instant = yes } }
-        #        equipment_bonus = { strat_bomber_equipment = { build_cost_ic = -0.2 instant = yes } }
-        #        }
-        #     }
+        POL_air_2 = {
+            picture = generic_air_payment
+            modifier = {
+                   air_close_air_support_attack_factor = 0.025
+                   air_close_air_support_defence_factor = 0.025
+                   air_accidents_factor = -0.01
+                }
+             }
          
         POL_air_3 = {
+            picture = generic_air_research
             modifier = {
                 air_strategic_bomber_agility_factor = 0.1
                 air_strategic_bomber_attack_factor = 0.1
@@ -28,6 +30,7 @@ ideas = {
 
         # navy
         POL_navy_1 = {
+            picture = generic_navy_bonus
             modifier = {
                 naval_coordination = 0.05
                 experience_gain_navy = 0.025
@@ -35,6 +38,7 @@ ideas = {
         }
 
         POL_navy_2 = {
+            picture = generic_coastal_navy
             modifier = {
                 navy_submarine_attack_factor = 0.025
                 navy_submarine_defence_factor = 0.05
@@ -43,6 +47,7 @@ ideas = {
         }
 
         POL_navy_3 = {
+            picture = generic_sea_focused_navy
             modifier = {
                 navy_capital_ship_attack_factor = 0.075
                 navy_capital_ship_defence_factor = 0.1
@@ -54,7 +59,7 @@ ideas = {
         #https://hoi4-modding.fandom.com/wiki/Modifiers
 
         POL_motorized_training = {
-
+            picture = FRA_motorized_focus
             modifier = {
                 motorized_movement_speed = 0.15
                 motorized_attack_factor = 0.05
@@ -63,7 +68,7 @@ ideas = {
         }
 
         POL_motorized_logistics_buff = {
-
+            picture = generic_build_infrastructure
             modifier = {
                 motorized_supply_consumption_factor = -0.10
                 motorized_supply_grace = 0.10
@@ -71,14 +76,14 @@ ideas = {
         }
 
         POL_motorized_tactics_buff = {
-
+            picture = FRA_motorized_focus
             modifier = {
                 add_army_experience = 90
             }  
         }
 
         POL_tank_tactics = {
-
+            picture = generic_acquire_tanks
             modifier = {
                 army_armor_attack_factor  = 0.1
                 army_armor_defence_factor = 0.05
@@ -88,6 +93,7 @@ ideas = {
         }
         
         POL_cavalry_training = {
+            picture = generic_army_war_college
             modifier = {
                     cavalry_speed = 0.05
                     cavalry_supply_consumption = 0.05
@@ -97,19 +103,23 @@ ideas = {
                 }
 
         POL_cavalry_tactics_buff = {
+            picture = generic_army_war_college
             modifier = {
                 cavalry_speed_factor = 0.15
                 }
         }
 
-        #POL_Master_Cav = {
-        #    modifier = {
-        #        cavalry_attack 
-        #    }
-        #}
+        POL_Master_Cav = {
+            picture = generic_motorized_equipment_manufacturer_2
+            modifier = {
+                cavalry_army_attack_factor = 0.1
+                cavalry_army_organization_factor = 0.05
+                cavalry_army_defense_factor = 0.05 
+            }
+        }
         
         POL_combined_arms_mastery = {
-
+            picture = hol_expand_the_colonial_army
             modifier = {
                 add_equipment_capture_factor = 0.2
             }
@@ -117,12 +127,14 @@ ideas = {
         
         # Government
         POL_remove_fascism = {
+            picture = generic_fascism_banned
             modifier = {
                 fascism_drift = -0.25
             }
         }
 
         POL_government_stall = {
+            picture = gre_political_instability
             modifier = {
                 war_support_factor = -0.2
                 stability_factor = -0.1
@@ -135,6 +147,7 @@ ideas = {
             }
 
         POL_gov_republic = {
+            picture = EST_democratic_opposition
             modifier = {
                 democratic_drift = 0.02
                 surrender_limit = -0.05
@@ -146,6 +159,7 @@ ideas = {
         }
 
         POL_gov_king = {
+            picture = generic_monarchist_uprising
             modifier = {
                 neutrality_drift = 0.02
                 surrender_limit = 0.1
@@ -158,6 +172,7 @@ ideas = {
         }
         
         POL_gov_people = {
+            picture = ast_abandon_the_westminster_system_communism
             modifier = {
                 communism_drift = 0.02
                 surrender_limit = 0.05
@@ -171,6 +186,7 @@ ideas = {
 
             # actions
         POL_weak_government = {
+            picture = generic_disjointed_gov
             allowed = {
                 always = yes
             }
@@ -181,6 +197,7 @@ ideas = {
         }
     
         POL_legitimate_government = {
+            picture = generic_pp_unity_bonus
             allowed = {
                 always = yes
             }
@@ -193,6 +210,7 @@ ideas = {
         }
     
         POL_strong_government = {
+            picture = POL_april_constitution
             allowed = {
                 always = yes
             }
@@ -207,21 +225,25 @@ ideas = {
          
         # Civillian Factory Ideas
         POL_industrial_Ca = {
+            picture = POL_disjointed_industry
             modifier = {
                 production_speed_industrial_complex_factor = 0.05
             }
         }
         POL_industrial_Cb = {
+            picture = man_five_year_plan_industry
             modifier = {
                 production_speed_industrial_complex_factor = 0.1
             }
         }
         POL_industrial_Cc = {
+            picture = man_five_year_plan_industry
             modifier = {
                 production_speed_industrial_complex_factor = 0.15
             }
         }
         POL_industrial_Cd = {
+            picture = man_five_year_plan_industry
             modifier = {
                 production_speed_industrial_complex_factor = 0.2
             }
@@ -229,21 +251,25 @@ ideas = {
 
         # Military Factory Ideas
         POL_industrial_Ma = {
+            picture = POL_disjointed_industry
             modifier = {
                 production_speed_arms_factory_factor = 0.05
             }
         }
         POL_industrial_Mb = {
+            picture = man_five_year_plan_industry
             modifier = {
                 production_speed_arms_factory_factor = 0.1
             }
         }
         POL_industrial_Mc = {
+            picture = man_five_year_plan_industry
             modifier = {
                 production_speed_arms_factory_factor = 0.15
             }
         }
         POL_industrial_Md = {
+            picture = man_five_year_plan_industry
             modifier = {
                 production_speed_arms_factory_factor = 0.2
             }
