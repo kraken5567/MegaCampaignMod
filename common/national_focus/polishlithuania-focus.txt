@@ -313,7 +313,7 @@ focus_tree = {
 	#Villanize Germany
 	focus = {
 		id = Z45_villainize_germany
-		icon = GFX_focus_Z45_reassert_silesian_claims
+		icon = GFX_focus_POL_reassert_silesian_claims
 		x = 14
 		y = 2
 		cost = 7.143 #50 days
@@ -502,37 +502,6 @@ focus_tree = {
 		will_lead_to_war_with = SOV
 	}
 
-	#Buffer States
-	#focus = {
-	#	id = Z45_buffer_states
-	#	icon = GFX_goal_unknown
-	#	x = 15
-	#	y = 3
-	#	cost = 12
-	#	search_filters = {
-	#		FOCUS_FILTER_FRA_POLITICAL_VIOLENCE
-	#	}
-	#	prerequisite = {
-	#		focus = Z45_villainize_germany
-	#		focus = Z45_villainize_russia
-	#	} 
-	#	available = {
-	#		date > 1940.01.01
-	#		has_government = fascism
-	#	}
-	#	completion_reward = {
-	#		custom_effect = {
-	#			target = {
-	#				controller = Z45
-	#			}
-	#			which = surrounding_states
-	#			scripted_effect = {
-	#				id = add_claim_scripted_effect
-	#			}
-	#		}
-	#	}
-	#}
-
 	# Villanize Denmark
 	focus = {
 		id = Z45_villainize_denmark
@@ -592,7 +561,7 @@ focus_tree = {
 
 	focus = {
 		id = Z45_Gov_Options
-		icon = GFX_focus_Z45_common_organization_of_society
+		icon = GFX_focus_POL_common_organization_of_society
 		x = 15
 		y = 3
 		cost = 3.572 #25 days
@@ -748,7 +717,7 @@ focus_tree = {
 
 	focus = {
 		id = Z45_gov_f_ban
-		icon = GFX_focus_Z45_ban_nazi_party
+		icon = GFX_focus_POL_ban_nazi_party
 		cost = 7.143 #50
 		x = 8
 		y = 4
@@ -830,7 +799,7 @@ focus_tree = {
 
 	focus = {
 		id = Z45_gov_m_strengthen
-		icon = GFX_focus_Z45_cossack_king
+		icon = GFX_focus_POL_cossack_king
 		cost = 14.286 #100
 		x = 10
 		y = 3
@@ -845,6 +814,7 @@ focus_tree = {
 			create_country_leader = {
 				name = "King Stanisław IV"
 				ideology = despotism
+				picture = "gfx/leaders/POL/Stanisław_Augustus.dds"
 				traits = {
 					Dictator
 					Hawk

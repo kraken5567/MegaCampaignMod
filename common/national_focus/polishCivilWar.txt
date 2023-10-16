@@ -848,7 +848,7 @@ focus_tree = {
 				popularity = 0.25
 			}
 			create_country_leader = {
-				picture = ROOT #Change Later
+				picture = "gfx/leaders/POL/Stanisław_Augustus.dds"
 				name = "King Stanisław IV"
 				ideology = despotism
 				traits = {
