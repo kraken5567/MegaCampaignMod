@@ -1,9 +1,10 @@
 add_namespace = generic_focus
 
 country_event = {
-	id = generic_focus.001
+    id = generic_focus.001
     title = "Modernized Military"
-    desc = "After a long time our military has worked at improving our tactics and now we have greatly improved!"
+    desc = "After a long period of work, our military has improved its tactics significantly."
+	picture = GFX_report_event_generic_military_parade
 
     trigger = {
     }
@@ -11,105 +12,108 @@ country_event = {
     is_triggered_only = yes
 
     mean_time_to_happen = {
-        days = 1 # 
+        days = 1
     }
 
     option = {
         name = "We shall be feared by our enemies!"
 
-		if = {
-			limit = {ROOT = {has_country_flag = picked_Mobile } }
-			add_ideas = generic_tank_tactics
-		}
-		else_if = {
-			limit = {ROOT = {has_country_flag = picked_Power } }
-			add_ideas = generic_artillery_tactics
-		}
-		else_if = {
-			limit = {ROOT = {has_country_flag = picked_Planning } }
-			add_ideas = generic_trench_tactics
-		}
-		else_if = {
-			limit = {ROOT = {has_country_flag = picked_Mass } }
-			add_ideas = generic_push_tactics
-		}
-		}	
-	}
+        if = {
+            limit = { has_country_flag = picked_Mobile }
+            add_ideas = generic_tank_tactics
+        }
+        else_if = {
+            limit = { has_country_flag = picked_Power }
+            add_ideas = generic_artillery_tactics
+        }
+        else_if = {
+            limit = { has_country_flag = picked_Planning }
+            add_ideas = generic_trench_tactics
+        }
+        else_if = {
+            limit = { has_country_flag = picked_Mass }
+            add_ideas = generic_push_tactics
+        }
+    }
+}
 
 country_event = {
-	id = generic_focus.002
-	title = "Government Reorginization"
-	desc = "After a long time our military has worked at improving our tactics and now we have greatly improved!"
+    id = generic_focus.002
+    title = "Government Reorganization"
+    desc = "After a long period of work, our military has improved its tactics significantly."
+	picture = GFX_report_event_generic_parliament
 
-	trigger = {
+    trigger = {
     }
 
     is_triggered_only = yes
 
     mean_time_to_happen = {
-        days = 1 # 
+        days = 1
     }
 
-	option = {
-		name = "For the better of our country!"
+    option = {
+        name = "For the better of our country!"
 
-		if = {
-			limit = { has_government = fascism }
-			add_ideas = generic_conquerAll
-		}
-		else_if = {
-			limit = { has_government = communism }
-			add_ideas = generic_puppetAll
-			every_other_country = {
-				limit = { 
-						NOT = { 
-							AND = {
-								is_ally_with = ROOT 
-								has_government = communism
-								is_subject_of = ROOT
-								has_opinion = { target = ROOT value > 50 }
-								}
-							}
-						}
-					}
-			ROOT = { create_wargoal = {
-				type = puppet_wargoal_focus
-				target = PREV
-				} }
-			}
-		else_if = {
-			limit = {has_government = democratic}
-			every_other_country = {
-				limit = { 
-					NOT = { 
-						is_ally_with = ROOT 
-						has_government = democratic
-						is_subject_of = ROOT
-						has_opinion = { target = ROOT value > 50 } 
-						}
-					}
-				}
-			# found wargoal here "C:\Program Files (x86)\Steam\steamapps\common\Hearts of Iron IV\common\wargoals\00_invasion.txt"
-			ROOT = { create_wargoal = { type = liberate_wargoal  target = PREV } }
-			}
-		else = {
-			every_neighbor_country = {
-				limit = {
-					NOT = {
-						is_subject_of = ROOT
-						is_ally_with = ROOT
-						has_government = ROOT
-						}
-					}
-				}
-			ROOT = { create_wargoal = {
-				target = PREV
-				type = annex_everything
-			} }
-			ROOT = { create_wargoal = {
-				target = PREV
-				type = puppet_wargoal_focus
-			} }
-			}
-		}
-	}
+        if = {
+            limit = { has_government = fascism }
+            add_ideas = generic_conquerAll
+        }
+        else_if = {
+            limit = { has_government = communism }
+            add_ideas = generic_puppetAll
+            every_other_country = {
+                limit = {
+                    NOT = {
+                        AND = {
+                            is_ally_with = ROOT
+                            has_government = communism
+                            is_subject_of = ROOT
+                            has_opinion = { target = ROOT value > 50 }
+                        }
+                    }
+                }
+            }
+            create_wargoal = {
+                type = puppet_wargoal_focus
+                target = PREV
+            }
+        }
+        else_if = {
+            limit = { has_government = democratic }
+            every_other_country = {
+                limit = {
+                    NOT = {
+                        is_ally_with = ROOT
+                        has_government = democratic
+                        is_subject_of = ROOT
+                        has_opinion = { target = ROOT value > 50 }
+                    }
+                }
+            }
+            create_wargoal = { 
+                type = liberate_wargoal
+                target = PREV
+            }
+        }
+        else = {
+            every_neighbor_country = {
+                limit = {
+                    NOT = {
+                        is_subject_of = ROOT
+                        is_ally_with = ROOT
+                        has_government = ROOT
+                    }
+                }
+            }
+            create_wargoal = {
+                type = annex_everything
+                target = PREV
+            }
+            create_wargoal = {
+                type = puppet_wargoal_focus
+                target = PREV
+            }
+        }
+    }
+}
