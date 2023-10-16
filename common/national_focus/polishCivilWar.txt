@@ -7,13 +7,13 @@ focus_tree = {
 		factor = 0
 		modifier = {
 			add = 10
-			tag = Z45
+			tag = POL
 		}
 	}
 
 	# Military Tree #
 	focus = { 
-		id = Z45_ModernMil_1
+		id = POL_ModernMil_1
 		icon = GFX_focus_chi_army_reform
 		x = 2
 		y = 0
@@ -30,52 +30,52 @@ focus_tree = {
 
 	# Motorized Modern
 	focus = {
-		id = Z45_Mot_1
+		id = POL_Mot_1
 		icon = GFX_goal_generic_army_motorized
-		prerequisite = { focus = Z45_ModernMil_1  }
-		mutually_exclusive = { focus = Z45_Cav_1 }
+		prerequisite = { focus = POL_ModernMil_1  }
+		mutually_exclusive = { focus = POL_Cav_1 }
 		x = 1
 		y = 1
 		cost = 5
 		completion_reward = {
-			add_ideas = Z45_motorized_training
+			add_ideas = POL_motorized_training
 		}
 	}
 
 	focus = {
-		id = Z45_Mot_2
+		id = POL_Mot_2
 		icon = GFX_focus_SOV_organize_wreckers
-		prerequisite = { focus = Z45_Mot_1 }
+		prerequisite = { focus = POL_Mot_1 }
 		x = 1
 		y = 2
 		cost = 5
 		completion_reward = {
-			add_ideas = Z45_motorized_tactics_buff
+			add_ideas = POL_motorized_tactics_buff
 		}
 	}
 
 	focus = {
-		id = Z45_Mot_3
+		id = POL_Mot_3
 		icon = GFX_focus_generic_truck
-		prerequisite = {focus = Z45_Mot_2}
+		prerequisite = {focus = POL_Mot_2}
 		x = 1
 		y = 3
 		cost = 10
 		completion_reward = {
-			add_ideas = Z45_motorized_logistics_buff
+			add_ideas = POL_motorized_logistics_buff
 		}
 	}
 
 	focus = {
-		id = Z45_Mot_4
+		id = POL_Mot_4
 		icon = GFX_goal_generic_army_tanks
-		prerequisite = { focus = Z45_ModernMil_2 }
-		prerequisite = { focus = Z45_Mot_3 }
+		prerequisite = { focus = POL_ModernMil_2 }
+		prerequisite = { focus = POL_Mot_3 }
 		x = 1
 		y = 5
 		cost = 5
 		completion_reward = {
-			add_ideas = Z45_tank_tactics
+			add_ideas = POL_tank_tactics
 
 			add_doctrine_cost_reduction = {
 				cost_reduction = 0.25
@@ -88,35 +88,35 @@ focus_tree = {
 
 	# Cavalry Modern
 	focus = {
-		id = Z45_Cav_1
+		id = POL_Cav_1
 		icon = GFX_goal_generic_cavalry
-		prerequisite = { focus = Z45_ModernMil_1  }
-		mutually_exclusive = { focus = Z45_Mot_1 }
+		prerequisite = { focus = POL_ModernMil_1  }
+		mutually_exclusive = { focus = POL_Mot_1 }
 		x = 3
 		y = 1
 		cost = 5
 		completion_reward = {
-			add_ideas = Z45_cavalry_training
+			add_ideas = POL_cavalry_training
 		}
 	}
 
 	focus = {
-		id = Z45_Cav_2
+		id = POL_Cav_2
 		icon = GFX_goal_generic_cavalry
-		prerequisite = { focus = Z45_Cav_1 }
+		prerequisite = { focus = POL_Cav_1 }
 		x = 3
 		y = 3 
 		cost = 5
 		completion_reward = {
-			add_ideas = Z45_cavalry_tactics_buff
+			add_ideas = POL_cavalry_tactics_buff
 		}
 	}
 
 	focus = {
-		id = Z45_Cav_3
+		id = POL_Cav_3
 		icon = GFX_focus_SOV_restore_cossack_units
-		prerequisite = { focus = Z45_ModernMil_2 }
-		prerequisite = { focus = Z45_Cav_2 }
+		prerequisite = { focus = POL_ModernMil_2 }
+		prerequisite = { focus = POL_Cav_2 }
 		x = 3
 		y = 5
 		cost = 5
@@ -126,9 +126,9 @@ focus_tree = {
 	}
 
 	focus = { 
-		id = Z45_ModernMil_2
+		id = POL_ModernMil_2
 		icon = GFX_goal_generic_army_doctrines
-		prerequisite = { focus = Z45_Cav_2 focus = Z45_Mot_3 }
+		prerequisite = { focus = POL_Cav_2 focus = POL_Mot_3 }
 		x = 2
 		y = 4
 		cost = 5
@@ -144,81 +144,81 @@ focus_tree = {
 
 	# Naval 
 	focus = { 
-		id = Z45_naval_1
+		id = POL_naval_1
 		icon = GFX_goal_generic_navy_carrier
 		x = 32
 		y = 1
 		cost = 5
-		prerequisite = { focus = Z45_industrial_N }
+		prerequisite = { focus = POL_industrial_N }
 		completion_reward = {			
 			navy_experience = 25
-			add_ideas = Z45_navy_1
+			add_ideas = POL_navy_1
 		}
 	}
 	focus = { 
-		id = Z45_naval_2
+		id = POL_naval_2
 		icon = GFX_goal_generic_navy_submarine
 		x = 32
 		y = 2
 		cost = 5
-		prerequisite = { focus = Z45_industrial_N }
+		prerequisite = { focus = POL_industrial_N }
 		completion_reward = {			
 			navy_experience = 25
-			add_ideas = Z45_navy_2
+			add_ideas = POL_navy_2
 		}
 	}
 	focus = { 
-		id = Z45_naval_3
+		id = POL_naval_3
 		icon = GFX_goal_generic_navy_battleship
 		x = 32
 		y = 3
 		cost = 5
-		prerequisite = { focus = Z45_industrial_N }
+		prerequisite = { focus = POL_industrial_N }
 		completion_reward = {			
 			navy_experience = 25
-			add_ideas = Z45_navy_3
+			add_ideas = POL_navy_3
 		}
 	}
 	# Air
 	focus = { 
-		id = Z45_air_1
+		id = POL_air_1
 		icon = GFX_goal_generic_air_fighter2
 		x = 30
 		y = 2
 		cost = 5
-		prerequisite = { focus = Z45_naval_1 }
+		prerequisite = { focus = POL_naval_1 }
 		completion_reward = {			
 			air_experience = 25
 			add_ideas = {
-				Z45_air_1
+				POL_air_1
 			}
 		}
 	}
 	focus = { 
-		id = Z45_air_2
+		id = POL_air_2
 		icon = GFX_goal_generic_air_fighter
 		x = 30
 		y = 3
 		cost = 5
-		prerequisite = { focus = Z45_air_1 }
+		prerequisite = { focus = POL_air_1 }
 		completion_reward = {			
 			air_experience = 25
 			add_ideas = {
-				Z45_air_2
+				POL_air_2
 			}
 		}
 	}
 	focus = { 
-		id = Z45_air_3
+		id = POL_air_3
 		icon = GFX_focus_generic_aircraft_production
 		x = 30
 		y = 4
 		cost = 5
-		prerequisite = { focus = Z45_air_2 }
+		prerequisite = { focus = POL_air_2 }
 		completion_reward = {			
 			air_experience = 25
 			add_ideas = {
-				Z45_air_3
+				POL_air_3
 			}
 		}
 	}
@@ -228,13 +228,13 @@ focus_tree = {
 	# Political Tree # 
 	#A New Direction
 	focus = {
-		id = Z45_a_new_direction
+		id = POL_a_new_direction
 		icon = GFX_focus_generic_polish_deal
 		x = 16
 		y = 0
 		cost = 5
 		mutually_exclusive = {
-			focus = Z45_civil_reorginization
+			focus = POL_civil_reorginization
 		}
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
@@ -247,7 +247,7 @@ focus_tree = {
 
 	#The West
 	focus = {
-		id = Z45_the_west
+		id = POL_the_west
 		icon = GFX_focus_generic_spread_fascism
 		x = 13
 		y = 1
@@ -255,7 +255,7 @@ focus_tree = {
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
 		}
-		prerequisite = { focus = Z45_a_new_direction  }
+		prerequisite = { focus = POL_a_new_direction  }
 		bypass = {
 			has_war_with = Z68
 		}
@@ -266,7 +266,7 @@ focus_tree = {
 
 	#The East
 	focus = {
-		id = Z45_the_east
+		id = POL_the_east
 		icon = GFX_focus_SOV_patriarch_of_all_russia
 		x = 17
 		y = 1
@@ -274,7 +274,7 @@ focus_tree = {
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
 		}
-		prerequisite = { focus = Z45_a_new_direction  }
+		prerequisite = { focus = POL_a_new_direction  }
 		bypass = {
 			has_war_with = SOV
 		}
@@ -286,7 +286,7 @@ focus_tree = {
 
 	#Ally Germany
 	focus = {
-		id = Z45_ally_germany
+		id = POL_ally_germany
 		icon = GFX_focus_chi_mission_to_germany
 		x = 12
 		y = 2
@@ -294,8 +294,13 @@ focus_tree = {
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
 		}
-		prerequisite = { focus = Z45_the_west  }
-		mutually_exclusive = { focus = Z45_villainize_germany }
+		prerequisite = { focus = POL_the_west  }
+		mutually_exclusive = { focus = POL_villainize_germany }
+
+		
+		cancel = {
+			has_war_with = Z68
+		} 
 
 		completion_reward = {
 
@@ -312,20 +317,22 @@ focus_tree = {
 
 	#Villanize Germany
 	focus = {
-		id = Z45_villainize_germany
-		icon = GFX_focus_Z45_reassert_silesian_claims
+		id = POL_villainize_germany
+		icon = GFX_focus_POL_reassert_silesian_claims
 		x = 14
 		y = 2
 		cost = 7.143 #50 days
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
 		}
-		prerequisite = { focus = Z45_the_west  }
-		mutually_exclusive = { focus = Z45_ally_germany  }
+		prerequisite = { focus = POL_the_west  }
+		mutually_exclusive = { focus = POL_ally_germany  }
 		ai_will_do = { factor = 1 }
+
 		available = {
 			country_exists = Z68
 		}
+
 		completion_reward = {
 			create_wargoal = {
 			    type = puppet_wargoal_focus
@@ -342,7 +349,7 @@ focus_tree = {
 
 	# Villanize Bohemia
 	focus = {
-		id = Z45_villainize_bohemia
+		id = POL_villainize_bohemia
 		icon = GFX_goal_generic_more_territorial_claims
 		x = 14
 		y = 4
@@ -351,8 +358,8 @@ focus_tree = {
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
 		}
-		prerequisite = { focus = Z45_Gov_Options }
-		mutually_exclusive = { focus = Z45_ally_bohemia }
+		prerequisite = { focus = POL_Gov_Options }
+		mutually_exclusive = { focus = POL_ally_bohemia }
 
 		completion_reward = {
 			create_wargoal = {
@@ -367,12 +374,12 @@ focus_tree = {
 	}
 
 	focus = {
-		id = Z45_ally_hungary
+		id = POL_ally_hungary
 		icon = GFX_goal_tfv_strengthen_commonwealth_ties
 		x = 14
 		y = 5
 		cost = 5
-		prerequisite = { focus = Z45_villainize_bohemia }
+		prerequisite = { focus = POL_villainize_bohemia }
 		completion_reward = {
 			add_to_faction = HUN
 		}
@@ -381,7 +388,7 @@ focus_tree = {
 
 	# Ally Bohemia
 	focus = {
-		id = Z45_ally_bohemia
+		id = POL_ally_bohemia
 		icon = GFX_goal_tfv_strengthen_commonwealth_ties
 		x = 12
 		y = 4
@@ -390,9 +397,8 @@ focus_tree = {
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
 		}
-		prerequisite = { focus = Z45_Gov_Options }
-		mutually_exclusive = { focus = Z45_villainize_bohemia }
-
+		prerequisite = { focus = POL_Gov_Options }
+		mutually_exclusive = { focus = POL_villainize_bohemia }
 
 		completion_reward = {
 		
@@ -407,7 +413,7 @@ focus_tree = {
 
 	# Attack Hungary
 	focus = {
-		id = Z45_attack_hungary
+		id = POL_attack_hungary
 		icon = GFX_goal_generic_more_territorial_claims
 		x = 12
 		y = 5
@@ -416,7 +422,7 @@ focus_tree = {
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
 		}
-		prerequisite = { focus = Z45_ally_bohemia }
+		prerequisite = { focus = POL_ally_bohemia }
 
 		available = {
 		 NOT = { is_ally_with = HUN }
@@ -448,7 +454,7 @@ focus_tree = {
 
 	#Ally Russia
 	focus = {
-		id = Z45_ally_russia
+		id = POL_ally_russia
 		icon = GFX_goal_tfv_strengthen_commonwealth_ties
 		x = 18
 		y = 2
@@ -456,8 +462,8 @@ focus_tree = {
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
 		}
-		prerequisite = { focus = Z45_the_east  }
-		mutually_exclusive = { focus = Z45_villainize_russia }
+		prerequisite = { focus = POL_the_east  }
+		mutually_exclusive = { focus = POL_villainize_russia }
 
 		completion_reward = {
 
@@ -474,7 +480,7 @@ focus_tree = {
 
 	#Villainize Russia
 	focus = {
-		id = Z45_villainize_russia
+		id = POL_villainize_russia
 		icon = GFX_focus_rom_abdicate
 		x = 16
 		y = 2
@@ -482,8 +488,8 @@ focus_tree = {
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
 		}
-		prerequisite = { focus = Z45_the_east  }
-		mutually_exclusive = { focus = Z45_ally_russia }
+		prerequisite = { focus = POL_the_east  }
+		mutually_exclusive = { focus = POL_ally_russia }
 		
 		completion_reward = {
 			create_wargoal = {
@@ -504,7 +510,7 @@ focus_tree = {
 
 	#Buffer States
 	#focus = {
-	#	id = Z45_buffer_states
+	#	id = POL_buffer_states
 	#	icon = GFX_goal_unknown
 	#	x = 15
 	#	y = 3
@@ -513,8 +519,8 @@ focus_tree = {
 	#		FOCUS_FILTER_FRA_POLITICAL_VIOLENCE
 	#	}
 	#	prerequisite = {
-	#		focus = Z45_villainize_germany
-	#		focus = Z45_villainize_russia
+	#		focus = POL_villainize_germany
+	#		focus = POL_villainize_russia
 	#	} 
 	#	available = {
 	#		date > 1940.01.01
@@ -535,7 +541,7 @@ focus_tree = {
 
 	# Villanize Denmark
 	focus = {
-		id = Z45_villainize_denmark
+		id = POL_villainize_denmark
 		icon = GFX_goal_generic_more_territorial_claims
 		x = 16
 		y = 4
@@ -544,10 +550,9 @@ focus_tree = {
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
 		}
-		prerequisite = { focus = Z45_Gov_Options }
-		mutually_exclusive = { focus = Z45_ally_denmark }
+		prerequisite = { focus = POL_Gov_Options }
+		mutually_exclusive = { focus = POL_ally_denmark }
 		
-
 		completion_reward = {
 			create_wargoal = {
 			    type = puppet_wargoal_focus
@@ -563,7 +568,7 @@ focus_tree = {
 
 	# Ally Denmark
 	focus = {
-		id = Z45_ally_denmark
+		id = POL_ally_denmark
 		icon = GFX_goal_tfv_strengthen_commonwealth_ties
 		x = 18
 		y = 4
@@ -572,8 +577,8 @@ focus_tree = {
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
 		}
-		prerequisite = { focus = Z45_Gov_Options }
-		mutually_exclusive = { focus = Z45_villainize_denmark }
+		prerequisite = { focus = POL_Gov_Options }
+		mutually_exclusive = { focus = POL_villainize_denmark }
 
 		completion_reward = {
 
@@ -591,16 +596,16 @@ focus_tree = {
 	# Government
 
 	focus = {
-		id = Z45_Gov_Options
-		icon = GFX_focus_Z45_common_organization_of_society
+		id = POL_Gov_Options
+		icon = GFX_focus_POL_common_organization_of_society
 		x = 15
 		y = 3
 		cost = 3.572 #25 days
-		prerequisite = { focus = Z45_villainize_germany focus = Z45_ally_germany  }
-		prerequisite = { focus = Z45_villainize_russia focus = Z45_ally_russia  }
+		prerequisite = { focus = POL_villainize_germany focus = POL_ally_germany  }
+		prerequisite = { focus = POL_villainize_russia focus = POL_ally_russia  }
 	
 		completion_reward = {
-			remove_ideas = { Z45_government_stall }
+			remove_ideas = { POL_government_stall }
 
 			if = {
 				limit = {
@@ -654,13 +659,13 @@ focus_tree = {
 	#Alternate Path
 
 	focus = {
-		id = Z45_civil_reorginization
+		id = POL_civil_reorginization
 		icon = GFX_goal_generic_occupy_states_ongoing_war
 		x = 7
 		y = 0
 		cost = 5
 		mutually_exclusive = {
-			focus = Z45_a_new_direction
+			focus = POL_a_new_direction
 		}
 		search_filters = {
 			FOCUS_FILTER_POLITICAL
@@ -692,19 +697,19 @@ focus_tree = {
 
 	#Communism
 	focus = {
-		id = Z45_gov_c
+		id = POL_gov_c
 		icon = GFX_focus_chi_cooperation_with_the_communists
 		cost = 7.143 #50
 		x = 6
 		y = 1
 		mutually_exclusive = {
-			focus = Z45_gov_d
+			focus = POL_gov_d
 		}
 		available = {
 			has_civil_war = no
 		}
 		prerequisite = {
-			focus = Z45_civil_reorginization
+			focus = POL_civil_reorginization
 		}
 		completion_reward = { 
 			add_stability = 0.50
@@ -719,27 +724,27 @@ focus_tree = {
 	}
 
 	focus = {
-		id = Z45_gov_c_strengthen
+		id = POL_gov_c_strengthen
 		icon = GFX_goal_support_communism
 		cost = 7.143 #50
 		x = 6
 		y = 2
 		prerequisite = {
-			focus = Z45_gov_c
+			focus = POL_gov_c
 		}
 		completion_reward = { 
-			add_ideas = Z45_gov_people
+			add_ideas = POL_gov_people
 		}
 	}
 
 	focus = {
-		id = Z45_gov_c_spread
+		id = POL_gov_c_spread
 		icon = GFX_focus_SOV_the_glory_of_the_red_army_communism
 		cost = 7.143 #50
 		x = 6
 		y = 3
 		prerequisite = {
-			focus = Z45_gov_c_strengthen
+			focus = POL_gov_c_strengthen
 		}
 		completion_reward = { 
 			country_event = { id = Z45.000 days = 0 }
@@ -747,24 +752,24 @@ focus_tree = {
 	}
 
 	focus = {
-		id = Z45_gov_f_ban
-		icon = GFX_focus_Z45_ban_nazi_party
+		id = POL_gov_f_ban
+		icon = GFX_focus_POL_ban_nazi_party
 		cost = 7.143 #50
 		x = 8
 		y = 4
 		prerequisite = {
-			focus = Z45_gov_c_strengthen
-			focus = Z45_gov_d_strengthen
-			focus = Z45_gov_m_strengthen
+			focus = POL_gov_c_strengthen
+			focus = POL_gov_d_strengthen
+			focus = POL_gov_m_strengthen
 		}
 		completion_reward = { 
-			add_ideas = Z45_remove_fascism
+			add_ideas = POL_remove_fascism
 		}
 	}
 
 	# Democracy
 	focus = {
-		id = Z45_gov_d
+		id = POL_gov_d
 		icon = GFX_goal_support_democracy
 		cost = 7.143 #50
 		x = 9
@@ -773,10 +778,10 @@ focus_tree = {
 			has_civil_war = no
 		}
 		mutually_exclusive = {
-			focus = Z45_gov_c
+			focus = POL_gov_c
 		}
 		prerequisite = {
-			focus = Z45_civil_reorginization
+			focus = POL_civil_reorginization
 		}
 		completion_reward = {
 			add_stability = 0.50
@@ -788,19 +793,19 @@ focus_tree = {
 	}
 
 	focus = {
-		id = Z45_gov_d_strengthen
+		id = POL_gov_d_strengthen
 		icon = GFX_goal_support_democracy
 		cost = 7.143 #50
 		x = 8
 		y = 2
 		mutually_exclusive = {
-			focus = Z45_gov_m
+			focus = POL_gov_m
 		}
 		prerequisite = {
-			focus = Z45_gov_d
+			focus = POL_gov_d
 		}
 		completion_reward = { 
-			add_ideas = Z45_gov_republic
+			add_ideas = POL_gov_republic
 			set_politics = {
 				ruling_party = democratic
 
@@ -810,16 +815,16 @@ focus_tree = {
 
 	# MONARCH
 	focus = {
-		id =  Z45_gov_m
+		id =  POL_gov_m
 		icon = GFX_focus_generic_monarchy_2
 		cost = 7.143 #50
 		x = 10
 		y = 2
 		prerequisite = {
-			focus = Z45_gov_d
+			focus = POL_gov_d
 		}
 		completion_reward = {
-			add_ideas = Z45_gov_king
+			add_ideas = POL_gov_king
 
 			add_popularity = {
 				ideology = neutrality
@@ -829,13 +834,13 @@ focus_tree = {
 	}
 
 	focus = {
-		id = Z45_gov_m_strengthen
-		icon = GFX_focus_Z45_cossack_king
+		id = POL_gov_m_strengthen
+		icon = GFX_focus_POL_cossack_king
 		cost = 14.286 #100
 		x = 10
 		y = 3
 		prerequisite = {
-			focus = Z45_gov_m
+			focus = POL_gov_m
 		}
 		completion_reward = {
 			add_popularity = {
@@ -843,6 +848,7 @@ focus_tree = {
 				popularity = 0.25
 			}
 			create_country_leader = {
+				picture = ROOT #Change Later
 				name = "King Stanisław IV"
 				ideology = despotism
 				traits = {
@@ -855,28 +861,28 @@ focus_tree = {
 	}
 
 	focus = {
-		id = Z45_invade_Russia
+		id = POL_invade_Russia
 		icon = GFX_focus_attack_soviet
 		cost = 14.286 #100
 		x = 10
 		y = 4
-		prerequisite = { focus = Z45_gov_m_strengthen }
+		prerequisite = { focus = POL_gov_m_strengthen }
 		completion_reward = { 
 			every_state = { limit = { is_controlled_by = SOV } ROOT = { add_state_core = PREV } }
 			declare_war_on = {
 				target = SOV 
-				type = take_state
+				type = take_state 
 			}
 		}
 	}
 
 	focus = {
-		id = Z45_ROM_invasion
+		id = POL_ROM_invasion
 		icon = GFX_focus_BUL_prussia_of_the_balkans
 		cost = 10
 		x = 10
 		y = 5
-		prerequisite = { focus = Z45_invade_Russia }
+		prerequisite = { focus = POL_invade_Russia }
 		completion_reward = { 
 			add_state_core = 204
 	
@@ -885,7 +891,7 @@ focus_tree = {
 	}
 
 	focus = {
-		id = Z45_GBF
+		id = POL_GBF
 		icon = GFX_focus_BUL_prussia_of_the_balkans
 		cost = 10
 		x = 10
@@ -894,7 +900,7 @@ focus_tree = {
 			ROM = { is_puppet_of = Z45 }
 		}
 		prerequisite = {
-			focus = Z45_ROM_invasion
+			focus = POL_ROM_invasion
 		}
 		completion_reward = { 
 			ROM = { set_cosmetic_tag = GBF }
@@ -903,18 +909,18 @@ focus_tree = {
 
 	# Industry Tree
 	focus = {
-		id = Z45_industrial_1
+		id = POL_industrial_1
 		icon = GFX_goal_generic_construct_civilian
 		x = 24
 		y = 0
 		cost = 10
 		completion_reward = {
 			add_political_power = 15
-			}
+        	}
     	}
 
 	focus = {
-		id = Z45_industrial_N
+		id = POL_industrial_N
 		icon = GFX_goal_generic_build_navy
 		x = 30
 		y = 0
@@ -932,13 +938,13 @@ focus_tree = {
 	}
 	# Navy Industry
 	focus = {
-		id = Z45_industrial_N_1
+		id = POL_industrial_N_1
 		icon = GFX_goal_generic_construct_naval_dockyard
 		x = 28
 		y = 1
 		cost = 10
-		prerequisite = { focus = Z45_industrial_N }
-		prerequisite = { focus = Z45_industrial_1 }
+		prerequisite = { focus = POL_industrial_N }
+		prerequisite = { focus = POL_industrial_1 }
 		completion_reward = { 
 			random_owned_controlled_state = {
 				add_extra_state_shared_building_slots = 2
@@ -951,12 +957,12 @@ focus_tree = {
 			}
 	}
 	focus = {
-		id = Z45_industrial_N_2
+		id = POL_industrial_N_2
 		icon = GFX_goal_generic_construct_naval_dockyard
 		x = 28
 		y = 2
 		cost = 10
-		prerequisite = { focus = Z45_industrial_N_1 }
+		prerequisite = { focus = POL_industrial_N_1 }
 		completion_reward = { 
 			random_owned_controlled_state = {
 				add_extra_state_shared_building_slots = 2
@@ -969,12 +975,12 @@ focus_tree = {
 			}
 	}
 	focus = {
-		id = Z45_industrial_N_3
+		id = POL_industrial_N_3
 		icon = GFX_goal_generic_construct_naval_dockyard
 		x = 28
 		y = 3
 		cost = 10
-		prerequisite = { focus = Z45_industrial_N_2 }
+		prerequisite = { focus = POL_industrial_N_2 }
 		completion_reward = { 
 			random_owned_controlled_state = {
 				add_extra_state_shared_building_slots = 2
@@ -989,11 +995,11 @@ focus_tree = {
 
 	# Turning Point 
 	focus = {
-		id = Z45_industrial_T_1
+		id = POL_industrial_T_1
 		icon = GFX_goal_generic_oil_refinery
 		x = 24
 		y = 2
-		prerequisite = {focus = Z45_industrial_M_2 focus = Z45_industrial_C_2}
+		prerequisite = {focus = POL_industrial_M_2 focus = POL_industrial_C_2}
 		mutually_exclusive = {}
 		cost = 10
 		completion_reward = {
@@ -1011,11 +1017,11 @@ focus_tree = {
     	}
 
 		focus = {
-			id = Z45_industrial_T_2
+			id = POL_industrial_T_2
 			icon = GFX_goal_generic_oil_refinery
 			x = 24
 			y = 4
-			prerequisite = {focus = Z45_industrial_T_1 }
+			prerequisite = {focus = POL_industrial_T_1 }
 			mutually_exclusive = {}
 			cost = 10
 			completion_reward = {
@@ -1032,11 +1038,11 @@ focus_tree = {
 			}
 	
 		focus = {
-			id = Z45_industrial_T_3
+			id = POL_industrial_T_3
 			icon = GFX_goal_generic_oil_refinery
 			x = 24
 			y = 5
-			prerequisite = {focus = Z45_industrial_T_2 }
+			prerequisite = {focus = POL_industrial_T_2 }
 			mutually_exclusive = {}
 			cost = 10
 			completion_reward = {
@@ -1054,11 +1060,11 @@ focus_tree = {
 
 	# Militarist Focused
 	focus = {
-		id = Z45_industrial_M_1
+		id = POL_industrial_M_1
 		icon = GFX_goal_generic_construct_mil_factory
 		x = 26
 		y = 1
-		prerequisite = {focus = Z45_industrial_1}
+		prerequisite = {focus = POL_industrial_1}
 		cost = 10
 		completion_reward = {
 			
@@ -1071,15 +1077,15 @@ focus_tree = {
 				}
 			}
 
-			add_ideas = Z45_industrial_Ma
+			add_ideas = POL_industrial_Ma
         	}
     	}
 	focus = {
-		id = Z45_industrial_M_2
+		id = POL_industrial_M_2
 		icon = GFX_goal_generic_construct_mil_factory
 		x = 26
 		y = 2
-		prerequisite = {focus = Z45_industrial_M_1}
+		prerequisite = {focus = POL_industrial_M_1}
 		cost = 10
 		completion_reward = {
 			
@@ -1095,20 +1101,20 @@ focus_tree = {
 			}
 			
 			swap_ideas = {
-    			remove_idea = Z45_industrial_Ma
-    			add_idea = Z45_industrial_Mb
+    			remove_idea = POL_industrial_Ma
+    			add_idea = POL_industrial_Mb
 				}
         	}
     	}
 
 	focus = {
-		id = Z45_industrial_M_3
+		id = POL_industrial_M_3
 		icon = GFX_goal_generic_construct_mil_factory
 		x = 26
 		y = 3
-		prerequisite = {focus = Z45_industrial_M_2 }
+		prerequisite = {focus = POL_industrial_M_2 }
 		
-		mutually_exclusive = {focus = Z45_industrial_C_3}
+		mutually_exclusive = {focus = POL_industrial_C_3}
 
 		available = {
 			OR = {
@@ -1137,18 +1143,18 @@ focus_tree = {
 			}
 
 			swap_ideas = {
-    			remove_idea = Z45_industrial_Mb
-    			add_idea = Z45_industrial_Mc
+    			remove_idea = POL_industrial_Mb
+    			add_idea = POL_industrial_Mc
 				}
         	}
     	}
 
 	focus = {
-		id = Z45_industrial_M_4
+		id = POL_industrial_M_4
 		icon = GFX_goal_generic_construct_mil_factory
 		x = 26
 		y = 4
-		prerequisite = {focus = Z45_industrial_M_3}
+		prerequisite = {focus = POL_industrial_M_3}
 		cost = 10
 		completion_reward = {
 
@@ -1162,19 +1168,19 @@ focus_tree = {
 			}
 
 			swap_ideas = {
-    			remove_idea = Z45_industrial_Mc
-    			add_idea = Z45_industrial_Md
+    			remove_idea = POL_industrial_Mc
+    			add_idea = POL_industrial_Md
 				}
         	}
     	}
 
 	# Civilian Focused
 	focus = {
-		id = Z45_industrial_C_1
+		id = POL_industrial_C_1
 		icon = GFX_goal_generic_construct_civ_factory
 		x = 22
 		y = 1
-		prerequisite = {focus = Z45_industrial_1}
+		prerequisite = {focus = POL_industrial_1}
 		cost = 10
 		completion_reward = {
 
@@ -1187,16 +1193,16 @@ focus_tree = {
 				}
 			}
 
-			add_ideas = Z45_industrial_Ca
+			add_ideas = POL_industrial_Ca
     		}
 		}
 	
 	focus = {
-		id = Z45_industrial_C_2
+		id = POL_industrial_C_2
 		icon = GFX_goal_generic_construct_civ_factory
 		x = 22
 		y = 2
-		prerequisite = {focus = Z45_industrial_C_1}
+		prerequisite = {focus = POL_industrial_C_1}
 		cost = 10
 		completion_reward = {
 
@@ -1212,19 +1218,19 @@ focus_tree = {
 			}
 
 			swap_ideas = {
-    			remove_idea = Z45_industrial_Ca
-    			add_idea = Z45_industrial_Cb
+    			remove_idea = POL_industrial_Ca
+    			add_idea = POL_industrial_Cb
 				}
 			}
     	}
 	
 	focus = {
-		id = Z45_industrial_C_3
+		id = POL_industrial_C_3
 		icon = GFX_goal_generic_construct_civ_factory
 		x = 22
 		y = 3
 
-		mutually_exclusive = {focus = Z45_industrial_M_3}
+		mutually_exclusive = {focus = POL_industrial_M_3}
 
 		available = {
 			OR = {
@@ -1240,7 +1246,7 @@ focus_tree = {
 			}
 		}
 
-		prerequisite = {focus = Z45_industrial_C_2}
+		prerequisite = {focus = POL_industrial_C_2}
 		cost = 10
 		completion_reward = {
 	
@@ -1254,18 +1260,18 @@ focus_tree = {
 			}
 
 			swap_ideas = {
-    			remove_idea = Z45_industrial_Cb
-    			add_idea = Z45_industrial_Cc
+    			remove_idea = POL_industrial_Cb
+    			add_idea = POL_industrial_Cc
 				}
     		}
 		}
 	
 	focus = {
-		id = Z45_industrial_C_4
+		id = POL_industrial_C_4
 		icon = GFX_goal_generic_construct_civ_factory
 		x = 22
 		y = 4
-		prerequisite = {focus = Z45_industrial_C_3}
+		prerequisite = {focus = POL_industrial_C_3}
 		cost = 10
 		completion_reward = {
 
@@ -1279,8 +1285,8 @@ focus_tree = {
 			}
 
 			swap_ideas = {
-    			remove_idea = Z45_industrial_Cc
-    			add_idea = Z45_industrial_Cd
+    			remove_idea = POL_industrial_Cc
+    			add_idea = POL_industrial_Cd
 				}
     		}
 		}

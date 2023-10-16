@@ -1,7 +1,7 @@
 ideas = {
     country = {
         # air
-        Z45_air_1 = {
+        POL_air_1 = {
             picture = generic_fighter_production_diverted
             modifier = {
                 air_air_superiority_attack_factor = 0.1
@@ -9,7 +9,7 @@ ideas = {
                 }
         }
          
-        Z45_air_2 = {
+        POL_air_2 = {
             picture = generic_air_payment
             modifier = {
                    air_close_air_support_attack_factor = 0.025
@@ -18,7 +18,7 @@ ideas = {
                 }
              }
          
-        Z45_air_3 = {
+        POL_air_3 = {
             picture = generic_air_research
             modifier = {
                 air_strategic_bomber_agility_factor = 0.1
@@ -29,7 +29,7 @@ ideas = {
         }
 
         # navy
-        Z45_navy_1 = {
+        POL_navy_1 = {
             picture = generic_navy_bonus
             modifier = {
                 naval_coordination = 0.05
@@ -37,7 +37,7 @@ ideas = {
             }
         }
 
-        Z45_navy_2 = {
+        POL_navy_2 = {
             picture = generic_coastal_navy
             modifier = {
                 navy_submarine_attack_factor = 0.025
@@ -46,7 +46,7 @@ ideas = {
             }
         }
 
-        Z45_navy_3 = {
+        POL_navy_3 = {
             picture = generic_sea_focused_navy
             modifier = {
                 navy_capital_ship_attack_factor = 0.075
@@ -58,7 +58,7 @@ ideas = {
         # Military
         #https://hoi4-modding.fandom.com/wiki/Modifiers
 
-        Z45_motorized_training = {
+        POL_motorized_training = {
             picture = FRA_motorized_focus
             modifier = {
                 motorized_movement_speed = 0.15
@@ -67,7 +67,7 @@ ideas = {
             }
         }
 
-        Z45_motorized_logistics_buff = {
+        POL_motorized_logistics_buff = {
             picture = generic_build_infrastructure
             modifier = {
                 motorized_supply_consumption_factor = -0.10
@@ -75,14 +75,14 @@ ideas = {
                 }
         }
 
-        Z45_motorized_tactics_buff = {
+        POL_motorized_tactics_buff = {
             picture = FRA_motorized_focus
             modifier = {
                 add_army_experience = 90
             }  
         }
 
-        Z45_tank_tactics = {
+        POL_tank_tactics = {
             picture = generic_acquire_tanks
             modifier = {
                 army_armor_attack_factor  = 0.1
@@ -92,7 +92,7 @@ ideas = {
 
         }
         
-        Z45_cavalry_training = {
+        POL_cavalry_training = {
             picture = generic_army_war_college
             modifier = {
                     cavalry_speed = 0.05
@@ -102,14 +102,14 @@ ideas = {
                     }
                 }
 
-        Z45_cavalry_tactics_buff = {
+        POL_cavalry_tactics_buff = {
             picture = generic_army_war_college
             modifier = {
                 cavalry_speed_factor = 0.15
                 }
         }
 
-        Z45_Master_Cav = {
+        POL_Master_Cav = {
             picture = generic_motorized_equipment_manufacturer_2
             modifier = {
                 cavalry_army_attack_factor = 0.1
@@ -118,7 +118,7 @@ ideas = {
             }
         }
         
-        Z45_combined_arms_mastery = {
+        POL_combined_arms_mastery = {
             picture = hol_expand_the_colonial_army
             modifier = {
                 add_equipment_capture_factor = 0.2
@@ -126,14 +126,14 @@ ideas = {
         }
         
         # Government
-        Z45_remove_fascism = {
+        POL_remove_fascism = {
             picture = generic_fascism_banned
             modifier = {
                 fascism_drift = -0.25
             }
         }
 
-        Z45_government_stall = {
+        POL_government_stall = {
             picture = gre_political_instability
             modifier = {
                 war_support_factor = -0.2
@@ -146,7 +146,7 @@ ideas = {
                 }
             }
 
-        Z45_gov_republic = {
+        POL_gov_republic = {
             picture = EST_democratic_opposition
             modifier = {
                 democratic_drift = 0.02
@@ -158,7 +158,7 @@ ideas = {
             }
         }
 
-        Z45_gov_king = {
+        POL_gov_king = {
             picture = generic_monarchist_uprising
             modifier = {
                 neutrality_drift = 0.02
@@ -171,7 +171,7 @@ ideas = {
             }
         }
         
-        Z45_gov_people = {
+        POL_gov_people = {
             picture = ast_abandon_the_westminster_system_communism
             modifier = {
                 communism_drift = 0.02
@@ -185,7 +185,7 @@ ideas = {
         }
 
             # actions
-        Z45_weak_government = {
+        POL_weak_government = {
             picture = generic_disjointed_gov
             allowed = {
                 always = yes
@@ -196,7 +196,7 @@ ideas = {
             }
         }
     
-        Z45_legitimate_government = {
+        POL_legitimate_government = {
             picture = generic_pp_unity_bonus
             allowed = {
                 always = yes
@@ -209,8 +209,8 @@ ideas = {
             }
         }
     
-        Z45_strong_government = {
-            picture = Z45_april_constitution
+        POL_strong_government = {
+            picture = POL_april_constitution
             allowed = {
                 always = yes
             }
@@ -224,25 +224,25 @@ ideas = {
         }
          
         # Civillian Factory Ideas
-        Z45_industrial_Ca = {
-            picture = Z45_disjointed_industry
+        POL_industrial_Ca = {
+            picture = POL_disjointed_industry
             modifier = {
                 production_speed_industrial_complex_factor = 0.05
             }
         }
-        Z45_industrial_Cb = {
+        POL_industrial_Cb = {
             picture = man_five_year_plan_industry
             modifier = {
                 production_speed_industrial_complex_factor = 0.1
             }
         }
-        Z45_industrial_Cc = {
+        POL_industrial_Cc = {
             picture = man_five_year_plan_industry
             modifier = {
                 production_speed_industrial_complex_factor = 0.15
             }
         }
-        Z45_industrial_Cd = {
+        POL_industrial_Cd = {
             picture = man_five_year_plan_industry
             modifier = {
                 production_speed_industrial_complex_factor = 0.2
@@ -250,25 +250,25 @@ ideas = {
         }
 
         # Military Factory Ideas
-        Z45_industrial_Ma = {
-            picture = Z45_disjointed_industry
+        POL_industrial_Ma = {
+            picture = POL_disjointed_industry
             modifier = {
                 production_speed_arms_factory_factor = 0.05
             }
         }
-        Z45_industrial_Mb = {
+        POL_industrial_Mb = {
             picture = man_five_year_plan_industry
             modifier = {
                 production_speed_arms_factory_factor = 0.1
             }
         }
-        Z45_industrial_Mc = {
+        POL_industrial_Mc = {
             picture = man_five_year_plan_industry
             modifier = {
                 production_speed_arms_factory_factor = 0.15
             }
         }
-        Z45_industrial_Md = {
+        POL_industrial_Md = {
             picture = man_five_year_plan_industry
             modifier = {
                 production_speed_arms_factory_factor = 0.2

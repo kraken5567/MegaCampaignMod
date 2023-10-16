@@ -82,8 +82,19 @@ country_event = {
     option = {
         name = "Prepare for the worst..."
 
+        set_variable_to_random = { 
+            var = chance
+            max = 5
+            integer = yes
+        }
         if = {
-            limit = {chance > .1 chance = .1}
+            limit = { 
+                check_variable = {
+                    var = chance
+                    value = 3 
+                    compare = less_than_or_equals 
+                }
+            }
             country_event = { id = Z45.103 days = 7 random_days = 180 }
         }
         else = {
@@ -94,10 +105,21 @@ country_event = {
     option = {
         name = "Let it resolve itself."
 
-        set_temp_variable = { chance = random }
+        set_variable_to_random = { 
+            var = chance
+            max = 5
+            integer = yes
+        }
+
         if = {
-            limit = {chance > .5 chance = .5}
-            country_event = { id = Z45.103 days = {multiply_temp_variable = { var = chance value = year } } }
+            limit = { 
+                check_variable = {
+                    var = chance
+                    value = 3 
+                    compare = greater_than_or_equals 
+                }
+            }
+            country_event = { id = Z45.103 days = 91 }
         }
         else = {
             country_event = { id = Z45.102 days = 91 }
@@ -139,50 +161,48 @@ country_event = {
     }
 
     option = {
-        name = "Stand our ground!"
-        if = {
-            limit = { 
-                NOT = { ROOT = { has_government = communism } }
-                }
-            start_civil_war = {
-                ruling_party = ROOT
-                ideology = Communism
-                size = 0.9
+        name = "Join the monarchists!"
+        start_civil_war = {
+            ruling_party = neutrality
+            capital = root.capital
+            ideology = ROOT
+            size = party_popularity@neutrality
             }
-        }
-        else_if = {
-            limit = { 
-                NOT = { ROOT = { has_government = democratic } }
-                }
-                start_civil_war = {
-                    ruling_party = ROOT
-                    ideology = democratic
-                    size = 0.5
-                }
+            hidden_effect = {
+                ROOT = { set_cosmetic_tag = POL }
             }
-        }
+    }
     option = {
         name = "Join the communists!"
         start_civil_war = {
             ruling_party = communism
+            capital = root.capital
             ideology = ROOT
-            size = 0.9
+            size = party_popularity@communism
+            }
+            hidden_effect = {
+                ROOT = { set_cosmetic_tag = POL }
             }
         }
     option = {
         name = "Join the fascists!"
         start_civil_war = {
             ruling_party = fascism
+            capital = root.capital
             ideology = ROOT
-            size = 0.5
+            size = party_popularity@fascism
             }
         }
     option = {
         name = "Join the democrats"
         start_civil_war = {
             ruling_party = democratic
+            capital = root.capital
             ideology = ROOT
-            size = 0.9
+            size = party_popularity@democratic
+            }
+            hidden_effect = {
+                ROOT = { set_cosmetic_tag = POL }
             }
         }
 }
