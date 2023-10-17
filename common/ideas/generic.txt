@@ -82,24 +82,23 @@ ideas = {
         generic_artillery_tactics = {
             picture = generic_artillery_regiments
             modifier = {
-                army_artillery_soft_factor  = 0.1
-                army_artillery_defence_factor = 0.05
-                army_artillery_speed_factor   = 0.05
+                army_artillery_soft_attack_factor  = 0.1
+                army_artillery_defence_attack_factor = 0.05
             }
         }
 
         generic_trench_tactics = {
             picture = CZE_planning_bonus
             modifier = {
-                army_troop_defence_factor = 0.25
+                army_infantry_defence_factor = 0.25
             }
         }
 
         generic_push_tactics = {
             modifier = {
-                army_troop_soft_factor   = 0.025
-                army_troop_speed_factor  = 0.025
-                army_troop_attack_factor = 0.025
+                army_infantry_soft_factor   = 0.025
+                army_infantry_speed_factor  = 0.025
+                army_infantry_attack_factor = 0.025
 
                 army_artillery_soft_factor   = 0.025
                 army_artillery_speed_factor  = 0.025
@@ -140,7 +139,7 @@ ideas = {
                 consumer_goods_factor = -0.025
                 conscription = 0.1
                 non_core_manpower = -1
-                research_bonus = 0.1
+                research_speed_factor = 0.1
                 state_production_speed_arms_factory_factor = 0.05
             }
         }
@@ -166,7 +165,7 @@ ideas = {
                 consumer_goods_factor = -0.05
                 conscription = -0.01
                 non_core_manpower = 0.2
-                research_bonus = 0.05
+                research_speed_factor = 0.05
             }
         }
 
@@ -192,7 +191,7 @@ ideas = {
                 conscription = 0.025
                 non_core_manpower = -0.05
                 supply_consumption_factor = 0.01
-                research_bonus = -0.01
+                research_speed_factor = -0.01
             }
         }
 
@@ -218,7 +217,7 @@ ideas = {
                 conscription = 0.01
                 non_core_manpower = 0.05
                 supply_consumption_factor = -0.025
-                research_bonus = -0.05
+                research_speed_factor = -0.05
             }
         }
          

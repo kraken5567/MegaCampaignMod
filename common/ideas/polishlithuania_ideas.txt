@@ -54,31 +54,26 @@ ideas = {
             }
         }
 
-
-        # Military
-        #https://hoi4-modding.fandom.com/wiki/Modifiers
-
         Z45_motorized_training = {
             picture = FRA_motorized_focus
             modifier = {
-                motorized_movement_speed = 0.15
-                motorized_attack_factor = 0.05
-                add_army_experience = 50
+                army_motorized_movement_speed = 0.15
+                army_motorized_attack_factor = 0.05
             }
         }
 
         Z45_motorized_logistics_buff = {
             picture = generic_build_infrastructure
             modifier = {
-                motorized_supply_consumption_factor = -0.10
-                motorized_supply_grace = 0.10
+                army_motorized_supply_consumption_factor = -0.10
+                army_motorized_supply_grace = 0.10
                 }
         }
 
         Z45_motorized_tactics_buff = {
             picture = FRA_motorized_focus
             modifier = {
-                add_army_experience = 90
+                army_motorized_supply_consumption_factor = -0.0025
             }  
         }
 
@@ -95,33 +90,33 @@ ideas = {
         Z45_cavalry_training = {
             picture = generic_army_war_college
             modifier = {
-                    cavalry_speed = 0.05
-                    cavalry_supply_consumption = 0.05
-                    cavalry_defense = 0.05
-                    cavalry_attack = 0.10
+                    army_cavalry_speed = 0.05
+                    army_cavalry_supply_consumption = 0.05
+                    army_cavalry_defense = 0.05
+                    army_cavalry_attack = 0.10
                     }
                 }
 
         Z45_cavalry_tactics_buff = {
             picture = generic_army_war_college
             modifier = {
-                cavalry_speed_factor = 0.15
+                army_cavalry_speed_factor = 0.15
                 }
         }
 
         Z45_Master_Cav = {
             picture = generic_motorized_equipment_manufacturer_2
             modifier = {
-                cavalry_army_attack_factor = 0.1
-                cavalry_army_organization_factor = 0.05
-                cavalry_army_defense_factor = 0.05 
+                army_cavalry_attack_factor = 0.1
+                army_cavalry_organization_factor = 0.05
+                army_cavalry_defense_factor = 0.05 
             }
         }
         
         Z45_combined_arms_mastery = {
             picture = hol_expand_the_colonial_army
             modifier = {
-                add_equipment_capture_factor = 0.2
+                army_equipment_capture_factor = 0.2
             }
         }
         
@@ -154,7 +149,7 @@ ideas = {
                 consumer_goods_factor = -0.05
                 conscription = -0.01
                 non_core_manpower = 0.2
-                research_bonus = 0.05
+                research_speed_factor = 0.05
             }
         }
 
@@ -167,7 +162,7 @@ ideas = {
                 conscription = 0.025
                 non_core_manpower = -0.05
                 supply_consumption_factor = 0.01
-                research_bonus = -0.01
+                research_speed_factor = -0.01
             }
         }
         
@@ -180,11 +175,11 @@ ideas = {
                 conscription = 0.01
                 non_core_manpower = 0.05
                 supply_consumption_factor = -0.025
-                research_bonus = -0.05
+                research_speed_factor = -0.05
             }
         }
 
-            # actions
+        # actions
         Z45_weak_government = {
             picture = generic_disjointed_gov
             allowed = {
@@ -203,8 +198,6 @@ ideas = {
             }
             modifier = {
                 consumer_goods_factor = -0.025
-                add_war_support = 0.1
-                add_stability = 0.1
                 justify_war_goal_time = -0.34
             }
         }
@@ -219,7 +212,6 @@ ideas = {
                 surrender_limit = 0.9
                 stability_weekly = 0.025
                 political_power_gain = 0.25
-                add_political_power = 150
             }
         }
          
