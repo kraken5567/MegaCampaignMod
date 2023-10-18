@@ -1,0 +1,1257 @@
+focus_tree = {
+
+	id = polishlithuania-focus
+	continuous_focus_position = { x = 0 y = 1500 }
+	
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = Z45
+		}
+	}
+
+	# Military Tree #
+	focus = { 
+		id = Z45_ModernMil_1
+		icon = GFX_focus_chi_army_reform
+		x = 2
+		y = 0
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		ai_will_do = { factor = 1 }
+		completion_reward = {			
+			add_war_support = 0.05
+			army_experience = 25
+		}
+	}
+
+	# Motorized Modern
+	focus = {
+		id = Z45_Mot_1
+		icon = GFX_goal_generic_army_motorized
+		prerequisite = { focus = Z45_ModernMil_1  }
+		mutually_exclusive = { focus = Z45_Cav_1 }
+		x = 1
+		y = 1
+		cost = 5
+		completion_reward = {
+			add_ideas = Z45_motorized_training
+		}
+	}
+
+	focus = {
+		id = Z45_Mot_2
+		icon = GFX_focus_SOV_organize_wreckers
+		prerequisite = { focus = Z45_Mot_1 }
+		x = 1
+		y = 2
+		cost = 5
+		completion_reward = {
+			add_ideas = Z45_motorized_tactics_buff
+		}
+	}
+
+	focus = {
+		id = Z45_Mot_3
+		icon = GFX_focus_generic_truck
+		prerequisite = {focus = Z45_Mot_2}
+		x = 1
+		y = 3
+		cost = 10
+		completion_reward = {
+			add_ideas = Z45_motorized_logistics_buff
+		}
+	}
+
+	focus = {
+		id = Z45_Mot_4
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = Z45_ModernMil_2 }
+		prerequisite = { focus = Z45_Mot_3 }
+		x = 1
+		y = 5
+		cost = 5
+		completion_reward = {
+			add_ideas = Z45_tank_tactics
+
+			add_doctrine_cost_reduction = {
+				cost_reduction = 0.25
+				name = mobile_warfare
+			}
+
+			army_experience = 75
+		}
+	}
+
+	# Cavalry Modern
+	focus = {
+		id = Z45_Cav_1
+		icon = GFX_goal_generic_cavalry
+		prerequisite = { focus = Z45_ModernMil_1  }
+		mutually_exclusive = { focus = Z45_Mot_1 }
+		x = 3
+		y = 1
+		cost = 5
+		completion_reward = {
+			add_ideas = Z45_cavalry_training
+		}
+	}
+
+	focus = {
+		id = Z45_Cav_2
+		icon = GFX_goal_generic_cavalry
+		prerequisite = { focus = Z45_Cav_1 }
+		x = 3
+		y = 3 
+		cost = 5
+		completion_reward = {
+			add_ideas = Z45_cavalry_tactics_buff
+		}
+	}
+
+	focus = {
+		id = Z45_Cav_3
+		icon = GFX_focus_SOV_restore_cossack_units
+		prerequisite = { focus = Z45_ModernMil_2 }
+		prerequisite = { focus = Z45_Cav_2 }
+		x = 3
+		y = 5
+		cost = 5
+		completion_reward = {
+			add_ideas = Z45_Master_Cav
+		}
+	}
+
+	focus = { 
+		id = Z45_ModernMil_2
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = Z45_Cav_2 focus = Z45_Mot_3 }
+		x = 2
+		y = 4
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		ai_will_do = { factor = 1 }
+		completion_reward = {			
+			add_war_support = 0.05
+			army_experience = 25
+		}
+	}
+
+	# Naval 
+	focus = { 
+		id = Z45_naval_1
+		icon = GFX_goal_generic_navy_carrier
+		x = 32
+		y = 1
+		cost = 5
+		prerequisite = { focus = Z45_industrial_N }
+		completion_reward = {			
+			navy_experience = 25
+			add_ideas = Z45_navy_1
+		}
+	}
+	focus = { 
+		id = Z45_naval_2
+		icon = GFX_goal_generic_navy_submarine
+		x = 32
+		y = 2
+		cost = 5
+		prerequisite = { focus = Z45_industrial_N }
+		completion_reward = {			
+			navy_experience = 25
+			add_ideas = Z45_navy_2
+		}
+	}
+	focus = { 
+		id = Z45_naval_3
+		icon = GFX_goal_generic_navy_battleship
+		x = 32
+		y = 3
+		cost = 5
+		prerequisite = { focus = Z45_industrial_N }
+		completion_reward = {			
+			navy_experience = 25
+			add_ideas = Z45_navy_3
+		}
+	}
+	# Air
+	focus = { 
+		id = Z45_air_1
+		icon = GFX_goal_generic_air_fighter2
+		x = 30
+		y = 2
+		cost = 5
+		prerequisite = { focus = Z45_naval_1 }
+		completion_reward = {			
+			air_experience = 25
+			add_ideas = {
+				Z45_air_1
+			}
+		}
+	}
+	focus = { 
+		id = Z45_air_2
+		icon = GFX_goal_generic_air_fighter
+		x = 30
+		y = 3
+		cost = 5
+		prerequisite = { focus = Z45_air_1 }
+		completion_reward = {			
+			air_experience = 25
+			add_ideas = {
+				Z45_air_2
+			}
+		}
+	}
+	focus = { 
+		id = Z45_air_3
+		icon = GFX_focus_generic_aircraft_production
+		x = 30
+		y = 4
+		cost = 5
+		prerequisite = { focus = Z45_air_2 }
+		completion_reward = {			
+			air_experience = 25
+			add_ideas = {
+				Z45_air_3
+			}
+		}
+	}
+
+###############################################
+
+	# Political Tree # 
+	#A New Direction
+	focus = {
+		id = Z45_a_new_direction
+		icon = GFX_focus_generic_polish_deal
+		x = 16
+		y = 0
+		cost = 5
+		mutually_exclusive = {
+			focus = Z45_civil_reorginization
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+
+	#The West
+	focus = {
+		id = Z45_the_west
+		icon = GFX_focus_generic_spread_fascism
+		x = 13
+		y = 1
+		cost = 0.143
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = Z45_a_new_direction  }
+		bypass = {
+			has_war_with = Z68
+		}
+		completion_reward = {
+			add_political_power = 10
+			}
+		}
+
+	#The East
+	focus = {
+		id = Z45_the_east
+		icon = GFX_focus_SOV_patriarch_of_all_russia
+		x = 17
+		y = 1
+		cost = 0.143
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = Z45_a_new_direction  }
+		bypass = {
+			has_war_with = SOV
+		}
+		completion_reward = {
+			add_political_power = 10
+			
+		}
+	}
+
+	#Ally Germany
+	focus = {
+		id = Z45_ally_germany
+		icon = GFX_focus_chi_mission_to_germany
+		x = 12
+		y = 2
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = Z45_the_west  }
+		mutually_exclusive = { focus = Z45_villainize_germany }
+
+		completion_reward = {
+
+			add_to_faction = Z68
+
+			set_country_flag = ally_ger
+
+			add_opinion_modifier = {
+			    target = Z68
+			    modifier = huge_increase
+			}
+		}
+	}
+
+	#Villanize Germany
+	focus = {
+		id = Z45_villainize_germany
+		icon = GFX_focus_POL_reassert_silesian_claims
+		x = 14
+		y = 2
+		cost = 7.143 #50 days
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = Z45_the_west  }
+		mutually_exclusive = { focus = Z45_ally_germany  }
+		ai_will_do = { factor = 1 }
+		available = {
+			country_exists = Z68
+		}
+		completion_reward = {
+			create_wargoal = {
+			    type = puppet_wargoal_focus
+			    target = Z68
+			}
+			add_state_claim = 40 
+			add_state_claim = 68 
+			add_state_claim = 321
+			
+			set_country_flag = villan_ger
+		}
+		will_lead_to_war_with = Z68
+	}
+
+	# Villanize Bohemia
+	focus = {
+		id = Z45_villainize_bohemia
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 14
+		y = 4
+		cost = 7.143 #50 days
+
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = Z45_Gov_Options }
+		mutually_exclusive = { focus = Z45_ally_bohemia }
+
+		completion_reward = {
+			create_wargoal = {
+			    type = puppet_wargoal_focus
+			    target = Z05
+			}
+			add_state_claim = 148
+			add_state_claim = 154
+
+		}
+		will_lead_to_war_with = Z05
+	}
+
+	focus = {
+		id = Z45_ally_hungary
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		x = 14
+		y = 5
+		cost = 5
+		prerequisite = { focus = Z45_villainize_bohemia }
+		completion_reward = {
+			add_to_faction = HUN
+		}
+
+	}
+
+	# Ally Bohemia
+	focus = {
+		id = Z45_ally_bohemia
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		x = 12
+		y = 4
+		cost = 5
+
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = Z45_Gov_Options }
+		mutually_exclusive = { focus = Z45_villainize_bohemia }
+
+
+		completion_reward = {
+		
+			add_to_faction = Z05
+
+			add_opinion_modifier = {
+			    target = Z05
+			    modifier = huge_increase
+			}
+		}
+	}
+
+	# Attack Hungary
+	focus = {
+		id = Z45_attack_hungary
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 12
+		y = 5
+		cost = 5
+
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = Z45_ally_bohemia }
+
+		available = {
+		 NOT = { is_ally_with = HUN }
+		}
+
+		completion_reward = {
+
+			add_opinion_modifier = {
+			    target = Z05
+			    modifier = huge_increase
+			}
+
+			# Bohemia Claims
+			Z05 = {add_state_claim = 112}
+			Z05 = {add_state_claim = 366}
+			Z05 = {add_state_claim = 222}
+
+			# Poland Claims
+			Z45 = {add_state_core = 228}
+			Z45 = {add_state_claim = 215}
+
+			# Romanian Claims
+			ROM = {add_state_claim = 549}
+			ROM = {add_state_claim = 261}
+		}
+	}
+
+	# EAST #
+
+	#Ally Russia
+	focus = {
+		id = Z45_ally_russia
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		x = 18
+		y = 2
+		cost = 5
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = Z45_the_east  }
+		mutually_exclusive = { focus = Z45_villainize_russia }
+
+		completion_reward = {
+
+			add_to_faction = SOV
+			
+			set_country_flag = ally_rus
+
+			add_opinion_modifier = {
+			    target = SOV
+			    modifier = huge_increase
+			}
+		}
+	}
+
+	#Villainize Russia
+	focus = {
+		id = Z45_villainize_russia
+		icon = GFX_focus_rom_abdicate
+		x = 16
+		y = 2
+		cost = 7.143 #50 days
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = Z45_the_east  }
+		mutually_exclusive = { focus = Z45_ally_russia }
+		
+		completion_reward = {
+			create_wargoal = {
+			    type = puppet_wargoal_focus
+			    target = SOV
+			}
+			add_state_claim = 498 
+			add_state_claim = 311 
+			add_state_claim = 164 
+			add_state_claim = 207 
+			add_state_claim = 563 
+			add_state_claim = 330
+			
+			set_country_flag = villan_rus
+		}
+		will_lead_to_war_with = SOV
+	}
+
+	# Villanize Denmark
+	focus = {
+		id = Z45_villainize_denmark
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 16
+		y = 4
+		cost = 7.143 #50 days
+
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = Z45_Gov_Options }
+		mutually_exclusive = { focus = Z45_ally_denmark }
+		
+
+		completion_reward = {
+			create_wargoal = {
+			    type = puppet_wargoal_focus
+			    target = DEN
+			}
+			add_state_claim = 277
+			add_state_claim = 435
+			
+			set_country_flag = villan_rus
+		}
+		will_lead_to_war_with = DEN
+	}
+
+	# Ally Denmark
+	focus = {
+		id = Z45_ally_denmark
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		x = 18
+		y = 4
+		cost = 5
+
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		prerequisite = { focus = Z45_Gov_Options }
+		mutually_exclusive = { focus = Z45_villainize_denmark }
+
+		completion_reward = {
+
+			add_to_faction = DEN
+
+			add_opinion_modifier = {
+			    target = DEN
+			    modifier = huge_increase
+			}
+
+		}
+	}
+
+
+	# Government
+
+	focus = {
+		id = Z45_Gov_Options
+		icon = GFX_focus_POL_common_organization_of_society
+		x = 15
+		y = 3
+		cost = 3.572 #25 days
+		prerequisite = { focus = Z45_villainize_germany focus = Z45_ally_germany  }
+		prerequisite = { focus = Z45_villainize_russia focus = Z45_ally_russia  }
+	
+		completion_reward = {
+			remove_ideas = { Z45_government_stall }
+
+			if = {
+				limit = {
+					has_country_flag = villan_ger
+					has_country_flag = villan_rus
+				}
+				#immediate
+				add_stability = 0.2
+				add_war_support = 0.2
+				# flag
+				set_country_flag = Gov_Strong
+				Z45 = { country_event = { id = Z45.300 days = 2} }
+			}
+
+			else_if = {
+				limit = {
+					OR = {
+						AND = {
+							has_country_flag = villan_rus
+							has_country_flag = ally_ger
+						}
+						AND = {
+							has_country_flag = villan_ger
+							has_country_flag = ally_rus
+						}
+					}
+				}
+				#immediate
+				add_stability = 0.1
+				add_war_support = 0.1
+				# flag
+				set_country_flag = Gov_Legitimate
+				Z45 = { country_event = { id = Z45.200 days = 2} }
+			}
+
+			else_if = {
+				limit = {
+					has_country_flag = ally_ger
+					has_country_flag = ally_rus
+				}
+				#immediate
+                add_stability = -0.3
+				add_war_support = -0.3
+				# flag
+				set_country_flag = Gov_Weak
+				Z45 = { country_event = { id = Z45.100 days = 2 } }
+			}
+		}
+	}
+
+	#Alternate Path
+
+	focus = {
+		id = Z45_civil_reorginization
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		x = 7
+		y = 0
+		cost = 5
+		mutually_exclusive = {
+			focus = Z45_a_new_direction
+		}
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		ai_will_do = { factor = 1 }
+		completion_reward = {
+			add_political_power = 50
+			add_stability = -0.25
+			add_war_support = 0.25
+			set_political_party = {
+				ideology = neutrality
+				popularity = 0.50
+			}
+			set_political_party = {
+				ideology = fascism
+				popularity = -0.50
+			}
+			start_civil_war = {
+				ruling_party = neutrality
+				ideology = fascism
+				size = 0.35
+				capital = 14
+				states = {
+					32 4 90 198 479 8 323 293 71 293 63 15 14 271
+				}
+			}
+		}
+	}
+
+	#Communism
+	focus = {
+		id = Z45_gov_c
+		icon = GFX_focus_chi_cooperation_with_the_communists
+		cost = 7.143 #50
+		x = 6
+		y = 1
+		mutually_exclusive = {
+			focus = Z45_gov_d
+		}
+		available = {
+			has_civil_war = no
+		}
+		prerequisite = {
+			focus = Z45_civil_reorginization
+		}
+		completion_reward = { 
+			add_stability = 0.50
+			add_popularity = {
+				ideology = communism
+				popularity = 0.4
+			}
+			set_politics = {
+				ruling_party = communism
+			}
+		}
+	}
+
+	focus = {
+		id = Z45_gov_c_strengthen
+		icon = GFX_goal_support_communism
+		cost = 7.143 #50
+		x = 6
+		y = 2
+		prerequisite = {
+			focus = Z45_gov_c
+		}
+		completion_reward = { 
+			add_ideas = Z45_gov_people
+		}
+	}
+
+	focus = {
+		id = Z45_gov_c_spread
+		icon = GFX_focus_SOV_the_glory_of_the_red_army_communism
+		cost = 7.143 #50
+		x = 6
+		y = 3
+		prerequisite = {
+			focus = Z45_gov_c_strengthen
+		}
+		completion_reward = { 
+			country_event = { id = Z45.000 days = 0 }
+		}
+	}
+
+	focus = {
+		id = Z45_gov_f_ban
+		icon = GFX_focus_POL_ban_nazi_party
+		cost = 7.143 #50
+		x = 8
+		y = 4
+		prerequisite = {
+			focus = Z45_gov_c_strengthen
+			focus = Z45_gov_d_strengthen
+			focus = Z45_gov_m_strengthen
+		}
+		completion_reward = { 
+			add_ideas = Z45_remove_fascism
+		}
+	}
+
+	# Democracy
+	focus = {
+		id = Z45_gov_d
+		icon = GFX_goal_support_democracy
+		cost = 7.143 #50
+		x = 9
+		y = 1
+		available = {
+			has_civil_war = no
+		}
+		mutually_exclusive = {
+			focus = Z45_gov_c
+		}
+		prerequisite = {
+			focus = Z45_civil_reorginization
+		}
+		completion_reward = {
+			add_stability = 0.50
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.2
+			}
+		}
+	}
+
+	focus = {
+		id = Z45_gov_d_strengthen
+		icon = GFX_goal_support_democracy
+		cost = 7.143 #50
+		x = 8
+		y = 2
+		mutually_exclusive = {
+			focus = Z45_gov_m
+		}
+		prerequisite = {
+			focus = Z45_gov_d
+		}
+		completion_reward = { 
+			add_ideas = Z45_gov_republic
+			set_politics = {
+				ruling_party = democratic
+
+			}
+		}
+	}
+
+	# MONARCH
+	focus = {
+		id =  Z45_gov_m
+		icon = GFX_focus_generic_monarchy_2
+		cost = 7.143 #50
+		x = 10
+		y = 2
+		prerequisite = {
+			focus = Z45_gov_d
+		}
+		completion_reward = {
+			add_ideas = Z45_gov_king
+
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.05
+			}
+		}
+	}
+
+	focus = {
+		id = Z45_gov_m_strengthen
+		icon = GFX_focus_POL_cossack_king
+		cost = 14.286 #100
+		x = 10
+		y = 3
+		prerequisite = {
+			focus = Z45_gov_m
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.25
+			}
+			create_country_leader = {
+				name = "King Stanisław IV"
+				ideology = despotism
+				picture = "gfx/leaders/POL/Stanisław_Augustus.dds"
+				traits = {
+					Dictator
+					Hawk
+					POL_cossack_king
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = Z45_invade_Russia
+		icon = GFX_focus_attack_soviet
+		cost = 14.286 #100
+		x = 10
+		y = 4
+		prerequisite = { focus = Z45_gov_m_strengthen }
+		completion_reward = { 
+			every_state = { limit = { is_controlled_by = SOV } ROOT = { add_state_core = PREV } }
+			declare_war_on = {
+				target = SOV 
+				type = take_state
+			}
+		}
+	}
+
+	focus = {
+		id = Z45_ROM_invasion
+		icon = GFX_focus_BUL_prussia_of_the_balkans
+		cost = 10
+		x = 10
+		y = 5
+		prerequisite = { focus = Z45_invade_Russia }
+		completion_reward = { 
+			add_state_core = 204
+	
+			Z45 = {	create_wargoal = { target = ROM type = puppet_wargoal_focus } }
+		}
+	}
+
+	focus = {
+		id = Z45_GBF
+		icon = GFX_focus_BUL_prussia_of_the_balkans
+		cost = 10
+		x = 10
+		y = 6
+		available = {
+			ROM = { is_puppet_of = Z45 }
+		}
+		prerequisite = {
+			focus = Z45_ROM_invasion
+		}
+		completion_reward = { 
+			ROM = { set_cosmetic_tag = GBF }
+			}
+		}
+
+	# Industry Tree
+	focus = {
+		id = Z45_industrial_1
+		icon = GFX_goal_generic_construct_civilian
+		x = 24
+		y = 0
+		cost = 10
+		completion_reward = {
+			add_political_power = 15
+			}
+    	}
+
+	focus = {
+		id = Z45_industrial_N
+		icon = GFX_goal_generic_build_navy
+		x = 30
+		y = 0
+		cost = 10
+		completion_reward = { 
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+					}
+				}
+			}
+	}
+	# Navy Industry
+	focus = {
+		id = Z45_industrial_N_1
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 28
+		y = 1
+		cost = 10
+		prerequisite = { focus = Z45_industrial_N }
+		prerequisite = { focus = Z45_industrial_1 }
+		completion_reward = { 
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+					}
+				}
+			}
+	}
+	focus = {
+		id = Z45_industrial_N_2
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 28
+		y = 2
+		cost = 10
+		prerequisite = { focus = Z45_industrial_N_1 }
+		completion_reward = { 
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+					}
+				}
+			}
+	}
+	focus = {
+		id = Z45_industrial_N_3
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 28
+		y = 3
+		cost = 10
+		prerequisite = { focus = Z45_industrial_N_2 }
+		completion_reward = { 
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+					}
+				}
+			}
+	}
+
+	# Turning Point 
+	focus = {
+		id = Z45_industrial_T_1
+		icon = GFX_goal_generic_oil_refinery
+		x = 24
+		y = 2
+		prerequisite = {focus = Z45_industrial_M_2 focus = Z45_industrial_C_2}
+		mutually_exclusive = {}
+		cost = 10
+		completion_reward = {
+			set_country_flag = Industrial_T_Completed
+			
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = synthetic_refinery
+					level = 2
+					instant_build = yes
+				}
+			}
+        	}
+    	}
+
+		focus = {
+			id = Z45_industrial_T_2
+			icon = GFX_goal_generic_oil_refinery
+			x = 24
+			y = 4
+			prerequisite = {focus = Z45_industrial_T_1 }
+			mutually_exclusive = {}
+			cost = 10
+			completion_reward = {
+
+				random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = synthetic_refinery
+					level = 2
+					instant_build = yes
+				}
+			}
+				}
+			}
+	
+		focus = {
+			id = Z45_industrial_T_3
+			icon = GFX_goal_generic_oil_refinery
+			x = 24
+			y = 5
+			prerequisite = {focus = Z45_industrial_T_2 }
+			mutually_exclusive = {}
+			cost = 10
+			completion_reward = {
+
+				random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = synthetic_refinery
+					level = 2
+					instant_build = yes
+					}
+				}
+				}
+			}
+
+	# Militarist Focused
+	focus = {
+		id = Z45_industrial_M_1
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 26
+		y = 1
+		prerequisite = {focus = Z45_industrial_1}
+		cost = 10
+		completion_reward = {
+			
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+
+			add_ideas = Z45_industrial_Ma
+        	}
+    	}
+	focus = {
+		id = Z45_industrial_M_2
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 26
+		y = 2
+		prerequisite = {focus = Z45_industrial_M_1}
+		cost = 10
+		completion_reward = {
+			
+			set_country_flag = Industrial_M_Completed
+
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+					instant_build = yes
+				}
+			}
+			
+			swap_ideas = {
+    			remove_idea = Z45_industrial_Ma
+    			add_idea = Z45_industrial_Mb
+				}
+        	}
+    	}
+
+	focus = {
+		id = Z45_industrial_M_3
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 26
+		y = 3
+		prerequisite = {focus = Z45_industrial_M_2 }
+		
+		mutually_exclusive = {focus = Z45_industrial_C_3}
+
+		available = {
+			OR = {
+				AND = {
+					has_country_flag = Industrial_C_Completed
+					has_country_flag = Industrial_T_Completed
+					}
+				AND = {
+					has_country_flag = Industrial_M_Completed
+					NOT = { has_country_flag = Industrial_T_Completed
+					}
+				}
+			}
+		}
+		
+		cost = 10
+		completion_reward = {
+
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = arms_factory
+					level = 3
+					instant_build = yes
+				}
+			}
+
+			swap_ideas = {
+    			remove_idea = Z45_industrial_Mb
+    			add_idea = Z45_industrial_Mc
+				}
+        	}
+    	}
+
+	focus = {
+		id = Z45_industrial_M_4
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 26
+		y = 4
+		prerequisite = {focus = Z45_industrial_M_3}
+		cost = 10
+		completion_reward = {
+
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = arms_factory
+					level = 4
+					instant_build = yes
+				}
+			}
+
+			swap_ideas = {
+    			remove_idea = Z45_industrial_Mc
+    			add_idea = Z45_industrial_Md
+				}
+        	}
+    	}
+
+	# Civilian Focused
+	focus = {
+		id = Z45_industrial_C_1
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 22
+		y = 1
+		prerequisite = {focus = Z45_industrial_1}
+		cost = 10
+		completion_reward = {
+
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+
+			add_ideas = Z45_industrial_Ca
+    		}
+		}
+	
+	focus = {
+		id = Z45_industrial_C_2
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 22
+		y = 2
+		prerequisite = {focus = Z45_industrial_C_1}
+		cost = 10
+		completion_reward = {
+
+			set_country_flag = Industrial_C_Completed
+
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+			}
+
+			swap_ideas = {
+    			remove_idea = Z45_industrial_Ca
+    			add_idea = Z45_industrial_Cb
+				}
+			}
+    	}
+	
+	focus = {
+		id = Z45_industrial_C_3
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 22
+		y = 3
+
+		mutually_exclusive = {focus = Z45_industrial_M_3}
+
+		available = {
+			OR = {
+				AND = {
+					has_country_flag = Industrial_M_Completed
+					has_country_flag = Industrial_T_Completed
+					}
+				AND = {
+					has_country_flag = Industrial_C_Completed
+					NOT = { has_country_flag = Industrial_T_Completed
+					}
+				}
+			}
+		}
+
+		prerequisite = {focus = Z45_industrial_C_2}
+		cost = 10
+		completion_reward = {
+	
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+					type = industrial_complex
+					level = 3
+					instant_build = yes
+				}
+			}
+
+			swap_ideas = {
+    			remove_idea = Z45_industrial_Cb
+    			add_idea = Z45_industrial_Cc
+				}
+    		}
+		}
+	
+	focus = {
+		id = Z45_industrial_C_4
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 22
+		y = 4
+		prerequisite = {focus = Z45_industrial_C_3}
+		cost = 10
+		completion_reward = {
+
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+					type = industrial_complex
+					level = 4
+					instant_build = yes
+				}
+			}
+
+			swap_ideas = {
+    			remove_idea = Z45_industrial_Cc
+    			add_idea = Z45_industrial_Cd
+				}
+    		}
+		}
+}

@@ -1,0 +1,277 @@
+ideas = {
+
+    country = {
+
+        generic_conquerAll = {
+            picture = generic_aircraft_support
+            modifier = {
+                justify_war_goal_time = -0.25
+                compliance_growth_on_our_occupied_states = -0.025
+                resistance_activity = 0.25
+            }
+        }
+
+        generic_puppetAll = {
+            picture = generic_aircraft_support
+            modifier = {
+                justify_war_goal_time = -0.15
+                compliance_growth_on_our_occupied_states = -0.005
+                resistance_activity = 0.15
+            }
+        }
+
+        # air
+        generic_air_1 = {
+            picture = generic_fighter_production_diverted
+            modifier = {
+                air_air_superiority_attack_factor = 0.1
+                air_air_superiority_defence_factor = 0.1
+                }
+        }
+        
+        generic_air_2 = {
+            picture = generic_air_payment
+            modifier = {
+                   air_close_air_support_attack_factor = 0.025
+                   air_close_air_support_defence_factor = 0.025
+                   air_accidents_factor = -0.01
+                }
+             }
+         
+        generic_air_3 = {
+            picture = generic_air_research
+            modifier = {
+                air_strategic_bomber_agility_factor = 0.1
+                air_strategic_bomber_attack_factor = 0.1
+                air_strategic_bomber_bombing_factor = 0.1
+                air_strategic_bomber_defence_factor = 0.1
+            }
+        }
+
+        # navy
+        generic_navy_1 = {
+            picture = generic_navy_bonus
+            modifier = {
+
+            }
+        }
+
+        generic_navy_2 = {
+            picture = generic_navy_carrier_bonus
+            modifier = {
+                
+            }
+        }
+
+        generic_navy_3 = {
+            picture = generic_coastal_navy
+            modifier = {
+                
+            }
+        }
+
+        generic_tank_tactics = {
+            picture = generic_acquire_tanks
+            modifier = {
+                army_armor_attack_factor  = 0.1
+                army_armor_defence_factor = 0.05
+                army_armor_speed_factor   = 0.05
+            }
+        }
+
+        generic_artillery_tactics = {
+            picture = generic_artillery_regiments
+            modifier = {
+                army_artillery_soft_attack_factor  = 0.1
+                army_artillery_defence_attack_factor = 0.05
+            }
+        }
+
+        generic_trench_tactics = {
+            picture = CZE_planning_bonus
+            modifier = {
+                army_infantry_defence_factor = 0.25
+            }
+        }
+
+        generic_push_tactics = {
+            modifier = {
+                army_infantry_soft_factor   = 0.025
+                army_infantry_speed_factor  = 0.025
+                army_infantry_attack_factor = 0.025
+
+                army_artillery_soft_factor   = 0.025
+                army_artillery_speed_factor  = 0.025
+                army_artillery_attack_factor = 0.025
+
+                army_armor_soft_factor      = 0.025
+                army_armor_speed_factor     = 0.025
+                army_armor_attack_factor    = 0.025
+            }
+        }
+        
+        # Government
+        generic_remove_fascism = {
+            picture = generic_fascism_banned
+            modifier = {
+                fascism_drift = -0.25
+            }
+        }
+
+        # Nationalism Path
+
+        generic_F_army = {
+            picture = chi_army_corruption3
+            modifier = {
+                army_org_factor = 0.05
+                army_speed_factor = 0.1
+                army_attack_factor = 0.033
+                army_fuel_consumption_factor = -0.1
+                supply_consumption_factor = 0.05
+            }
+        }
+
+        generic_F_goals = {
+            picture = generic_fascism_drift_2
+            modifier = {
+                fascism_drift = 0.02
+                surrender_limit = 0.025
+                consumer_goods_factor = -0.025
+                conscription = 0.1
+                non_core_manpower = -1
+                research_speed_factor = 0.1
+                state_production_speed_arms_factory_factor = 0.05
+            }
+        }
+
+        # Democracy/Republic Path
+        
+        generic_D_army = {
+            picture = chi_army_corruption3
+            modifier = {
+                army_org_factor = 0.1
+                army_speed_factor = 0.1
+                army_attack_factor = 0.033
+                army_fuel_consumption_factor = 0.05
+                supply_consumption_factor = 0.1
+            }
+        }
+
+        generic_D_goals = {
+            picture = generic_democratic_drift_bonus
+            modifier = {
+                democratic_drift = 0.02
+                surrender_limit = -0.05
+                consumer_goods_factor = -0.05
+                conscription = -0.01
+                non_core_manpower = 0.2
+                research_speed_factor = 0.05
+            }
+        }
+
+        # Neutrality/Monarch Path
+
+        generic_N_army = {
+            picture = MEX_politicised_army_2
+            modifier = {
+                army_org_factor = -0.05
+                army_speed_factor = -0.1
+                army_attack_factor = 0.033
+                army_fuel_consumption_factor = -0.1
+                supply_consumption_factor = -0.1
+            }
+        }
+
+        generic_N_goals = {
+            picture = generic_monarchist_uprising
+            modifier = {
+                neutrality_drift = 0.02
+                surrender_limit = 0.1
+                consumer_goods_factor = -0.035
+                conscription = 0.025
+                non_core_manpower = -0.05
+                supply_consumption_factor = 0.01
+                research_speed_factor = -0.01
+            }
+        }
+
+        # Communism Path
+
+        generic_C_army = {
+            picture = generic_communist_army
+            modifier = {
+                army_org_factor = -0.1
+                army_speed_factor = -0.1
+                army_attack_factor = 0.1
+                army_fuel_consumption_factor = 0.05
+                supply_consumption_factor = 0.15
+            }
+        }
+        
+        generic_C_goals = {
+            picture = generic_communism_drift_bonus
+            modifier = {
+                communism_drift = 0.02
+                surrender_limit = 0.05
+                consumer_goods_factor = -0.025
+                conscription = 0.01
+                non_core_manpower = 0.05
+                supply_consumption_factor = -0.025
+                research_speed_factor = -0.05
+            }
+        }
+         
+        # Civillian Factory Ideas
+        generic_industrial_Ca = {
+            picture = POL_disjointed_industry
+            modifier = {
+                production_speed_industrial_complex_factor = 0.05
+            }
+        }
+        generic_industrial_Cb = {
+            picture = man_five_year_plan_industry
+            modifier = {
+                production_speed_industrial_complex_factor = 0.1
+            }
+        }
+        generic_industrial_Cc = {
+            picture = man_five_year_plan_industry
+            modifier = {
+                production_speed_industrial_complex_factor = 0.15
+            }
+        }
+        generic_industrial_Cd = {
+            picture = man_five_year_plan_industry
+            modifier = {
+                production_speed_industrial_complex_factor = 0.2
+            }
+        }
+
+        # Military Factory Ideas
+        generic_industrial_Ma = {
+            picture = POL_disjointed_industry
+            modifier = {
+                production_speed_arms_factory_factor = 0.05
+            }
+        }
+        generic_industrial_Mb = {
+            picture = man_five_year_plan_industry
+            modifier = {
+                production_speed_arms_factory_factor = 0.1
+            }
+        }
+        generic_industrial_Mc = {
+            picture = man_five_year_plan_industry
+            modifier = {
+                production_speed_arms_factory_factor = 0.15
+            }
+        }
+        generic_industrial_Md = {
+            picture = man_five_year_plan_industry
+            modifier = {
+                production_speed_arms_factory_factor = 0.2
+            }
+        }
+
+    }
+} 

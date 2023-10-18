@@ -1,48 +1,58 @@
 ﻿l_english: 
 
 # Economic
-POL_industrial_Ca:0 "PIA Civillian Focus"
-POL_industrial_Cb:0 "PIA Civillian Focus"
-POL_industrial_Cc:0 "PIA Civillian Focus"
-POL_industrial_Cd:0 "PIA Civillian Focus"
+Z45_industrial_Ca:0 "PIA Civillian Focus"
+Z45_industrial_Cb:0 "PIA Civillian Focus"
+Z45_industrial_Cc:0 "PIA Civillian Focus"
+Z45_industrial_Cd:0 "PIA Civillian Focus"
 
-POL_industrial_Ma:0 "PIA Military Focus"
-POL_industrial_Mb:0 "PIA Military Focus"
-POL_industrial_Mc:0 "PIA Military Focus"
-POL_industrial_Md:0 "PIA Military Focus"
+Z45_industrial_Ma:0 "PIA Military Focus"
+Z45_industrial_Mb:0 "PIA Military Focus"
+Z45_industrial_Mc:0 "PIA Military Focus"
+Z45_industrial_Md:0 "PIA Military Focus"
 
 # desc
-POL_industrial_Ca_desc:0 "Polish Industrial Administration"
-POL_industrial_Cb_desc:0 "Polish Industrial Administration"
-POL_industrial_Cc_desc:0 "Polish Industrial Administration"
-POL_industrial_Cd_desc:0 "Polish Industrial Administration"
+Z45_industrial_Ca_desc:0 "Polish Industrial Administration"
+Z45_industrial_Cb_desc:0 "Polish Industrial Administration"
+Z45_industrial_Cc_desc:0 "Polish Industrial Administration"
+Z45_industrial_Cd_desc:0 "Polish Industrial Administration"
 
-POL_industrial_Ma_desc:0 "Polish Industrial Administration"
-POL_industrial_Mb_desc:0 "Polish Industrial Administration"
-POL_industrial_Mc_desc:0 "Polish Industrial Administration"
-POL_industrial_Md_desc:0 "Polish Industrial Administration"
+Z45_industrial_Ma_desc:0 "Polish Industrial Administration"
+Z45_industrial_Mb_desc:0 "Polish Industrial Administration"
+Z45_industrial_Mc_desc:0 "Polish Industrial Administration"
+Z45_industrial_Md_desc:0 "Polish Industrial Administration"
 
 # Military
 
-POL_motorized_training:0 "Modern Cavalry Training"
-POL_motorized_logistics_buff:0 "Truck Logistic Re-Organization"
-POL_motorized_tactics_buff:0 "Motorized Tactics Research"
-POL_tank_tactics:0 "Mobile Tactics"
+Z45_motorized_training:0 "Modern Cavalry Training"
+Z45_motorized_logistics_buff:0 "Truck Logistic Re-Organization"
+Z45_motorized_tactics_buff:0 "Motorized Tactics Research"
+Z45_tank_tactics:0 "Mobile Tactics"
 
-POL_cavalry_training:0 "Cavalry Training"
-POL_cavalry_tactics_buff:0 "New Cavalry Tactics"
-#POL_Master_Cav:0 ""
+Z45_cavalry_training:0 "Cavalry Training"
+Z45_cavalry_tactics_buff:0 "New Cavalry Tactics"
+Z45_Master_Cav:0 "Cavalry Mastery"
 
-POL_combined_arms_mastery:0 "Modernized Armies"
+Z45_combined_arms_mastery:0 "Modernized Armies"
+
+# Air
+Z45_air_1:0 "Fighter Training"
+Z45_air_2:0 "Close Air Raiding"
+Z45_air_3:0 "Strategic Bombing Committee"
+
+# Navy
+Z45_navy_1:0 "Improved Navy"
+Z45_navy_2:0 "Submarine Tactics"
+Z45_navy_3:0 "Capital Ship Improvements"
 
 # Political
-POL_remove_fascism:0 "Banned The Nationalists"
+Z45_remove_fascism:0 "Banned The Nationalists"
 
-POL_government_stall:0 "Government Stagnation"
-POL_gov_republic:0 "Polish Democracy"
-POL_gov_king:0 "Polish Cossack Monarchy"
-POL_gov_people:0 "Polish Commonwealth of Peoples"
+Z45_government_stall:0 "Government Stagnation"
+Z45_gov_republic:0 "Polish Democracy"
+Z45_gov_king:0 "Polish Cossack Monarchy"
+Z45_gov_people:0 "Polish Commonwealth of Peoples"
 
-POL_strong_government:0 "Warmongering Government"
-POL_legitimate_government:0 "Moderate Administration"
-POL_weak_government:0 "Weak Self-Assertive Government"
+Z45_strong_government:0 "Warmongering Government"
+Z45_legitimate_government:0 "Moderate Administration"
+Z45_weak_government:0 "Weak Self-Assertive Government"

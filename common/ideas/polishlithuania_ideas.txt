@@ -1,23 +1,25 @@
 ideas = {
     country = {
         # air
-        POL_air_1 = {
+        Z45_air_1 = {
+            picture = generic_fighter_production_diverted
             modifier = {
                 air_air_superiority_attack_factor = 0.1
                 air_air_superiority_defence_factor = 0.1
                 }
         }
          
-        #POL_air_2 = {
-        #    # How do?
-        #    modifier = {
-        #        equipment_bonus = {fighter_equipment = { build_cost_ic = -0.1 instant = yes } }
-        #        equipment_bonus = { CAS_equipment = { build_cost_ic = -0.125 instant = yes } }
-        #        equipment_bonus = { strat_bomber_equipment = { build_cost_ic = -0.2 instant = yes } }
-        #        }
-        #     }
+        Z45_air_2 = {
+            picture = generic_air_payment
+            modifier = {
+                   air_close_air_support_attack_factor = 0.025
+                   air_close_air_support_defence_factor = 0.025
+                   air_accidents_factor = -0.01
+                }
+             }
          
-        POL_air_3 = {
+        Z45_air_3 = {
+            picture = generic_air_research
             modifier = {
                 air_strategic_bomber_agility_factor = 0.1
                 air_strategic_bomber_attack_factor = 0.1
@@ -27,54 +29,56 @@ ideas = {
         }
 
         # navy
-        POL_navy_1 = {
+        Z45_navy_1 = {
+            picture = generic_navy_bonus
             modifier = {
-
+                naval_coordination = 0.05
+                experience_gain_navy = 0.025
             }
         }
 
-        POL_navy_2 = {
+        Z45_navy_2 = {
+            picture = generic_coastal_navy
             modifier = {
-                
+                navy_submarine_attack_factor = 0.025
+                navy_submarine_defence_factor = 0.05
+                navy_submarine_detection_factor = 0.05
             }
         }
 
-        POL_navy_3 = {
+        Z45_navy_3 = {
+            picture = generic_sea_focused_navy
             modifier = {
-                
+                navy_capital_ship_attack_factor = 0.075
+                navy_capital_ship_defence_factor = 0.1
             }
         }
 
-
-        # Military
-        #https://hoi4-modding.fandom.com/wiki/Modifiers
-
-        POL_motorized_training = {
-
+        Z45_motorized_training = {
+            picture = FRA_motorized_focus
             modifier = {
-                motorized_movement_speed = 0.15
-                motorized_attack_factor = 0.05
-                add_army_experience = 50
+                army_motorized_movement_speed = 0.15
+                army_motorized_attack_factor = 0.05
             }
         }
 
-        POL_motorized_logistics_buff = {
-
+        Z45_motorized_logistics_buff = {
+            picture = generic_build_infrastructure
             modifier = {
-                motorized_supply_consumption_factor = -0.10
-                motorized_supply_grace = 0.10
+                army_motorized_supply_consumption_factor = -0.10
+                army_motorized_supply_grace = 0.10
                 }
         }
 
-        POL_motorized_tactics_buff = {
-
+        Z45_motorized_tactics_buff = {
+            picture = FRA_motorized_focus
             modifier = {
-                add_army_experience = 90
+                army_motorized_supply_consumption_factor = -0.0025
             }  
         }
 
-        POL_tank_tactics = {
-
+        Z45_tank_tactics = {
+            picture = generic_acquire_tanks
             modifier = {
                 army_armor_attack_factor  = 0.1
                 army_armor_defence_factor = 0.05
@@ -83,42 +87,49 @@ ideas = {
 
         }
         
-        POL_cavalry_training = {
+        Z45_cavalry_training = {
+            picture = generic_army_war_college
             modifier = {
-                    cavalry_speed = 0.05
-                    cavalry_supply_consumption = 0.05
-                    cavalry_defense = 0.05
-                    cavalry_attack = 0.10
+                    army_cavalry_speed = 0.05
+                    army_cavalry_supply_consumption = 0.05
+                    army_cavalry_defense = 0.05
+                    army_cavalry_attack = 0.10
                     }
                 }
 
-        POL_cavalry_tactics_buff = {
+        Z45_cavalry_tactics_buff = {
+            picture = generic_army_war_college
             modifier = {
-                cavalry_speed_factor = 0.15
+                army_cavalry_speed_factor = 0.15
                 }
         }
 
-        #POL_Master_Cav = {
-        #    modifier = {
-        #        cavalry_attack 
-        #    }
-        #}
-        
-        POL_combined_arms_mastery = {
-
+        Z45_Master_Cav = {
+            picture = generic_motorized_equipment_manufacturer_2
             modifier = {
-                add_equipment_capture_factor = 0.2
+                army_cavalry_attack_factor = 0.1
+                army_cavalry_organization_factor = 0.05
+                army_cavalry_defense_factor = 0.05 
+            }
+        }
+        
+        Z45_combined_arms_mastery = {
+            picture = hol_expand_the_colonial_army
+            modifier = {
+                army_equipment_capture_factor = 0.2
             }
         }
         
         # Government
-        POL_remove_fascism = {
+        Z45_remove_fascism = {
+            picture = generic_fascism_banned
             modifier = {
                 fascism_drift = -0.25
             }
         }
 
-        POL_government_stall = {
+        Z45_government_stall = {
+            picture = gre_political_instability
             modifier = {
                 war_support_factor = -0.2
                 stability_factor = -0.1
@@ -130,18 +141,20 @@ ideas = {
                 }
             }
 
-        POL_gov_republic = {
+        Z45_gov_republic = {
+            picture = EST_democratic_opposition
             modifier = {
                 democratic_drift = 0.02
                 surrender_limit = -0.05
                 consumer_goods_factor = -0.05
                 conscription = -0.01
                 non_core_manpower = 0.2
-                research_bonus = 0.05
+                research_speed_factor = 0.05
             }
         }
 
-        POL_gov_king = {
+        Z45_gov_king = {
+            picture = generic_monarchist_uprising
             modifier = {
                 neutrality_drift = 0.02
                 surrender_limit = 0.1
@@ -149,11 +162,12 @@ ideas = {
                 conscription = 0.025
                 non_core_manpower = -0.05
                 supply_consumption_factor = 0.01
-                research_bonus = -0.01
+                research_speed_factor = -0.01
             }
         }
         
-        POL_gov_people = {
+        Z45_gov_people = {
+            picture = ast_abandon_the_westminster_system_communism
             modifier = {
                 communism_drift = 0.02
                 surrender_limit = 0.05
@@ -161,12 +175,13 @@ ideas = {
                 conscription = 0.01
                 non_core_manpower = 0.05
                 supply_consumption_factor = -0.025
-                research_bonus = -0.05
+                research_speed_factor = -0.05
             }
         }
 
-            # actions
-        POL_weak_government = {
+        # actions
+        Z45_weak_government = {
+            picture = generic_disjointed_gov
             allowed = {
                 always = yes
             }
@@ -176,19 +191,19 @@ ideas = {
             }
         }
     
-        POL_legitimate_government = {
+        Z45_legitimate_government = {
+            picture = generic_pp_unity_bonus
             allowed = {
                 always = yes
             }
             modifier = {
                 consumer_goods_factor = -0.025
-                add_war_support = 0.1
-                add_stability = 0.1
                 justify_war_goal_time = -0.34
             }
         }
     
-        POL_strong_government = {
+        Z45_strong_government = {
+            picture = Z45_april_constitution
             allowed = {
                 always = yes
             }
@@ -197,49 +212,56 @@ ideas = {
                 surrender_limit = 0.9
                 stability_weekly = 0.025
                 political_power_gain = 0.25
-                add_political_power = 150
             }
         }
          
         # Civillian Factory Ideas
-        POL_industrial_Ca = {
+        Z45_industrial_Ca = {
+            picture = Z45_disjointed_industry
             modifier = {
                 production_speed_industrial_complex_factor = 0.05
             }
         }
-        POL_industrial_Cb = {
+        Z45_industrial_Cb = {
+            picture = man_five_year_plan_industry
             modifier = {
                 production_speed_industrial_complex_factor = 0.1
             }
         }
-        POL_industrial_Cc = {
+        Z45_industrial_Cc = {
+            picture = man_five_year_plan_industry
             modifier = {
                 production_speed_industrial_complex_factor = 0.15
             }
         }
-        POL_industrial_Cd = {
+        Z45_industrial_Cd = {
+            picture = man_five_year_plan_industry
             modifier = {
                 production_speed_industrial_complex_factor = 0.2
             }
         }
 
         # Military Factory Ideas
-        POL_industrial_Ma = {
+        Z45_industrial_Ma = {
+            picture = Z45_disjointed_industry
             modifier = {
                 production_speed_arms_factory_factor = 0.05
             }
         }
-        POL_industrial_Mb = {
+        Z45_industrial_Mb = {
+            picture = man_five_year_plan_industry
             modifier = {
                 production_speed_arms_factory_factor = 0.1
             }
         }
-        POL_industrial_Mc = {
+        Z45_industrial_Mc = {
+            picture = man_five_year_plan_industry
             modifier = {
                 production_speed_arms_factory_factor = 0.15
             }
         }
-        POL_industrial_Md = {
+        Z45_industrial_Md = {
+            picture = man_five_year_plan_industry
             modifier = {
                 production_speed_arms_factory_factor = 0.2
             }
