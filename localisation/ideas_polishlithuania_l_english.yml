@@ -31,9 +31,19 @@ Z45_tank_tactics:0 "Mobile Tactics"
 
 Z45_cavalry_training:0 "Cavalry Training"
 Z45_cavalry_tactics_buff:0 "New Cavalry Tactics"
-#Z45_Master_Cav:0 ""
+Z45_Master_Cav:0 "Cavalry Mastery"
 
 Z45_combined_arms_mastery:0 "Modernized Armies"
+
+# Air
+Z45_air_1:0 "Fighter Training"
+Z45_air_2:0 "Close Air Raiding"
+Z45_air_3:0 "Strategic Bombing Committee"
+
+# Navy
+Z45_navy_1:0 "Improved Navy"
+Z45_navy_2:0 "Submarine Tactics"
+Z45_navy_3:0 "Capital Ship Improvements"
 
 # Political
 Z45_remove_fascism:0 "Banned The Nationalists"

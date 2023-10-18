@@ -61,7 +61,7 @@ create_country_leader = {
 }
 
 add_ideas = {
-	Z45_government_stall
+	POL_government_stall
 	}
 
 # DIPLOMACY

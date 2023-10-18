@@ -7,7 +7,7 @@ state = {
 		steel = 21
 	}
 
-	state_category = city
+	state_category = town
 
 	history = {
 		owner = Z45
