@@ -7,10 +7,7 @@ set_convoys = 0
 
 
 add_ideas = {
-	scraping_the_barrel
-	all_adults_serve
-	extensive_conscription
-	limited_conscription
+	Z45_government_stall
 	volunteer_only
 	civilian_economy
 }
