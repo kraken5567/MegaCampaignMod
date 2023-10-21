@@ -17,7 +17,7 @@ focus_tree = {
 		id = USA_a_new_beginning
 		icon = GFX_focus_usa_guarantee_the_american_dream
 		cost = 12
-		x = 6
+		x = 7
 		y = 0
 		completion_reward = { 
 			add_political_power = 100
@@ -46,8 +46,11 @@ focus_tree = {
 		id = USA_WorldDomination
 		icon = GFX_focus_generic_air_defense
 		cost = 10
-		x = 5
+		x = 4
 		y = 7
+		mutually_exclusive = {
+			focus = USA_WarWhenNeeded
+		}
 		prerequisite = {
 			focus = USA_AggressiveOverseas
 		}
@@ -64,6 +67,9 @@ focus_tree = {
 		cost = 10
 		x = 7
 		y = 7
+		mutually_exclusive = {
+			focus = USA_WorldDomination
+		}
 		prerequisite = {
 			focus = USA_AggressiveOverseas
 			focus = USA_PassiveOverseas
@@ -81,7 +87,7 @@ focus_tree = {
 		x = 9
 		y = 6
 		mutually_exclusive = {
-			focus = USA_AgressiveOverseas
+			focus = USA_AggressiveOverseas
 		}
 		prerequisite = {
 			focus = USA_overSeaDomination
@@ -121,7 +127,12 @@ focus_tree = {
 		}
 
 		completion_reward = { 
-
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.05
+			}
+			add_political_power = 50
+			add_ideas = USA_NoJustify
 		}
 	}
 	
@@ -167,6 +178,9 @@ focus_tree = {
 		cost = 20
 		x = 3
 		y = 3
+		ai_will_do = {
+			factor = 9999
+		}
 		prerequisite = {
 			focus = USA_North_Conquer
 		}
@@ -208,6 +222,9 @@ focus_tree = {
 		cost = 10
 		x = 1
 		y = 4
+		ai_will_do = {
+			factor = 9999
+		}
 		prerequisite = {
 			focus = USA_Core_Holdings
 		}
@@ -225,6 +242,9 @@ focus_tree = {
 		cost = 10
 		x = 1
 		y = 5
+		ai_will_do = {
+			factor = 9999
+		}
 		prerequisite = {
 			focus = USA_lowerCoreDebuffs
 		}

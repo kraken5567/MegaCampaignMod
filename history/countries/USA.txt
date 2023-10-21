@@ -1,8 +1,10 @@
-capital = 281
+capital = 686
+
+add_ideas = USA_Contested_Government
 
 oob = "USA_1936"
 set_research_slots = 3
-set_convoys = 0
+set_convoys = 352
 
 recruit_character = USA_50335564
 recruit_character = USA_16777411
@@ -19,6 +21,7 @@ recruit_character = USA_67109202
 recruit_character = USA_67111524
 recruit_character = USA_100663789
 recruit_character = USA_100665346
+
 if = {
 	limit = { has_dlc = "La Resistance" }
 	create_operative_leader = {
@@ -40,14 +43,17 @@ if = {
 }
 
 set_politics = {
-	ruling_party = neutrality
+	ruling_party = democratic
 	last_election = "1934.3.29"
 	election_frequency = 48
 	elections_allowed = yes
 }
 
 set_popularities = {
-	neutrality = 100
+	democratic = 62.5
+	fascism = 17.5
+	communism = 10.5
+	neutrality = 9.5
 }
 
 # DIPLOMACY
@@ -69,12 +75,12 @@ if = {
 }
 
 add_ideas = {
-	limited_conscription
+	volunteer_only
 	civilian_economy
-	export_focus
+	limited_exports
 }
-set_stability = 0.60
-set_war_support = 0.60
+set_stability = 0.46754
+set_war_support = 0.45234
 
 # Starting tech
 set_technology = {

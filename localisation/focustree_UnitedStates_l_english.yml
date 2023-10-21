@@ -6,14 +6,55 @@ USA_a_new_beginning_desc:0  "We need to decide how we shall interact with our ne
 USA_manifest_our_destiny:0 "Invade Our Neighbors"
 USA_manifest_our_destiny_desc:0 "Conquer their land, it is in our right."
 
+USA_North_Conquer:0 "Conquer Quebec"
+USA_North_Conquer_desc:0 "Annex with claims."
+USA_South_Conquer:0 "Conquer Mexico"
+USA_South_Conquer_desc:0 "Annex with claims."
+USA_West_Conquer:0 "Conquer Deseret"
+USA_West_Conquer_desc:0 "Annex with claims."
+
+USA_Core_Holdings:0 "Core All Held Lands"
+USA_Core_Holdings_desc:0 "Core all states at the cost of 25 Political Power and a heavy idea penalty."
+USA_lowerCoreDebuffs:0 "Start to Recover the Economy"
+USA_lowerCoreDebuffs_desc:0 "Coring everything comes with a cost."
+USA_removeCoreDebuffs:0 "Recover the Economy"
+USA_removeCoreDebuffs_desc:0 "Fix the broken economy."
+
+USA_overSeaDomination:0 "Manifest The American Dream"
+USA_overSeaDomination_desc:0 "Manifesting the American Dream is the utmost important thing!"
+
+USA_AggressiveOverseas:0 "Give Death"
+USA_AggressiveOverseas_desc:0 "Give Death, We will wreak havoc upon all who stand in our way!"
+USA_PassiveOverseas:0 "Give Liberty"
+USA_PassiveOverseas_desc:0 "Give Liberty, We recognize the importance of soverign countries."
+
+USA_WorldDomination:0 "The Great Manifest"
+USA_WorldDomination_desc:0 "The Great Manifest, we must make a world such that all people are free!"
+USA_WarWhenNeeded:0 "Keep the Peace"
+USA_WarWhenNeeded_desc:0 "We must help fend of the forces of evil!"
+USA_MakeAllies:0 "Seek Allies"
+USA_MakeAllies_desc:0 "We must make allies or we will be lost..."
+
 # Peaceful
-
 USA_peaceful_unification:0 "Push for North American Unity"
-USA_peaceful_unification_desc:0 "Start a new political movement to unify North America"
+USA_peaceful_unification_desc:0 "Start a new political movement to unify North America."
 
-USA_spread_contenentalunity:0 ""
-USA_spread_contenentalunity_desc:0 ""
+USA_spread_contenentalunity:0 "Plant Movement Elsewhere"
+USA_spread_contenentalunity_desc:0 "Push for the movement in other countires."
 
-USA_peaceful_unification:0 ""
-USA_peaceful_unification:0 ""
-USA_peaceful_unification:0 ""
+USA_pressure_Z83:0 "Pressure Deseret"
+USA_pressure_Z83_desc:0 "Pressure Deseret into unifying their country with ours."
+USA_pressure_Z93:0 "Pressure Quebec"
+USA_pressure_Z93_desc:0 "Pressure Quebec into unifying their country with ours."
+USA_pressure_MEX:0 "Pressure Mexico"
+USA_pressure_MEX_desc:0 "Pressure Mexico into unifying their country with ours."
+
+USA_ask_Z83:0 "Send the Request to Deseret"
+USA_ask_Z83_desc:0 "Ask if Deseret will join us. (Based on military strength)"
+USA_ask_Z93:0 "Send A Request to Quebec"
+USA_ask_Z93_desc:0 "Ask if Quebec will join us. (Based on military strength)"
+USA_ask_MEX:0 "Send A Request to Mexico"
+USA_ask_MEX_desc:0 "Ask if Mexico will join us. (Based on military strength)"
+
+USA_contenentalDefensePact:0 "Create NADO"
+USA_contenentalDefensePact_desc:0 "Create NADO, North American Defense Organization"

@@ -27,6 +27,14 @@ ideas = {
 }
 	country = {
 
+		USA_NoJustify = {
+			picture = generic_usa_conflict
+			modifier = {
+				justify_war_goal_time = 10000
+				custom_modifier_tooltip = "Just to prevent justifications that abuse focus rewards"
+			}
+		}
+
 		USA_lowStrikes = {
 			picture = FRA_factory_strikes
 			modifier = {
