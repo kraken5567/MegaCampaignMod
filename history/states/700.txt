@@ -1,0 +1,27 @@
+state = {
+	id = 700
+	name = "STATE_700"
+	manpower = 83543
+	resources = {
+		oil = 6
+		tungsten = 9
+	}
+
+	state_category = rural
+
+	history = {
+		owner = Z93
+		victory_points = {
+			7891 1
+		}
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 0
+			arms_factory = 0
+		}
+	}
+
+	provinces = {
+		3606 7869 7891 
+	}
+}

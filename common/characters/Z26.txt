@@ -1,0 +1,133 @@
+characters = {
+	Z26_0 = {
+		name = _
+		portraits = {
+		}
+	}
+	Z26_16778374 = {
+		name = Nanseb_O-Naimab
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16778374
+			cost = 150
+		}
+	}
+	Z26_16779424 = {
+		name = Fabunni_Tyiseseta
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16779424
+			cost = 150
+		}
+	}
+	Z26_33554701 = {
+		name = Gabeb_Guxanus
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33554701
+			cost = 150
+		}
+	}
+	Z26_33554741 = {
+		name = Khaub_Khomaa
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33554741
+			cost = 150
+		}
+	}
+	Z26_33558256 = {
+		name = Aruseb_Hanamab
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33558256
+			cost = 150
+		}
+	}
+	Z26_50331655 = {
+		name = Jabari_Hakawona
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50331655
+			cost = 150
+		}
+	}
+	Z26_50333101 = {
+		name = Naresib_Goeseb
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50333101
+			cost = 150
+		}
+	}
+	Z26_67109488 = {
+		name = Obeth_Tjimba
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_67109488
+			cost = 150
+		}
+	}
+	Z26_83887872 = {
+		name = Tsawub_Goeseb
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_83887872
+			cost = 150
+		}
+	}
+}

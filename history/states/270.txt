@@ -1,0 +1,24 @@
+state = {
+	id = 270
+	name = "STATE_270"
+	manpower = 2427561
+
+	state_category = rural
+
+	history = {
+		owner = ENG
+		victory_points = {
+			9405 1
+		}
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 0
+			arms_factory = 0
+		}
+		add_core_of = ENG
+	}
+
+	provinces = {
+		6289 6313 6405 7394 9284 9310 9405 11237 11267 11334 
+	}
+}

@@ -1,0 +1,133 @@
+characters = {
+	Z62_0 = {
+		name = _
+		portraits = {
+		}
+	}
+	Z62_16777464 = {
+		name = Umar_Bahadur
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16777464
+			cost = 150
+		}
+	}
+	Z62_16778232 = {
+		name = Shir_Kokand
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16778232
+			cost = 150
+		}
+	}
+	Z62_16781475 = {
+		name = Nasrallah_Bahadur
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16781475
+			cost = 150
+		}
+	}
+	Z62_33554948 = {
+		name = Isfandiyar_Bahadur
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33554948
+			cost = 150
+		}
+	}
+	Z62_33555801 = {
+		name = Allah_Quli_Gulkhani
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33555801
+			cost = 150
+		}
+	}
+	Z62_50332733 = {
+		name = Husayn_Bukhari
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50332733
+			cost = 150
+		}
+	}
+	Z62_50334917 = {
+		name = Alimqul_Bahadur
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50334917
+			cost = 150
+		}
+	}
+	Z62_50336134 = {
+		name = Abd_al-Ahad_Khan
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50336134
+			cost = 150
+		}
+	}
+	Z62_67111882 = {
+		name = Qilich_Kirghiz
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_67111882
+			cost = 150
+		}
+	}
+}

@@ -1,0 +1,58 @@
+bookmarks = {
+	bookmark = {
+		name = GRAND_CAMPAIGN_NAME
+		desc = GRAND_CAMPAIGN_DESC
+		date = 1936.1.1.12
+		picture = GFX_select_date_1936
+		default_country = "Z68"
+		default = yes
+		JAP = {
+			ideology = democratic
+			history = "A Grand Asian Empire"
+		}
+		PER = {
+			ideology = democratic
+			history = "A Grand Middle Easter Empire"
+		}
+		SPR = {
+			ideology = neutrality
+			history = "A Grand Colonial Empire"
+		}
+		Z45 = {
+			ideology = fascism
+			history = "A Powerful Eastern European Power"
+		}
+		Z68 = {
+			ideology = democratic
+			history = "An Economic Powerhouse"
+		}
+		USA = {
+			ideology = communism
+			history = "A Revolutionized Democracy"
+		}
+		ENG = {
+			minor = yes
+			ideology = neutrality
+			history = "A Failing Kingdom"
+		}
+		FRA = {
+			ideology = fascism
+			history = "A comparibly weak rival to Lothoringia"
+			minor = yes
+		}
+		Z98 = {
+			minor = yes
+			ideology = neutrality
+			history = "A Failing Kingdom"
+		}
+		ROM = {
+			minor = yes
+			ideology = fascism
+			history = "A subordinate to Polish-Lithuania"
+		}
+		effect = {
+			randomize_weather = 22345 # <-Obligatory in every bookmark !
+			#123 = { rain_light = yes }
+		}
+	}
+}

@@ -1,0 +1,29 @@
+focus_tree = {
+	id = japan-focus
+	continuous_focus_position = { x = -40 y = 1050 } 
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = JAP
+		}
+	}
+	#A Fading Empire
+	focus = {
+		id = JAP_a_fading_empire
+		icon = GFX_goal_generic_attack_allies
+		x = 5
+		y = 0
+		cost = 1
+		search_filters = {
+			FOCUS_FILTER_POLITICAL
+		}
+		completion_reward = {
+			add_stability = -0.1
+			political_power_growth > -0.5
+			
+			
+		}
+	}
+
+}

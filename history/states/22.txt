@@ -1,0 +1,27 @@
+state = {
+	id = 22
+	name = "STATE_22"
+	manpower = 20844836
+	resources = {
+		steel = 0
+	}
+
+	state_category = large_town
+
+	history = {
+		owner = JAP
+		victory_points = {
+			4469 2
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 2
+			arms_factory = 1
+		}
+		add_core_of = JAP
+	}
+
+	provinces = {
+		1027 1034 1180 1203 1438 1519 1531 1575 4074 4174 4208 4469 4538 4634 7158 7571 10367 10421 10507 12078 12300 12344 12432 
+	}
+}

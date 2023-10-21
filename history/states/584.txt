@@ -1,0 +1,21 @@
+state = {
+	id = 584
+	name = "STATE_584"
+	manpower = 223215
+
+	state_category = wasteland
+	impassable = yes
+
+	history = {
+		owner = SPR
+		buildings = {
+			infrastructure = 0
+			industrial_complex = 0
+			arms_factory = 0
+		}
+	}
+
+	provinces = {
+		4902 5136 10893 
+	}
+}

@@ -1,0 +1,143 @@
+characters = {
+	Z05_16779066 = {
+		name = Jaroslav_Lobkowicz
+		portraits = {
+			civilian = {
+				large = GFX_portrait_unknown
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			traits = {  }
+		}
+	}
+	Z05_16777727 = {
+		name = Evzen_Lobkowicz
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16777727
+			cost = 150
+		}
+	}
+	Z05_16781482 = {
+		name = Abraham_Harrach
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16781482
+			cost = 150
+		}
+	}
+	Z05_16781771 = {
+		name = Jan_Nepomuk_Safranek
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16781771
+			cost = 150
+		}
+	}
+	Z05_50331681 = {
+		name = Abraham_Skuhersky
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50331681
+			cost = 150
+		}
+	}
+	Z05_50331966 = {
+		name = Josef_Harrach
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50331966
+			cost = 150
+		}
+	}
+	Z05_67109406 = {
+		name = Cenek_Schack
+		portraits = {
+			army = {
+				large = GFX_portrait_europe_generic_land_8
+				small = GFX_portrait_europe_generic_land_8_small
+			}
+		}
+		corps_commander = {
+			traits = { infantry_officer old_guard trait_cautious }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 1
+		}
+	}
+	Z05_67109835 = {
+		name = Maxmilian_Zivr
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_67109835
+			cost = 150
+		}
+	}
+	Z05_67110130 = {
+		name = Vincenc_Fibich
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_67110130
+			cost = 150
+		}
+	}
+	Z05_83889033 = {
+		name = David_2_Safranek
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_83889033
+			cost = 150
+		}
+	}
+}

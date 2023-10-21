@@ -1,0 +1,157 @@
+characters = {
+	PRU_50331993 = {
+		name = Ignacio_Lopez
+		portraits = {
+			civilian = {
+				large = GFX_portrait_south_america_generic_8
+			}
+		}
+		country_leader = {
+			ideology = centrism
+			traits = {  }
+		}
+	}
+	PRU_16777820 = {
+		name = Julio_de_Pueyrredon
+		portraits = {
+			army = {
+				large = GFX_Portrait_South_America_Generic_land_4
+				small = GFX_Portrait_South_America_Generic_land_4_small
+			}
+		}
+		corps_commander = {
+			traits = { infantry_officer old_guard }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 3
+			planning_skill = 1
+			logistics_skill = 2
+		}
+	}
+	PRU_16778288 = {
+		name = Esteban_Tajes
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16778288
+			cost = 150
+		}
+	}
+	PRU_16778294 = {
+		name = Agustin_de_Rosas
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16778294
+			cost = 150
+		}
+	}
+	PRU_33558759 = {
+		name = Fructuoso_Bareiro
+		portraits = {
+			navy = {
+				large = GFX_Portrait_South_America_Generic_navy_3
+				small = GFX_Portrait_South_America_Generic_navy_3_small
+			}
+			civilian = {
+			}
+		}
+		navy_leader = {
+			traits = { arctic_water_expert }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			maneuvering_skill = 1
+			coordination_skill = 1
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33558759
+			cost = 150
+		}
+	}
+	PRU_50331755 = {
+		name = Guillermo_Gonzalez
+		portraits = {
+			army = {
+				large = GFX_Portrait_South_America_Generic_land_3
+				small = GFX_Portrait_South_America_Generic_land_3_small
+			}
+		}
+		corps_commander = {
+			traits = { career_officer ranger }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 3
+			planning_skill = 3
+			logistics_skill = 1
+		}
+	}
+	PRU_50331885 = {
+		name = Baltasar_de_Lamadrid
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50331885
+			cost = 150
+		}
+	}
+	PRU_50334239 = {
+		name = Roberto_de_Pueyrredon
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50334239
+			cost = 150
+		}
+	}
+	PRU_50334480 = {
+		name = Atanasio_de_Goyeneche
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50334480
+			cost = 150
+		}
+	}
+	PRU_67110070 = {
+		name = Roque_Bareiro
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_67110070
+			cost = 150
+		}
+	}
+}

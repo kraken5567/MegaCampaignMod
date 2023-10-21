@@ -1,0 +1,200 @@
+characters = {
+	Z61_16778988 = {
+		name = Sujana_Cirebon
+		portraits = {
+			army = {
+				large = GFX_portrait_unknown
+				small = GFX_portrait_unknown_small
+			}
+			civilian = {
+				large = GFX_portrait_unknown
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			traits = {  }
+		}
+		field_marshal = {
+			traits = { armor_officer career_officer offensive_doctrine }
+			skill = 4
+			attack_skill = 5
+			defense_skill = 2
+			planning_skill = 4
+			logistics_skill = 2
+		}
+	}
+	Z61_16777384 = {
+		name = Abdurrahman_Salihin
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16777384
+			cost = 150
+		}
+	}
+	Z61_16778228 = {
+		name = Haji_Alaeddin
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16778228
+			cost = 150
+		}
+	}
+	Z61_16779648 = {
+		name = Ahmad_Djojohadikusumo
+		portraits = {
+			navy = {
+				large = GFX_Portrait_asia_generic_navy_4
+				small = GFX_Portrait_asia_generic_navy_4_small
+			}
+		}
+		navy_leader = {
+			traits = { caustic_personality }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			maneuvering_skill = 2
+			coordination_skill = 2
+		}
+	}
+	Z61_16779863 = {
+		name = Dorodjatun_Cirebon
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16779863
+			cost = 150
+		}
+	}
+	Z61_16780836 = {
+		name = Ahmad_Hamengkubuwono
+		portraits = {
+			navy = {
+				large = GFX_Portrait_Asia_Generic_navy_1
+				small = GFX_Portrait_Asia_Generic_navy_1_small
+			}
+			civilian = {
+			}
+		}
+		navy_leader = {
+			traits = { cuts_corners gunnery_expert }
+			skill = 4
+			attack_skill = 4
+			defense_skill = 3
+			maneuvering_skill = 3
+			coordination_skill = 4
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16780836
+			cost = 150
+		}
+	}
+	Z61_33554876 = {
+		name = Zainul_Tajul
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33554876
+			cost = 150
+		}
+	}
+	Z61_33555011 = {
+		name = Safiuddin_Cakraningrat
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33555011
+			cost = 150
+		}
+	}
+	Z61_33558472 = {
+		name = Soegija_Natadiningrat
+		portraits = {
+			army = {
+				large = GFX_Portrait_Asia_Generic_land_1
+				small = GFX_Portrait_Asia_Generic_land_1_small
+			}
+		}
+		corps_commander = {
+			traits = { career_officer desert_fox politically_connected }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 2
+			planning_skill = 4
+			logistics_skill = 2
+		}
+	}
+	Z61_50334550 = {
+		name = Marpuah_Mufakhir
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50334550
+			cost = 150
+		}
+	}
+	Z61_50334674 = {
+		name = Haji_Notomidjojo
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50334674
+			cost = 150
+		}
+	}
+	Z61_67111673 = {
+		name = Soeharto_Mufakhir
+		portraits = {
+			army = {
+				large = GFX_Portrait_Asia_Generic_land_2
+				small = GFX_Portrait_Asia_Generic_land_2_small
+			}
+		}
+		corps_commander = {
+			traits = { cavalry_officer desert_fox }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 3
+			logistics_skill = 1
+		}
+	}
+}

@@ -1,0 +1,26 @@
+state = {
+	id = 468
+	name = "STATE_468"
+	manpower = 2013686
+
+	state_category = rural
+
+	history = {
+		owner = MEX
+		victory_points = {
+			10732 1
+		}
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 0
+			arms_factory = 0
+			10889 = {
+				naval_base = 1
+			}
+		}
+	}
+
+	provinces = {
+		2021 8079 10732 10889 12810 12867 
+	}
+}

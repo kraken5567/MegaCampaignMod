@@ -1,0 +1,119 @@
+characters = {
+	Z20_0 = {
+		name = _
+		portraits = {
+		}
+	}
+	Z20_16777439 = {
+		name = Hajari_Msemwa
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16777439
+			cost = 150
+		}
+	}
+	Z20_16777937 = {
+		name = Musawenkosi_Mudimbe
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16777937
+			cost = 150
+		}
+	}
+	Z20_16777972 = {
+		name = Raimi_Zwagendaba
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16777972
+			cost = 150
+		}
+	}
+	Z20_16778842 = {
+		name = Chata_Zwagendaba
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16778842
+			cost = 150
+		}
+	}
+	Z20_16781561 = {
+		name = Averey_Mudimbe
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16781561
+			cost = 150
+		}
+	}
+	Z20_33555399 = {
+		name = Chane_Kasanda
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33555399
+			cost = 150
+		}
+	}
+	Z20_33555721 = {
+		name = Genet_Mudimbe
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33555721
+			cost = 150
+		}
+	}
+	Z20_50333892 = {
+		name = Chane_Kasanda
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50333892
+			cost = 150
+		}
+	}
+}

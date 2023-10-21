@@ -1,0 +1,133 @@
+characters = {
+	RWA_0 = {
+		name = _
+		portraits = {
+		}
+	}
+	RWA_16777635 = {
+		name = Kigeli_Abanyiginya
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16777635
+			cost = 150
+		}
+	}
+	RWA_16777691 = {
+		name = Gahiji_Mutara
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16777691
+			cost = 150
+		}
+	}
+	RWA_16778015 = {
+		name = Sebahive_Nyiginya
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16778015
+			cost = 150
+		}
+	}
+	RWA_33554763 = {
+		name = Nkundiushuti_Abanyiginya
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33554763
+			cost = 150
+		}
+	}
+	RWA_33555858 = {
+		name = Gahiji_Rutarindwa
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33555858
+			cost = 150
+		}
+	}
+	RWA_33556814 = {
+		name = Hakizimana_Ndahindurwa
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33556814
+			cost = 150
+		}
+	}
+	RWA_33558241 = {
+		name = Nkundiushuti_Hindiro
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33558241
+			cost = 150
+		}
+	}
+	RWA_50335731 = {
+		name = Nyillingondo_Huma
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50335731
+			cost = 150
+		}
+	}
+	RWA_83890211 = {
+		name = Yuhi_Musinga
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_83890211
+			cost = 150
+		}
+	}
+}

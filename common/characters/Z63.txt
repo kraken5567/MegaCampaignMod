@@ -1,0 +1,202 @@
+characters = {
+	Z63_16779025 = {
+		name = Kempe_Narayan
+		portraits = {
+			civilian = {
+				large = GFX_portrait_unknown
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			traits = {  }
+		}
+	}
+	Z63_16777768 = {
+		name = Chennamma_Bibi
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16777768
+			cost = 150
+		}
+	}
+	Z63_16777995 = {
+		name = Harihara_Narayan
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16777995
+			cost = 150
+		}
+	}
+	Z63_16781463 = {
+		name = Harihara_Rayanna
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16781463
+			cost = 150
+		}
+	}
+	Z63_33554881 = {
+		name = Sagolli_Rani
+		portraits = {
+			army = {
+				large = GFX_idea_unknown
+				small = GFX_idea_unknown_small
+			}
+			civilian = {
+			}
+		}
+		corps_commander = {
+			traits = { infantry_officer old_guard }
+			skill = 1
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 1
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33554881
+			cost = 150
+		}
+	}
+	Z63_33555326 = {
+		name = Krishnadeva_Rama_Raya
+		portraits = {
+			navy = {
+				large = GFX_portrait_unknown
+				small = GFX_portrait_unknown_small
+			}
+		}
+		navy_leader = {
+			traits = { battleship_adherent old_guard_navy }
+			skill = 1
+			attack_skill = 2
+			defense_skill = 2
+			maneuvering_skill = 1
+			coordination_skill = 1
+		}
+	}
+	Z63_33556943 = {
+		name = Krishnadeva_Rama_Raya
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33556943
+			cost = 150
+		}
+	}
+	Z63_50332222 = {
+		name = Vishnuvardhana_Raya
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50332222
+			cost = 150
+		}
+	}
+	Z63_50332845 = {
+		name = Chennamma_Hegde
+		portraits = {
+			army = {
+				large = GFX_portrait_unknown
+				small = GFX_portrait_unknown_small
+			}
+		}
+		corps_commander = {
+			traits = { old_guard trait_mountaineer }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 3
+			planning_skill = 1
+			logistics_skill = 2
+		}
+	}
+	Z63_50333587 = {
+		name = Sagolli_Bibi
+		portraits = {
+			navy = {
+				large = GFX_portrait_unknown
+				small = GFX_portrait_unknown_small
+			}
+		}
+		navy_leader = {
+			traits = { chief_engineer naval_lineage old_guard_navy }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 3
+			maneuvering_skill = 2
+			coordination_skill = 2
+		}
+	}
+	Z63_50335658 = {
+		name = Basaveshwara_Rama_Raya
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50335658
+			cost = 150
+		}
+	}
+	Z63_67113141 = {
+		name = Bijjala_Rani
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_67113141
+			cost = 150
+		}
+	}
+	Z63_83887582 = {
+		name = Bijjala_Narayan
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_83887582
+			cost = 150
+		}
+	}
+}

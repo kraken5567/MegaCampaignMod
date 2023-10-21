@@ -1,0 +1,21 @@
+﻿l_english:
+GBF_democratic_party:0 "Democrats"
+GBF_democratic_party_long:0 "Democratic Balkan Party"
+GBF_fascism_party:0 "Nationalists"
+GBF_fascism_party_long:0 "Balkan Supremesists"
+GBF_neutrality_party:0 "Monarchist"
+GBF_neutrality_party_long:0 "Monarchist"
+
+
+
+GBF_democratic_DEF:5 "Balkan Democratic Federation"
+GBF_democratic_ADJ:5 "Balkan citizen"
+
+GBF_fascism_DEF:5 "Unitist Faction"
+GBF_fascism_ADJ:5 "Romanian"
+
+GBF_communism_DEF:5 "Commonwealth"
+GBF_communism_ADJ:5 "Commonwealthian"
+
+GBF_neutrality_DEF:5 "United Balkan Monarchies"
+GBF_neutrality_ADJ:5 "Empiric-Balkanian"

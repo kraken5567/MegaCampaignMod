@@ -1,0 +1,126 @@
+characters = {
+	Z76_16779097 = {
+		name = Prasan_Sharqi
+		portraits = {
+			civilian = {
+				large = GFX_portrait_unknown
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			traits = {  }
+		}
+	}
+	Z76_16777488 = {
+		name = Sadyk_Ibraimov
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16777488
+			cost = 150
+		}
+	}
+	Z76_33556882 = {
+		name = Izzat_Boryak
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33556882
+			cost = 150
+		}
+	}
+	Z76_33558008 = {
+		name = Vishvanath_Sharqi
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33558008
+			cost = 150
+		}
+	}
+	Z76_33558589 = {
+		name = Askar_Kutebar
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33558589
+			cost = 150
+		}
+	}
+	Z76_50334599 = {
+		name = Nasiridin_Boryak
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50334599
+			cost = 150
+		}
+	}
+	Z76_67111388 = {
+		name = Askar_Ibraimov
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_67111388
+			cost = 150
+		}
+	}
+	Z76_67113015 = {
+		name = Askar_Madali
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_67113015
+			cost = 150
+		}
+	}
+	Z76_83890295 = {
+		name = Torokul_Khan
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_83890295
+			cost = 150
+		}
+	}
+}

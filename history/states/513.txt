@@ -1,0 +1,27 @@
+state = {
+	id = 513
+	name = "STATE_513"
+	manpower = 1037022
+	resources = {
+		aluminium = 32
+		oil = 100
+	}
+
+	state_category = rural
+
+	history = {
+		owner = USA
+		victory_points = {
+			1618 1
+		}
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 0
+			arms_factory = 0
+		}
+	}
+
+	provinces = {
+		1618 1806 2043 4919 5103 6803 7762 7904 7945 8025 9822 10702 10798 11743 11802 12624 
+	}
+}

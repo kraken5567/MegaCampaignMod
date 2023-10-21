@@ -1,0 +1,140 @@
+characters = {
+	Z54_4551 = {
+		name = Germaine_Tullaugaq
+		portraits = {
+			civilian = {
+				large = GFX_portrait_south_america_generic_7
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			traits = {  }
+		}
+	}
+	Z54_1121 = {
+		name = Simeonie_Tiktaalaaq
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_1121
+			cost = 150
+		}
+	}
+	Z54_16777824 = {
+		name = Peter_Keenainak
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16777824
+			cost = 150
+		}
+	}
+	Z54_16778555 = {
+		name = Simeonie_Ashoona
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16778555
+			cost = 150
+		}
+	}
+	Z54_33555310 = {
+		name = Naalak_Enuaraq
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33555310
+			cost = 150
+		}
+	}
+	Z54_33555362 = {
+		name = Caubvick_Atagotaaluk
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33555362
+			cost = 150
+		}
+	}
+	Z54_33558874 = {
+		name = Jack_Tullaugaq
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33558874
+			cost = 150
+		}
+	}
+	Z54_50332011 = {
+		name = Jack_Tullaugaq
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50332011
+			cost = 150
+		}
+	}
+	Z54_50332582 = {
+		name = Kenojuak_Alakannuark
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50332582
+			cost = 150
+		}
+	}
+	Z54_50333639 = {
+		name = Jose_2_Tullaugaq
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50333639
+			cost = 150
+		}
+	}
+}

@@ -1,0 +1,154 @@
+characters = {
+	BRA_67112482 = {
+		name = Tancredo_Bittencourt
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_South_America_Generic_2
+			}
+		}
+		country_leader = {
+			ideology = liberalism
+			traits = {  }
+		}
+	}
+	BRA_16780902 = {
+		name = Mario_2_Santos
+		portraits = {
+			army = {
+				large = GFX_Portrait_South_America_Generic_land_3
+				small = GFX_Portrait_South_America_Generic_land_3_small
+			}
+			civilian = {
+			}
+		}
+		corps_commander = {
+			traits = {  }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 1
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16780902
+			cost = 150
+		}
+	}
+	BRA_16781260 = {
+		name = Eduardo_de_Suruf
+		portraits = {
+			navy = {
+				large = GFX_Portrait_South_America_Generic_navy_3
+				small = GFX_Portrait_South_America_Generic_navy_3_small
+			}
+		}
+		navy_leader = {
+			traits = { battleship_adherent gunnery_expert }
+			skill = 3
+			attack_skill = 3
+			defense_skill = 3
+			maneuvering_skill = 1
+			coordination_skill = 4
+		}
+	}
+	BRA_16781485 = {
+		name = Epitacio_Pessoa
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16781485
+			cost = 150
+		}
+	}
+	BRA_33555545 = {
+		name = Emilio_2_de_Suruf
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33555545
+			cost = 150
+		}
+	}
+	BRA_33555926 = {
+		name = Eduardo_Marques_de_Sousa
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33555926
+			cost = 150
+		}
+	}
+	BRA_50332189 = {
+		name = Gastao_Frontin
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50332189
+			cost = 150
+		}
+	}
+	BRA_50332709 = {
+		name = Filipe_Boaventura
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50332709
+			cost = 150
+		}
+	}
+	BRA_50335381 = {
+		name = Gaspar_de_Alcantara
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50335381
+			cost = 150
+		}
+	}
+	BRA_100667150 = {
+		name = Benjamin_Labatut
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_100667150
+			cost = 150
+		}
+	}
+}

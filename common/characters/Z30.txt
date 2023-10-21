@@ -1,0 +1,133 @@
+characters = {
+	Z30_0 = {
+		name = _
+		portraits = {
+		}
+	}
+	Z30_16777931 = {
+		name = Peter_Atagotaaluk
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16777931
+			cost = 150
+		}
+	}
+	Z30_16780999 = {
+		name = James_Atagotaaluk
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16780999
+			cost = 150
+		}
+	}
+	Z30_33554589 = {
+		name = Ernie_Enuaraq
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33554589
+			cost = 150
+		}
+	}
+	Z30_33555374 = {
+		name = Germaine_Sivuarapik
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33555374
+			cost = 150
+		}
+	}
+	Z30_33555860 = {
+		name = Jack_Tullaugaq
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33555860
+			cost = 150
+		}
+	}
+	Z30_50332576 = {
+		name = Titus_Enuaraq
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50332576
+			cost = 150
+		}
+	}
+	Z30_50335829 = {
+		name = Jose_2_Atagotaaluk
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50335829
+			cost = 150
+		}
+	}
+	Z30_50335842 = {
+		name = David_Ungallaq
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50335842
+			cost = 150
+		}
+	}
+	Z30_67109197 = {
+		name = Ipeelee_Nutarak
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_67109197
+			cost = 150
+		}
+	}
+}

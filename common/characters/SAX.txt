@@ -1,0 +1,140 @@
+characters = {
+	SAX_4583 = {
+		name = Heinrich_Askanier
+		portraits = {
+			civilian = {
+				large = GFX_portrait_unknown
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			traits = {  }
+		}
+	}
+	SAX_16777354 = {
+		name = Adolf_Wolfermann
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16777354
+			cost = 150
+		}
+	}
+	SAX_16778044 = {
+		name = Friedrich_Wilhelm_Askanier
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16778044
+			cost = 150
+		}
+	}
+	SAX_33558917 = {
+		name = Rudolf_Venedy
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33558917
+			cost = 150
+		}
+	}
+	SAX_50332465 = {
+		name = Erwin_Garbe
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50332465
+			cost = 150
+		}
+	}
+	SAX_50332883 = {
+		name = Esaias_von_Bittenfeld
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50332883
+			cost = 150
+		}
+	}
+	SAX_50332997 = {
+		name = Ludwig_Leue
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50332997
+			cost = 150
+		}
+	}
+	SAX_83886959 = {
+		name = Adelbert_von_Wettin
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_83886959
+			cost = 150
+		}
+	}
+	SAX_83887704 = {
+		name = Franz_Goetz
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_83887704
+			cost = 150
+		}
+	}
+	SAX_100666980 = {
+		name = Stefan_Mallmann
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_100666980
+			cost = 150
+		}
+	}
+}

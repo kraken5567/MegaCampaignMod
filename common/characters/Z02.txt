@@ -1,0 +1,140 @@
+characters = {
+	Z02_16779189 = {
+		name = Gamba_Bokondji
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_South_Africa_Political_Leader_Generic_2
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			traits = {  }
+		}
+	}
+	Z02_16777560 = {
+		name = Koloso_Munsensa
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16777560
+			cost = 150
+		}
+	}
+	Z02_16778219 = {
+		name = Mosambaye_Sungilanga
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16778219
+			cost = 150
+		}
+	}
+	Z02_16778326 = {
+		name = Hajari_Bokondji
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16778326
+			cost = 150
+		}
+	}
+	Z02_16779660 = {
+		name = Kisula_Bukuru
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16779660
+			cost = 150
+		}
+	}
+	Z02_33555278 = {
+		name = Razi_Ntomba
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33555278
+			cost = 150
+		}
+	}
+	Z02_33555733 = {
+		name = Haruni_Songomeno
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33555733
+			cost = 150
+		}
+	}
+	Z02_33557203 = {
+		name = Ilo_Bolamba
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33557203
+			cost = 150
+		}
+	}
+	Z02_50331702 = {
+		name = Genet_Bolia
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50331702
+			cost = 150
+		}
+	}
+	Z02_50332689 = {
+		name = Mosambaye_Alenga
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50332689
+			cost = 150
+		}
+	}
+}

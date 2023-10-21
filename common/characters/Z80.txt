@@ -1,0 +1,140 @@
+characters = {
+	Z80_16779214 = {
+		name = Mwerve_Vungara
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_Africa_Generic_4
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			traits = {  }
+		}
+	}
+	Z80_16777410 = {
+		name = Bigomokero_Vungara
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16777410
+			cost = 150
+		}
+	}
+	Z80_16777950 = {
+		name = Rugema_Dericoyard
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16777950
+			cost = 150
+		}
+	}
+	Z80_16778061 = {
+		name = Bigomokero_Ntayitunda
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16778061
+			cost = 150
+		}
+	}
+	Z80_16779630 = {
+		name = Rugemaninzi_Nabushi
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16779630
+			cost = 150
+		}
+	}
+	Z80_16781501 = {
+		name = Ngabwe_Ntayitunda
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16781501
+			cost = 150
+		}
+	}
+	Z80_33556707 = {
+		name = Mwerve_Younga
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33556707
+			cost = 150
+		}
+	}
+	Z80_33556861 = {
+		name = Kabare_Muhigirwa
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33556861
+			cost = 150
+		}
+	}
+	Z80_33557595 = {
+		name = Rutanganda_Younga
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33557595
+			cost = 150
+		}
+	}
+	Z80_50332334 = {
+		name = Makome_Dericoyard
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50332334
+			cost = 150
+		}
+	}
+}

@@ -1,0 +1,21 @@
+state = {
+	id = 669
+	name = "STATE_669"
+	manpower = 10104
+
+	state_category = wasteland
+	impassable = yes
+
+	history = {
+		owner = EGY
+		buildings = {
+			infrastructure = 0
+			industrial_complex = 0
+			arms_factory = 0
+		}
+	}
+
+	provinces = {
+		1143 7216 10127 12764 
+	}
+}

@@ -1,0 +1,30 @@
+state = {
+	id = 378
+	name = "STATE_378"
+	manpower = 2260235
+	resources = {
+		aluminium = 19
+		chromium = 13
+		steel = 11
+		tungsten = 8
+	}
+
+	state_category = town
+
+	history = {
+		owner = BRA
+		victory_points = {
+			8148 1
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 0
+			arms_factory = 1
+		}
+		add_core_of = BRA
+	}
+
+	provinces = {
+		2167 2185 2190 2218 4570 5223 7476 7589 8148 8210 8226 8233 10360 10931 10945 12334 12479 12903 12909 12923 12938 12977 
+	}
+}

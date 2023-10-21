@@ -1,0 +1,140 @@
+characters = {
+	Z12_16777584 = {
+		name = Abu_al-Mahdi
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_Africa_Generic_3
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			traits = {  }
+		}
+	}
+	Z12_16779817 = {
+		name = Ngapna_Njoya
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16779817
+			cost = 150
+		}
+	}
+	Z12_16781542 = {
+		name = Ngouhouno_Beyala
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16781542
+			cost = 150
+		}
+	}
+	Z12_33554905 = {
+		name = Gibril_Keira
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33554905
+			cost = 150
+		}
+	}
+	Z12_33557890 = {
+		name = Fifen_Beyala
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33557890
+			cost = 150
+		}
+	}
+	Z12_50332725 = {
+		name = Zakaria_Keira
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50332725
+			cost = 150
+		}
+	}
+	Z12_50334789 = {
+		name = Sulayman_al-Mahdi
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50334789
+			cost = 150
+		}
+	}
+	Z12_50335153 = {
+		name = Tunsam_Keira
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50335153
+			cost = 150
+		}
+	}
+	Z12_83887669 = {
+		name = Bush_al-Mahdi
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_83887669
+			cost = 150
+		}
+	}
+	Z12_83890131 = {
+		name = Fifen_Fotso
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_83890131
+			cost = 150
+		}
+	}
+}

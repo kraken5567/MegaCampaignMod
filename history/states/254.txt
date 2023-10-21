@@ -1,0 +1,33 @@
+state = {
+	id = 254
+	name = "STATE_254"
+	manpower = 1072253
+	resources = {
+		aluminium = 39
+		chromium = 19
+		steel = 15
+		tungsten = 13
+	}
+
+	state_category = rural
+
+	history = {
+		owner = GRE
+		victory_points = {
+			3988 1
+		}
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 0
+			arms_factory = 0
+			1205 = {
+				naval_base = 1
+			}
+		}
+		add_core_of = GRE
+	}
+
+	provinces = {
+		976 1109 1205 3864 3988 4109 7127 11895 12001 
+	}
+}

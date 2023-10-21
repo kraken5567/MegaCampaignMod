@@ -1,0 +1,28 @@
+state = {
+	id = 176
+	name = "STATE_176"
+	manpower = 4056198
+
+	state_category = town
+
+	history = {
+		owner = JAP
+		victory_points = {
+			987 1
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 0
+			arms_factory = 0
+			dockyard = 1
+			1150 = {
+				naval_base = 1
+			}
+		}
+		add_core_of = JAP
+	}
+
+	provinces = {
+		836 846 892 964 987 1150 3783 3839 3849 3895 3934 3970 6804 6837 6851 6860 6893 6918 6951 6981 9781 9835 9854 9885 11764 11771 11808 11886 
+	}
+}

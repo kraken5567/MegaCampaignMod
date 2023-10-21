@@ -1,0 +1,32 @@
+state = {
+	id = 256
+	name = "STATE_256"
+	manpower = 971189
+	resources = {
+		aluminium = 4
+		steel = 4
+		tungsten = 1
+	}
+
+	state_category = rural
+
+	history = {
+		owner = SPR
+		victory_points = {
+			11707 1
+		}
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 0
+			arms_factory = 0
+			11688 = {
+				naval_base = 1
+			}
+		}
+		add_core_of = SPR
+	}
+
+	provinces = {
+		738 6749 9703 9719 11688 11707 13218 
+	}
+}

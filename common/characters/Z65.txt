@@ -1,0 +1,140 @@
+characters = {
+	Z65_4538 = {
+		name = Kasim_Mutopa
+		portraits = {
+			civilian = {
+				large = GFX_portrait_unknown
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			traits = {  }
+		}
+	}
+	Z65_33554810 = {
+		name = Ife_Banda
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33554810
+			cost = 150
+		}
+	}
+	Z65_33555859 = {
+		name = Raimi_Kalonga
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33555859
+			cost = 150
+		}
+	}
+	Z65_33557116 = {
+		name = Raimi_Cimininyambo
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33557116
+			cost = 150
+		}
+	}
+	Z65_33558844 = {
+		name = Ife_Kalonga
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33558844
+			cost = 150
+		}
+	}
+	Z65_50332923 = {
+		name = Morathi_Mutopa
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50332923
+			cost = 150
+		}
+	}
+	Z65_50333002 = {
+		name = Fabunni_Cipfumba
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50333002
+			cost = 150
+		}
+	}
+	Z65_50333258 = {
+		name = Jaguan_Banda
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50333258
+			cost = 150
+		}
+	}
+	Z65_50335440 = {
+		name = Reth_Kalonga
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50335440
+			cost = 150
+		}
+	}
+	Z65_67108908 = {
+		name = Makalo_nyasoro
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_67108908
+			cost = 150
+		}
+	}
+}

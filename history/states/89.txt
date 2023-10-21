@@ -1,0 +1,28 @@
+state = {
+	id = 89
+	name = "STATE_89"
+	manpower = 2648184
+	resources = {
+		chromium = 15
+		steel = 26
+	}
+
+	state_category = town
+
+	history = {
+		owner = JAP
+		victory_points = {
+			7844 1
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 0
+			arms_factory = 1
+		}
+		add_core_of = JAP
+	}
+
+	provinces = {
+		1666 1748 1761 1795 4675 4677 4719 4726 4752 4762 4795 4821 4832 4855 4868 7691 7725 7759 7785 7786 7844 7889 10559 10565 10574 10583 10608 10643 10667 10681 10714 12543 12556 12565 12591 12622 12650 12660 12694 
+	}
+}

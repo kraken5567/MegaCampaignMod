@@ -1,0 +1,262 @@
+add_namespace = Z45
+
+#For Focus Rewards
+country_event = {
+    id = Z45.000
+    title = "Spread the Revolution"
+    desc = "Communism is the people's liberator"
+
+    trigger = {
+    }
+
+    is_triggered_only = yes
+
+    mean_time_to_happen = {
+        days = 1 # 
+    }
+
+    option = {
+        name = "Workers RISE AGAINST YOUR OPPRESSORS!"
+
+        country_event = {id = Z45.000 days = 730}
+
+        every_other_country = { 
+            limit = { NOT = { has_government = communism } } 
+            Z45 = {
+                create_wargoal = {
+                    type = puppet_wargoal_focus
+                    target = PREV
+                    }
+                }
+            }
+        } 
+    }
+
+#WEAK
+country_event = {
+    id = Z45.100
+    title = "Weak Government"
+    desc = "Our government is pathetic!"
+
+    trigger = {
+        AND = {
+            has_country_flag = ally_ger
+            has_country_flag = ally_rus
+        }
+    }
+
+    is_triggered_only = yes
+
+    mean_time_to_happen = {
+        days = 1 # 
+    }
+
+    option = {
+        name = "This is disasterous"
+
+        add_ideas = POL_weak_government
+
+        set_temp_variable = { chance = random }
+        country_event = {
+            id = Z45.101 
+            days = 90
+            random_days = 365
+            }
+        }
+    }
+
+country_event = {
+    id = Z45.101
+    title = "Turmoil!"
+    desc = "There is nothing but arguing over what to do next. What's might be next could be disaterous."
+
+    trigger = {
+    }
+
+    is_triggered_only = yes
+
+    mean_time_to_happen = {
+        days = 2  
+    }
+
+    option = {
+        name = "Prepare for the worst..."
+
+        set_variable_to_random = { 
+            var = chance
+            max = 5
+            integer = yes
+        }
+        if = {
+            limit = { 
+                check_variable = {
+                    var = chance
+                    value = 3 
+                    compare = less_than_or_equals 
+                }
+            }
+            country_event = { id = Z45.103 days = 7 random_days = 180 }
+        }
+        else = {
+            country_event = { id = Z45.102 days = 7 random_days = 90 } 
+            }
+        }
+
+    option = {
+        name = "Let it resolve itself."
+
+        set_variable_to_random = { 
+            var = chance
+            max = 5
+            integer = yes
+        }
+
+        if = {
+            limit = { 
+                check_variable = {
+                    var = chance
+                    value = 3 
+                    compare = greater_than_or_equals 
+                }
+            }
+            country_event = { id = Z45.103 days = 91 }
+        }
+        else = {
+            country_event = { id = Z45.102 days = 91 }
+        }
+    }
+}
+
+country_event = {
+    id = Z45.102
+    title = "Internal Peace!"
+    desc = "There is no longer a political divide in our country!"
+
+    trigger = {
+    }
+
+    is_triggered_only = yes
+
+    mean_time_to_happen = {
+        days = 2  
+    }
+
+    option = {
+        name = "TOGETHER WE STAND!"
+    }
+}
+
+country_event = {
+    id = Z45.103
+    title = "People Revolt!"
+    desc = "Our government is in shambles and all we can do now is fight for it or against it!"
+
+    trigger = {
+    }
+
+    is_triggered_only = yes
+
+    mean_time_to_happen = {
+        days = 2  
+    }
+
+    option = {
+        name = "Join the monarchists!"
+        start_civil_war = {
+            ruling_party = neutrality
+            capital = root.capital
+            ideology = ROOT
+            size = party_popularity@neutrality
+            }
+            hidden_effect = {
+                ROOT = { set_cosmetic_tag = POL }
+            }
+    }
+    option = {
+        name = "Join the communists!"
+        start_civil_war = {
+            ruling_party = communism
+            capital = root.capital
+            ideology = ROOT
+            size = party_popularity@communism
+            }
+            hidden_effect = {
+                ROOT = { set_cosmetic_tag = POL }
+            }
+        }
+    option = {
+        name = "Join the fascists!"
+        start_civil_war = {
+            ruling_party = fascism
+            capital = root.capital
+            ideology = ROOT
+            size = party_popularity@fascism
+            }
+        }
+    option = {
+        name = "Join the democrats"
+        start_civil_war = {
+            ruling_party = democratic
+            capital = root.capital
+            ideology = ROOT
+            size = party_popularity@democratic
+            }
+            hidden_effect = {
+                ROOT = { set_cosmetic_tag = POL }
+            }
+        }
+}
+
+#LEGITAMATE
+country_event = {
+    id = Z45.200
+    title = "Legitamate Government"
+    desc = "Our government has gone a moderate route. Wise..."
+
+    trigger = {
+        OR = {
+            AND = {
+                has_country_flag = villan_rus
+                has_country_flag = ally_ger
+                }
+            AND = {
+                has_country_flag = villan_ger
+                has_country_flag = ally_rus
+                }
+            }   
+        }
+
+    mean_time_to_happen = {
+        days = 1  
+    }
+
+    option = {
+        name = "Good"
+        add_ideas = POL_legitimate_government
+
+        country_event = { id = Z45.102 days = 30}
+    }
+}
+
+#STRONG
+country_event = {
+    id = Z45.300
+    title = "Strong Government"
+    desc = "Our government has gone an aggressive route. I hope they know what they are doing..."
+
+    trigger = {
+        AND = {
+            has_country_flag = villan_ger
+            has_country_flag = villan_rus
+            }
+        }
+
+    mean_time_to_happen = {
+        days = 1  
+    }
+
+    option = {
+        name = "For the greater good?"
+        add_ideas = POL_strong_government
+        }
+    }

@@ -1,0 +1,119 @@
+characters = {
+	Z90_0 = {
+		name = _
+		portraits = {
+		}
+	}
+	Z90_33555252 = {
+		name = Shahabuddin_bin_Nik
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33555252
+			cost = 150
+		}
+	}
+	Z90_33555598 = {
+		name = Abdullah_al-Khairat
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33555598
+			cost = 150
+		}
+	}
+	Z90_33555708 = {
+		name = Al-Mukammal_Bendahara
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33555708
+			cost = 150
+		}
+	}
+	Z90_67109030 = {
+		name = Ali_Jamalullail
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_67109030
+			cost = 150
+		}
+	}
+	Z90_67110489 = {
+		name = Yusuf_Jamalullail
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_67110489
+			cost = 150
+		}
+	}
+	Z90_67110749 = {
+		name = Muabidin_Riayat_Shah
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_67110749
+			cost = 150
+		}
+	}
+	Z90_100667132 = {
+		name = Jalil_al-Marhum
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_100667132
+			cost = 150
+		}
+	}
+	Z90_134221321 = {
+		name = Safiuddin_Bendahara
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_134221321
+			cost = 150
+		}
+	}
+}

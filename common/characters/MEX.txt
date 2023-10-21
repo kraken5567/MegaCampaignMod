@@ -1,0 +1,276 @@
+characters = {
+	MEX_50332389 = {
+		name = Felipe_Zelaya
+		portraits = {
+			civilian = {
+				large = GFX_portrait_south_america_generic_9
+			}
+		}
+		country_leader = {
+			ideology = moderatism
+			traits = {  }
+		}
+	}
+	MEX_16777243 = {
+		name = Maximiliano_Morazan
+		portraits = {
+			army = {
+				large = GFX_Portrait_South_America_Generic_land_1
+				small = GFX_Portrait_South_America_Generic_land_1_small
+			}
+		}
+		corps_commander = {
+			traits = { organizer ranger }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 1
+		}
+	}
+	MEX_16777332 = {
+		name = Fruto_Escalon
+		portraits = {
+			navy = {
+				large = GFX_Portrait_South_America_Generic_navy_1
+				small = GFX_Portrait_South_America_Generic_navy_1_small
+			}
+		}
+		navy_leader = {
+			traits = { caustic_personality chief_engineer old_guard_navy }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 3
+			maneuvering_skill = 2
+			coordination_skill = 1
+		}
+	}
+	MEX_16777430 = {
+		name = Eduardo_Lopez
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16777430
+			cost = 150
+		}
+	}
+	MEX_16777723 = {
+		name = Porfirio_DIaz
+		portraits = {
+			army = {
+				large = GFX_Portrait_South_America_Generic_land_2
+				small = GFX_Portrait_South_America_Generic_land_2_small
+			}
+		}
+		corps_commander = {
+			traits = { career_officer harsh_leader infantry_officer organizer }
+			skill = 4
+			attack_skill = 4
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 2
+		}
+	}
+	MEX_16777812 = {
+		name = Benito_Cardenas_2
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16777812
+			cost = 150
+		}
+	}
+	MEX_16778339 = {
+		name = Carlos_Barrios
+		portraits = {
+			navy = {
+				large = GFX_Portrait_South_America_Generic_navy_3
+				small = GFX_Portrait_South_America_Generic_navy_3_small
+			}
+		}
+		navy_leader = {
+			traits = { craven old_guard_navy }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			maneuvering_skill = 2
+			coordination_skill = 2
+		}
+	}
+	MEX_16778370 = {
+		name = Justo_Chavez
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16778370
+			cost = 150
+		}
+	}
+	MEX_16779787 = {
+		name = Diego_Menendez
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16779787
+			cost = 150
+		}
+	}
+	MEX_33555962 = {
+		name = Lisandro_Teran
+		portraits = {
+			army = {
+				large = GFX_Portrait_South_America_Generic_land_2
+				small = GFX_Portrait_South_America_Generic_land_2_small
+			}
+		}
+		field_marshal = {
+			traits = { defensive_doctrine infantry_officer inflexible_strategist }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 4
+			planning_skill = 1
+			logistics_skill = 3
+		}
+	}
+	MEX_33557281 = {
+		name = Doroteo_Barrios
+		portraits = {
+			army = {
+				large = GFX_Portrait_South_America_Generic_land_4
+				small = GFX_Portrait_South_America_Generic_land_4_small
+			}
+		}
+		corps_commander = {
+			traits = { infantry_officer old_guard trait_cautious }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 4
+			planning_skill = 3
+			logistics_skill = 1
+		}
+	}
+	MEX_33557578 = {
+		name = Benjamin_2_Barrios
+		portraits = {
+			army = {
+				large = GFX_Portrait_South_America_Generic_land_3
+				small = GFX_Portrait_South_America_Generic_land_3_small
+			}
+			civilian = {
+			}
+		}
+		corps_commander = {
+			traits = { organizer trait_reckless }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 3
+			logistics_skill = 1
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33557578
+			cost = 150
+		}
+	}
+	MEX_33557598 = {
+		name = Doroteo_Sinibaldi
+		portraits = {
+			army = {
+				large = GFX_Portrait_South_America_Generic_land_5
+				small = GFX_Portrait_South_America_Generic_land_5_small
+			}
+		}
+		corps_commander = {
+			traits = { politically_connected }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 3
+		}
+	}
+	MEX_50334932 = {
+		name = Maximo_Menendez
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50334932
+			cost = 150
+		}
+	}
+	MEX_67108887 = {
+		name = Lisandro_Regalado
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_67108887
+			cost = 150
+		}
+	}
+	MEX_67109324 = {
+		name = Eugenio_2_Menendez
+		portraits = {
+			army = {
+				large = GFX_Portrait_South_America_Generic_land_1
+				small = GFX_Portrait_South_America_Generic_land_1_small
+			}
+		}
+		corps_commander = {
+			traits = { armor_officer infantry_officer old_guard trait_cautious }
+			skill = 3
+			attack_skill = 1
+			defense_skill = 5
+			planning_skill = 3
+			logistics_skill = 1
+		}
+	}
+	MEX_83890166 = {
+		name = Marcelino_GU_ell
+		portraits = {
+			navy = {
+				large = GFX_Portrait_South_America_Generic_navy_2
+				small = GFX_Portrait_South_America_Generic_navy_2_small
+			}
+		}
+		navy_leader = {
+			traits = { craven }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 3
+			maneuvering_skill = 1
+			coordination_skill = 2
+		}
+	}
+}

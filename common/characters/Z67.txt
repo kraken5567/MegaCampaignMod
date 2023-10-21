@@ -1,0 +1,133 @@
+characters = {
+	Z67_0 = {
+		name = _
+		portraits = {
+		}
+	}
+	Z67_16777567 = {
+		name = Ras_Dinagde
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16777567
+			cost = 150
+		}
+	}
+	Z67_16777835 = {
+		name = Dirribi_Mideksa
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16777835
+			cost = 150
+		}
+	}
+	Z67_16778049 = {
+		name = Yilma_Eabisa
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16778049
+			cost = 150
+		}
+	}
+	Z67_16778233 = {
+		name = Ahmad_Makonnen
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16778233
+			cost = 150
+		}
+	}
+	Z67_16778510 = {
+		name = Abdus_Qallu
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16778510
+			cost = 150
+		}
+	}
+	Z67_33555519 = {
+		name = Abdus_Dacche
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33555519
+			cost = 150
+		}
+	}
+	Z67_33556788 = {
+		name = Abadula_Dacche
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33556788
+			cost = 150
+		}
+	}
+	Z67_50333596 = {
+		name = Waqo_Dacche
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50333596
+			cost = 150
+		}
+	}
+	Z67_50335395 = {
+		name = Hailu_Dinagde
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50335395
+			cost = 150
+		}
+	}
+}

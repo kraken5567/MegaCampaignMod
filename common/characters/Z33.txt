@@ -1,0 +1,140 @@
+characters = {
+	Z33_16779299 = {
+		name = Mulay_Mbili
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_Africa_Generic_3
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			traits = {  }
+		}
+	}
+	Z33_16777517 = {
+		name = Cimbindu_Naweej
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16777517
+			cost = 150
+		}
+	}
+	Z33_16777770 = {
+		name = Cikombe_Mbili
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16777770
+			cost = 150
+		}
+	}
+	Z33_16779935 = {
+		name = Kaumba_Kat
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16779935
+			cost = 150
+		}
+	}
+	Z33_33554749 = {
+		name = Muteba_Naweej
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33554749
+			cost = 150
+		}
+	}
+	Z33_33554828 = {
+		name = Mulay_Ilunga
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33554828
+			cost = 150
+		}
+	}
+	Z33_33556870 = {
+		name = Nawej_Futa
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33556870
+			cost = 150
+		}
+	}
+	Z33_50332049 = {
+		name = Mulay_Muteba
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50332049
+			cost = 150
+		}
+	}
+	Z33_50334425 = {
+		name = Mbala_Kasang
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50334425
+			cost = 150
+		}
+	}
+	Z33_67111711 = {
+		name = Waranankong_Kamong
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_67111711
+			cost = 150
+		}
+	}
+}

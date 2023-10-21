@@ -1,0 +1,24 @@
+state = {
+	id = 150
+	name = "STATE_150"
+	manpower = 2700614
+
+	state_category = town
+
+	history = {
+		owner = Z77
+		victory_points = {
+			4003 1
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			arms_factory = 0
+		}
+		add_core_of = Z77
+	}
+
+	provinces = {
+		1147 4003 4110 4382 7049 7084 10735 
+	}
+}

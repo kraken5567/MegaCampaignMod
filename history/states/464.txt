@@ -1,0 +1,30 @@
+state = {
+	id = 464
+	name = "STATE_464"
+	manpower = 234494
+	resources = {
+		chromium = 1
+	}
+
+	state_category = rural
+
+	history = {
+		owner = COL
+		victory_points = {
+			12738 1
+		}
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 0
+			arms_factory = 0
+			2075 = {
+				naval_base = 1
+			}
+		}
+		add_core_of = COL
+	}
+
+	provinces = {
+		1988 2075 10728 12738 
+	}
+}

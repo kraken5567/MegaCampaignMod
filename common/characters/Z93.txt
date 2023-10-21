@@ -1,0 +1,254 @@
+characters = {
+	Z93_50332739 = {
+		name = Miguel_Rodriguez
+		portraits = {
+			army = {
+				large = GFX_Portrait_South_America_Generic_land_4
+				small = GFX_Portrait_South_America_Generic_land_4_small
+			}
+			civilian = {
+				large = GFX_Portrait_South_America_Generic_land_4
+			}
+		}
+		country_leader = {
+			ideology = centrism
+			traits = {  }
+		}
+		field_marshal = {
+			traits = { naval_invader }
+			skill = 1
+			attack_skill = 1
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	Z93_16778063 = {
+		name = Ricardo_Fagoaga
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16778063
+			cost = 150
+		}
+	}
+	Z93_16780952 = {
+		name = Blas_de_Yermo
+		portraits = {
+			navy = {
+				large = GFX_Portrait_South_America_Generic_navy_1
+				small = GFX_Portrait_South_America_Generic_navy_1_small
+			}
+		}
+		navy_leader = {
+			traits = { aviation_enthusiast chief_engineer }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			maneuvering_skill = 3
+			coordination_skill = 1
+		}
+	}
+	Z93_16781250 = {
+		name = Martin_2_Diaz_2
+		portraits = {
+			navy = {
+				large = GFX_Portrait_South_America_Generic_navy_3
+				small = GFX_Portrait_South_America_Generic_navy_3_small
+			}
+		}
+		navy_leader = {
+			traits = { old_guard_navy }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 3
+			maneuvering_skill = 1
+			coordination_skill = 2
+		}
+	}
+	Z93_33554929 = {
+		name = Ambrosio_Farfan
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33554929
+			cost = 150
+		}
+	}
+	Z93_33557893 = {
+		name = Tiburcio_Diaz_2
+		portraits = {
+			army = {
+				large = GFX_Portrait_South_America_Generic_land_3
+				small = GFX_Portrait_South_America_Generic_land_3_small
+			}
+		}
+		corps_commander = {
+			traits = { cavalry_officer }
+			skill = 2
+			attack_skill = 3
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 2
+		}
+	}
+	Z93_33558780 = {
+		name = Jose_Maria_Alvarez
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33558780
+			cost = 150
+		}
+	}
+	Z93_33558954 = {
+		name = Emilio_de_Terreros
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33558954
+			cost = 150
+		}
+	}
+	Z93_50333307 = {
+		name = Tomas_de_Romay
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50333307
+			cost = 150
+		}
+	}
+	Z93_50333907 = {
+		name = Emiliano_Preciado
+		portraits = {
+			navy = {
+				large = GFX_Portrait_South_America_Generic_navy_2
+				small = GFX_Portrait_South_America_Generic_navy_2_small
+			}
+		}
+		navy_leader = {
+			traits = { naval_lineage }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			maneuvering_skill = 2
+			coordination_skill = 2
+		}
+	}
+	Z93_50334302 = {
+		name = Jose_Manuel_Alarcon
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50334302
+			cost = 150
+		}
+	}
+	Z93_50334589 = {
+		name = Vicente_Castellanos
+		portraits = {
+			army = {
+				large = GFX_Portrait_South_America_Generic_land_5
+				small = GFX_Portrait_South_America_Generic_land_5_small
+			}
+		}
+		corps_commander = {
+			traits = { armor_officer }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 2
+			logistics_skill = 2
+		}
+	}
+	Z93_50336118 = {
+		name = Ambrosio_de_Romay
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50336118
+			cost = 150
+		}
+	}
+	Z93_50336243 = {
+		name = Juan_Bautista_Coello
+		portraits = {
+			army = {
+				large = GFX_Portrait_South_America_Generic_land_1
+				small = GFX_Portrait_South_America_Generic_land_1_small
+			}
+		}
+		corps_commander = {
+			traits = { infantry_officer ranger }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 3
+			logistics_skill = 1
+		}
+	}
+	Z93_67110495 = {
+		name = Justo_de_Ampudia
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_67110495
+			cost = 150
+		}
+	}
+	Z93_67112439 = {
+		name = Blas_de_Terreros
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_67112439
+			cost = 150
+		}
+	}
+}

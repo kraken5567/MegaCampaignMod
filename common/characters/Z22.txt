@@ -1,0 +1,105 @@
+characters = {
+	Z22_0 = {
+		name = _
+		portraits = {
+		}
+	}
+	Z22_33556915 = {
+		name = Michael_Leonhardt
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33556915
+			cost = 150
+		}
+	}
+	Z22_33557197 = {
+		name = Adelbert_Keiffenheim
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33557197
+			cost = 150
+		}
+	}
+	Z22_33557365 = {
+		name = Fritz_Schree
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33557365
+			cost = 150
+		}
+	}
+	Z22_50332657 = {
+		name = Maximilian_RU_hl
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50332657
+			cost = 150
+		}
+	}
+	Z22_50332968 = {
+		name = Oskar_von_Arentschildt
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50332968
+			cost = 150
+		}
+	}
+	Z22_67111909 = {
+		name = Gunther_von_Moltke
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_67111909
+			cost = 150
+		}
+	}
+	Z22_67111978 = {
+		name = Nikolaus_Zulauf
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_67111978
+			cost = 150
+		}
+	}
+}

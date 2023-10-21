@@ -1,0 +1,140 @@
+characters = {
+	Z19_16778296 = {
+		name = Naalak_Atagotaaluk
+		portraits = {
+			civilian = {
+				large = GFX_portrait_south_america_generic_7
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			traits = {  }
+		}
+	}
+	Z19_16777434 = {
+		name = Ernie_Arreak
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16777434
+			cost = 150
+		}
+	}
+	Z19_16777868 = {
+		name = Naalak_Ipeelee
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16777868
+			cost = 150
+		}
+	}
+	Z19_16779659 = {
+		name = Markoosie_Evaloarjuk
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16779659
+			cost = 150
+		}
+	}
+	Z19_16781480 = {
+		name = Jose_2_Atagotaaluk
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16781480
+			cost = 150
+		}
+	}
+	Z19_33554790 = {
+		name = Peter_Pudluk
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33554790
+			cost = 150
+		}
+	}
+	Z19_33555534 = {
+		name = Jose_2_Quissa
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33555534
+			cost = 150
+		}
+	}
+	Z19_33556769 = {
+		name = Peter_Irgittuq
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33556769
+			cost = 150
+		}
+	}
+	Z19_50332279 = {
+		name = David_Tullaugaq
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50332279
+			cost = 150
+		}
+	}
+	Z19_100663686 = {
+		name = Ernie_Atagotaaluk
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_100663686
+			cost = 150
+		}
+	}
+}

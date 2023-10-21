@@ -1,0 +1,27 @@
+state = {
+	id = 608
+	name = "STATE_608"
+	manpower = 104717
+	resources = {
+		steel = 1
+	}
+
+	state_category = rural
+
+	history = {
+		owner = COL
+		victory_points = {
+			5026 1
+		}
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 0
+			arms_factory = 0
+		}
+		add_core_of = COL
+	}
+
+	provinces = {
+		1887 2007 2079 5026 10792 12729 12770 12825 
+	}
+}

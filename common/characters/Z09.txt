@@ -1,0 +1,140 @@
+characters = {
+	Z09_16778971 = {
+		name = Jack_Atagotaaluk
+		portraits = {
+			civilian = {
+				large = GFX_portrait_south_america_generic_8
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			traits = {  }
+		}
+	}
+	Z09_16777527 = {
+		name = Kenojuak_Evaloarjuk
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16777527
+			cost = 150
+		}
+	}
+	Z09_16777583 = {
+		name = Germaine_Atagotaaluk
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16777583
+			cost = 150
+		}
+	}
+	Z09_16778163 = {
+		name = Germaine_Atagotaaluk
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16778163
+			cost = 150
+		}
+	}
+	Z09_16781773 = {
+		name = Jose_2_Kunuk
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16781773
+			cost = 150
+		}
+	}
+	Z09_50332894 = {
+		name = Jack_Kusugak
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50332894
+			cost = 150
+		}
+	}
+	Z09_50335877 = {
+		name = Peter_Kunuk
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50335877
+			cost = 150
+		}
+	}
+	Z09_67110036 = {
+		name = Jose_2_Tullaugaq
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_67110036
+			cost = 150
+		}
+	}
+	Z09_67112347 = {
+		name = Germaine_Tullaugaq
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_67112347
+			cost = 150
+		}
+	}
+	Z09_67112663 = {
+		name = Kenojuak_Keenainak
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_67112663
+			cost = 150
+		}
+	}
+}

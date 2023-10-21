@@ -1,0 +1,140 @@
+characters = {
+	Z56_4596 = {
+		name = Yusuf_Kichidemi
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_Africa_Generic_3
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			traits = {  }
+		}
+	}
+	Z56_16777436 = {
+		name = Ali_ibn_Ali
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16777436
+			cost = 150
+		}
+	}
+	Z56_16777564 = {
+		name = Kharut_Kichidemi
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16777564
+			cost = 150
+		}
+	}
+	Z56_16778346 = {
+		name = Jawda_Habre
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16778346
+			cost = 150
+		}
+	}
+	Z56_33555020 = {
+		name = Ahmad_al-Sharif
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33555020
+			cost = 150
+		}
+	}
+	Z56_33555965 = {
+		name = Adham_al-Sharif
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33555965
+			cost = 150
+		}
+	}
+	Z56_33558417 = {
+		name = Ibrahim_ibn_Ali
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33558417
+			cost = 150
+		}
+	}
+	Z56_50334248 = {
+		name = Adham_Habre
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50334248
+			cost = 150
+		}
+	}
+	Z56_67111639 = {
+		name = Ali_Kichidemi
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_67111639
+			cost = 150
+		}
+	}
+	Z56_83888710 = {
+		name = Jawda_Kichidemi
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_83888710
+			cost = 150
+		}
+	}
+}

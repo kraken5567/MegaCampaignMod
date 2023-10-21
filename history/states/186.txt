@@ -1,0 +1,32 @@
+state = {
+	id = 186
+	name = "STATE_186"
+	manpower = 2276146
+	resources = {
+		aluminium = 0
+		steel = 7
+	}
+
+	state_category = town
+
+	history = {
+		owner = EGY
+		victory_points = {
+			1068 15
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 0
+			arms_factory = 0
+			dockyard = 1
+			10126 = {
+				naval_base = 1
+			}
+		}
+		add_core_of = EGY
+	}
+
+	provinces = {
+		1068 1080 4143 7030 7144 7188 10028 10031 10126 11974 12004 12044 
+	}
+}

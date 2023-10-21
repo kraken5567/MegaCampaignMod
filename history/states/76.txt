@@ -1,0 +1,27 @@
+state = {
+	id = 76
+	name = "STATE_76"
+	manpower = 17516965
+	resources = {
+		chromium = 2
+	}
+
+	state_category = town
+
+	history = {
+		owner = Z77
+		victory_points = {
+			8007 1
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			arms_factory = 0
+		}
+		add_core_of = Z77
+	}
+
+	provinces = {
+		1107 1129 1971 2076 4979 7106 7903 8007 8106 9084 10066 10139 10173 10729 10772 10843 10887 10898 12005 12708 12792 12822 
+	}
+}

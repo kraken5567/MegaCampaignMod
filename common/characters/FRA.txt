@@ -1,0 +1,222 @@
+characters = {
+	FRA_4487 = {
+		name = Antoine_von_Cilli
+		portraits = {
+			civilian = {
+				large = GFX_portrait_unknown
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			traits = {  }
+		}
+	}
+	FRA_16778119 = {
+		name = Georges_Clemenceau
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16778119
+			cost = 150
+		}
+	}
+	FRA_16778353 = {
+		name = Andre_Exelmans
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16778353
+			cost = 150
+		}
+	}
+	FRA_16778566 = {
+		name = Oscar_Alavoine
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16778566
+			cost = 150
+		}
+	}
+	FRA_16778584 = {
+		name = Hyacinthe_Vernhette
+		portraits = {
+			army = {
+				large = GFX_Portrait_France_Generic_land_6
+				small = GFX_Portrait_France_Generic_land_6_small
+			}
+		}
+		corps_commander = {
+			traits = { armor_officer harsh_leader infantry_officer }
+			skill = 4
+			attack_skill = 5
+			defense_skill = 2
+			planning_skill = 5
+			logistics_skill = 2
+		}
+	}
+	FRA_16778689 = {
+		name = Jeremie_de_Beauharnais
+		portraits = {
+			navy = {
+				large = GFX_Portrait_France_Generic_navy_3
+				small = GFX_Portrait_France_Generic_navy_3_small
+			}
+		}
+		navy_leader = {
+			traits = { craven gunnery_expert naval_lineage old_guard_navy }
+			skill = 4
+			attack_skill = 2
+			defense_skill = 5
+			maneuvering_skill = 2
+			coordination_skill = 4
+		}
+	}
+	FRA_16779406 = {
+		name = E_tienne_Mispoulet
+		portraits = {
+			army = {
+				large = GFX_Portrait_France_Generic_land_5
+				small = GFX_Portrait_France_Generic_land_5_small
+			}
+		}
+		corps_commander = {
+			traits = { armor_officer organizer }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 3
+		}
+	}
+	FRA_16780166 = {
+		name = Joseph_Desgrange
+		portraits = {
+			navy = {
+				large = GFX_Portrait_France_Generic_navy_2
+				small = GFX_Portrait_France_Generic_navy_2_small
+			}
+		}
+		navy_leader = {
+			traits = { caustic_personality media_personality }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			maneuvering_skill = 1
+			coordination_skill = 2
+		}
+	}
+	FRA_33554613 = {
+		name = Georges_Jaures
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33554613
+			cost = 150
+		}
+	}
+	FRA_33555043 = {
+		name = JE_rO_me_Bonnin
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33555043
+			cost = 150
+		}
+	}
+	FRA_33555239 = {
+		name = Henri_d_Orleans
+		portraits = {
+			army = {
+				large = GFX_Portrait_France_Generic_land_1
+				small = GFX_Portrait_France_Generic_land_1_small
+			}
+			civilian = {
+			}
+		}
+		corps_commander = {
+			traits = { armor_officer inflexible_strategist }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			planning_skill = 2
+			logistics_skill = 1
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33555239
+			cost = 150
+		}
+	}
+	FRA_50332010 = {
+		name = Victor_Cibiel
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50332010
+			cost = 150
+		}
+	}
+	FRA_50335371 = {
+		name = Eugene_de_Chastellux
+		portraits = {
+			navy = {
+				large = GFX_Portrait_France_Generic_navy_1
+				small = GFX_Portrait_France_Generic_navy_1_small
+			}
+		}
+		navy_leader = {
+			traits = { chief_engineer }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			maneuvering_skill = 2
+			coordination_skill = 2
+		}
+	}
+	FRA_50335439 = {
+		name = Francois_von_Cilli
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50335439
+			cost = 150
+		}
+	}
+}

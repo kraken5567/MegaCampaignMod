@@ -1,0 +1,32 @@
+state = {
+	id = 137
+	name = "STATE_137"
+	manpower = 981374
+	resources = {
+		aluminium = 2
+		oil = 22
+		steel = 8
+	}
+
+	state_category = town
+
+	history = {
+		owner = PER
+		victory_points = {
+			8117 1
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 2
+			arms_factory = 0
+			10797 = {
+				naval_base = 1
+			}
+		}
+		add_core_of = PER
+	}
+
+	provinces = {
+		4928 4966 5089 8031 8117 10797 10881 
+	}
+}

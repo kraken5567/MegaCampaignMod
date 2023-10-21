@@ -1,0 +1,30 @@
+state = {
+	id = 314
+	name = "STATE_314"
+	manpower = 613187
+	resources = {
+		oil = 10
+	}
+
+	state_category = rural
+
+	history = {
+		owner = PRU
+		victory_points = {
+			12997 1
+		}
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 0
+			arms_factory = 0
+			12997 = {
+				naval_base = 1
+			}
+		}
+		add_core_of = PRU
+	}
+
+	provinces = {
+		2162 2212 2226 5190 12983 12997 
+	}
+}

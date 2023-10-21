@@ -1,0 +1,197 @@
+characters = {
+	Z95_33558805 = {
+		name = Tancredi_Moffa_di_Lisio_Gribaldi
+		portraits = {
+			civilian = {
+				large = GFX_portrait_europe_generic_8
+			}
+		}
+		country_leader = {
+			ideology = conservatism
+			traits = {  }
+		}
+	}
+	Z95_33554900 = {
+		name = Costanzo_Biancheri
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33554900
+			cost = 150
+		}
+	}
+	Z95_33554914 = {
+		name = Fabrizio_Moffa_di_Lisio_Gribaldi
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33554914
+			cost = 150
+		}
+	}
+	Z95_33557922 = {
+		name = Girolamo_De_Castro
+		portraits = {
+			army = {
+				large = GFX_Portrait_Italy_Generic_land_6
+				small = GFX_Portrait_Italy_Generic_land_6_small
+			}
+		}
+		corps_commander = {
+			traits = { organizer trait_reckless }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 1
+			planning_skill = 3
+			logistics_skill = 1
+		}
+	}
+	Z95_50331732 = {
+		name = Andrea_Somis_di_Chavrie
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50331732
+			cost = 150
+		}
+	}
+	Z95_50333270 = {
+		name = Carlo_Peyrone
+		portraits = {
+			army = {
+				large = GFX_Portrait_Italy_Generic_land_5
+				small = GFX_Portrait_Italy_Generic_land_5_small
+			}
+		}
+		corps_commander = {
+			traits = { cavalry_officer }
+			skill = 2
+			attack_skill = 3
+			defense_skill = 1
+			planning_skill = 1
+			logistics_skill = 2
+		}
+	}
+	Z95_50335099 = {
+		name = Tommaso_Rattazzi
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50335099
+			cost = 150
+		}
+	}
+	Z95_50335822 = {
+		name = Antonio_De_Benedetti
+		portraits = {
+			army = {
+				large = GFX_Portrait_Italy_Generic_land_1
+				small = GFX_Portrait_Italy_Generic_land_1_small
+			}
+		}
+		corps_commander = {
+			traits = { organizer trait_cautious }
+			skill = 2
+			attack_skill = 1
+			defense_skill = 2
+			planning_skill = 1
+			logistics_skill = 4
+		}
+	}
+	Z95_67110379 = {
+		name = Umberto_Farina
+		portraits = {
+			army = {
+				large = GFX_Portrait_Italy_Generic_land_7
+				small = GFX_Portrait_Italy_Generic_land_7_small
+			}
+		}
+		corps_commander = {
+			traits = { armor_officer }
+			skill = 3
+			attack_skill = 4
+			defense_skill = 1
+			planning_skill = 3
+			logistics_skill = 3
+		}
+	}
+	Z95_67113092 = {
+		name = Faustino_Pianelli
+		portraits = {
+			navy = {
+				large = GFX_Portrait_Italy_Generic_navy_3
+				small = GFX_Portrait_Italy_Generic_navy_3_small
+			}
+		}
+		navy_leader = {
+			traits = { chief_engineer naval_lineage }
+			skill = 2
+			attack_skill = 2
+			defense_skill = 2
+			maneuvering_skill = 3
+			coordination_skill = 2
+		}
+	}
+	Z95_83889642 = {
+		name = Bernardino_Bo
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_83889642
+			cost = 150
+		}
+	}
+	Z95_83889739 = {
+		name = Ernesto_Costa
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_83889739
+			cost = 150
+		}
+	}
+	Z95_100665946 = {
+		name = Luigi_La_Marmora
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_100665946
+			cost = 150
+		}
+	}
+}

@@ -1,0 +1,31 @@
+state = {
+	id = 9
+	name = "STATE_9"
+	manpower = 3701382
+	resources = {
+		steel = 48
+	}
+
+	state_category = city
+
+	history = {
+		owner = Z68
+		victory_points = {
+			13068 2
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 2
+			arms_factory = 1
+			dockyard = 1
+			6446 = {
+				naval_base = 1
+			}
+		}
+		add_core_of = Z68
+	}
+
+	provinces = {
+		516 3576 6446 6560 6598 9574 11419 13068 
+	}
+}

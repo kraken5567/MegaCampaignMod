@@ -1,0 +1,30 @@
+state = {
+	id = 97
+	name = "STATE_97"
+	manpower = 1292024
+	resources = {
+		oil = 8
+	}
+
+	state_category = town
+
+	history = {
+		owner = PER
+		victory_points = {
+			2089 1
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 0
+			arms_factory = 1
+			8085 = {
+				naval_base = 1
+			}
+		}
+		add_core_of = PER
+	}
+
+	provinces = {
+		78 2004 2089 8085 12726 
+	}
+}

@@ -1,0 +1,140 @@
+characters = {
+	Z89_67112281 = {
+		name = Ishim_Khan
+		portraits = {
+			civilian = {
+				large = GFX_portrait_unknown
+			}
+		}
+		country_leader = {
+			ideology = moderatism
+			traits = {  }
+		}
+	}
+	Z89_33554911 = {
+		name = Mehmed_Aytakov
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33554911
+			cost = 150
+		}
+	}
+	Z89_33555767 = {
+		name = Ebrahim_Maksum
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33555767
+			cost = 150
+		}
+	}
+	Z89_50332981 = {
+		name = Kenisary_Khan
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50332981
+			cost = 150
+		}
+	}
+	Z89_67108986 = {
+		name = Kemal_Khan
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_67108986
+			cost = 150
+		}
+	}
+	Z89_67110479 = {
+		name = Nasiridin_Ibraimov
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_67110479
+			cost = 150
+		}
+	}
+	Z89_67112220 = {
+		name = Qilich_Bayramov
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_67112220
+			cost = 150
+		}
+	}
+	Z89_67112859 = {
+		name = Jahangir_Bukhari
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_67112859
+			cost = 150
+		}
+	}
+	Z89_67113025 = {
+		name = Husayin_Beg
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_67113025
+			cost = 150
+		}
+	}
+	Z89_100666595 = {
+		name = Murat_Khan
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_100666595
+			cost = 150
+		}
+	}
+}

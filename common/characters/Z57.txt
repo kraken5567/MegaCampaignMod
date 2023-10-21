@@ -1,0 +1,140 @@
+characters = {
+	Z57_16779174 = {
+		name = Kimoi_arap_Moi
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_Africa_Generic_3
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			traits = {  }
+		}
+	}
+	Z57_16777663 = {
+		name = Adongo_Kulei
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16777663
+			cost = 150
+		}
+	}
+	Z57_16778272 = {
+		name = Adongo_Cheptirim
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16778272
+			cost = 150
+		}
+	}
+	Z57_33555705 = {
+		name = Adongo_Garang
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33555705
+			cost = 150
+		}
+	}
+	Z57_50332197 = {
+		name = Kimoi_Cham
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50332197
+			cost = 150
+		}
+	}
+	Z57_50335117 = {
+		name = Kimoi_arap_Chebii
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50335117
+			cost = 150
+		}
+	}
+	Z57_50336062 = {
+		name = Toroitich_arap_Moi
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50336062
+			cost = 150
+		}
+	}
+	Z57_50336188 = {
+		name = Matayo_arap_Moi
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50336188
+			cost = 150
+		}
+	}
+	Z57_83888015 = {
+		name = Matayo_Kulei
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_83888015
+			cost = 150
+		}
+	}
+	Z57_117441856 = {
+		name = Tuitoek_arap_Chebii
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_117441856
+			cost = 150
+		}
+	}
+}

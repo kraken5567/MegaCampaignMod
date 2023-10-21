@@ -1,0 +1,27 @@
+state = {
+	id = 64
+	name = "STATE_64"
+	manpower = 15940480
+	resources = {
+		tungsten = 3
+	}
+
+	state_category = town
+
+	history = {
+		owner = Z77
+		victory_points = {
+			2086 20
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			arms_factory = 1
+		}
+		add_core_of = Z77
+	}
+
+	provinces = {
+		1898 2002 2032 2086 3989 4915 5002 5086 5157 9951 10021 10794 11955 12868 
+	}
+}

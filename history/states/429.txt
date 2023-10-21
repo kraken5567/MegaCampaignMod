@@ -1,0 +1,26 @@
+state = {
+	id = 429
+	name = "STATE_429"
+	manpower = 2171258
+	resources = {
+		aluminium = 18
+	}
+
+	state_category = rural
+
+	history = {
+		owner = USA
+		victory_points = {
+			4569 1
+		}
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 0
+			arms_factory = 0
+		}
+	}
+
+	provinces = {
+		1441 1523 1534 1564 1621 4449 4540 4569 7449 7607 10333 10370 10391 10516 10717 12346 12361 12463 
+	}
+}

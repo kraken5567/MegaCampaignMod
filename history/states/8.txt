@@ -1,0 +1,29 @@
+state = {
+	id = 8
+	name = "STATE_8"
+	manpower = 5230104
+	resources = {
+		aluminium = 1
+		oil = 9
+		steel = 16
+	}
+
+	state_category = city
+
+	history = {
+		owner = Z45
+		victory_points = {
+			11398 2
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 3
+			arms_factory = 1
+		}
+		add_core_of = Z45
+	}
+
+	provinces = {
+		417 442 466 3410 3434 6499 6522 6604 9412 9494 11398 11413 11507 
+	}
+}

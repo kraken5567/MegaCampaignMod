@@ -1,0 +1,28 @@
+state = {
+	id = 648
+	name = "STATE_648"
+	manpower = 21458
+	resources = {
+		aluminium = 0
+		steel = 1
+	}
+
+	state_category = rural
+
+	history = {
+		owner = EGY
+		victory_points = {
+			12771 1
+		}
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 0
+			arms_factory = 0
+		}
+		add_core_of = EGY
+	}
+
+	provinces = {
+		1206 10097 10844 12771 
+	}
+}

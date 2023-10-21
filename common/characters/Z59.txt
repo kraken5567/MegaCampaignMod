@@ -1,0 +1,140 @@
+characters = {
+	Z59_16779136 = {
+		name = Kapendi_Muluzi
+		portraits = {
+			civilian = {
+				large = GFX_Portrait_South_Africa_Political_Leader_Generic
+			}
+		}
+		country_leader = {
+			ideology = despotism
+			traits = {  }
+		}
+	}
+	Z59_16778352 = {
+		name = Chisisi_Mwamba
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16778352
+			cost = 150
+		}
+	}
+	Z59_16780200 = {
+		name = Mbiya_Mwamba
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16780200
+			cost = 150
+		}
+	}
+	Z59_16781591 = {
+		name = Kajombo_Muluzi
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_16781591
+			cost = 150
+		}
+	}
+	Z59_33554472 = {
+		name = Kapendi_Muluzi
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33554472
+			cost = 150
+		}
+	}
+	Z59_33555434 = {
+		name = Mbiya_Mgayi
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33555434
+			cost = 150
+		}
+	}
+	Z59_33556938 = {
+		name = Utni_Muluzi
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_33556938
+			cost = 150
+		}
+	}
+	Z59_50331828 = {
+		name = Citiwala_Ntabeni
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_50331828
+			cost = 150
+		}
+	}
+	Z59_67112123 = {
+		name = Lukongolo_Mgayi
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_67112123
+			cost = 150
+		}
+	}
+	Z59_67112670 = {
+		name = Ngolinga_Muluzi
+		portraits = {
+			civilian = {
+				small = GFX_idea_unknown
+			}
+		}
+		advisor = {
+			traits = {  }
+			slot = political_advisor
+			idea_token = i_67112670
+			cost = 150
+		}
+	}
+}
