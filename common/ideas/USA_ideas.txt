@@ -1,0 +1,61 @@
+ideas = {
+	mobilization_laws = {
+}
+	economy = {
+}
+	political_advisor = {
+}
+	tank_manufacturer = {
+}
+	naval_manufacturer = {
+}
+	aircraft_manufacturer = {
+}
+	materiel_manufacturer = {
+}
+	industrial_concern = {
+}
+	theorist = {
+}
+	army_chief = {
+}
+	navy_chief = {
+}
+	air_chief = {
+}
+	high_command = {
+}
+	country = {
+
+		USA_lowStrikes = {
+			picture = FRA_factory_strikes
+			modifier = {
+				consumer_goods_factor = 0.1
+				industrial_capacity_factory = -0.1
+				local_resources_factor = -0.25
+			}
+		}
+
+		USA_coredLand = {
+			picture = FRA_factory_strikes
+			modifier = {
+				conscription = -0.0125
+				monthly_population = -0.02
+				consumer_goods_factor = 0.25
+				industrial_capacity_factory = -0.2
+				industrial_capacity_dockyard = -0.1
+				local_resources_factor = -0.5
+			}
+		}
+
+		USA_PNAP_support = {
+			picture = SPR_collectivized_society
+			modifier = {
+				democratic_drift = 0.02
+				master_ideology_drift = 0.10
+			}
+		}
+	}
+}
+
+	

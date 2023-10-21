@@ -1,0 +1,458 @@
+focus_tree = {
+	id = UnitedStates-focus
+	country = { 
+		factor = 0
+		modifier = {
+			add = 10
+			tag = USA 
+		}
+	}
+
+	continuous_focus_position = {
+		x = 0
+		y = 1700
+	}
+
+	focus = {
+		id = USA_a_new_beginning
+		icon = GFX_focus_usa_guarantee_the_american_dream
+		cost = 12
+		x = 6
+		y = 0
+		completion_reward = { 
+			add_political_power = 100
+		}
+	}
+
+	# Global diplomacy
+
+	# Agressive
+	focus = {
+		id = USA_AggressiveOverseas
+		icon = GFX_focus_generic_air_defense
+		cost = 10
+		x = 6
+		y = 6
+		mutually_exclusive = {
+			focus = USA_PassiveOverseas
+		}
+		prerequisite = {
+			focus = USA_overSeaDomination
+			focus = USA_contenentalDefensePact
+		}
+	}
+
+	focus = {
+		id = USA_WorldDomination
+		icon = GFX_focus_generic_air_defense
+		cost = 10
+		x = 5
+		y = 7
+		prerequisite = {
+			focus = USA_AggressiveOverseas
+		}
+		completion_reward = {
+			
+		}
+	}
+
+	# Neutral
+
+	focus = {
+		id = USA_WarWhenNeeded
+		icon = GFX_focus_generic_air_defense
+		cost = 10
+		x = 7
+		y = 7
+		prerequisite = {
+			focus = USA_AggressiveOverseas
+			focus = USA_PassiveOverseas
+		}
+		completion_reward = {
+			
+		}
+	}
+
+	# Peaceful
+	focus = {
+		id = USA_PassiveOverseas
+		icon = GFX_goal_generic_defence
+		cost = 5
+		x = 9
+		y = 6
+		mutually_exclusive = {
+			focus = USA_AgressiveOverseas
+		}
+		prerequisite = {
+			focus = USA_overSeaDomination
+			focus = USA_contenentalDefensePact
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_MakeAllies
+		icon = GFX_goal_generic_major_alliance
+		cost = 5
+		x = 10
+		y = 7
+		prerequisite = {
+			focus = USA_PassiveOverseas
+		}
+		completion_reward = { }
+	}
+
+
+	# American Nationalism
+
+	focus = {
+		id = USA_manifest_our_destiny
+		icon = GFX_focus_POL_support_global_falangism
+		cost = 15
+		x = 3
+		y = 1
+
+		mutually_exclusive = {
+			focus = USA_peaceful_unification
+		}
+
+		prerequisite = {
+			focus = USA_a_new_beginning
+		}
+
+		completion_reward = { 
+
+		}
+	}
+	
+	focus = {
+		id = USA_North_Conquer
+		icon = GFX_goal_generic_territory_or_war
+		cost = 10
+		x = 1
+		y = 2
+		prerequisite = {
+			focus = USA_manifest_our_destiny
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_South_Conquer
+		icon = GFX_goal_generic_territory_or_war
+		cost = 10
+		prerequisite = {
+			focus = USA_manifest_our_destiny
+		}
+		x = 3
+		y = 2
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_West_Conquer
+		icon = GFX_goal_generic_territory_or_war
+		cost = 10
+		x = 5
+		y = 2
+		prerequisite = {
+			focus = USA_manifest_our_destiny
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_Core_Holdings
+		icon = GFX_focus_generic_treaty
+		cost = 20
+		x = 3
+		y = 3
+		prerequisite = {
+			focus = USA_North_Conquer
+		}
+		prerequisite = {
+			focus = USA_South_Conquer
+		}
+		prerequisite = {
+			focus = USA_West_Conquer
+		}
+		completion_reward = { 
+			set_variable = {
+				states_to_core = 0
+				political_cost = -25
+			}
+			USA = { 
+				every_owned_state = {
+					limit = {
+						NOT = { is_core_of = USA }
+						}
+					add_to_temp_variable = {
+						var = states_to_core
+						value = 1
+					}
+					add_core_of = USA
+					}
+				}	
+			multiply_variable = {
+				var = political_cost
+				value = states_to_core
+			}
+			add_political_power = political_cost
+			add_ideas = USA_coredLand
+		}
+	}
+
+	focus = {
+		id = USA_lowerCoreDebuffs
+		icon = GFX_focus_generic_self_management
+		cost = 10
+		x = 1
+		y = 4
+		prerequisite = {
+			focus = USA_Core_Holdings
+		}
+		completion_reward = { 
+			swap_ideas = {
+				remove_idea = USA_coredLand
+				add_idea = USA_lowStrikes
+			}
+		}
+	}
+
+	focus = {
+		id = USA_removeCoreDebuffs
+		icon = GFX_focus_generic_self_management
+		cost = 10
+		x = 1
+		y = 5
+		prerequisite = {
+			focus = USA_lowerCoreDebuffs
+		}
+		completion_reward = { 
+			remove_ideas = USA_lowStrikes
+		}
+	}
+
+	focus = {
+		id = USA_overSeaDomination
+		icon = GFX_focus_generic_little_entente
+		cost = 12
+		x = 5
+		y = 5
+
+		prerequisite = {
+			focus = USA_Core_Holdings
+		}
+
+		completion_reward = {
+
+		}
+	}
+
+	# North American Pan-Nationalism
+
+	focus = {
+		id = USA_peaceful_unification
+		icon = GFX_goal_generic_national_unity
+		cost = 15
+		x = 10
+		y = 1
+
+		mutually_exclusive = {
+			focus = USA_manifest_our_destiny
+		}
+
+		prerequisite = {
+			focus = USA_a_new_beginning
+		}
+
+		completion_reward = { 
+
+		}
+	}
+
+	focus = {
+		id = USA_spread_contenentalunity
+		icon = GFX_goal_generic_propaganda
+		cost = 5
+		x = 10
+		y = 2
+
+		prerequisite = {
+			focus = USA_peaceful_unification
+		}
+
+		completion_reward = { 
+			add_timed_ideas = {
+				idea = USA_PNAP_support
+				days = 365
+			}
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.05
+			}
+			set_party_name = {
+				ideology = democratic
+				long_name = "North American Unity Party"
+				name = "NAUP"
+			}
+		}
+	}
+
+	focus = {
+		id = USA_pressure_Z83
+		icon = GFX_focus_SOV_rebuild_the_savior_cathedral
+		cost = 5
+		x = 8
+		y = 3
+
+		prerequisite = {
+			focus = USA_spread_contenentalunity
+		}
+
+		completion_reward = { 
+			Z83 = {
+				add_timed_ideas = {
+					idea = USA_PNAP_support
+					days = 365
+				}
+				add_popularity = {
+					ideology = democratic
+					popularity = 0.05
+				}
+				set_party_name = {
+					ideology = democratic
+					long_name = "Pan-North-American Party"
+					name = "PNAP"
+				}
+			}
+			
+		}
+	}
+
+	focus = {
+		id = USA_ask_Z83
+		icon = GFX_focus_SOV_rebuild_the_savior_cathedral
+		cost = 5
+		x = 8
+		y = 4
+
+		prerequisite = {
+			focus = USA_pressure_Z83
+		}
+
+		completion_reward = { 
+			USA = { country_event = { id = USA.110 days = 7 } }
+		}
+	}
+
+	focus = {
+		id = USA_pressure_Z93
+		icon = GFX_goal_generic_propaganda
+		cost = 5
+		x = 10
+		y = 3
+
+		prerequisite = {
+			focus = USA_spread_contenentalunity
+		}
+
+		completion_reward = { 
+			Z93 = {
+				add_timed_ideas = {
+					idea = USA_PNAP_support
+					days = 365
+				}
+				add_popularity = {
+					ideology = democratic
+					popularity = 0.05
+				}
+				set_party_name = {
+					ideology = democratic
+					long_name = "North American Unity Party"
+					name = "NAUP"
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = USA_ask_Z93
+		icon = GFX_goal_generic_propaganda
+		cost = 5
+		x = 10
+		y = 4
+
+		prerequisite = {
+			focus = USA_pressure_Z93
+		}
+
+		completion_reward = { 
+			USA = { country_event = { id = USA.120 days = 7 } }
+		}
+	}
+
+	focus = {
+		id = USA_pressure_MEX
+		icon = GFX_focus_mex_redeem_aztlan
+		cost = 5
+		x = 12
+		y = 3
+
+		prerequisite = {
+			focus = USA_spread_contenentalunity
+		}
+
+		completion_reward = { 
+			MEX = { 
+				add_timed_ideas = {
+				idea = USA_PNAP_support
+				days = 365
+				}
+				add_popularity = {
+					ideology = democratic
+					popularity = 0.05
+				}
+				set_party_name = {
+					ideology = democratic
+					long_name = "North American Unity Party"
+					name = "NAUP"
+				}
+			}
+			
+		}
+	}
+
+	focus = {
+		id = USA_ask_MEX
+		icon = GFX_focus_mex_redeem_aztlan
+		cost = 5
+		x = 12
+		y = 4
+
+		prerequisite = {
+			focus = USA_pressure_MEX
+		}
+
+		completion_reward = { 
+			USA = { country_event = { id = USA.130 days = 7 } }
+		}
+	}
+
+	focus = {
+		id = USA_contenentalDefensePact
+		icon = GFX_goal_generic_alliance
+		cost = 10
+		x = 10
+		y = 5
+
+		prerequisite = { focus = USA_ask_MEX }
+		prerequisite = { focus = USA_ask_Z83 }
+		prerequisite = { focus = USA_ask_Z93 }
+
+		completion_reward = { 
+			USA = {create_faction = "North American Defense Pact"}
+		}
+	}
+
+}

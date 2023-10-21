@@ -1,0 +1,473 @@
+add_namespace = USA
+
+country_event = {
+    id = USA.110
+    title = "Spread Contenetal Unity"
+    desc = "We shall ask Deseret if they would want to unify the continent."
+
+    trigger = {
+    }
+
+    is_triggered_only = yes
+
+    mean_time_to_happen = {
+        days = 1 # 
+    }
+
+	option = {
+		name = "Nudge Deseret into the idea."
+		if = {
+			limit = {
+				Z83 = { is_ai = yes }
+			}
+			country_event = {id = USA_interact_Ai.010 days = 7 }
+			}
+		else = {
+			country_event = {id = USA_interact_Player.010 days = 7}
+			}
+		} 
+    }
+
+country_event = {
+	id = USA.120
+	title = "Spread Contenetal Unity"
+	desc = "We shall ask Quebec if they would want to unify the continent."
+
+	trigger = {
+	}
+
+	is_triggered_only = yes
+
+	mean_time_to_happen = {
+		days = 1 # 
+	}
+
+	option = {
+		name = "Nudge Quebec into the idea."
+		if = {
+			limit = {
+				Z93 = { is_ai = yes }
+			}
+			country_event = {id = USA_interact_Ai.020 days = 7 }
+			}
+		else = {
+			country_event = {id = USA_interact_Player.020 days = 7}
+			}
+		} 
+	}
+
+country_event = {
+	id = USA.130
+	title = "Spread Contenetal Unity"
+	desc = "We shall ask Mexico if they would want to unify the continent."
+
+	trigger = {
+	}
+
+	is_triggered_only = yes
+
+	mean_time_to_happen = {
+		days = 1 # 
+	}
+
+	option = {
+		name = "Nudge Mexico into the idea."
+		if = {
+			limit = {
+				MEX = { is_ai = yes }
+			}
+			country_event = {id = USA_interact_Ai.030 days = 7 }
+			}
+		else = {
+			country_event = {id = USA_interact_Player.030 days = 7}
+			}
+		} 
+	}
+
+# USA INTERACTION EVENTS (FIRE ONLY FROM USA.### EVENTS ONTO A COUNTRY!)
+add_namespace = USA_interact_Player
+add_namespace = USA_interact_Ai
+
+# Event category, country, yes(1)/no(0)
+
+#DESERET
+
+country_event = {
+	id = USA_interact_Ai.010
+	title = "United States Proposes Contenetal Unity"
+	desc = "How shall we handle this?"
+
+	trigger = {
+	}
+
+	is_triggered_only = yes
+
+	mean_time_to_happen = {
+		days = 1 # 
+	}
+
+	option = {
+		name = "Ai does a thing"
+		if = {
+			limit = {
+				AND = {
+					ROOT = { is_ai = yes }
+					ROOT = {
+						strength_ratio = {
+							tag = USA
+							ratio < 1.25
+						}
+					}
+				}
+			}
+			USA = {
+				country_event = {id = USA.011 days = 7}
+				}
+		}
+		else ={
+			USA = {
+				country_event = {id = USA.010 days = 7}
+				}
+		}
+	}
+} 
+
+country_event = {
+	id = USA_interact_Player.010
+	title = "United States Proposes Contenetal Unity"
+	desc = "How shall we handle this?"
+
+	trigger = {
+	}
+
+	is_triggered_only = yes
+
+	mean_time_to_happen = {
+		days = 1 # 
+	}
+
+	option = {
+		name = "Accept."
+		USA = {
+			country_event = {id = USA.011 days = 7}
+			}
+		}
+
+	option = {
+		name = "Reject."
+		USA = {
+			country_event = {id = USA.010 days = 7}
+		}
+	}
+} 
+
+country_event = {
+	id = USA.010
+	title = "Deseret Rejects our Proposal"
+	desc = ""
+	trigger = {
+		
+	}
+	is_triggered_only = yes
+	option = {
+		name = "We tried"
+		add_opinion_modifier = {
+			target = Z83
+			modifier = medium_decrease
+		}
+	}
+	option = {
+		name = "We will run over them!"
+		add_opinion_modifier = {
+			target = MEX
+			modifier = large_decrease
+		}
+		Z83 = {
+			every_core_state = {
+				add_claim_by = USA
+			}
+		}
+		create_wargoal = {
+			target = Z83
+			type = annex_everything
+		}
+	}
+}
+
+country_event = {
+	id = USA.011
+	title = "Deseret Accepts our Proposal"
+	desc = ""
+	trigger = {
+		
+	}
+	is_triggered_only = yes
+	option = {
+		name = "Good"
+		
+		Z83 = {
+			every_core_state = {
+				add_core_of = USA
+			}
+		}
+		USA = { 
+			annex_country = { 
+				target = Z83 
+			} 
+		}
+	}
+}
+
+# QUEBEC
+
+country_event = {
+	id = USA_interact_Ai.020
+	title = "United States Proposes Contenetal Unity"
+	desc = "How shall we handle this?"
+
+	trigger = {
+	}
+
+	is_triggered_only = yes
+
+	mean_time_to_happen = {
+		days = 1 # 
+	}
+
+	option = {
+		name = "Ai does a thing"
+		if = {
+			limit = {
+				AND = {
+					ROOT = { is_ai = yes }
+					ROOT = {
+						strength_ratio = {
+							tag = USA
+							ratio < 1.25
+						}
+					}
+				}
+			}
+			USA = {
+				country_event = {id = USA.021 days = 7}
+				}
+		}
+		else ={
+			USA = {
+				country_event = {id = USA.020 days = 7}
+				}
+		}
+	}
+}
+
+country_event = {
+	id = USA_interact_Player.020
+	title = "United States Proposes Contenetal Unity"
+	desc = "How shall we handle this?"
+
+	trigger = {
+	}
+
+	is_triggered_only = yes
+
+	mean_time_to_happen = {
+		days = 1 # 
+	}
+
+	option = {
+		name = "Accept."
+		USA = {
+			country_event = {id = USA.021 days = 7}
+			}
+		}
+
+	option = {
+		name = "Reject."
+		USA = {
+			country_event = {id = USA.020 days = 7}
+		}
+	}
+}
+
+country_event = {
+	id = USA.020
+	title = "Quebec Rejects our Proposal"
+	desc = ""
+	trigger = {
+		
+	}
+	is_triggered_only = yes
+	option = {
+		name = "We tried"
+		add_opinion_modifier = {
+			target = Z93
+			modifier = medium_decrease
+		}
+	}
+	option = {
+		name = "We will run over them!"
+		add_opinion_modifier = {
+			target = Z93
+			modifier = large_decrease
+		}
+		Z93 = {
+			every_core_state = {
+				add_claim_by = USA
+			}
+		}
+		create_wargoal = {
+			target = Z93
+			type = annex_everything
+		}
+	}
+}
+
+country_event = {
+	id = USA.021
+	title = "Quebec Accepts our Proposal"
+	desc = ""
+	trigger = {
+		
+	}
+	is_triggered_only = yes
+	option = {
+		name = "Good"
+		Z93 = {
+			every_core_state = {
+				add_core_of = USA
+			}
+		}
+		USA = { 
+			annex_country = { 
+				target = Z93 
+			} 
+		}
+	}
+}
+
+# MEXICO
+
+country_event = {
+	id = USA_interact_Ai.030
+	title = "United States Proposes Contenetal Unity"
+	desc = "How shall we handle this?"
+
+	trigger = {
+	}
+
+	is_triggered_only = yes
+
+	mean_time_to_happen = {
+		days = 1 # 
+	}
+
+	option = {
+		name = "Ai does a thing"
+		if = {
+			limit = {
+				AND = {
+					ROOT = { is_ai = yes }
+					ROOT = {
+						strength_ratio = {
+							tag = USA
+							ratio < 1.25
+						}
+					}
+				}
+			}
+			USA = {
+				country_event = {id = USA.031 days = 7}
+				}
+		}
+		else ={
+			USA = {
+				country_event = {id = USA.030 days = 7}
+				}
+		}
+	}
+}
+
+country_event = {
+	id = USA_interact_Player.030
+	title = "United States Proposes Contenetal Unity"
+	desc = "How shall we handle this?"
+
+	trigger = {
+	}
+
+	is_triggered_only = yes
+
+	mean_time_to_happen = {
+		days = 1 # 
+	}
+
+	option = {
+		name = "Accept."
+		USA = {
+			country_event = {id = USA.031 days = 7}
+			}
+		}
+
+	option = {
+		name = "Reject."
+		USA = {
+			country_event = {id = USA.030 days = 7}
+		}
+	}
+}
+
+country_event = {
+	id = USA.030
+	title = "Mexico Rejects our Proposal"
+	desc = ""
+	trigger = {
+		
+	}
+	is_triggered_only = yes
+	option = {
+		name = "We tried"
+		add_opinion_modifier = {
+			target = MEX
+			modifier = medium_decrease
+		}
+	}
+	option = {
+		name = "We will run over them!"
+		add_opinion_modifier = {
+			target = MEX
+			modifier = large_decrease
+		}
+		MEX = {
+			every_core_state = {
+				add_claim_by = USA
+			}
+		}
+		create_wargoal = {
+			target = MEX
+			type = annex_everything
+		}
+	}
+}
+
+country_event = {
+	id = USA.031
+	title = "Mexico Accepts our Proposal"
+	desc = ""
+	trigger = {
+		
+	}
+	is_triggered_only = yes
+	option = {
+		name = "Good"
+		MEX = {
+			every_core_state = {
+				add_core_of = USA
+			}
+		}
+		USA = { 
+			annex_country = { 
+				target = MEX 
+			} 
+		}
+	}
+}
