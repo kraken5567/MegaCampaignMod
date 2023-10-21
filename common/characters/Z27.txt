@@ -15,7 +15,7 @@ characters = {
 			traits = {  }
 		}
 		field_marshal = {
-			traits = { cavalry_officer charismatic }
+			traits = { cavalry_officer }
 			skill = 1
 			attack_skill = 2
 			defense_skill = 1
@@ -60,8 +60,6 @@ characters = {
 			army = {
 				large = GFX_Portrait_asia_generic_land_5
 				small = GFX_Portrait_asia_generic_land_5_small
-			}
-			civilian = {
 			}
 		}
 		corps_commander = {

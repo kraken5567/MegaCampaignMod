@@ -110,13 +110,11 @@ country_event = {
 		name = "Ai does a thing"
 		if = {
 			limit = {
-				AND = {
-					ROOT = { is_ai = yes }
-					ROOT = {
-						strength_ratio = {
-							tag = USA
-							ratio < 1.25
-						}
+				ROOT = { is_ai = yes }
+				ROOT = {
+					strength_ratio = {
+						tag = USA
+						ratio < 1.25
 					}
 				}
 			}
@@ -238,13 +236,11 @@ country_event = {
 		name = "Ai does a thing"
 		if = {
 			limit = {
-				AND = {
-					ROOT = { is_ai = yes }
-					ROOT = {
-						strength_ratio = {
-							tag = USA
-							ratio < 1.25
-						}
+				ROOT = { is_ai = yes }
+				ROOT = {
+					strength_ratio = {
+						tag = USA
+						ratio < 1.25
 					}
 				}
 			}
@@ -365,13 +361,11 @@ country_event = {
 		name = "Ai does a thing"
 		if = {
 			limit = {
-				AND = {
-					ROOT = { is_ai = yes }
-					ROOT = {
-						strength_ratio = {
-							tag = USA
-							ratio < 1.25
-						}
+				ROOT = { is_ai = yes }
+				ROOT = {
+					strength_ratio = {
+						tag = USA
+						ratio < 1.25
 					}
 				}
 			}

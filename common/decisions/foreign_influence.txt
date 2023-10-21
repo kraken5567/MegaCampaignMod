@@ -39,10 +39,6 @@ foreign_influence = {
 			}
 		}
 
-		complete_effect = {
-			FROM = { add_timed_idea = { idea = nation_building days = 120 } }
-		}
-
 		modifier = {
 			political_power_cost = 0.5
 		}
@@ -87,11 +83,6 @@ foreign_influence = {
 			}
 		}
 
-		complete_effect = {
-			FROM = {
-				add_timed_idea = { idea = socialist_education days = 120 }
-			}
-		}
 		modifier = {
 			political_power_cost = 0.5
 		}
@@ -136,12 +127,6 @@ foreign_influence = {
 			}
 		}
 
-		complete_effect = {
-			FROM = {
-				add_timed_idea = { idea = paramilitary_training days = 120 }
-			}
-		}
-
 		modifier = {
 			political_power_cost = 0.5
 		}
@@ -181,12 +166,6 @@ foreign_influence = {
 		target_trigger = {
 			FROM = {
 				is_puppet_of = ROOT
-			}
-		}
-
-		complete_effect = {
-			FROM = {
-				add_timed_idea = { idea = military_parade days = 120 }
 			}
 		}
 

@@ -40,6 +40,9 @@ focus_tree = {
 			focus = USA_overSeaDomination
 			focus = USA_contenentalDefensePact
 		}
+		completion_reward = {
+			
+		}
 	}
 
 	focus = {

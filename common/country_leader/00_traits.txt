@@ -4533,7 +4533,7 @@ leader_traits = {
 		fascism_drift = -0.05
 		fascism_acceptance = -40
 		targeted_modifier = {
-			tag = GER
+			tag = Z45
 			attack_bonus_against = 0.1
 			defense_bonus_against = 0.1
 		}
