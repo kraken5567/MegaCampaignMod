@@ -1,5 +1,59 @@
 ideologies = {
 
+	socialism = {
+
+		types = {
+			
+			american-socialism = {
+				can_be_randomly_selected = no
+			}
+
+			social-democracy = {
+				can_be_randomly_selected = yes
+			}
+
+		}
+
+		color = {
+			250 100 100
+		}
+
+		rules = {
+			can_create_collaboration_government = no
+			can_declare_war_on_same_ideology = no
+			can_force_government = no
+			can_send_volunteers = no
+			can_puppet = no
+			can_lower_tension = yes
+			can_only_justify_war_on_threat_country = yes
+			can_guarantee_other_ideologies = yes
+		}
+
+		can_host_government_in_exile = yes
+
+		war_impact_on_world_tension = 0.25		# no major danger, remember this this the 40s!
+		faction_impact_on_world_tension = 0.1
+
+		modifiers = {
+			generate_wargoal_tension = 0.00
+			join_faction_tension = 0.00
+			lend_lease_tension = 0.00
+			send_volunteers_tension = 0.00
+			guarantee_tension = 0.00
+			civilian_intel_to_others = 20.0
+			army_intel_to_others = 5.0
+			navy_intel_to_others = 20.0
+			airforce_intel_to_others = 5
+			embargo_cost_factor = -0.5
+			embargo_threshold_factor = -0.5
+		}
+
+		faction_modifiers = {
+			faction_trade_opinion_factor = 0.50 #plus 50% trade opinion
+		}
+
+	}
+
 	nationalist = {
 
 		types = {
@@ -54,8 +108,6 @@ ideologies = {
 			liberalism = {
 			}
 
-			socialism = {
-			}
 		}
 
 		dynamic_faction_names = {
