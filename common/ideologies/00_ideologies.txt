@@ -1,5 +1,49 @@
 ideologies = {
 
+	nationalist = {
+
+		types = {
+			
+			america-first = {
+				can_be_randomly_selected = no
+			}
+
+			ethnostatic = {
+				can_be_randomly_selected = yes
+			}
+		}
+
+		dynamic_faction_names = {
+			"Nationalist Party"
+			"Ethnoist Party"
+			"Ethnostate Party"
+		}
+
+		color = { 25 110 60 }
+
+		rules = {
+			can_create_collaboration_government = no
+			can_declare_war_on_same_ideology = yes
+			can_force_government = yes
+			can_send_volunteers = yes
+			can_puppet = yes
+			can_lower_tension = no
+			can_only_justify_war_on_threat_country = yes
+			can_guarantee_other_ideologies = no
+		}
+
+		modifiers = {
+			justify_war_goal_when_in_major_war_time = -0.80
+			civilian_intel_to_others = 5.0
+			army_intel_to_others = 2.0
+			navy_intel_to_others = 2.0
+			airforce_intel_to_others = 2.0
+			hidden_modifier = { join_faction_tension = -0.1 }
+			embargo_cost_factor = 0.0
+		}
+
+	}
+
 	democratic = {
 
 		types = {
