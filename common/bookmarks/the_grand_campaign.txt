@@ -2,7 +2,7 @@ bookmarks = {
 	bookmark = {
 		name = GRAND_CAMPAIGN_NAME
 		desc = GRAND_CAMPAIGN_DESC
-		date = 1936.1.1.12
+		date = 1934.12.1.1
 		picture = GFX_select_date_1936
 		default_country = "Z68"
 		default = yes
@@ -27,7 +27,7 @@ bookmarks = {
 			history = "An Economic Powerhouse"
 		}
 		USA = {
-			ideology = communism
+			ideology = democratic
 			history = "A Revolutionized Democracy"
 		}
 		ENG = {
