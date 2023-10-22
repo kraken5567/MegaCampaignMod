@@ -50,9 +50,11 @@ set_politics = {
 }
 
 set_popularities = {
+	socialism = 4
+	nationalist = 12.5
 	democratic = 62.5
-	fascism = 17.5
-	communism = 10.5
+	fascism = 5
+	communism = 6.5
 	neutrality = 9.5
 }
 
@@ -79,8 +81,8 @@ add_ideas = {
 	civilian_economy
 	limited_exports
 }
-set_stability = 0.46754
-set_war_support = 0.45234
+set_stability = 46.754
+set_war_support = 45.234
 
 # Starting tech
 set_technology = {

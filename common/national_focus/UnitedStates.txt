@@ -24,6 +24,23 @@ focus_tree = {
 		completion_reward = { }
 	}
 
+	focus = {
+		id = USA_FixedPolitics
+		icon = GFX_focus_generic_self_management
+		cost = 7
+		x = 23
+		y = 5
+		prerequisite = {
+			focus = USA_militaryLeaders
+			focus = USA_researchOfDemocracy
+			focus = USA_RedArmy
+		}
+		completion_reward = {
+			add_political_power = 200
+			remove_ideas = USA_Contested_Government
+		}
+	}
+
 	# Communist (HARD)
 
 	focus = {
@@ -39,8 +56,141 @@ focus_tree = {
 		prerequisite = {
 			focus = USA_addressContension
 		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = USA_LeftWing
+				days = 730
+			}
+		}
+	}
+
+	focus = {
+		id = USA_RedArmy
+		icon = GFX_focus_SOV_the_glory_of_the_red_army_communism
+		cost = 7
+		x = 19
+		y = 4
+		prerequisite = {
+			focus = USA_democraticRaids
+		}
+		prerequisite = {
+			focus = USA_socialDemocracy
+		}
 		completion_reward = { }
 	}
+
+		# Full Communism
+
+		focus = {
+			id = USA_Communism
+			icon = GFX_goal_support_communism
+			cost = 7
+			x = 18
+			y = 2
+			mutually_exclusive = {
+				focus = USA_Socialism
+			}
+			prerequisite = {
+				focus = USA_freePoliticalRivals
+			}
+			completion_reward = {
+				# variable set up
+				set_temp_variable = {
+					var = current_socialism
+					value = party_popularity@socialism
+				}
+
+				# halving Socialism
+				multiply_temp_variable = {
+					var = current_socialism
+					value = 0.5
+				}
+
+				# add half of Communism
+				add_popularity = {
+					ideology = communism
+					popularity = current_socialism
+				}
+
+				# remove half of Socialism
+				multiply_temp_variable = {
+					var = current_socialism
+					value = -1
+				}
+				add_popularity = {
+					ideology = socialism
+					popularity = current_socialism
+				}
+			}
+		}
+
+		focus = {
+			id = USA_democraticRaids
+			icon = GFX_focus_generic_strike_at_democracy3
+			cost = 7
+			x = 18
+			y = 3
+			prerequisite = {
+				focus = USA_Communism
+			}
+			completion_reward = { }
+		}
+
+		# Moderate Communism
+		focus = {
+			id = USA_Socialism
+			icon = GFX_focus_chi_cooperation_with_the_communists
+			cost = 7
+			x = 20
+			y = 2
+			mutually_exclusive = {
+				focus = USA_Communism
+			}
+			prerequisite = {
+				focus = USA_freePoliticalRivals
+			}
+			completion_reward = {
+				# variable set up
+				set_temp_variable = {
+					var = current_communism
+					value = party_popularity@communism
+				}
+
+				# halving Communism
+				multiply_temp_variable = {
+					var = current_communism
+					value = 0.5
+				}
+
+				# add half of Socialism
+				add_popularity = {
+					ideology = socialism
+					popularity = current_communism
+				}
+
+				# remove half of Communism
+				multiply_temp_variable = {
+					var = current_communism
+					value = -1
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = current_communism
+				}
+			}
+		}
+
+		focus = {
+			id = USA_socialDemocracy
+			icon = GFX_focus_generic_soviet_politics
+			cost = 7
+			x = 20
+			y = 3
+			prerequisite = {
+				focus = USA_Socialism
+			}
+			completion_reward = { }
+		}
 
 	# Democratic (MEDIUM)
 
@@ -57,17 +207,23 @@ focus_tree = {
 		prerequisite = {
 			focus = USA_addressContension
 		}
-		completion_reward = { }
+		completion_reward = {
+			add_timed_idea = {
+				idea = USA_democracy
+				days = 730
+			}
+		}
 	}
 
 	focus = {
 		id = USA_antiCommunistRaids
 		icon = GFX_goal_anti_comintern_pact
 		cost = 5
-		x = 22
+		x = 24
 		y = 2
 		prerequisite = {
 			focus = USA_gainSupport
+			focus = USA_pushForACentralCause
 		}
 		completion_reward = {
 			add_timed_idea = {
@@ -89,14 +245,15 @@ focus_tree = {
 		id = USA_antiFascistRaids
 		icon = GFX_focus_generic_anti_fascist_diplomacy
 		cost = 5
-		x = 24
+		x = 22
 		y = 2
 		prerequisite = {
 			focus = USA_gainSupport
+			focus = USA_freePoliticalRivals
 		}
 		completion_reward = { 
 			add_timed_idea = {
-				idea = Z45_remove_fascism
+				idea = USA_remove_fascism
 				days = 365
 			}
 			if = {
@@ -108,6 +265,33 @@ focus_tree = {
 				custom_effect_tooltip = USA_civilWarFireWarn
 			}
 		}
+	}
+
+	focus = {
+		id = USA_industryOfDemocracy
+		icon = GFX_focus_generic_the_giant_wakes
+		cost = 7
+		x = 23
+		y = 3
+		prerequisite = {
+			focus = USA_antiCommunistRaids
+		}
+		prerequisite = {
+			focus = USA_antiFascistRaids
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_researchOfDemocracy
+		icon = GFX_focus_research2
+		cost = 7
+		x = 23
+		y = 4
+		prerequisite = {
+			focus = USA_industryOfDemocracy
+		}
+		completion_reward = { }
 	}
 
 	# Nationalist (EASY)
@@ -125,8 +309,137 @@ focus_tree = {
 		prerequisite = {
 			focus = USA_addressContension
 		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = USA_RightWing
+				days = 730
+			}
+		}
+	}	
+
+	focus = {
+		id = USA_militaryLeaders
+		icon = GFX_focus_generic_military_mission
+		cost = 7
+		x = 27
+		y = 4
+		prerequisite = {
+			focus = USA_ConfederateConstitution
+			focus = USA_AmericaFirstParty
+		}
 		completion_reward = { }
 	}
+		# Moderate Fascism
+		focus = {
+			id = USA_Nationalism
+			icon = GFX_focus_usa_honor_the_confederacy
+			cost = 7
+			x = 26
+			y = 2
+			prerequisite = {
+				focus = USA_pushForACentralCause
+			}
+			mutually_exclusive = {
+				focus = USA_Fascism
+			}
+			completion_reward = {
+				# variable set up
+				set_temp_variable = {
+					var = current_fascism
+					value = party_popularity@fascism
+				}
+
+				# halving fascism
+				multiply_temp_variable = {
+					var = current_fascism
+					value = 0.5
+				}
+
+				# add half of fascism
+				add_popularity = {
+					ideology = nationalist
+					popularity = current_fascism
+				}
+
+				# remove half of fascism
+				multiply_temp_variable = {
+					var = current_fascism
+					value = -1
+				}
+				add_popularity = {
+					ideology = fascism
+					popularity = current_fascism
+				}
+			}
+		}
+
+		focus = {
+			id = USA_ConfederateConstitution
+			icon = GFX_focus_generic_treaty
+			cost = 7
+			x = 26
+			y = 3
+			prerequisite = {
+				focus = USA_Nationalism
+			}
+			completion_reward = { }
+		}
+
+		# Full Fascism
+		focus = {
+			id = USA_Fascism
+			icon = GFX_goal_support_fascism
+			cost = 7
+			x = 28
+			y = 2
+			prerequisite = {
+				focus = USA_pushForACentralCause
+			}
+			mutually_exclusive = {
+				focus = USA_Nationalism
+			}
+			completion_reward = {
+				# variable set up
+				set_temp_variable = {
+					var = current_nationalism
+					value = party_popularity@nationalist
+				}
+
+				# halving fascism
+				multiply_temp_variable = {
+					var = current_nationalism
+					value = 0.5
+				}
+
+				# add half of fascism
+				add_popularity = {
+					ideology = fascism
+					popularity = current_nationalism
+				}
+
+				# remove half of fascism
+				multiply_temp_variable = {
+					var = current_nationalism
+					value = -1
+				}
+				add_popularity = {
+					ideology = nationalist
+					popularity = current_nationalism
+				}
+			}
+		}
+
+		focus = {
+			id = USA_AmericaFirstParty
+			icon = GFX_focus_generic_strike_at_democracy1
+			cost = 7
+			x = 28
+			y = 3
+			prerequisite = {
+				focus = USA_Fascism
+			}
+			completion_reward = { }
+		}
 
 	#Conquering Tree
 

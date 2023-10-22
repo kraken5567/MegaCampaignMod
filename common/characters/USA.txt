@@ -9,8 +9,7 @@ characters = {
 		country_leader = {
 			ideology = conservatism
 			traits = {
-				democratic_crusader
-				democratic_reformer
+				weak_democrat
 			}
 		}
 	}
