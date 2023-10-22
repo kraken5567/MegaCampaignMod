@@ -88,6 +88,64 @@ country_event = {
 add_namespace = USA_interact_Player
 add_namespace = USA_interact_Ai
 
+# Generic (event#.countryAim)
+# ##.99 is all countries
+
+country_event = {
+	id = USA_interact_Ai.01.99  # Define a unique event ID.
+	title = "America invites you to their faction"  # Event title.
+	desc = "You have been invited to join our faction. Will you accept?"
+
+	is_triggered_only = yes  # Ensure it's a one-time event.
+
+	mean_time_to_happen = {
+		days = 1  # Adjust timing as needed.
+	}
+
+	option = {
+		name = "Accept the invitation."
+		USA = { add_to_faction = ROOT }
+	}
+
+	option = {
+		name = "Decline the invitation."
+		ROOT = {
+			add_opinion_modifier = {
+				target = USA
+				modifier = refused_alliance
+			}
+		}
+	}
+}
+
+country_event = {
+	id = USA_interact_Player.01.99  # Define a unique event ID.
+	title = "America invites you to their faction"  # Event title.
+	desc = "You have been invited to join our faction. Will you accept?"
+
+	is_triggered_only = yes  # Ensure it's a one-time event.
+
+	mean_time_to_happen = {
+		days = 1  # Adjust timing as needed.
+	}
+
+	option = {
+		name = "Accept the invitation."
+		USA = { add_to_faction = ROOT }
+	}
+
+	option = {
+		name = "Decline the invitation."
+		ROOT = {
+			add_opinion_modifier = {
+				target = USA
+				modifier = refused_alliance
+			}
+		}
+	}
+}
+
+# Unify Focus Branch
 # Event category, country, yes(1)/no(0)
 
 #DESERET

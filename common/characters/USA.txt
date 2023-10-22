@@ -7,8 +7,11 @@ characters = {
 			}
 		}
 		country_leader = {
-			ideology = moderatism
-			traits = {  }
+			ideology = conservatism
+			traits = {
+				democratic_crusader
+				democratic_reformer
+			}
 		}
 	}
 	USA_16777411 = {

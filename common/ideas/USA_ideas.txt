@@ -1,31 +1,41 @@
 ideas = {
-	mobilization_laws = {
-}
-	economy = {
-}
-	political_advisor = {
-}
-	tank_manufacturer = {
-}
-	naval_manufacturer = {
-}
-	aircraft_manufacturer = {
-}
-	materiel_manufacturer = {
-}
-	industrial_concern = {
-}
-	theorist = {
-}
-	army_chief = {
-}
-	navy_chief = {
-}
-	air_chief = {
-}
-	high_command = {
-}
 	country = {
+
+		USA_improveGlobal = {
+			picture = generic_deal_with_the_devil2
+			modifier = {
+				improve_relations_maintain_cost_factor = -0.5
+				
+			}
+		}
+
+		USA_aggressive = {
+			picture = generic_war_preparation
+			modifier = {
+				join_faction_tension = -0.25
+				send_volunteers_tension = -0.35
+				guarantee_tension = -0.2
+				mobilization_laws_cost_factor = 1
+				economy_cost_factor = 1
+			}
+		}
+
+		USA_passive = {
+			picture = neutrality_idea
+			modifier = {
+				join_faction_tension = 0.25
+				send_volunteers_tension = 0.5
+				guarantee_tension = 0.5
+				embargo_threshold_factor = 1.5
+			}
+		}
+
+		USA_remove_communism = {
+			picture = anti_soviet_pact
+			modifier = {
+				communism_drift = -0.05
+			}
+		}
 
 		USA_NoJustify = {
 			picture = generic_usa_conflict

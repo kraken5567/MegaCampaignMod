@@ -1,4 +1,8 @@
 ﻿l_english:
+# Tooltips (§<ColorFirstLetter>....§!) 
+USA_civilWarFireWarn:0 "§R CIVIL WAR WILL FIRE DUE TO IDEOLOGY SUPPORT!§!"
+
+# Focuses
 USA_a_new_beginning:0 "New Foreign Policy"
 USA_a_new_beginning_desc:0  "We need to decide how we shall interact with our neighbors and countries all over the globe."
 
