@@ -12,6 +12,357 @@ focus_tree = {
 		x = 0
 		y = 1700
 	}
+	
+	# Industry Tree
+
+	focus = {
+		id = USA_addressEconomy
+		icon = GFX_focus_generic_industry_3
+		cost = 7
+		x = 38
+		y = 0
+		completion_reward = {
+			add_political_power = 25
+		}
+	}
+
+	focus = {
+		id = USA_industryEND
+		icon = GFX_focus_generic_industry_3
+		cost = 7
+		x = 38
+		y = 6
+		prerequisite = {
+			focus = USA_regulations
+			focus = USA_fundPublic
+			focus = USA_infrastructurePrivate
+		}
+		completion_reward = {
+			# free market = USA_invisableHandDid
+			# intervention = USA_interveneDid
+		}
+	}
+
+	# More spirit buffs, no random building event
+	
+	focus = {
+		id = USA_invisibleHand
+		icon = GFX_focus_generic_concessions
+		cost = 7
+		x = 42
+		y = 1
+		prerequisite = {
+			focus = USA_addressEconomy
+		}
+		mutually_exclusive = {
+			focus = USA_intervene
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_freeMarketReforms
+		icon = GFX_goal_continuous_boost_freedom
+		cost = 7
+		x = 41
+		y = 2
+		prerequisite = {
+			focus = USA_invisibleHand
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_reduceTax
+		icon = GFX_focus_renounce_the_treaty_of_trianon
+		cost = 7
+		x = 43
+		y = 2
+		prerequisite = {
+			focus = USA_invisibleHand
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_migrantMagnet
+		icon = GFX_focus_usa_guarantee_the_american_dream
+		cost = 7
+		x = 40
+		y = 3
+		prerequisite = {
+			focus = USA_freeMarketReforms
+		}
+		prerequisite = {
+			focus = USA_reduceTax
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_skilledLabor
+		icon = GFX_focus_generic_military_academy
+		cost = 7
+		x = 42
+		y = 3
+		prerequisite = {
+			focus = USA_freeMarketReforms
+		}
+		prerequisite = {
+			focus = USA_reduceTax
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_freeTrade
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 7
+		x = 44
+		y = 3
+		prerequisite = {
+			focus = USA_freeMarketReforms
+		}
+		prerequisite = {
+			focus = USA_reduceTax
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_researchPush
+		icon = GFX_focus_research2
+		cost = 7
+		x = 41
+		y = 4
+		prerequisite = {
+			focus = USA_freeMarketReforms
+		}
+		prerequisite = {
+			focus = USA_reduceTax
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_consumerPush
+		icon = GFX_goal_generic_consumer_goods
+		cost = 7
+		x = 43
+		y = 4
+		prerequisite = {
+			focus = USA_freeMarketReforms
+		}
+		prerequisite = {
+			focus = USA_reduceTax
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_infrastructurePrivate
+		icon = GFX_goal_generic_construct_civilian
+		cost = 7
+		x = 42
+		y = 5
+		prerequisite = {
+			focus = USA_consumerPush
+		}
+		prerequisite = {
+			focus = USA_researchPush
+		}
+		completion_reward = {
+			set_country_flag = USA_invisableHandDid
+		}
+	}
+
+	# Less building buffs, event that builds a building randomly(?)
+
+	focus = {
+		id = USA_intervene
+		icon = GFX_focus_generic_the_giant_wakes
+		cost = 7
+		x = 34
+		y = 1
+		prerequisite = {
+			focus = USA_addressEconomy
+		}
+		mutually_exclusive = {
+			focus = USA_invisibleHand
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_ratifyProjects
+		icon = GFX_focus_generic_treaty
+		cost = 7
+		x = 33
+		y = 2
+		prerequisite = {
+			focus = USA_intervene
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_getSupport
+		icon = GFX_goal_generic_intelligence_exchange
+		cost = 7
+		x = 35
+		y = 2
+		prerequisite = {
+			focus = USA_intervene
+		}
+		completion_reward = { }
+	}
+
+	# USA_---Works
+
+	focus = {
+		id = USA_steelWorks
+		icon = GFX_focus_generic_steel
+		cost = 7
+		x = 31
+		y = 3
+		prerequisite = {
+			focus = USA_ratifyProjects
+		}
+		prerequisite = {
+			focus = USA_getSupport
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_tungstenWorks
+		icon = GFX_focus_generic_tungsten
+		cost = 7
+		x = 33
+		y = 3
+		prerequisite = {
+			focus = USA_ratifyProjects
+		}
+		prerequisite = {
+			focus = USA_getSupport
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_aluminiumWorks
+		icon = GFX_focus_generic_aluminum
+		cost = 7
+		x = 35
+		y = 3
+		prerequisite = {
+			focus = USA_ratifyProjects
+		}
+		prerequisite = {
+			focus = USA_getSupport
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_oilWorks
+		icon = GFX_goal_generic_oil_refinery
+		cost = 7
+		x = 37
+		y = 3
+		prerequisite = {
+			focus = USA_ratifyProjects
+		}
+		prerequisite = {
+			focus = USA_getSupport
+		}
+		completion_reward = { }
+	}
+
+	# past resourse works focuses
+
+	focus = {
+		id = USA_factoryWorks
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 7
+		x = 32
+		y = 4
+		prerequisite = {
+			focus = USA_ratifyProjects
+		}
+		prerequisite = {
+			focus = USA_getSupport
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_infrastructureWorks
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 7
+		x = 34
+		y = 4
+		prerequisite = {
+			focus = USA_ratifyProjects
+		}
+		prerequisite = {
+			focus = USA_getSupport
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_productionWorks
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 7
+		x = 36
+		y = 4
+		prerequisite = {
+			focus = USA_ratifyProjects
+		}
+		prerequisite = {
+			focus = USA_getSupport
+		}
+		completion_reward = { }
+	}
+
+	# Intervene End Focuses
+
+	focus = {
+		id = USA_regulations
+		icon = GFX_goal_generic_neutrality_focus
+		cost = 7
+		x = 33
+		y = 5
+		prerequisite = {
+			focus = USA_factoryWorks
+		}
+		prerequisite = {
+			focus = USA_productionWorks
+			focus = USA_infrastructureWorks
+		}
+		completion_reward = {
+			set_country_flag = USA_interveneDid
+		}
+	}
+
+	focus = {
+		id = USA_fundPublic
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		cost = 7
+		x = 35
+		y = 5
+		prerequisite = {
+			focus = USA_factoryWorks
+			focus = USA_infrastructureWorks
+		}
+		prerequisite = {
+			focus = USA_productionWorks
+		}
+		completion_reward = {
+			set_country_flag = USA_interveneDid
+		}
+	}
 
 	# Political Tree
 
