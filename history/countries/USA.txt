@@ -38,7 +38,7 @@ if = {
 		traits = { operative_linguist operative_natural_orator }
 		bypass_recruitment = no
 		available_to_spy_master = yes
-		nationalities = { USA Z84 }
+		nationalities = { USA }
 	}
 }
 
@@ -47,6 +47,18 @@ set_politics = {
 	last_election = "1934.3.29"
 	election_frequency = 48
 	elections_allowed = yes
+}
+
+set_party_name = {
+	ideology = socialism
+	long_name = "United States Socialist Party"
+	name = "USSP"
+}
+
+set_party_name = {
+	ideology = nationalist
+	long_name = "America First Party"
+	name = "AFP"
 }
 
 set_popularities = {
@@ -81,6 +93,7 @@ add_ideas = {
 	civilian_economy
 	limited_exports
 }
+
 set_stability = 46.754
 set_war_support = 45.234
 
@@ -193,7 +206,6 @@ if = {
 	create_equipment_variant = {
 		name = "Early Destroyer"
 		type = ship_hull_light_1
-		name_group = DD_HISTORICAL
 		modules = {
 		fixed_ship_battery_slot = ship_light_battery_1
 		fixed_ship_anti_air_slot = ship_anti_air_1
@@ -204,12 +216,11 @@ if = {
 		mid_1_custom_slot = ship_depth_charge_1
 		rear_1_custom_slot = empty
 	}
-		obsolete = no
+		obsolete = yes
 	}
 	create_equipment_variant = {
 		name = "Early Heavy Cruiser"
 		type = ship_hull_cruiser_1
-		name_group = CA_HISTORICAL
 		modules = {
 		fixed_ship_battery_slot = ship_medium_battery_1
 		fixed_ship_anti_air_slot = ship_anti_air_1
@@ -222,12 +233,11 @@ if = {
 		mid_2_custom_slot = ship_medium_battery_1
 		rear_1_custom_slot = empty
 	}
-		obsolete = no
+		obsolete = yes
 	}
 	create_equipment_variant = {
 		name = "Early Light Cruiser"
 		type = ship_hull_cruiser_1
-		name_group = CL_HISTORICAL
 		modules = {
 		fixed_ship_battery_slot = ship_light_battery_1
 		fixed_ship_anti_air_slot = ship_anti_air_1
@@ -240,7 +250,7 @@ if = {
 		mid_2_custom_slot = ship_light_battery_1
 		rear_1_custom_slot = empty
 	}
-		obsolete = no
+		obsolete = yes
 	}
 	create_equipment_variant = {
 		name = "Early Submarine"
@@ -304,7 +314,7 @@ if = {
 		engine_type_slot = engine_1_1x
 		special_type_slot_1 = empty
 	}
-		obsolete = no
+		obsolete = yes
 	}
 	create_equipment_variant = {
 		name = "Interwar Carrier Fighter"
@@ -315,7 +325,7 @@ if = {
 		engine_type_slot = engine_1_1x
 		special_type_slot_1 = empty
 	}
-		obsolete = no
+		obsolete = yes
 	}
 	create_equipment_variant = {
 		name = "Interwar CAS"
@@ -325,7 +335,7 @@ if = {
 		engine_type_slot = engine_1_1x
 		special_type_slot_1 = lmg_defense_turret
 	}
-		obsolete = no
+		obsolete = yes
 	}
 	create_equipment_variant = {
 		name = "Interwar Carrier CAS"
@@ -335,7 +345,7 @@ if = {
 		engine_type_slot = engine_1_1x
 		special_type_slot_1 = lmg_defense_turret
 	}
-		obsolete = no
+		obsolete = yes
 	}
 	create_equipment_variant = {
 		name = "Interwar Naval Bomber"
@@ -345,7 +355,7 @@ if = {
 		engine_type_slot = engine_1_1x
 		special_type_slot_1 = lmg_defense_turret
 	}
-		obsolete = no
+		obsolete = yes
 	}
 	create_equipment_variant = {
 		name = "Interwar Carrier Naval Bomber"
@@ -355,7 +365,7 @@ if = {
 		engine_type_slot = engine_1_1x
 		special_type_slot_1 = lmg_defense_turret
 	}
-		obsolete = no
+		obsolete = yes
 	}
 	create_equipment_variant = {
 		name = "Interwar Tactical Bomber"
@@ -366,7 +376,7 @@ if = {
 		special_type_slot_1 = lmg_defense_turret
 		special_type_slot_2 = lmg_defense_turret
 	}
-		obsolete = no
+		obsolete = yes
 	}
 	create_equipment_variant = {
 		name = "Interwar Strategic Bomber"
@@ -377,9 +387,6 @@ if = {
 		special_type_slot_1 = lmg_defense_turret
 		special_type_slot_2 = lmg_defense_turret
 	}
-		obsolete = no
+		obsolete = yes
 	}
-}
-if = {
-	limit = { has_dlc = "No Step Back" }
 }

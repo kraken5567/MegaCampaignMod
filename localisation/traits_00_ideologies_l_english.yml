@@ -3,5 +3,8 @@
 weak_democrat:0 "Weak Democrat"
 socialism:0 "Socialism"
 socialism_drift:0 "Daily Socialism Support:"
-nationalism:0 "Nationalism"
-nationalism_drift:0 "Daily Nationalism Support:"
+
+
+nationalist:0 "Nationalist Party"
+nationalist_drift:0 "Daily Nationalism Support:"
+
