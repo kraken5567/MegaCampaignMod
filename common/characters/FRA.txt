@@ -156,8 +156,6 @@ characters = {
 				large = GFX_Portrait_France_Generic_land_1
 				small = GFX_Portrait_France_Generic_land_1_small
 			}
-			civilian = {
-			}
 		}
 		corps_commander = {
 			traits = { armor_officer inflexible_strategist }

@@ -77,8 +77,6 @@ characters = {
 				large = GFX_Portrait_Europe_Generic_land_4
 				small = GFX_Portrait_Europe_Generic_land_4_small
 			}
-			civilian = {
-			}
 		}
 		corps_commander = {
 			traits = { naval_invader }

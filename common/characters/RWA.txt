@@ -1,9 +1,4 @@
 characters = {
-	RWA_0 = {
-		name = _
-		portraits = {
-		}
-	}
 	RWA_16777635 = {
 		name = Kigeli_Abanyiginya
 		portraits = {

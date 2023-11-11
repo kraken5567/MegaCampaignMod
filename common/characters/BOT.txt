@@ -1,9 +1,4 @@
 characters = {
-	BOT_0 = {
-		name = _
-		portraits = {
-		}
-	}
 	BOT_16777509 = {
 		name = Kedikilwe_Bakalaka
 		portraits = {

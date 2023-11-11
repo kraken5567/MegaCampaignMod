@@ -1,9 +1,4 @@
 characters = {
-	PAP_0 = {
-		name = _
-		portraits = {
-		}
-	}
 	PAP_16778050 = {
 		name = Ilario_Sacchetti
 		portraits = {

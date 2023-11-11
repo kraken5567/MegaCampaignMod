@@ -91,8 +91,6 @@ characters = {
 				large = GFX_portrait_europe_generic_navy_5
 				small = GFX_portrait_europe_generic_navy_5_small
 			}
-			civilian = {
-			}
 		}
 		navy_leader = {
 			traits = { seawolf }

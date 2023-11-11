@@ -153,8 +153,6 @@ characters = {
 				large = GFX_Portrait_europe_generic_land_6
 				small = GFX_Portrait_europe_generic_land_6_small
 			}
-			civilian = {
-			}
 		}
 		corps_commander = {
 			traits = { politically_connected }

@@ -1,9 +1,4 @@
 characters = {
-	COG_0 = {
-		name = _
-		portraits = {
-		}
-	}
 	COG_16777393 = {
 		name = Kenje_Ma_N_Sangou
 		portraits = {

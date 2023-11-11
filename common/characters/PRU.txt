@@ -63,8 +63,6 @@ characters = {
 				large = GFX_Portrait_South_America_Generic_navy_3
 				small = GFX_Portrait_South_America_Generic_navy_3_small
 			}
-			civilian = {
-			}
 		}
 		navy_leader = {
 			traits = { arctic_water_expert }

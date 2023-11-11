@@ -30,8 +30,6 @@ characters = {
 				large = GFX_portrait_FIN_carl_mannerheim
 				small = GFX_portrait_FIN_carl_mannerheim_small
 			}
-			civilian = {
-			}
 		}
 		corps_commander = {
 			traits = {  }
@@ -54,8 +52,6 @@ characters = {
 			navy = {
 				large = GFX_Portrait_Europe_Generic_navy_1
 				small = GFX_Portrait_Europe_Generic_navy_1_small
-			}
-			civilian = {
 			}
 		}
 		navy_leader = {

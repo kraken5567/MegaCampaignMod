@@ -18,8 +18,6 @@ characters = {
 				large = GFX_Portrait_South_America_Generic_land_3
 				small = GFX_Portrait_South_America_Generic_land_3_small
 			}
-			civilian = {
-			}
 		}
 		corps_commander = {
 			traits = {  }
