@@ -1,0 +1,102 @@
+Confederacy = {
+
+	please_the_states = {
+		icon = GFX_decision_eng_trade_unions_demand
+
+		available = { }
+
+		visible = { }
+
+		cost = 75
+
+		complete_effect = {
+			add_power_balance_value = {
+				id = USA_CONFED
+				value = 0.1
+			}
+			random_core_state = {
+				add_manpower = -10000
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+				}		
+			} 	
+			custom_effect_tooltip = "USA_BOP1_STATE_SUPPORT"
+		}
+
+		days_re_enable = 30
+
+	}
+
+	please_congress = {
+		icon = GFX_decision_eng_trade_unions_support
+
+		available = { }
+
+		visible = { }
+
+		cost = 25
+
+		complete_effect = {
+			add_power_balance_value = {
+				id = USA_CONFED
+				value = -0.25
+			}
+			add_threat = -2
+			custom_effect_tooltip = "USA_BOP1_FEDERAL_SUPPORT"
+		}
+
+		days_re_enable = 90
+
+	}
+
+	manifest_confederacy = {
+		icon = GFX_decision_infiltrate_state
+
+		available = { }
+
+		visible = { }
+
+		cost = 150
+
+		complete_effect = {
+			#claim all adjacent (right?)
+			USA = { 
+				every_controlled_state = {
+					every_neighbor_state = {
+						add_claim_by = USA
+					} 
+				}
+			}
+			custom_effect_tooltip = "USA_BOP1_MANIFEST"
+		}
+
+		days_re_enable = 182
+
+	}
+
+	open_project = {
+		icon = GFX_decision_hol_draw_up_staff_plans
+
+		available = { }
+
+		visible = { }
+
+		cost = 75
+
+		complete_effect = {
+			# random cored state ID
+			set_variable = {
+				var = requested_state
+				value = random_core_state
+			}
+			# 0 -> 1 float
+			set_variable = {
+				var = requestedBuildingType
+				value = random
+			}
+			# starting event with state's name
+			country_event = { id = USA_BOP.003 days = 2 }
+		}
+	}
+}

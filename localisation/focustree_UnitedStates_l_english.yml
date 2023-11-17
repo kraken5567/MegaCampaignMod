@@ -1,6 +1,14 @@
 ﻿l_english:
+
+# event titles [$TARGET.GetName]
+
 # Tooltips (§<ColorFirstLetter>....§!) 
-USA_civilWarFireWarn:0 "§R CIVIL WAR WILL FIRE DUE TO IDEOLOGY SUPPORT!§!"
+USA_BOP1_STATE_SUPPORT:0 "§YWill add Civillian Factory to a random core at the cost of 10k population in that core.§!"
+USA_BOP1_FEDERAL_SUPPORT:0 "§YAppease the legislators which reduces threat.§!"
+USA_civilWarFireWarn:0 "§RCIVIL WAR WILL FIRE DUE TO IDEOLOGY SUPPORT!§!"
+FOCUS_WARN_END_PARTPOP:0 "§RFOCUS WILL CANCEL WITH LOW IDEOLOGY SUPPORT! (<25%)§!"
+USA_Confederacy_Contention:0 "§RTHERE WILL BE POLITICAL DISCOURSE§!"
+USA_BOP1_MANIFEST:0 "§YThis will add a claim to all adjacent states to our borders, this could be many or few states.§!"
 
 # Focuses
 USA_a_new_beginning:0 "New Foreign Policy"

@@ -1,0 +1,7 @@
+USA_CONFED_BOP = {
+    allowed = {
+        tag = USA
+    }
+    priority = 1000
+    visible_when_empty = no
+}

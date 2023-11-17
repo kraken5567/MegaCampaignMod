@@ -9,6 +9,7 @@ tags={
 }
 name="Echos of Empires"
 picture="thumbnail.png"
+replace_path="common"
 replace_path="common/countries"
 replace_path="common/national_focus"
 replace_path="common/bookmarks"

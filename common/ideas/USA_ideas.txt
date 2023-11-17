@@ -1,6 +1,121 @@
 ideas = {
 	country = {
 
+		USA_fundPublic = {
+			picture = generic_foreign_capital
+			modifier = {
+				political_power_gain = -0.1
+				industrial_capacity_factory = 0.025
+				monthly_population = 0.01
+			}
+		}
+
+		USA_regulated = {
+			picture = generic_production_bonus
+			modifier = {
+				political_power_gain = -0.05
+				industrial_capacity_factory = -0.025
+				monthly_population = 0.025
+			}
+		}
+
+		USA_publicColab = {
+			picture = generic_goods_red_bonus
+			modifier = {
+				political_power_gain = -0.15
+				production_factory_start_efficiency_factor = 0.1
+				production_factory_efficiency_gain_factor = 0.5
+				production_factory_max_efficiency_factor = 0.1
+				industrial_capacity_factory = 0.05
+			}
+		}
+
+		USA_projects = {
+			picture = generic_exploit_mines
+			modifier = {
+				consumer_goods_factor = -0.1
+				production_speed_arms_factory_factor = 0.1
+				production_speed_industrial_complex_factor = 0.1
+				production_speed_infrastructure_factor = 0.25
+			}
+		}
+
+		USA_communist = {
+			picture = socialist_science_focus
+			modifier = {
+				communism_drift = 0.025
+				communism_acceptance = 35
+			}
+		}
+
+		USA_socialDem = {
+			picture = socialist_science_focus
+			modifier = {
+				socialism_drift = 0.02
+				socialism_acceptance = 45
+			}
+		}
+
+		USA_confederacy = {
+			picture = generic_fascism_drift_2
+			modifier = {
+				nationalist_drift = 0.02
+				custom_modifier_tooltip = "USA_Confederacy_Contention"
+			}
+		}
+
+		USA_dreamFirst = {
+			picture = usa_desegregation_1
+			modifier = {
+				fascism_drift = 0.01
+				fascism_acceptance = 50
+				political_power_gain = 0.1
+			}
+		}
+
+		USA_KKK = {
+			picture = generic_usa_conflict
+			modifier = {
+				nationalist_drift = 0.03
+				fascism_drift = 0.01
+				nationalist_acceptance = 50
+				fascism_drift = 25
+			}
+		}
+
+		USA_demResearch = {
+			picture = generic_research_bonus
+			modifier = {
+				research_speed_factor = 0.05
+				democratic_drift = 0.025
+			}
+		}
+
+		USA_RedWave = { 
+			picture = FIN_socialist_wellfare
+			modifier = {
+				army_armor_attack_factor = 0.1
+				army_armor_defense_factor = 0.1
+				army_armor_speed_factor = 0.05
+				army_attack_factor = 0.1 
+			}
+			targeted_modifier = {
+				tag = USA 
+			}
+		}
+
+		USA_demIndustry = {
+			picture = man_five_year_plan_industry
+			modifier = {
+				consumer_goods_factor = 0.05
+				production_speed_industrial_complex_factor = 0.1
+				production_speed_arms_factory_factor = 0.1
+				production_speed_dockyard_factor = 0.1
+				production_speed_infrastructure_factor = 0.25
+				industrial_capacity_factory = -0.1
+			}
+		}
+
 		USA_democracy = {
 			picture = generic_democratic_drift_bonus
 			modifier = {

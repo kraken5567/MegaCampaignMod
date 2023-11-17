@@ -2,6 +2,13 @@ capital = 686
 
 add_ideas = USA_Contested_Government
 
+set_variable = {
+	# RANGE: -1 to 1
+	var = Confederate_Support
+	value = 0
+	tooltip = "Tracks Confederacy Support in the Legislative Branch"
+}
+
 oob = "USA_1936"
 set_research_slots = 3
 set_convoys = 352
@@ -26,7 +33,6 @@ if = {
 	limit = { has_dlc = "La Resistance" }
 	create_operative_leader = {
 		name = Edwin_Roffignac
-		GFX = GFX_portrait_europe_generic_operative_male_1
 		traits = { operative_natural_orator operative_seducer }
 		bypass_recruitment = no
 		available_to_spy_master = yes
@@ -34,7 +40,6 @@ if = {
 	}
 	create_operative_leader = {
 		name = Philip_Winkler
-		GFX = GFX_portrait_europe_generic_operative_male_2
 		traits = { operative_linguist operative_natural_orator }
 		bypass_recruitment = no
 		available_to_spy_master = yes

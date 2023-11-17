@@ -12,7 +12,343 @@ focus_tree = {
 		x = 0
 		y = 1700
 	}
+
+	# Military Tree
+
+	focus = {
+		id = USA_improveMilitary
+		icon = GFX_focus_generic_military_academy
+		cost = 7
+		x = 18
+		y = 8
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_pentagon
+		icon = GFX_focus_usa_build_the_pentagon
+		cost = 12
+		x = 18
+		y = 10
+		prerequisite = { focus = USA_improveMilitary }
+		completion_reward = { }
+	}
 	
+	# THE ARMY
+	focus = {
+		id = USA_theArmy
+		icon = GFX_goal_generic_axis_build_infantry
+		cost = 7
+		x = 15
+		y = 9
+		prerequisite = {
+			focus = USA_improveMilitary
+		}
+		completion_reward = { }
+	}
+
+	# tactics
+
+	focus = {
+		id = USA_armyTactics
+		icon = GFX_goal_generic_position_armies
+		cost = 7
+		x = 13
+		y = 10
+		prerequisite = {
+			focus = USA_theArmy
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_armyTacticDone
+		icon = GFX_goal_generic_army_doctrines
+		cost = 7
+		x = 13
+		y = 14
+		prerequisite = { focus = USA_armorCombined }
+		prerequisite = { focus = USA_artilleryCombined }
+		completion_reward = { }
+	}
+
+	# Armor
+	focus = {
+		id = USA_armored
+		icon = GFX_focus_generic_combined_arms
+		cost = 7
+		x = 12
+		y = 11
+		mutually_exclusive = {
+			focus = USA_artillery
+		}
+		prerequisite = {
+			focus = USA_armyTactics
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_tanks
+		icon = GFX_goal_generic_army_tanks
+		cost = 7
+		x = 12
+		y = 12
+		prerequisite = {
+			focus = USA_armored
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_armorCombined
+		icon = GFX_focus_generic_tank_air_support
+		cost = 7
+		x = 12
+		y = 13
+		prerequisite = { 
+			focus = USA_tanks
+		}
+		completion_reward = { }
+	}
+
+	# Artillery
+	focus = {
+		id = USA_artillery
+		icon = GFX_goal_generic_occupy_start_war
+		cost = 7
+		x = 14
+		y = 11
+		mutually_exclusive = {
+			focus = USA_armored
+		}
+		prerequisite = {
+			focus = USA_armyTactics
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_barrage
+		icon = GFX_goal_generic_army_artillery2
+		cost = 7
+		x = 14
+		y = 12
+		prerequisite = {
+			focus = USA_artillery
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_artilleryCombined
+		icon = GFX_focus_generic_multi_role_aircraft
+		cost = 7
+		x = 14
+		y = 13
+		prerequisite = { 
+			focus = USA_barrage
+		}
+		completion_reward = { }
+	}
+
+	#THE NAVY
+	focus = {
+		id = USA_theNavy
+		icon = GFX_goal_generic_build_navy
+		cost = 7
+		x = 21
+		y = 9
+		prerequisite = {
+			focus = USA_improveMilitary
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_carrierFleet
+		icon = GFX_goal_generic_navy_carrier
+		cost = 7
+		x = 20
+		y = 11
+		prerequisite = { focus = USA_theNavy }
+		prerequisite = { focus = USA_pentagon }
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_navyTactics
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		cost = 7
+		x = 23
+		y = 10
+		prerequisite = {
+			focus = USA_theNavy
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_navyTacticDone
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		cost = 7
+		x = 23
+		y = 14
+		prerequisite = {
+			focus = USA_improvedFleet
+			focus = USA_improvedSub
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_navyDefense
+		icon = GFX_goal_generic_navy_cruiser
+		cost = 7
+		x = 22
+		y = 11
+		mutually_exclusive = {
+			focus = USA_navyAttack
+		}
+		prerequisite = {
+			focus = USA_navyTactics
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_destroyerFleet
+		icon = GFX_focus_generic_navy_battleship2
+		cost = 7
+		x = 22
+		y = 12
+		prerequisite = {
+			focus = USA_navyDefense
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_improvedFleet
+		icon = GFX_goal_generic_navy_battleship
+		cost = 7
+		x = 22
+		y = 13
+		prerequisite = {
+			focus = USA_destroyerFleet
+		}
+		completion_reward = { }
+	}
+
+	# Attack (NAVY)
+	focus = {
+		id = USA_navyAttack
+		icon = GFX_goal_generic_amphibious_assault
+		cost = 7
+		x = 24
+		y = 11
+		mutually_exclusive = {
+			focus = USA_navyDefense
+		}
+		prerequisite = {
+			focus = USA_navyTactics
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_subFleet
+		icon = GFX_goal_generic_navy_submarine
+		cost = 7
+		x = 24
+		y = 12
+		prerequisite = {
+			focus = USA_navyAttack
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_improvedSub
+		icon = GFX_goal_generic_navy_anti_submarine
+		cost = 7
+		x = 24
+		y = 13
+		prerequisite = {
+			focus = USA_subFleet
+		}
+		completion_reward = { }
+	}
+
+	#THE AIRFORCE
+	focus = {
+		id = USA_theAirforce
+		icon = GFX_goal_generic_build_airforce
+		cost = 7
+		x = 16
+		y = 11
+		prerequisite = { focus = USA_theArmy }
+		prerequisite = { focus = USA_pentagon }
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_fighters
+		icon = GFX_goal_generic_air_fighter2
+		cost = 7
+		x = 16
+		y = 12
+		prerequisite = { focus = USA_theAirforce }
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_bombers
+		icon = GFX_focus_generic_long_range_aircraft
+		cost = 7
+		x = 17
+		y = 13
+		prerequisite = { focus = USA_theAirforce }
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_CAS
+		icon = GFX_goal_generic_air_bomber
+		cost = 7
+		x = 18
+		y = 14
+		prerequisite = { 
+			focus = USA_theAirforce 
+			focus = USA_carrierFleet
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_torpedoSquad
+		icon = GFX_focus_generic_multi_role_aircraft
+		cost = 7
+		x = 19
+		y = 13
+		prerequisite = {
+			focus = USA_carrierFleet
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_interceptor
+		icon = GFX_focus_generic_cas_aircraft
+		cost = 7
+		x = 20
+		y = 12
+		prerequisite = {
+			focus = USA_carrierFleet
+		}
+		completion_reward = { }
+	}
+
 	# Industry Tree
 
 	focus = {
@@ -38,8 +374,21 @@ focus_tree = {
 			focus = USA_infrastructurePrivate
 		}
 		completion_reward = {
-			# free market = USA_invisableHandDid
-			# intervention = USA_interveneDid
+			if = {
+				limit = {
+					# free market = USA_invisableHandDid
+					ROOT = { has_country_flag = USA_invisableHandDid }
+				}
+				# Should loop to give a bonus random building to a state every 4 months
+				country_event = { id = USA_industry.1 days = 5 }
+			}
+			if = {
+				limit = {
+					# intervention = USA_interveneDid
+					ROOT = { has_country_flag = USA_interveneDid }
+				}
+				country_event = { id = USA_industry.0 days = 5 }
+			}
 		}
 	}
 
@@ -202,7 +551,14 @@ focus_tree = {
 		prerequisite = {
 			focus = USA_intervene
 		}
-		completion_reward = { }
+		completion_reward = {
+			add_political_power = 50
+			add_stability = 0.1
+			add_timed_idea = {
+				idea = USA_projects
+				days = 730
+			}
+		}
 	}
 
 	focus = {
@@ -214,7 +570,11 @@ focus_tree = {
 		prerequisite = {
 			focus = USA_intervene
 		}
-		completion_reward = { }
+		completion_reward = { 
+			add_political_power = -75
+			add_stability = -0.05
+			add_ideas = USA_publicColab
+		}
 	}
 
 	# USA_---Works
@@ -231,7 +591,16 @@ focus_tree = {
 		prerequisite = {
 			focus = USA_getSupport
 		}
-		completion_reward = { }
+		completion_reward = {
+			ROOT = {
+				random_core_state = {
+					add_resource = {
+						type = steel
+						amount = 20
+					}
+				}
+			}
+		}
 	}
 
 	focus = {
@@ -246,7 +615,16 @@ focus_tree = {
 		prerequisite = {
 			focus = USA_getSupport
 		}
-		completion_reward = { }
+		completion_reward = {
+			ROOT = {
+				random_core_state = {
+					add_resource = {
+						type = tungsten
+						amount = 20
+					}
+				}
+			}
+		}
 	}
 
 	focus = {
@@ -261,7 +639,16 @@ focus_tree = {
 		prerequisite = {
 			focus = USA_getSupport
 		}
-		completion_reward = { }
+		completion_reward = {
+			ROOT = {
+				random_core_state = {
+					add_resource = {
+						type = aluminium
+						amount = 20
+					}
+				}
+			}
+		}
 	}
 
 	focus = {
@@ -276,7 +663,16 @@ focus_tree = {
 		prerequisite = {
 			focus = USA_getSupport
 		}
-		completion_reward = { }
+		completion_reward = {
+			ROOT = {
+				random_core_state = {
+					add_resource = {
+						type = oil
+						amount = 10
+					}
+				}
+			}
+		}
 	}
 
 	# past resourse works focuses
@@ -293,7 +689,23 @@ focus_tree = {
 		prerequisite = {
 			focus = USA_getSupport
 		}
-		completion_reward = { }
+		completion_reward = {
+			# Very op, probably...
+			every_core_state = {
+				limit = {
+					check_variable = {
+						var = building_level@industrial_complex
+						value = 2
+						compare = less_than
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+				}
+			}
+		}
 	}
 
 	focus = {
@@ -308,7 +720,14 @@ focus_tree = {
 		prerequisite = {
 			focus = USA_getSupport
 		}
-		completion_reward = { }
+		completion_reward = {
+			every_core_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+				}
+			}
+		}
 	}
 
 	focus = {
@@ -323,7 +742,22 @@ focus_tree = {
 		prerequisite = {
 			focus = USA_getSupport
 		}
-		completion_reward = { }
+		completion_reward = {
+			every_core_state = {
+				limit = {
+					check_variable = {
+						var = building_level@arms_factory
+						value = 2
+						compare = less_than
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+				}
+			}
+		}
 	}
 
 	# Intervene End Focuses
@@ -342,6 +776,7 @@ focus_tree = {
 			focus = USA_infrastructureWorks
 		}
 		completion_reward = {
+			add_ideas = USA_regulated
 			set_country_flag = USA_interveneDid
 		}
 	}
@@ -360,6 +795,8 @@ focus_tree = {
 			focus = USA_productionWorks
 		}
 		completion_reward = {
+			add_political_power = -100
+			add_stability = 0.15
 			set_country_flag = USA_interveneDid
 		}
 	}
@@ -427,7 +864,9 @@ focus_tree = {
 		prerequisite = {
 			focus = USA_socialDemocracy
 		}
-		completion_reward = { }
+		completion_reward = {
+			add_ideas = USA_RedWave
+		}
 	}
 
 		# Full Communism
@@ -481,10 +920,25 @@ focus_tree = {
 			cost = 7
 			x = 18
 			y = 3
+			cancel = {
+				check_variable = {
+					var = current_communism
+					value = 25
+					compare = less_than
+				}
+			}
 			prerequisite = {
 				focus = USA_Communism
 			}
-			completion_reward = { }
+			completion_reward = {
+				add_political_power = -100
+				add_popularity = {
+					ideology = communism
+					popularity = 0.05
+				}
+				add_ideas = USA_communist
+				custom_effect_tooltip = "FOCUS_WARN_END_PARTPOP"
+			}
 		}
 
 		# Moderate Communism
@@ -537,10 +991,25 @@ focus_tree = {
 			cost = 7
 			x = 20
 			y = 3
+			cancel = {
+				check_variable = {
+					var = current_socialism
+					value = 25
+					compare = less_than
+				}
+			}
 			prerequisite = {
 				focus = USA_Socialism
 			}
-			completion_reward = { }
+			completion_reward = {
+				add_political_power = -100
+				add_popularity = {
+					ideology = socialism
+					popularity = 0.05
+				}
+				add_ideas = USA_socialDem
+				custom_effect_tooltip = "FOCUS_WARN_END_PARTPOP"
+			}
 		}
 
 	# Democratic (MEDIUM)
@@ -587,7 +1056,7 @@ focus_tree = {
 					ideology = communism
 					size = communism_support_var
 				}
-				custom_effect_tooltip = USA_civilWarFireWarn
+				custom_effect_tooltip = "USA_civilWarFireWarn"
 			}
 		}
 	}
@@ -613,7 +1082,7 @@ focus_tree = {
 					ideology = fascism
 					size = fascism_support_var
 				}
-				custom_effect_tooltip = USA_civilWarFireWarn
+				custom_effect_tooltip = "USA_civilWarFireWarn"
 			}
 		}
 	}
@@ -630,7 +1099,12 @@ focus_tree = {
 		prerequisite = {
 			focus = USA_antiFascistRaids
 		}
-		completion_reward = { }
+		completion_reward = {
+			add_timed_idea = {
+				idea = USA_demIndustry
+				days = 365
+			}
+		}
 	}
 
 	focus = {
@@ -642,7 +1116,9 @@ focus_tree = {
 		prerequisite = {
 			focus = USA_industryOfDemocracy
 		}
-		completion_reward = { }
+		completion_reward = {
+			add_ideas = USA_demResearch
+		}
 	}
 
 	# Nationalist (EASY)
@@ -678,7 +1154,9 @@ focus_tree = {
 			focus = USA_ConfederateConstitution
 			focus = USA_AmericaFirstParty
 		}
-		completion_reward = { }
+		completion_reward = {
+			add_ideas = USA_KKK
+		}
 	}
 		# Moderate Fascism
 		focus = {
@@ -730,10 +1208,24 @@ focus_tree = {
 			cost = 7
 			x = 26
 			y = 3
+			cancel = {
+				check_variable = {
+					var = current_nationalism
+					value = 25
+					compare = less_than
+				}
+			}
 			prerequisite = {
 				focus = USA_Nationalism
 			}
-			completion_reward = { }
+			completion_reward = {
+				custom_effect_tooltip = "FOCUS_WARN_END_PARTPOP"
+				add_timed_idea = {
+					idea = USA_confederacy
+					days = 70
+				}
+				country_event = USA_civil.000
+			}
 		}
 
 		# Full Fascism
@@ -786,10 +1278,24 @@ focus_tree = {
 			cost = 7
 			x = 28
 			y = 3
+			cancel = {
+				check_variable = {
+					var = current_fascism
+					value = 25
+					compare = less_than
+				}
+			}
 			prerequisite = {
 				focus = USA_Fascism
 			}
-			completion_reward = { }
+			completion_reward = {
+				add_timed_idea = {
+					idea = USA_dreamFirst
+					days = 365
+				}
+				custom_effect_tooltip = "FOCUS_WARN_END_PARTPOP"
+
+			}
 		}
 
 	#Conquering Tree
@@ -870,13 +1376,16 @@ focus_tree = {
 		y = 7
 		mutually_exclusive = {
 			focus = USA_WorldDomination
+			focus = USA_MakeAllies
 		}
 		prerequisite = {
 			focus = USA_AggressiveOverseas
 			focus = USA_PassiveOverseas
 		}
 		completion_reward = {
-			
+			add_political_power = 50
+			add_war_support = 0.05
+			add_stability = 0.05
 		}
 	}
 
@@ -905,6 +1414,9 @@ focus_tree = {
 		cost = 5
 		x = 11
 		y = 7
+		mutually_exclusive = {
+			focus = USA_WarWhenNeeded
+		}
 		prerequisite = {
 			focus = USA_PassiveOverseas
 		}
@@ -921,15 +1433,15 @@ focus_tree = {
 				}
 				if = {
 					limit = {
-						PREV = { is_ai = yes }
+						THIS = { is_ai = yes }
 					}
-					PREV = { country_event = {id = USA_interact_Ai.01.99 days = 3} }
+					THIS = { country_event = {id = USA_interact_Ai.0199 days = 3} }
 				}
 				else_if = {
 					limit = { 
-						PREV = { is_ai = no }
+						THIS = { is_ai = no }
 					}
-					PREV = { country_event = {id = USA_interact_Player.01.99 days = 3} }
+					THIS = { country_event = {id = USA_interact_Player.0199 days = 3} }
 				}
 			}
 		}
