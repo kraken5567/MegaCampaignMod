@@ -1,0 +1,1831 @@
+focus_tree = {
+	id = UnitedStates-focus
+	country = { 
+		factor = 0
+		modifier = {
+			add = 10
+			tag = USA 
+		}
+	}
+
+	continuous_focus_position = {
+		x = 0
+		y = 1700
+	}
+
+	# Military Tree
+
+	focus = {
+		id = USA_improveMilitary
+		icon = GFX_focus_generic_military_academy
+		cost = 7
+		x = 18
+		y = 8
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_pentagon
+		icon = GFX_focus_usa_build_the_pentagon
+		cost = 12
+		x = 18
+		y = 10
+		prerequisite = { focus = USA_improveMilitary }
+		completion_reward = { }
+	}
+	
+	# THE ARMY
+	focus = {
+		id = USA_theArmy
+		icon = GFX_goal_generic_axis_build_infantry
+		cost = 7
+		x = 15
+		y = 9
+		prerequisite = {
+			focus = USA_improveMilitary
+		}
+		completion_reward = { }
+	}
+
+	# tactics
+
+	focus = {
+		id = USA_armyTactics
+		icon = GFX_goal_generic_position_armies
+		cost = 7
+		x = 13
+		y = 10
+		prerequisite = {
+			focus = USA_theArmy
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_armyTacticDone
+		icon = GFX_goal_generic_army_doctrines
+		cost = 7
+		x = 13
+		y = 14
+		prerequisite = { focus = USA_armorCombined }
+		prerequisite = { focus = USA_artilleryCombined }
+		completion_reward = { }
+	}
+
+	# Armor
+	focus = {
+		id = USA_armored
+		icon = GFX_focus_generic_combined_arms
+		cost = 7
+		x = 12
+		y = 11
+		mutually_exclusive = {
+			focus = USA_artillery
+		}
+		prerequisite = {
+			focus = USA_armyTactics
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_tanks
+		icon = GFX_goal_generic_army_tanks
+		cost = 7
+		x = 12
+		y = 12
+		prerequisite = {
+			focus = USA_armored
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_armorCombined
+		icon = GFX_focus_generic_tank_air_support
+		cost = 7
+		x = 12
+		y = 13
+		prerequisite = { 
+			focus = USA_tanks
+		}
+		completion_reward = { }
+	}
+
+	# Artillery
+	focus = {
+		id = USA_artillery
+		icon = GFX_goal_generic_occupy_start_war
+		cost = 7
+		x = 14
+		y = 11
+		mutually_exclusive = {
+			focus = USA_armored
+		}
+		prerequisite = {
+			focus = USA_armyTactics
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_barrage
+		icon = GFX_goal_generic_army_artillery2
+		cost = 7
+		x = 14
+		y = 12
+		prerequisite = {
+			focus = USA_artillery
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_artilleryCombined
+		icon = GFX_focus_generic_multi_role_aircraft
+		cost = 7
+		x = 14
+		y = 13
+		prerequisite = { 
+			focus = USA_barrage
+		}
+		completion_reward = { }
+	}
+
+	#THE NAVY
+	focus = {
+		id = USA_theNavy
+		icon = GFX_goal_generic_build_navy
+		cost = 7
+		x = 21
+		y = 9
+		prerequisite = {
+			focus = USA_improveMilitary
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_carrierFleet
+		icon = GFX_goal_generic_navy_carrier
+		cost = 7
+		x = 20
+		y = 11
+		prerequisite = { focus = USA_theNavy }
+		prerequisite = { focus = USA_pentagon }
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_navyTactics
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		cost = 7
+		x = 23
+		y = 10
+		prerequisite = {
+			focus = USA_theNavy
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_navyTacticDone
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		cost = 7
+		x = 23
+		y = 14
+		prerequisite = {
+			focus = USA_improvedFleet
+			focus = USA_improvedSub
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_navyDefense
+		icon = GFX_goal_generic_navy_cruiser
+		cost = 7
+		x = 22
+		y = 11
+		mutually_exclusive = {
+			focus = USA_navyAttack
+		}
+		prerequisite = {
+			focus = USA_navyTactics
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_destroyerFleet
+		icon = GFX_focus_generic_navy_battleship2
+		cost = 7
+		x = 22
+		y = 12
+		prerequisite = {
+			focus = USA_navyDefense
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_improvedFleet
+		icon = GFX_goal_generic_navy_battleship
+		cost = 7
+		x = 22
+		y = 13
+		prerequisite = {
+			focus = USA_destroyerFleet
+		}
+		completion_reward = { }
+	}
+
+	# Attack (NAVY)
+	focus = {
+		id = USA_navyAttack
+		icon = GFX_goal_generic_amphibious_assault
+		cost = 7
+		x = 24
+		y = 11
+		mutually_exclusive = {
+			focus = USA_navyDefense
+		}
+		prerequisite = {
+			focus = USA_navyTactics
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_subFleet
+		icon = GFX_goal_generic_navy_submarine
+		cost = 7
+		x = 24
+		y = 12
+		prerequisite = {
+			focus = USA_navyAttack
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_improvedSub
+		icon = GFX_goal_generic_navy_anti_submarine
+		cost = 7
+		x = 24
+		y = 13
+		prerequisite = {
+			focus = USA_subFleet
+		}
+		completion_reward = { }
+	}
+
+	#THE AIRFORCE
+	focus = {
+		id = USA_theAirforce
+		icon = GFX_goal_generic_build_airforce
+		cost = 7
+		x = 16
+		y = 11
+		prerequisite = { focus = USA_theArmy }
+		prerequisite = { focus = USA_pentagon }
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_fighters
+		icon = GFX_goal_generic_air_fighter2
+		cost = 7
+		x = 16
+		y = 12
+		prerequisite = { focus = USA_theAirforce }
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_bombers
+		icon = GFX_focus_generic_long_range_aircraft
+		cost = 7
+		x = 17
+		y = 13
+		prerequisite = { focus = USA_theAirforce }
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_CAS
+		icon = GFX_goal_generic_air_bomber
+		cost = 7
+		x = 18
+		y = 14
+		prerequisite = { 
+			focus = USA_theAirforce 
+			focus = USA_carrierFleet
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_torpedoSquad
+		icon = GFX_focus_generic_multi_role_aircraft
+		cost = 7
+		x = 19
+		y = 13
+		prerequisite = {
+			focus = USA_carrierFleet
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_interceptor
+		icon = GFX_focus_generic_cas_aircraft
+		cost = 7
+		x = 20
+		y = 12
+		prerequisite = {
+			focus = USA_carrierFleet
+		}
+		completion_reward = { }
+	}
+
+	# Industry Tree
+
+	focus = {
+		id = USA_addressEconomy
+		icon = GFX_focus_generic_industry_3
+		cost = 7
+		x = 38
+		y = 0
+		completion_reward = {
+			add_political_power = 25
+		}
+	}
+
+	focus = {
+		id = USA_industryEND
+		icon = GFX_focus_generic_industry_3
+		cost = 7
+		x = 38
+		y = 6
+		prerequisite = {
+			focus = USA_regulations
+			focus = USA_fundPublic
+			focus = USA_infrastructurePrivate
+		}
+		completion_reward = {
+			if = {
+				limit = {
+					# free market = USA_invisableHandDid
+					ROOT = { has_country_flag = USA_invisableHandDid }
+				}
+				# Should loop to give a bonus random building to a state every 4 months
+				country_event = { id = USA_industry.1 days = 5 }
+			}
+			if = {
+				limit = {
+					# intervention = USA_interveneDid
+					ROOT = { has_country_flag = USA_interveneDid }
+				}
+				country_event = { id = USA_industry.0 days = 5 }
+			}
+		}
+	}
+
+	# More spirit buffs, no random building event
+	
+	focus = {
+		id = USA_invisibleHand
+		icon = GFX_focus_generic_concessions
+		cost = 7
+		x = 42
+		y = 1
+		prerequisite = {
+			focus = USA_addressEconomy
+		}
+		mutually_exclusive = {
+			focus = USA_intervene
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_freeMarketReforms
+		icon = GFX_goal_continuous_boost_freedom
+		cost = 7
+		x = 41
+		y = 2
+		prerequisite = {
+			focus = USA_invisibleHand
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_reduceTax
+		icon = GFX_focus_renounce_the_treaty_of_trianon
+		cost = 7
+		x = 43
+		y = 2
+		prerequisite = {
+			focus = USA_invisibleHand
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_migrantMagnet
+		icon = GFX_focus_usa_guarantee_the_american_dream
+		cost = 7
+		x = 40
+		y = 3
+		prerequisite = {
+			focus = USA_freeMarketReforms
+		}
+		prerequisite = {
+			focus = USA_reduceTax
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_skilledLabor
+		icon = GFX_focus_generic_military_academy
+		cost = 7
+		x = 42
+		y = 3
+		prerequisite = {
+			focus = USA_freeMarketReforms
+		}
+		prerequisite = {
+			focus = USA_reduceTax
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_freeTrade
+		icon = GFX_goal_generic_positive_trade_relations
+		cost = 7
+		x = 44
+		y = 3
+		prerequisite = {
+			focus = USA_freeMarketReforms
+		}
+		prerequisite = {
+			focus = USA_reduceTax
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_researchPush
+		icon = GFX_focus_research2
+		cost = 7
+		x = 41
+		y = 4
+		prerequisite = {
+			focus = USA_freeMarketReforms
+		}
+		prerequisite = {
+			focus = USA_reduceTax
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_consumerPush
+		icon = GFX_goal_generic_consumer_goods
+		cost = 7
+		x = 43
+		y = 4
+		prerequisite = {
+			focus = USA_freeMarketReforms
+		}
+		prerequisite = {
+			focus = USA_reduceTax
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_infrastructurePrivate
+		icon = GFX_goal_generic_construct_civilian
+		cost = 7
+		x = 42
+		y = 5
+		prerequisite = {
+			focus = USA_consumerPush
+		}
+		prerequisite = {
+			focus = USA_researchPush
+		}
+		completion_reward = {
+			set_country_flag = USA_invisableHandDid
+		}
+	}
+
+	# Less building buffs, event that builds a building randomly(?)
+
+	focus = {
+		id = USA_intervene
+		icon = GFX_focus_generic_the_giant_wakes
+		cost = 7
+		x = 34
+		y = 1
+		prerequisite = {
+			focus = USA_addressEconomy
+		}
+		mutually_exclusive = {
+			focus = USA_invisibleHand
+		}
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_ratifyProjects
+		icon = GFX_focus_generic_treaty
+		cost = 7
+		x = 33
+		y = 2
+		prerequisite = {
+			focus = USA_intervene
+		}
+		completion_reward = {
+			add_political_power = 50
+			add_stability = 0.1
+			add_timed_idea = {
+				idea = USA_projects
+				days = 730
+			}
+		}
+	}
+
+	focus = {
+		id = USA_getSupport
+		icon = GFX_goal_generic_intelligence_exchange
+		cost = 7
+		x = 35
+		y = 2
+		prerequisite = {
+			focus = USA_intervene
+		}
+		completion_reward = { 
+			add_political_power = -75
+			add_stability = -0.05
+			add_ideas = USA_publicColab
+		}
+	}
+
+	# USA_---Works
+
+	focus = {
+		id = USA_steelWorks
+		icon = GFX_focus_generic_steel
+		cost = 7
+		x = 31
+		y = 3
+		prerequisite = {
+			focus = USA_ratifyProjects
+		}
+		prerequisite = {
+			focus = USA_getSupport
+		}
+		completion_reward = {
+			ROOT = {
+				random_core_state = {
+					add_resource = {
+						type = steel
+						amount = 20
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = USA_tungstenWorks
+		icon = GFX_focus_generic_tungsten
+		cost = 7
+		x = 33
+		y = 3
+		prerequisite = {
+			focus = USA_ratifyProjects
+		}
+		prerequisite = {
+			focus = USA_getSupport
+		}
+		completion_reward = {
+			ROOT = {
+				random_core_state = {
+					add_resource = {
+						type = tungsten
+						amount = 20
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = USA_aluminiumWorks
+		icon = GFX_focus_generic_aluminum
+		cost = 7
+		x = 35
+		y = 3
+		prerequisite = {
+			focus = USA_ratifyProjects
+		}
+		prerequisite = {
+			focus = USA_getSupport
+		}
+		completion_reward = {
+			ROOT = {
+				random_core_state = {
+					add_resource = {
+						type = aluminium
+						amount = 20
+					}
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = USA_oilWorks
+		icon = GFX_goal_generic_oil_refinery
+		cost = 7
+		x = 37
+		y = 3
+		prerequisite = {
+			focus = USA_ratifyProjects
+		}
+		prerequisite = {
+			focus = USA_getSupport
+		}
+		completion_reward = {
+			ROOT = {
+				random_core_state = {
+					add_resource = {
+						type = oil
+						amount = 10
+					}
+				}
+			}
+		}
+	}
+
+	# past resourse works focuses
+
+	focus = {
+		id = USA_factoryWorks
+		icon = GFX_goal_generic_construct_civ_factory
+		cost = 7
+		x = 32
+		y = 4
+		prerequisite = {
+			focus = USA_ratifyProjects
+		}
+		prerequisite = {
+			focus = USA_getSupport
+		}
+		completion_reward = {
+			# Very op, probably...
+			every_core_state = {
+				limit = {
+					check_variable = {
+						var = building_level@industrial_complex
+						value = 2
+						compare = less_than
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = USA_infrastructureWorks
+		icon = GFX_goal_generic_construct_infrastructure
+		cost = 7
+		x = 34
+		y = 4
+		prerequisite = {
+			focus = USA_ratifyProjects
+		}
+		prerequisite = {
+			focus = USA_getSupport
+		}
+		completion_reward = {
+			every_core_state = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = USA_productionWorks
+		icon = GFX_goal_generic_construct_mil_factory
+		cost = 7
+		x = 36
+		y = 4
+		prerequisite = {
+			focus = USA_ratifyProjects
+		}
+		prerequisite = {
+			focus = USA_getSupport
+		}
+		completion_reward = {
+			every_core_state = {
+				limit = {
+					check_variable = {
+						var = building_level@arms_factory
+						value = 2
+						compare = less_than
+					}
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 2
+				}
+			}
+		}
+	}
+
+	# Intervene End Focuses
+
+	focus = {
+		id = USA_regulations
+		icon = GFX_goal_generic_neutrality_focus
+		cost = 7
+		x = 33
+		y = 5
+		prerequisite = {
+			focus = USA_factoryWorks
+		}
+		prerequisite = {
+			focus = USA_productionWorks
+			focus = USA_infrastructureWorks
+		}
+		completion_reward = {
+			add_ideas = USA_regulated
+			set_country_flag = USA_interveneDid
+		}
+	}
+
+	focus = {
+		id = USA_fundPublic
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		cost = 7
+		x = 35
+		y = 5
+		prerequisite = {
+			focus = USA_factoryWorks
+			focus = USA_infrastructureWorks
+		}
+		prerequisite = {
+			focus = USA_productionWorks
+		}
+		completion_reward = {
+			add_political_power = -100
+			add_stability = 0.15
+			set_country_flag = USA_interveneDid
+		}
+	}
+
+	# Political Tree
+
+	focus = {
+		id = USA_addressContension
+		icon = GFX_goal_tfv_saf_anti_colonialist_crusade
+		cost = 7
+		x = 23
+		y = 0
+		completion_reward = { }
+	}
+
+	focus = {
+		id = USA_FixedPolitics
+		icon = GFX_focus_generic_self_management
+		cost = 7
+		x = 23
+		y = 5
+		prerequisite = {
+			focus = USA_militaryLeaders
+			focus = USA_researchOfDemocracy
+			focus = USA_RedArmy
+		}
+		completion_reward = {
+			add_political_power = 200
+			remove_ideas = USA_Contested_Government
+		}
+	}
+
+	# Communist (HARD)
+
+	focus = {
+		id = USA_freePoliticalRivals
+		icon = GFX_focus_POL_complete_april_constitution
+		cost = 5
+		x = 19
+		y = 1
+		mutually_exclusive = {
+			focus = USA_pushForACentralCause
+			focus = USA_gainSupport
+		}
+		prerequisite = {
+			focus = USA_addressContension
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = USA_LeftWing
+				days = 730
+			}
+		}
+	}
+
+	focus = {
+		id = USA_RedArmy
+		icon = GFX_focus_SOV_the_glory_of_the_red_army_communism
+		cost = 7
+		x = 19
+		y = 4
+		prerequisite = {
+			focus = USA_democraticRaids
+		}
+		prerequisite = {
+			focus = USA_socialDemocracy
+		}
+		completion_reward = {
+			add_ideas = USA_RedWave
+		}
+	}
+
+		# Full Communism
+
+		focus = {
+			id = USA_Communism
+			icon = GFX_goal_support_communism
+			cost = 7
+			x = 18
+			y = 2
+			mutually_exclusive = {
+				focus = USA_Socialism
+			}
+			prerequisite = {
+				focus = USA_freePoliticalRivals
+			}
+			completion_reward = {
+				# variable set up
+				set_temp_variable = {
+					var = current_socialism
+					value = party_popularity@socialism
+				}
+
+				# halving Socialism
+				multiply_temp_variable = {
+					var = current_socialism
+					value = 0.5
+				}
+
+				# add half of Communism
+				add_popularity = {
+					ideology = communism
+					popularity = current_socialism
+				}
+
+				# remove half of Socialism
+				multiply_temp_variable = {
+					var = current_socialism
+					value = -1
+				}
+				add_popularity = {
+					ideology = socialism
+					popularity = current_socialism
+				}
+			}
+		}
+
+		focus = {
+			id = USA_democraticRaids
+			icon = GFX_focus_generic_strike_at_democracy3
+			cost = 7
+			x = 18
+			y = 3
+			cancel = {
+				check_variable = {
+					var = current_communism
+					value = 25
+					compare = less_than
+				}
+			}
+			prerequisite = {
+				focus = USA_Communism
+			}
+			completion_reward = {
+				add_political_power = -100
+				add_popularity = {
+					ideology = communism
+					popularity = 0.05
+				}
+				add_ideas = USA_communist
+				custom_effect_tooltip = "FOCUS_WARN_END_PARTPOP"
+			}
+		}
+
+		# Moderate Communism
+		focus = {
+			id = USA_Socialism
+			icon = GFX_focus_chi_cooperation_with_the_communists
+			cost = 7
+			x = 20
+			y = 2
+			mutually_exclusive = {
+				focus = USA_Communism
+			}
+			prerequisite = {
+				focus = USA_freePoliticalRivals
+			}
+			completion_reward = {
+				# variable set up
+				set_temp_variable = {
+					var = current_communism
+					value = party_popularity@communism
+				}
+
+				# halving Communism
+				multiply_temp_variable = {
+					var = current_communism
+					value = 0.5
+				}
+
+				# add half of Socialism
+				add_popularity = {
+					ideology = socialism
+					popularity = current_communism
+				}
+
+				# remove half of Communism
+				multiply_temp_variable = {
+					var = current_communism
+					value = -1
+				}
+				add_popularity = {
+					ideology = communism
+					popularity = current_communism
+				}
+			}
+		}
+
+		focus = {
+			id = USA_socialDemocracy
+			icon = GFX_focus_generic_soviet_politics
+			cost = 7
+			x = 20
+			y = 3
+			cancel = {
+				check_variable = {
+					var = current_socialism
+					value = 25
+					compare = less_than
+				}
+			}
+			prerequisite = {
+				focus = USA_Socialism
+			}
+			completion_reward = {
+				add_political_power = -100
+				add_popularity = {
+					ideology = socialism
+					popularity = 0.05
+				}
+				add_ideas = USA_socialDem
+				custom_effect_tooltip = "FOCUS_WARN_END_PARTPOP"
+			}
+		}
+
+	# Democratic (MEDIUM)
+
+	focus = {
+		id = USA_gainSupport
+		icon = GFX_goal_support_democracy
+		cost = 5
+		x = 23
+		y = 1
+		mutually_exclusive = {
+			focus = USA_freePoliticalRivals
+			focus = USA_pushForACentralCause
+		}
+		prerequisite = {
+			focus = USA_addressContension
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = USA_democracy
+				days = 730
+			}
+		}
+	}
+
+	focus = {
+		id = USA_antiCommunistRaids
+		icon = GFX_goal_anti_comintern_pact
+		cost = 5
+		x = 24
+		y = 2
+		prerequisite = {
+			focus = USA_gainSupport
+			focus = USA_pushForACentralCause
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = USA_remove_communism
+				days = 365
+			}
+			if = {
+				limit = { ROOT = {communism > 0.10} }
+				start_civil_war = {
+					ideology = communism
+					size = communism_support_var
+				}
+				custom_effect_tooltip = "USA_civilWarFireWarn"
+			}
+		}
+	}
+
+	focus = {
+		id = USA_antiFascistRaids
+		icon = GFX_focus_generic_anti_fascist_diplomacy
+		cost = 5
+		x = 22
+		y = 2
+		prerequisite = {
+			focus = USA_gainSupport
+			focus = USA_freePoliticalRivals
+		}
+		completion_reward = { 
+			add_timed_idea = {
+				idea = USA_remove_fascism
+				days = 365
+			}
+			if = {
+				limit = { ROOT = {fascism > 0.10} }
+				start_civil_war = {
+					ideology = fascism
+					size = fascism_support_var
+				}
+				custom_effect_tooltip = "USA_civilWarFireWarn"
+			}
+		}
+	}
+
+	focus = {
+		id = USA_industryOfDemocracy
+		icon = GFX_focus_generic_the_giant_wakes
+		cost = 7
+		x = 23
+		y = 3
+		prerequisite = {
+			focus = USA_antiCommunistRaids
+		}
+		prerequisite = {
+			focus = USA_antiFascistRaids
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = USA_demIndustry
+				days = 365
+			}
+		}
+	}
+
+	focus = {
+		id = USA_researchOfDemocracy
+		icon = GFX_focus_research2
+		cost = 7
+		x = 23
+		y = 4
+		prerequisite = {
+			focus = USA_industryOfDemocracy
+		}
+		completion_reward = {
+			add_ideas = USA_demResearch
+		}
+	}
+
+	# Nationalist (EASY)
+
+	focus = {
+		id = USA_pushForACentralCause
+		icon = GFX_focus_ITA_generic_fascist_workers
+		cost = 5
+		x = 27
+		y = 1
+		mutually_exclusive = {
+			focus = USA_freePoliticalRivals
+			focus = USA_gainSupport
+		}
+		prerequisite = {
+			focus = USA_addressContension
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = USA_RightWing
+				days = 730
+			}
+		}
+	}	
+
+	focus = {
+		id = USA_militaryLeaders
+		icon = GFX_focus_generic_military_mission
+		cost = 7
+		x = 27
+		y = 4
+		prerequisite = {
+			focus = USA_ConfederateConstitution
+			focus = USA_AmericaFirstParty
+		}
+		completion_reward = {
+			add_ideas = USA_KKK
+		}
+	}
+		# Moderate Fascism
+		focus = {
+			id = USA_Nationalism
+			icon = GFX_focus_usa_honor_the_confederacy
+			cost = 7
+			x = 26
+			y = 2
+			prerequisite = {
+				focus = USA_pushForACentralCause
+			}
+			mutually_exclusive = {
+				focus = USA_Fascism
+			}
+			completion_reward = {
+				# variable set up
+				set_temp_variable = {
+					var = current_fascism
+					value = party_popularity@fascism
+				}
+
+				# halving fascism
+				multiply_temp_variable = {
+					var = current_fascism
+					value = 0.5
+				}
+
+				# add half of fascism
+				add_popularity = {
+					ideology = nationalist
+					popularity = current_fascism
+				}
+
+				# remove half of fascism
+				multiply_temp_variable = {
+					var = current_fascism
+					value = -1
+				}
+				add_popularity = {
+					ideology = fascism
+					popularity = current_fascism
+				}
+			}
+		}
+
+		focus = {
+			id = USA_ConfederateConstitution
+			icon = GFX_focus_generic_treaty
+			cost = 7
+			x = 26
+			y = 3
+			cancel = {
+				check_variable = {
+					var = current_nationalism
+					value = 25
+					compare = less_than
+				}
+			}
+			prerequisite = {
+				focus = USA_Nationalism
+			}
+			completion_reward = {
+				custom_effect_tooltip = "FOCUS_WARN_END_PARTPOP"
+				add_timed_idea = {
+					idea = USA_confederacy
+					days = 70
+				}
+				country_event = USA_civil.000
+			}
+		}
+
+		# Full Fascism
+		focus = {
+			id = USA_Fascism
+			icon = GFX_goal_support_fascism
+			cost = 7
+			x = 28
+			y = 2
+			prerequisite = {
+				focus = USA_pushForACentralCause
+			}
+			mutually_exclusive = {
+				focus = USA_Nationalism
+			}
+			completion_reward = {
+				# variable set up
+				set_temp_variable = {
+					var = current_nationalism
+					value = party_popularity@nationalist
+				}
+
+				# halving fascism
+				multiply_temp_variable = {
+					var = current_nationalism
+					value = 0.5
+				}
+
+				# add half of fascism
+				add_popularity = {
+					ideology = fascism
+					popularity = current_nationalism
+				}
+
+				# remove half of fascism
+				multiply_temp_variable = {
+					var = current_nationalism
+					value = -1
+				}
+				add_popularity = {
+					ideology = nationalist
+					popularity = current_nationalism
+				}
+			}
+		}
+
+		focus = {
+			id = USA_AmericaFirstParty
+			icon = GFX_focus_generic_strike_at_democracy1
+			cost = 7
+			x = 28
+			y = 3
+			cancel = {
+				check_variable = {
+					var = current_fascism
+					value = 25
+					compare = less_than
+				}
+			}
+			prerequisite = {
+				focus = USA_Fascism
+			}
+			completion_reward = {
+				add_timed_idea = {
+					idea = USA_dreamFirst
+					days = 365
+				}
+				custom_effect_tooltip = "FOCUS_WARN_END_PARTPOP"
+
+			}
+		}
+
+	#Conquering Tree
+
+	focus = {
+		id = USA_a_new_beginning
+		icon = GFX_focus_usa_guarantee_the_american_dream
+		cost = 12
+		x = 7
+		y = 0
+		completion_reward = { 
+			add_political_power = 100
+		}
+	}
+
+	# Global diplomacy
+
+	# Agressive
+	focus = {
+		id = USA_AggressiveOverseas
+		icon = GFX_focus_generic_air_defense
+		cost = 10
+		x = 6
+		y = 6
+		mutually_exclusive = {
+			focus = USA_PassiveOverseas
+		}
+		prerequisite = {
+			focus = USA_overSeaDomination
+			focus = USA_contenentalDefensePact
+		}
+		completion_reward = {
+			add_ideas = USA_aggressive
+		}
+	}
+
+	focus = {
+		id = USA_WorldDomination
+		icon = GFX_focus_generic_air_defense
+		cost = 10
+		x = 4
+		y = 7
+		mutually_exclusive = {
+			focus = USA_WarWhenNeeded
+		}
+		prerequisite = {
+			focus = USA_AggressiveOverseas
+		}
+		completion_reward = {
+			every_other_country = {
+				if = {
+					limit = {
+						NOT = {
+							is_ally_with = ROOT
+							is_puppet_of = ROOT
+							is_guaranteed_by = ROOT
+						}
+					}
+				}
+				PREV = { every_controlled_state  = { add_claim_by = ROOT} }
+				ROOT = {
+					create_wargoal = {
+						target = PREV
+						type = annex_everything
+					} 
+				}
+			}
+		}
+	}
+
+	# Neutral
+
+	focus = {
+		id = USA_WarWhenNeeded
+		icon = GFX_focus_generic_air_defense
+		cost = 10
+		x = 7
+		y = 7
+		mutually_exclusive = {
+			focus = USA_WorldDomination
+			focus = USA_MakeAllies
+		}
+		prerequisite = {
+			focus = USA_AggressiveOverseas
+			focus = USA_PassiveOverseas
+		}
+		completion_reward = {
+			add_political_power = 50
+			add_war_support = 0.05
+			add_stability = 0.05
+		}
+	}
+
+	# Peaceful
+	focus = {
+		id = USA_PassiveOverseas
+		icon = GFX_goal_generic_defence
+		cost = 5
+		x = 9
+		y = 6
+		mutually_exclusive = {
+			focus = USA_AggressiveOverseas
+		}
+		prerequisite = {
+			focus = USA_overSeaDomination
+			focus = USA_contenentalDefensePact
+		}
+		completion_reward = {
+			add_ideas = USA_passive
+		}
+	}
+
+	focus = {
+		id = USA_MakeAllies
+		icon = GFX_goal_generic_major_alliance
+		cost = 5
+		x = 11
+		y = 7
+		mutually_exclusive = {
+			focus = USA_WarWhenNeeded
+		}
+		prerequisite = {
+			focus = USA_PassiveOverseas
+		}
+		prerequisite = {
+			focus = USA_contenentalDefensePact
+		}
+		completion_reward = {
+			add_ideas = USA_improveGlobal
+			every_other_country = {
+				limit = {
+					is_subject = no
+					has_government = ROOT
+					is_in_faction = no  # Exclude countries that are already in factions.
+				}
+				if = {
+					limit = {
+						THIS = { is_ai = yes }
+					}
+					THIS = { country_event = {id = USA_interact_Ai.0199 days = 3} }
+				}
+				else_if = {
+					limit = { 
+						THIS = { is_ai = no }
+					}
+					THIS = { country_event = {id = USA_interact_Player.0199 days = 3} }
+				}
+			}
+		}
+	}
+
+
+	# American Nationalism
+
+	focus = {
+		id = USA_manifest_our_destiny
+		icon = GFX_focus_POL_support_global_falangism
+		cost = 15
+		x = 3
+		y = 1
+
+		mutually_exclusive = {
+			focus = USA_peaceful_unification
+		}
+
+		prerequisite = {
+			focus = USA_a_new_beginning
+		}
+
+		completion_reward = { 
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.05
+			}
+			add_political_power = 50
+			add_ideas = USA_NoJustify
+		}
+	}
+	
+	focus = {
+		id = USA_North_Conquer
+		icon = GFX_goal_generic_territory_or_war
+		cost = 10
+		x = 1
+		y = 2
+		prerequisite = {
+			focus = USA_manifest_our_destiny
+		}
+		completion_reward = {
+			create_wargoal = {
+				target = Z93
+				type = annex_everything
+			}
+		}
+	}
+
+	focus = {
+		id = USA_South_Conquer
+		icon = GFX_goal_generic_territory_or_war
+		cost = 10
+		prerequisite = {
+			focus = USA_manifest_our_destiny
+		}
+		x = 3
+		y = 2
+		completion_reward = {
+			create_wargoal = {
+				target = MEX
+				type = annex_everything
+			}
+		}
+	}
+
+	focus = {
+		id = USA_West_Conquer
+		icon = GFX_goal_generic_territory_or_war
+		cost = 10
+		x = 5
+		y = 2
+		prerequisite = {
+			focus = USA_manifest_our_destiny
+		}
+		completion_reward = {
+			create_wargoal = {
+				target = Z83
+				type = annex_everything
+			}
+		}
+	}
+
+	focus = {
+		id = USA_Core_Holdings
+		icon = GFX_focus_generic_treaty
+		cost = 20
+		x = 3
+		y = 3
+		ai_will_do = {
+			factor = 9999
+		}
+		prerequisite = {
+			focus = USA_North_Conquer
+		}
+		prerequisite = {
+			focus = USA_South_Conquer
+		}
+		prerequisite = {
+			focus = USA_West_Conquer
+		}
+		completion_reward = { 
+			set_variable = {
+				states_to_core = 0
+				political_cost = -25
+			}
+			USA = { 
+				every_owned_state = {
+					limit = {
+						NOT = { is_core_of = USA }
+						}
+					add_to_temp_variable = {
+						var = states_to_core
+						value = 1
+					}
+					add_core_of = USA
+					}
+				}	
+			multiply_variable = {
+				var = political_cost
+				value = states_to_core
+			}
+			add_political_power = political_cost
+			add_ideas = USA_coredLand
+		}
+	}
+
+	focus = {
+		id = USA_lowerCoreDebuffs
+		icon = GFX_focus_generic_self_management
+		cost = 10
+		x = 1
+		y = 4
+		ai_will_do = {
+			factor = 9999
+		}
+		prerequisite = {
+			focus = USA_Core_Holdings
+		}
+		completion_reward = { 
+			swap_ideas = {
+				remove_idea = USA_coredLand
+				add_idea = USA_lowStrikes
+			}
+		}
+	}
+
+	focus = {
+		id = USA_removeCoreDebuffs
+		icon = GFX_focus_generic_self_management
+		cost = 10
+		x = 1
+		y = 5
+		ai_will_do = {
+			factor = 9999
+		}
+		prerequisite = {
+			focus = USA_lowerCoreDebuffs
+		}
+		completion_reward = { 
+			remove_ideas = USA_lowStrikes
+		}
+	}
+
+	focus = {
+		id = USA_overSeaDomination
+		icon = GFX_focus_generic_little_entente
+		cost = 12
+		x = 5
+		y = 5
+
+		prerequisite = {
+			focus = USA_Core_Holdings
+		}
+
+		completion_reward = {
+			remove_ideas = USA_NoJustify
+		}
+	}
+
+	# North American Pan-Nationalism
+
+	focus = {
+		id = USA_peaceful_unification
+		icon = GFX_goal_generic_national_unity
+		cost = 15
+		x = 10
+		y = 1
+
+		mutually_exclusive = {
+			focus = USA_manifest_our_destiny
+		}
+
+		prerequisite = {
+			focus = USA_a_new_beginning
+		}
+
+		completion_reward = { 
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = USA_spread_contenentalunity
+		icon = GFX_goal_generic_propaganda
+		cost = 5
+		x = 10
+		y = 2
+
+		prerequisite = {
+			focus = USA_peaceful_unification
+		}
+
+		completion_reward = { 
+			add_timed_idea = {
+				idea = USA_PNAP_support
+				days = 365
+			}
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.05
+			}
+			set_party_name = {
+				ideology = democratic
+				long_name = "North American Unity Party"
+				name = "NAUP"
+			}
+		}
+	}
+
+	focus = {
+		id = USA_pressure_Z83
+		icon = GFX_focus_SOV_rebuild_the_savior_cathedral
+		cost = 5
+		x = 8
+		y = 3
+
+		prerequisite = {
+			focus = USA_spread_contenentalunity
+		}
+
+		completion_reward = { 
+			Z83 = {
+				add_timed_idea = {
+					idea = USA_PNAP_support
+					days = 365
+				}
+				add_popularity = {
+					ideology = democratic
+					popularity = 0.05
+				}
+				set_party_name = {
+					ideology = democratic
+					long_name = "Pan-North-American Party"
+					name = "PNAP"
+				}
+			}
+			
+		}
+	}
+
+	focus = {
+		id = USA_ask_Z83
+		icon = GFX_focus_SOV_rebuild_the_savior_cathedral
+		cost = 5
+		x = 8
+		y = 4
+
+		prerequisite = {
+			focus = USA_pressure_Z83
+		}
+
+		completion_reward = { 
+			USA = { country_event = { id = USA.110 days = 7 } }
+		}
+	}
+
+	focus = {
+		id = USA_pressure_Z93
+		icon = GFX_goal_generic_propaganda
+		cost = 5
+		x = 10
+		y = 3
+
+		prerequisite = {
+			focus = USA_spread_contenentalunity
+		}
+
+		completion_reward = { 
+			Z93 = {
+				add_timed_idea = {
+					idea = USA_PNAP_support
+					days = 365
+				}
+				add_popularity = {
+					ideology = democratic
+					popularity = 0.05
+				}
+				set_party_name = {
+					ideology = democratic
+					long_name = "North American Unity Party"
+					name = "NAUP"
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = USA_ask_Z93
+		icon = GFX_goal_generic_propaganda
+		cost = 5
+		x = 10
+		y = 4
+
+		prerequisite = {
+			focus = USA_pressure_Z93
+		}
+
+		completion_reward = { 
+			USA = { country_event = { id = USA.120 days = 7 } }
+		}
+	}
+
+	focus = {
+		id = USA_pressure_MEX
+		icon = GFX_focus_mex_redeem_aztlan
+		cost = 5
+		x = 12
+		y = 3
+
+		prerequisite = {
+			focus = USA_spread_contenentalunity
+		}
+
+		completion_reward = { 
+			MEX = { 
+				add_timed_idea = {
+				idea = USA_PNAP_support
+				days = 365
+				}
+				add_popularity = {
+					ideology = democratic
+					popularity = 0.05
+				}
+				set_party_name = {
+					ideology = democratic
+					long_name = "North American Unity Party"
+					name = "NAUP"
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = USA_ask_MEX
+		icon = GFX_focus_mex_redeem_aztlan
+		cost = 5
+		x = 12
+		y = 4
+
+		prerequisite = {
+			focus = USA_pressure_MEX
+		}
+
+		completion_reward = { 
+			USA = { country_event = { id = USA.130 days = 7 } }
+		}
+	}
+
+	focus = {
+		id = USA_contenentalDefensePact
+		icon = GFX_goal_generic_alliance
+		cost = 10
+		x = 10
+		y = 5
+
+		prerequisite = { focus = USA_ask_MEX }
+		prerequisite = { focus = USA_ask_Z83 }
+		prerequisite = { focus = USA_ask_Z93 }
+
+		completion_reward = { 
+			USA = {create_faction = "North American Defense Pact"}
+		}
+	}
+
+}

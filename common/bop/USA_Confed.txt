@@ -1,0 +1,51 @@
+USA_CONFED = {
+
+    decision_category = USA_CONFED_BOP
+
+    # Range: -1 to 1
+    initial_value = 0
+
+    left_side = USA_CONFED_LEFT
+    right_side = USA_CONFED_RIGHT
+
+    side = {
+        id = USA_CONFED_LEFT
+        icon = GFX_idea_USA_desegregation_2
+        range = {
+            id = USA_Federal
+            min = -1
+            max = -0.5
+            modifier = {
+                stability_weekly = 0.01
+                monthly_population = 5
+                civilian_factory_use = 0.05
+                democratic_drift = 0.05
+            }
+        }
+    }
+
+    range = {
+        id = USA_Moderate
+        min = -0.5
+        max = 0.5
+        modifier = {
+            political_power_gain = 0.5
+        }
+    }
+
+    side = {
+        id = USA_CONFED_RIGHT
+        icon = GFX_idea_usa_desegregation_1
+        range = {
+            id = USA_AntiFederal
+            min = 0.5
+            max = 1
+            modifier = {
+                war_support_weekly = 0.005
+                monthly_population = -5
+                civilian_factory_use = 0.05
+                nationalist_drift = 0.05
+            }
+        }
+    }
+}

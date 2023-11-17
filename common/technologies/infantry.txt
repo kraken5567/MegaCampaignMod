@@ -1,6 +1,7 @@
 technologies = {
 	
 	@1918 = 0
+	@1924 = 1
 	@1936 = 2
 	@1938 = 4
 	@1939 = 6
@@ -76,6 +77,16 @@ technologies = {
 			
 			modifier = {
 				factor = 10
+				tag = CHI
+				
+				OR = {
+					date > "1937.1.1"
+					JAP = { is_ai = no }
+				}
+			}
+			
+			modifier = {
+				factor = 10
 				date > "1936.1.3"
 			}
 		}
@@ -123,6 +134,20 @@ technologies = {
 			
 			modifier = {
 				factor = 5
+
+				OR = {
+					tag = CHI
+					tag = PRC
+					tag = XSM
+					tag = SIK
+					tag = GXC
+					tag = SHX
+					tag = YUN
+				}
+			}
+
+			modifier = {
+				factor = 5
 				date > "1939.1.1"
 			}
 		}
@@ -165,6 +190,17 @@ technologies = {
 				num_of_military_factories < 50
 				factor = 0.5
 			}
+			#modifier = {
+			#	factor = 0
+			#	tag = SOV
+			#	OR = {
+			#		date < "1944.1.1" # stock up on lots of rifles, we got the manpower
+			#		AND = {
+			#			date > "1943.1.1"
+			#			surrender_progress < 0.1 # if we arent losing badly its ok
+			#		}
+			#	}
+			#}
 		}
 	}
 	improved_infantry_weapons_2 = {
@@ -332,6 +368,10 @@ technologies = {
 			
 			
 			modifier = {
+				tag = GER
+				factor = 2.5
+			}
+			modifier = {
 				num_of_military_factories > 150
 				factor = 2.5
 			}
@@ -431,6 +471,21 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 0.5
+			
+			modifier = {
+				factor = 5
+				tag = USA
+			}
+			
+			modifier = {
+				factor = 2
+				tag = GER
+			}
+			
+			modifier = {
+				factor = 5
+				tag = ENG
+			}
 		}
 	}
 	
@@ -445,7 +500,7 @@ technologies = {
 			leads_to_tech = paratroopers3
 			research_cost_coeff = 1
 		}
-
+		
 		research_cost = 1.5
 		start_year = 1939
 		folder = {
@@ -460,6 +515,21 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 0.5
+			
+			modifier = {
+				factor = 2
+				tag = USA
+			}
+			
+			modifier = {
+				factor = 2
+				tag = GER
+			}
+			
+			modifier = {
+				factor = 2
+				tag = ENG
+			}
 		}
 	}
 
@@ -484,6 +554,21 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 0.5
+			
+			modifier = {
+				factor = 2
+				tag = USA
+			}
+			
+			modifier = {
+				factor = 2
+				tag = GER
+			}
+			
+			modifier = {
+				factor = 2
+				tag = ENG
+			}
 		}
 	}
 	
@@ -524,6 +609,21 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 0.7
+			
+			modifier = {
+				factor = 3
+				tag = USA
+			}
+			
+			modifier = {
+				factor = 3
+				tag = JAP
+			}
+			
+			modifier = {
+				factor = 5
+				tag = ENG
+			}
 		}
 	}
 	
@@ -537,7 +637,6 @@ technologies = {
 			leads_to_tech = marines3
 			research_cost_coeff = 1
 		}
-		
 
 		research_cost = 1.5
 		start_year = 1939
@@ -553,6 +652,16 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 0.7
+			
+			modifier = {
+				factor = 3
+				tag = USA
+			}
+			
+			modifier = {
+				factor = 3
+				tag = JAP
+			}
 		}
 	}
 	
@@ -576,6 +685,16 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 0.7
+			
+			modifier = {
+				factor = 3
+				tag = USA
+			}
+			
+			modifier = {
+				factor = 3
+				tag = JAP
+			}
 		}
 	}	
 	
@@ -631,7 +750,6 @@ technologies = {
 			research_cost_coeff = 1
 		}
 
-
 		research_cost = 1.5
 		start_year = 1939
 		folder = {
@@ -678,6 +796,8 @@ technologies = {
 			acclimatization_hot_climate_gain_factor = 0.05
 			acclimatization_cold_climate_gain_factor = 0.05
 		}
+		
+		allow_branch = { not = { has_dlc = "Arms Against Tyranny" } }
 		
 		#dependencies = {
 		#	OR = {
@@ -758,7 +878,7 @@ technologies = {
 			advanced_special_forces
 		}
 
-		special_forces_cap = 0.05
+		special_forces_cap = 0.10
 		special_forces_training_time_factor = -0.1
 		
 		path = {
@@ -789,11 +909,11 @@ technologies = {
 	extreme_environment_training = {
 
 		category_special_forces = {
-			acclimatization_hot_climate_gain_factor = 0.50
-			acclimatization_cold_climate_gain_factor = 0.50
+			acclimatization_hot_climate_gain_factor = 0.20
+			acclimatization_cold_climate_gain_factor = 0.20
 		}
 		
-		special_forces_no_supply_grace = 48
+		special_forces_no_supply_grace = 24
 		special_forces_training_time_factor = 0.1
 		
 		path = {
@@ -824,8 +944,8 @@ technologies = {
 	survival_training = {
 
 		category_special_forces = {
-			acclimatization_hot_climate_gain_factor = 0.20
-			acclimatization_cold_climate_gain_factor = 0.20
+			acclimatization_hot_climate_gain_factor = 0.10
+			acclimatization_cold_climate_gain_factor = 0.10
 		}
 		
 		special_forces_out_of_supply_factor = -0.1
@@ -857,13 +977,11 @@ technologies = {
 
 	elite_forces = {
 		category_special_forces = {
-			acclimatization_hot_climate_gain_factor = 0.20
-			acclimatization_cold_climate_gain_factor = 0.20
 			max_organisation = 5
 			soft_attack = 0.05
 		}
 		
-		special_forces_no_supply_grace = 48
+		special_forces_no_supply_grace = 24
 
 		research_cost = 2
 		start_year = 1944
@@ -1148,6 +1266,9 @@ technologies = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
+				factor = 15
+			}
+			modifier = {
 				factor = 2
 				date > "1937.1.1"
 			}
@@ -1221,34 +1342,6 @@ technologies = {
 		
 		categories = {
 			infantry_weapons
-		}
-		
-		ai_will_do = {
-			factor = 1
-			
-			modifier = {
-				factor = 2
-				date > "1938.1.6"
-			}
-			
-			modifier = {
-				factor = 2
-				date > "1939.1.1"
-			}
-			
-			modifier = {
-				factor = 2
-				date > "1940.1.1"
-			}
-			
-			modifier = {
-				factor = 2
-				date > "1941.1.1"
-			}
-			modifier = {
-				has_war = yes
-				factor = 2
-			}
 		}
 	}
 	
@@ -1414,6 +1507,69 @@ technologies = {
 			}
 		}
 	}
+
+	tech_trucks = {
+
+		enable_subunits = {
+			mot_anti_tank_brigade
+			mot_artillery_brigade
+			mot_anti_air_brigade
+		}
+
+		enable_equipments = {
+			motorized_equipment_0
+		}
+
+		enable_equipment_modules = {
+			tank_wheeled_suspension
+		}
+
+		
+		path = {
+			leads_to_tech = motorised_infantry
+			research_cost_coeff = 1
+		}
+
+		path = {
+			leads_to_tech = armored_car1
+			research_cost_coeff = 1
+		} 
+
+		research_cost = 1.5
+		start_year = 1936
+		folder = {
+			name = infantry_folder
+			position = { x = 0 y = -1 }
+		}
+		
+		categories = {
+			motorized_equipment
+			infantry_tech
+		}
+		
+		ai_will_do = {
+			factor = 1
+			
+			modifier = {
+				factor = 2
+				date > "1937.1.1"
+			}
+			
+			modifier = {
+				factor = 2
+				date > "1938.1.1"
+			}
+			
+			modifier = {
+				factor = 2
+				date > "1939.1.1"
+			}
+			modifier = {
+				is_major = no
+				factor = 0.75
+			}
+		}
+	}
 	
 	motorised_infantry = {
 
@@ -1425,9 +1581,9 @@ technologies = {
 			motorized_equipment_1
 		}
 
-		enable_equipment_modules = {
-			tank_wheeled_suspension
-		}
+		#enable_equipment_modules = {
+		#	tank_wheeled_suspension
+		#}
 
 		on_research_complete_limit = {
 			NOT = {
@@ -1443,11 +1599,6 @@ technologies = {
 		
 		path = {
 			leads_to_tech = mechanised_infantry
-			research_cost_coeff = 1
-		}
-
-		path = {
-			leads_to_tech = armored_car1
 			research_cost_coeff = 1
 		}
 
@@ -1503,12 +1654,20 @@ technologies = {
 		enable_equipments = {
 			motorized_rocket_equipment_1
 		}
+		dependencies = {
+			rocket_artillery = 1
+		}
 	
 		research_cost = 1.5
 		start_year = 1939
 		
 		ai_will_do = {
 			factor = 1
+			
+			modifier = {
+				factor = 2
+				tag = SOV
+			}
 		}
 		
 		categories = {
@@ -1535,7 +1694,7 @@ technologies = {
 		start_year = 1914
 		folder = {
 			name = infantry_folder
-			position = { x = 4 y = @1936 }
+			position = { x = 4 y = @1924 }
 		}
 		
 		categories = {
@@ -1703,7 +1862,68 @@ technologies = {
 		}
 	}
 
+ 	SWE_lynx_armored_car = {
+ 		allow = { always = no }
+		enable_equipments = {
+			#armored_car_at_equipment
+		}
+
+		research_cost = 1
+		start_year = 1942
+		sub_tech_index = 1
+		
+		categories = {
+			motorized_equipment
+			armor
+			cat_armored_cars
+		}
+
+		armored_car = {
+			max_organisation = 5
+			ap_attack = 0.1
+			hard_attack = 0.1
+			#hardness = 1
+			forest = {
+		    	attack = 0.2
+				movement = 0.55
+			}
+			desert = {
+		    	attack = -0.2
+				movement = -0.55
+			}
+
+			snow = {
+				attack = 0.2
+				movement = 0.35
+			}
+		}
+
+		armored_car_recon = {
+			max_organisation = 3
+			ap_attack = 0.1
+			hard_attack = 0.1
+			#hardness = 1
+			forest = {
+		    	attack = 0.05
+				movement = 0.05
+			}
+			desert = {
+		    	attack = -0.15
+				movement = -0.15
+			}
+
+			snow = {
+				attack = 0.05
+				movement = 0.08
+			}
+		}
+	}
+
 	mechanised_infantry = {
+
+		enable_subunits = {
+			mechanized
+		}
 
 		enable_equipments = {
 			mechanized_equipment_1
@@ -1754,6 +1974,17 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				tag = USA
+				factor = 2
+			}
+		}
+	}
+
+ 	militia_tech = {
+ 		allow = { always = no }
+		enable_subunits = {
+			militia
 		}
 	}
 
@@ -1792,6 +2023,10 @@ technologies = {
 		
 		ai_will_do = {
 			factor = 2
+			modifier = {
+				tag = USA
+				factor = 2
+			}
 		}
 	}
 
@@ -1909,7 +2144,7 @@ technologies = {
 		}		
 	}
 
-	######### FROM SOVIET FOCUS ##########
+	######### FROM SOVIET FOCUS ########## (And Finnish)
 	penal_infantry = {
 		
 		allow = {
@@ -1970,7 +2205,130 @@ technologies = {
 		}
 		irregular_infantry = {
 			max_organisation = 10
-			maximum_speed = 1.25 #TODO_TA for testing only, remove
 		}
 	}
+
+
+	######### FROM FINNISH FOCUS ##########
+	molotov_cocktails_tech = {
+		
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+
+		category_all_infantry = {
+			hard_attack = 0.25
+			ap_attack = 1
+		}
+	}
+
+	winter_logistics_support_tech = {
+		
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+
+		enable_subunits = {
+			winter_logistics_support
+		}
+	}
+
+	long_range_patrol_support_tech = {
+		
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+
+		enable_subunits = {
+			long_range_patrol_support
+		}
+	}
+
+	sami_pathfinders_tech = { #Hidden tech showed as part of FIN_sami_pathfinders national spirit
+		
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+
+		category_recon = {
+			recon = 1
+
+			snow = {
+				movement = 0.1
+			}
+			forest = {
+				movement = 0.05
+			}
+			hills = {
+				movement = 0.05
+			}
+			mountain = {
+				movement = 0.05
+			}
+			marsh = {
+				movement = 0.05
+			}
+			plains = {
+				movement = 0.05
+			}
+			river = {
+				movement = 0.05
+			}
+		}
+	}
+
+	lotta_svard_tech = { #Hidden tech showed as part of FIN_lotta_svard national spirit
+		
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+
+		category_support_battalions = { #Any changes in the values below need to be applied in FIN_lotta_svard_support_battalions_bonus_tt too
+			max_strength = 5
+			max_organisation = 10
+		}
+	}
+
+	SWE_sami_support_tech = { #Hidden tech for Sami reconcilliation for Sweden
+		
+		allow = {
+			always = no
+		}
+
+		research_cost = 1
+		start_year = 1936
+
+		category_recon = {
+			recon = 1
+
+			snow = {
+				movement = 0.1
+			}
+			forest = {
+				movement = 0.1
+			}
+			hills = {
+				movement = 0.05
+			}
+			mountain = {
+				movement = 0.05
+			}
+		}
+	}
+	
 }

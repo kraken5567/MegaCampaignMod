@@ -1,0 +1,38 @@
+ideas = {
+	#Starting Ideas for Counties (NOTHING ELSE!)
+	country = {
+		Z45_government_stall = {
+            picture = gre_political_instability
+            modifier = {
+                war_support_factor = -0.2
+                stability_factor = -0.1
+                political_power_gain = -2.5
+                recruitable_population_factor = -0.25
+                industrial_capacity_factory = -0.2
+                research_speed_factor = -0.1
+                justify_war_goal_time = 0.2
+                }
+            }
+		USA_Contested_Government = {
+			picture = generic_disjointed_gov
+			rule = {
+				can_join_factions = no
+				can_be_called_to_war = no
+				can_boost_own_ideology = no
+				can_create_collaboration_government = no
+				can_declare_war_on_same_ideology = no
+			}
+			modifier = {
+				economy_cost_factor = 300
+				mobilization_laws_cost_factor = 300
+				political_power_gain = -0.50
+				stability_factor = -0.10
+				war_support_factor = -0.10
+				conscription = -0.005
+				democratic_drift = -0.01
+				communism_drift = 0.01
+				fascism_drift = 0.01
+			}
+		}
+	}
+}
