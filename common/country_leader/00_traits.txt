@@ -14,6 +14,20 @@
 
 leader_traits = {
 
+	weak_democrat = {
+		random = no
+		political_power_factor = -0.5
+		democratic_drift = -0.04
+		fascism_drift = 0.01
+		communism_drift = 0.01
+		socialism_drift = 0.01
+		nationalist_drift = 0.01
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
 	dictator = {
 		random = no
 		political_power_factor = 0.25
@@ -4533,7 +4547,7 @@ leader_traits = {
 		fascism_drift = -0.05
 		fascism_acceptance = -40
 		targeted_modifier = {
-			tag = GER
+			tag = Z45
 			attack_bonus_against = 0.1
 			defense_bonus_against = 0.1
 		}

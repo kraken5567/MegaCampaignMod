@@ -3,12 +3,14 @@ characters = {
 		name = Theodore_2_Roosevelt
 		portraits = {
 			civilian = {
-				large = GFX_portrait_europe_generic_5
+				large = "gfx/leaders/USA/TRoos.dds"
 			}
 		}
 		country_leader = {
-			ideology = moderatism
-			traits = {  }
+			ideology = conservatism
+			traits = {
+				weak_democrat
+			}
 		}
 	}
 	USA_16777411 = {

@@ -2,17 +2,21 @@ bookmarks = {
 	bookmark = {
 		name = GRAND_CAMPAIGN_NAME
 		desc = GRAND_CAMPAIGN_DESC
-		date = 1936.1.1.12
+		date = 1934.1.1.12
 		picture = GFX_select_date_1936
-		default_country = "Z68"
+
 		default = yes
+		# Basically the Germany of this Mod
+		default_country = Z45
+
+		# Majors
 		JAP = {
 			ideology = democratic
 			history = "A Grand Asian Empire"
 		}
 		PER = {
 			ideology = democratic
-			history = "A Grand Middle Easter Empire"
+			history = "A Grand Middle Eastern Empire"
 		}
 		SPR = {
 			ideology = neutrality
@@ -20,36 +24,60 @@ bookmarks = {
 		}
 		Z45 = {
 			ideology = fascism
-			history = "A Powerful Eastern European Power"
+			history = "Z45_GRAND_CAMPAIGN_DESC"
+			ideas = {
+				Z45_government_stall
+			}
+			focuses = {
+				Z45_a_new_direction
+				Z45_civil_reorginization
+				Z45_gov_m_strengthen
+			}
 		}
 		Z68 = {
 			ideology = democratic
 			history = "An Economic Powerhouse"
 		}
 		USA = {
-			ideology = communism
-			history = "A Revolutionized Democracy"
+			ideology = democratic
+			history = "USA_GRAND_CAMPAIGN_DESC"
+			ideas = {
+				USA_Contested_Government
+			}
+			focuses = {
+				USA_a_new_beginning
+				USA_addressContension
+				USA_addressEconomy
+			}
 		}
-		ENG = {
-			minor = yes
+
+		"---" = {
+			history = "Explore Other Countries"
+		}
+
+		# Minor Countries (Should be in the lower part...)
+		# NEED FOCUSES TO SHOW UP!
+		"ENG" = {
 			ideology = neutrality
 			history = "A Failing Kingdom"
+			minor = yes
 		}
-		FRA = {
+		"FRA" = {
 			ideology = fascism
 			history = "A comparibly weak rival to Lothoringia"
 			minor = yes
 		}
-		Z98 = {
-			minor = yes
+		"Z98" = {
 			ideology = neutrality
 			history = "A Failing Kingdom"
-		}
-		ROM = {
 			minor = yes
+		}
+		"ROM" = {
 			ideology = fascism
 			history = "A subordinate to Polish-Lithuania"
+			minor = yes
 		}
+
 		effect = {
 			randomize_weather = 22345 # <-Obligatory in every bookmark !
 			#123 = { rain_light = yes }

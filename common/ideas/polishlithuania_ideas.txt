@@ -1,4 +1,4 @@
-ideas = {
+﻿ideas = {
     country = {
         # air
         Z45_air_1 = {
@@ -127,19 +127,6 @@ ideas = {
                 fascism_drift = -0.25
             }
         }
-
-        Z45_government_stall = {
-            picture = gre_political_instability
-            modifier = {
-                war_support_factor = -0.2
-                stability_factor = -0.1
-                political_power_gain = -2.5
-                recruitable_population_factor = -0.25
-                industrial_capacity_factory = -0.2
-                research_speed_factor = -0.1
-                justify_war_goal_time = 0.2
-                }
-            }
 
         Z45_gov_republic = {
             picture = EST_democratic_opposition
