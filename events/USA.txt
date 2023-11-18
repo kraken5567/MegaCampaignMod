@@ -790,7 +790,6 @@ country_event = {
 
 	option = {
 		name = "Free Market is a happy market!"
-		ROOT.requested_state
 		if = {
 			limit = {
 				check_variable = {

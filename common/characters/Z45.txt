@@ -62,8 +62,8 @@ characters = {
 		name = Edward_Mokronowski
 		portraits = {
 			army = {
-				large = GFX_Portrait_Europe_Generic_land_3
-				small = GFX_Portrait_Europe_Generic_land_3_small
+				large = "gfx/leaders/POL/Z45-POLFascism.dds"
+				small = "gfx/leaders/POL/Z45-POLFascism.dds"
 			}
 		}
 		field_marshal = {

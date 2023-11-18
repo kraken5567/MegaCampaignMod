@@ -1,0 +1,19 @@
+capital = 295
+
+#oob = "CAL_1934"
+set_research_slots = 2
+set_convoys = 5
+
+set_politics = {
+	ruling_party = socialism
+	last_election = "1933.1.1"
+	election_frequency = 24
+	elections_allowed = yes
+}
+
+set_popularities = {
+	democratic = 10
+	socialism = 75
+	neutrality = 10
+	communism = 5
+}
