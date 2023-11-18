@@ -22,6 +22,8 @@ state = {
 				naval_base = 1
 			}
 		}
+		add_core_of = CAL
+		add_core_of = Z83
 	}
 
 	provinces = {
