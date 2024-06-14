@@ -3,7 +3,6 @@ capital = 686
 add_ideas = USA_Contested_Government
 
 set_variable = {
-	# RANGE: -1 to 1
 	var = Confederate_Support
 	value = 0
 	tooltip = "Tracks Confederacy Support in the Legislative Branch"
@@ -12,6 +11,9 @@ set_variable = {
 oob = "USA_1936"
 set_research_slots = 3
 set_convoys = 352
+
+set_stability = 50
+set_war_support = 10
 
 recruit_character = USA_50335564
 recruit_character = USA_16777411
@@ -49,21 +51,45 @@ if = {
 
 set_politics = {
 	ruling_party = democratic
-	last_election = "1934.3.29"
+	last_election = "1934.11.29"
 	election_frequency = 48
 	elections_allowed = yes
 }
 
 set_party_name = {
+	ideology = democratic
+	long_name = "United States Democratic Party"
+	name = "Democratic Party"
+}
+
+set_party_name = {
+	ideology = neutrality
+	long_name = "Washington Bloodline Party"
+	name = "Washington Regency"
+}
+
+set_party_name = {
+	ideology = fascism
+	long_name = "American Supremeacy Party"
+	name = "ASP"
+}
+
+set_party_name = {
+	ideology = communism
+	long_name = "American Communist Party"
+	name = "ACP"
+}
+
+set_party_name = {
 	ideology = socialism
-	long_name = "United States Socialist Party"
-	name = "USSP"
+	long_name = "United States Social Democratic Party"
+	name = "USSDP"
 }
 
 set_party_name = {
 	ideology = nationalist
-	long_name = "America First Party"
-	name = "AFP"
+	long_name = "Confederate Constitutionalists"
+	name = "CC"
 }
 
 set_popularities = {
@@ -99,16 +125,34 @@ add_ideas = {
 	limited_exports
 }
 
-set_stability = 46.754
-set_war_support = 45.234
-
 # Starting tech
 set_technology = {
+
+	# Artillery #
+	gw_artillery = 1
+	antitank1 = 1
+	antiair1 = 1
+
+	# Armor # 
+	gwtank = 1
+	gwtank_chassis = 1
+	basic_light_tank = 1
+	basic_light_tank_chassis = 1	
+
+	# Support #
+	tech_support = 1
+	basic_train = 1
+
+	# Industry # 
 	fuel_refining = 1
 	fuel_silos = 1
-	gw_artillery = 1
+	construction1 = 1
+	basic_machine_tools = 1
+
+	# Infantry #
 	infantry_weapons = 1
 	tech_support = 1
+	
 }
 
 if = {

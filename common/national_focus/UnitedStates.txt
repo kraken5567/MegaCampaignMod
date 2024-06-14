@@ -21,7 +21,11 @@ focus_tree = {
 		cost = 7
 		x = 18
 		y = 8
-		completion_reward = { }
+		completion_reward = {
+			army_experience = 15
+			navy_experience = 15
+			air_experience = 10
+		}
 	}
 
 	focus = {
@@ -31,7 +35,9 @@ focus_tree = {
 		x = 18
 		y = 10
 		prerequisite = { focus = USA_improveMilitary }
-		completion_reward = { }
+		completion_reward = {
+			add_ideas = USA_pentagon
+		}
 	}
 	
 	# THE ARMY
@@ -44,7 +50,9 @@ focus_tree = {
 		prerequisite = {
 			focus = USA_improveMilitary
 		}
-		completion_reward = { }
+		completion_reward = {
+			army_experience = 25
+		}
 	}
 
 	# tactics
@@ -58,7 +66,10 @@ focus_tree = {
 		prerequisite = {
 			focus = USA_theArmy
 		}
-		completion_reward = { }
+		completion_reward = {
+			add_command_power = 25
+			army_experience = 5
+		}
 	}
 
 	focus = {
@@ -69,7 +80,106 @@ focus_tree = {
 		y = 14
 		prerequisite = { focus = USA_armorCombined }
 		prerequisite = { focus = USA_artilleryCombined }
-		completion_reward = { }
+		completion_reward = {
+			if = {
+				limit = {
+					USA = { has_country_flag = USA_Tank }
+				}
+				USA = {
+
+					# Give Tank
+
+					if = {
+						limit = { has_dlc = "No Step Back" }
+							create_equipment_variant = {
+								name = "M6A1"
+								type = heavy_tank_chassis_2
+								upgrades = {
+									tank_gun_upgrade = 2
+									tank_nsb_engine_upgrade = 2
+									tank_nsb_armor_upgrade = 7
+									}
+								}
+							create_equipment_variant = {
+								name = "M4 Sherman"
+								type = medium_tank_chassis_2
+								upgrades = {
+									tank_gun_upgrade = 2
+									tank_nsb_armor_upgrade = 4
+									tank_nsb_engine_upgrade = 3
+								}
+							}
+							create_equipment_variant = {
+								name = "M5"
+								type = light_tank_chassis_3
+								upgrades = {
+									tank_gun_upgrade = 2
+									tank_nsb_armor_upgrade = 4
+									tank_nsb_engine_upgrade = 3
+								}
+							}
+						}
+					else = {
+						create_equipment_variant = {
+							name = "M6A1"
+							type = heavy_tank_chassis_2
+							upgrades = {
+								tank_gun_upgrade = 2
+								tank_engine_upgrade = 2
+								tank_armor_upgrade = 7
+								}
+							}
+						create_equipment_variant = {
+							name = "M4 Sherman"
+							type = medium_tank_chassis_2
+							upgrades = {
+								tank_gun_upgrade = 2
+								tank_armor_upgrade = 4
+								tank_engine_upgrade = 3
+							}
+						}
+						create_equipment_variant = {
+							name = "M5"
+							type = light_tank_chassis_3
+							upgrades = {
+								tank_gun_upgrade = 2
+								tank_armor_upgrade = 4
+								tank_engine_upgrade = 3
+							}
+						}
+					}
+						add_equipment_to_stockpile = {
+							variant_name = "M6A1"
+							type = heavy_tank_chassis_2
+							amount = 20
+						}
+						add_equipment_to_stockpile = {
+							variant_name = "M4 Sherman"
+							type = medium_tank_chassis_2
+							amount = 200
+						}
+						add_equipment_to_stockpile = {
+							variant_name = "M5"
+							type = light_tank_chassis_3
+							amount = 20
+						}
+					}
+				}
+			else_if = {
+				limit = { 
+					USA = { has_country_flag = USA_Artillery }
+				}
+				# Give Modern Cannons
+				add_equipment_to_stockpile = {
+					type = artillery_equipment
+					amount = 500
+				}
+			}
+			else = {
+				custom_effect_tooltip = "USA_generic_nothingError"
+				custom_effect_tooltip = "Complete one of the Branches!"
+			}
+		}
 	}
 
 	# Armor
@@ -85,7 +195,9 @@ focus_tree = {
 		prerequisite = {
 			focus = USA_armyTactics
 		}
-		completion_reward = { }
+		completion_reward = {
+			add_ideas = USA_Armor
+		}
 	}
 
 	focus = {
@@ -97,7 +209,9 @@ focus_tree = {
 		prerequisite = {
 			focus = USA_armored
 		}
-		completion_reward = { }
+		completion_reward = {
+			add_ideas = USA_armorBuff
+		}
 	}
 
 	focus = {
@@ -109,7 +223,10 @@ focus_tree = {
 		prerequisite = { 
 			focus = USA_tanks
 		}
-		completion_reward = { }
+		completion_reward = {
+			add_ideas = USA_TankAir
+			set_country_flag = USA_Tank
+		}
 	}
 
 	# Artillery
@@ -125,7 +242,9 @@ focus_tree = {
 		prerequisite = {
 			focus = USA_armyTactics
 		}
-		completion_reward = { }
+		completion_reward = {
+			add_ideas = USA_Artillery
+		}
 	}
 
 	focus = {
@@ -137,7 +256,9 @@ focus_tree = {
 		prerequisite = {
 			focus = USA_artillery
 		}
-		completion_reward = { }
+		completion_reward = {
+			add_ideas = USA_ConcentratedFire
+		}
 	}
 
 	focus = {
@@ -149,7 +270,10 @@ focus_tree = {
 		prerequisite = { 
 			focus = USA_barrage
 		}
-		completion_reward = { }
+		completion_reward = {
+			add_ideas = USA_ArtilleryCombined
+			set_country_flag = USA_Artillery
+		}
 	}
 
 	#THE NAVY
@@ -162,7 +286,9 @@ focus_tree = {
 		prerequisite = {
 			focus = USA_improveMilitary
 		}
-		completion_reward = { }
+		completion_reward = {
+			navy_experience = 25
+		}
 	}
 
 	focus = {
@@ -289,7 +415,9 @@ focus_tree = {
 		y = 11
 		prerequisite = { focus = USA_theArmy }
 		prerequisite = { focus = USA_pentagon }
-		completion_reward = { }
+		completion_reward = {
+			add_ideas = USA_Airforce
+		}
 	}
 
 	focus = {
@@ -299,7 +427,35 @@ focus_tree = {
 		x = 16
 		y = 12
 		prerequisite = { focus = USA_theAirforce }
-		completion_reward = { }
+		completion_reward = {
+			if = {
+				limit = {
+					can_research = fighter3
+				}
+				set_technology = {
+					fighter1 = 1
+					fighter2 = 1
+					fighter3 = 1
+				}
+			}
+			else_if = {
+				limit = {
+					can_research = fighter2
+				}
+				set_technology = {
+					fighter1 = 1
+					fighter2 = 1
+				}
+			}
+			else_if = {
+				limit = {
+					can_research = fighter1
+				}
+				set_technology = {
+					fighter1 = 1
+				}
+			}
+		}
 	}
 
 	focus = {
@@ -824,8 +980,14 @@ focus_tree = {
 			focus = USA_RedArmy
 		}
 		completion_reward = {
-			add_political_power = 200
+			add_political_power = 100
 			remove_ideas = USA_Contested_Government
+			USA = {
+				remove_trait = {
+					trait = weak_democrat
+				}
+			}
+			# Custom Trait Logic HERE
 		}
 	}
 
@@ -1041,10 +1203,12 @@ focus_tree = {
 		cost = 5
 		x = 24
 		y = 2
+
 		prerequisite = {
 			focus = USA_gainSupport
 			focus = USA_pushForACentralCause
 		}
+
 		completion_reward = {
 			add_timed_idea = {
 				idea = USA_remove_communism
@@ -1067,10 +1231,12 @@ focus_tree = {
 		cost = 5
 		x = 22
 		y = 2
+
 		prerequisite = {
 			focus = USA_gainSupport
 			focus = USA_freePoliticalRivals
 		}
+
 		completion_reward = { 
 			add_timed_idea = {
 				idea = USA_remove_fascism
@@ -1104,6 +1270,10 @@ focus_tree = {
 				idea = USA_demIndustry
 				days = 365
 			}
+			add_offsite_building = {
+				type = industrial_complex
+				level = 2
+			}
 		}
 	}
 
@@ -1118,6 +1288,7 @@ focus_tree = {
 		}
 		completion_reward = {
 			add_ideas = USA_demResearch
+			USA = { add_research_slot = 1 }
 		}
 	}
 
@@ -1306,6 +1477,12 @@ focus_tree = {
 		cost = 12
 		x = 7
 		y = 0
+		available = {
+			USA = {
+				has_completed_focus = USA_FixedPolitics
+			}
+		}
+
 		completion_reward = { 
 			add_political_power = 100
 		}
@@ -1463,6 +1640,16 @@ focus_tree = {
 
 		prerequisite = {
 			focus = USA_a_new_beginning
+		}
+
+		available = {
+			USA = {
+				OR = {
+					has_government = nationalist
+					has_government = fascism
+					has_government = communism
+				}
+			}
 		}
 
 		completion_reward = { 
@@ -1638,6 +1825,16 @@ focus_tree = {
 
 		prerequisite = {
 			focus = USA_a_new_beginning
+		}
+		
+		available = {
+			USA = {
+				OR = {
+					has_government = socialism
+					has_government = neutrality
+					has_government = democratic
+				}
+			}
 		}
 
 		completion_reward = { 
@@ -1827,5 +2024,4 @@ focus_tree = {
 			USA = {create_faction = "North American Defense Pact"}
 		}
 	}
-
 }

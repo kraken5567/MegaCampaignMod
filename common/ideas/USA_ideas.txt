@@ -1,6 +1,92 @@
 ideas = {
 	country = {
 
+		USA_Airforce = {
+			modifier = {
+				experience_gain_air_factor = 0.05
+				air_ace_generation_chance_factor = 0.01
+				air_mission_efficiency = 0.04
+			}
+		}
+
+		USA_ArtilleryCombined = {
+			picture = generic_mountain_warfare
+			modifier = {
+				army_artillery_attack_factor = 0.05
+				army_artillery_defence_factor = 0.025
+				army_artillery_speed_factor = 0.01
+			}
+		}
+
+		USA_ConcentratedFire = {
+			picture = army_ordnance_department
+			equipment_bonus = {
+				artillery = {
+					hard_attack = 0.05
+					soft_attack = 0.05
+				}
+			}
+		}
+
+		USA_Artillery = {
+			picture = generic_artillery_regiments
+			equipment_bonus = {
+				artillery = {
+					hard_attack = 0.03
+					soft_attack = 0.05
+					max_organisation = 0.05
+				}
+			}
+		}
+
+		USA_TankAir = {
+			picture = generic_license_production
+			modifier = {
+				air_cas_efficiency = 0.1
+			}
+			equipment_bonus = {
+				armor = {
+					# in %
+					recon = 0.03
+					ap_attack = 0.02
+					max_organisation = 0.05
+					
+					instant = yes
+				}
+			}
+		}
+
+		USA_armorBuff = {
+			picture = man_five_year_plan_tank
+			equipment_bonus = {
+				armor = {
+					build_cost_ic = -0.1
+					breakthrough = 0.05
+					attack = 0.05
+					defense = 0.075
+					
+					instant = yes
+				}
+			}
+		}
+
+		USA_Armor = {
+			picture = generic_armor
+			modifier = {
+				army_armor_attack_factor = 0.05
+				army_armor_defence_factor = 0.05
+				army_armor_speed_factor = 0.1
+			}
+		}
+
+		USA_pentagon = {
+			picture = USA_pentagon
+			modifier = {
+				max_command_power = 50
+				command_power_gain = 0.05
+			}
+		}
+
 		USA_fundPublic = {
 			picture = generic_foreign_capital
 			modifier = {

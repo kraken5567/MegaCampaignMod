@@ -3,12 +3,160 @@
 # event titles [$TARGET.GetName]
 
 # Tooltips (§<ColorFirstLetter>....§!) 
+# Errors #
+USA_generic_nothingError:0 "§RThis will give an effect if conditions are met!§!"
+
+# Warns! #
 USA_BOP1_STATE_SUPPORT:0 "§YWill add Civillian Factory to a random core at the cost of 10k population in that core.§!"
 USA_BOP1_FEDERAL_SUPPORT:0 "§YAppease the legislators which reduces threat.§!"
 USA_civilWarFireWarn:0 "§RCIVIL WAR WILL FIRE DUE TO IDEOLOGY SUPPORT!§!"
 FOCUS_WARN_END_PARTPOP:0 "§RFOCUS WILL CANCEL WITH LOW IDEOLOGY SUPPORT! (<25%)§!"
 USA_Confederacy_Contention:0 "§RTHERE WILL BE POLITICAL DISCOURSE§!"
 USA_BOP1_MANIFEST:0 "§YThis will add a claim to all adjacent states to our borders, this could be many or few states.§!"
+
+# Info #
+
+
+# Industry 
+USA_addressEconomy:0 "Fix the Economy"
+USA_addressEconomy_desc:0 "We must choose what must be done!"
+
+USA_industryEND:0 "Finalize The Better Industry Act"
+USA_industryEND_desc:0 "We shall sign off the Better Industry Act. This act will help maintain our choice! Hope you picked the best one.."
+
+# Choice A
+USA_intervene:0 "Interventionalism"
+USA_intervene_desc:0 ""
+
+# 1
+USA_ratifyProjects:0 "Fund Public Works"
+USA_ratifyProjects_desc:0 "Improve the living conditions of all citizens."
+USA_getSupport:0 "Work With Corperations"
+USA_getSupport_desc:0 "Fund more beneficial works and help crate more jobs."
+
+# 2
+USA_steelWorks:0 "Build Steel Mills"
+USA_steelWorks_desc:0 "Build a steel mill"
+USA_tungstenWorks:0 "Build Tungsten Mine"
+USA_tungstenWorks_desc:0 "Build a tungsten mine"
+USA_aluminumWorks:0 "Build Aluminum Mine"
+USA_aluminumWorks_desc:0 "Build an aluminum mine"
+USA_oilWorks:0 "Build Steel Mills"
+USA_oilWorks_desc:0 "Build a steel mill"
+
+# 3
+USA_factoryWorks:0 "Build Civillian Factories"
+USA_factoryWorks_desc:0 "Build a few civillian factories"
+USA_infrastructureWorks:0 "Improve the National Highways"
+USA_infrastructureWorks_desc:0 "Build up most states to high level infrastructure."
+USA_productionWorks:0 "Build Military Factories"
+USA_productionWorks_desc:0 "Build a few new arms factories"
+
+# 4
+USA_regulations:0 "Regulate The Factories"
+USA_regulations_desc:0 "We need to improve the conditions of the factories"
+USA_fundPublic:0 "Fund Public Works"
+USA_fundPublic_desc:0 "Fund general improvements around the country"
+
+# Choice B
+USA_invisibleHand:0 "Laisse-Faire"
+USA_invisibleHand_desc:0 ""
+
+# 1
+USA_freeMarketReforms:0 "Ratify New Market Reforms"
+USA_freeMarketReforms_desc:0 "Give the companies more freedom to improve themselves"
+USA_reduceTax:0 "Lower Taxes on Companies"
+USA_reduceTax_desc:0 "Give the companies more freedom to improve themselves"
+
+# 2
+USA_migrantMagnet:0 "Beacon of New Hope"
+USA_migrantMagnet_desc:0 "Draw migrants and refugees to our factories"
+USA_skilledLabor:0 "Public Education"
+USA_skilledLabor_desc:0 "Teach the workers"
+USA_freeTrade:0 "Reduce Trade Limitations"
+USA_freeTrade_desc:0 "Reduce our trade limitations"
+
+# 3 
+USA_researchPush:0 "Push for Innovation"
+USA_researchPush_desc:0 "Push companies to invent and create"
+USA_consumerPush:0 "'Customer Is Always Right'"
+USA_consumerPush_desc:0 "Push comapnies to respect consumers"
+
+# 4
+USA_infrastructurePrivate:0 "Privatize Infrastructure"
+USA_infrastructurePrivate_desc:0 "Give the companies control of the infrastructure that hold our country together"
+
+# Political
+
+# I know I spelled it work, cry about it
+USA_addressContension:0 "Address the Contention"
+USA_addressContension_desc:0 "The last election was too close for any real clear cut winner. We have to decide what was the real outcome or we will have a disjoint between the people and the government."
+
+USA_FixedPolitics:0 "Justify Ourselves"
+USA_FixedPolitics_desc:0 "Justify our new administration to our people."
+
+# Choice A
+USA_gainSupport:0 "Stay the Course"
+USA_gainSupport_desc:0 "Staying the course might be our best option to legitimize the election and all future elections."
+
+# Level 1
+USA_antiFascistRaids:0 "Remove the Supremeists"
+USA_antiFascistRaids_desc:0 "Remove the Supremeists from our government and polotics, they are not wanted here."
+
+USA_antiCommunistRaids:0 "Remove the Marxists"
+USA_antiCommunistRaids_desc:0 "Remove the Marxists from our government and polotics, they are not wanted here."
+
+# Level 2 & 3
+
+USA_industryOfDemocracy:0 "Industry of Democracy"
+USA_industryOfDemocracy_desc:0 "Improve our industry."
+
+USA_researchOfDemocracy:0 "Research of Democracy"
+USA_researchOfDemocracy_desc:0 "Improve our labs and equipment."
+
+# Choice B
+USA_freePoliticalRivals:0 "Seek Support from Unpopulars"
+USA_freePoliticalRivals_desc:0 "This could lead to an America completely alein to the one we know and love. This could be for the better or for the worse, only time can tell."
+
+USA_RedArmy:0 "Defend the Heartland"
+USA_RedArmy_desc:0 "A revolutionary country needs its defense"
+
+# A
+USA_Communism:0 "The Far-Left"
+USA_Communism_desc:0 "Seek out the support of the Communists"
+
+USA_democraticRaids:0 "Rid the Democracy"
+USA_democraticRaids_desc:0 "The Democracy is the source of inequality of workers"
+
+# B
+USA_Socialism:0 "The Left"
+USA_Socialism_desc:0 "Seek out the support of the Socialists"
+
+USA_socialDemocracy:0 "Push for Equity"
+USA_socialDemocracy_desc:0 "Push fopr equity of all citizens of our wonderful country"
+
+# Choice C
+USA_pushForACentralCause:0 "Unite Our People to a Cause"
+USA_pushForACentralCause_desc:0 "This will almost certainly cause some people and groups to become even more radical than before. This might be catastrophic..."
+
+USA_militaryLeaders:0 "Seek War Mongers"
+USA_militaryLeaders_desc:0 "Give the KKK some power over the military"
+
+# A
+USA_Nationalism:0 "Land of Dixie"
+USA_Nationalism_desc:0 "Seek the support from the land of Dixie"
+
+USA_ConfederateConstitution:0 "Give the States Power"
+USA_ConfederateConstitution_desc:0 "Implement the 'Confederacy' Amendment."
+
+# B
+USA_Fascism:0 "America Above All"
+USA_Fascism_desc:0 "Seek out the support of the America First Party"
+
+USA_AmericaFirstParty:0 "American Supremacy"
+USA_AmericaFirstParty_desc:0 "America is the most powerful country and we will not be hindered!"
+
+# GLOBAL INFLUENCE BRANCH!
 
 # Focuses
 USA_a_new_beginning:0 "New Foreign Policy"
@@ -70,3 +218,70 @@ USA_ask_MEX_desc:0 "Ask if Mexico will join us. (Based on military strength)"
 
 USA_contenentalDefensePact:0 "Create NADO"
 USA_contenentalDefensePact_desc:0 "Create NADO, North American Defense Organization"
+
+# Military #
+
+USA_improveMilitary:0 "Improve Military"
+USA_improveMilitary_desc:0 ""
+
+# Middle Area
+USA_pentagon:0 "Build the Pentagon"
+USA_pentagon_desc:0 ""
+
+USA_CAS:0 "Create the Close-Air-Support Plane"
+USA_CAS_desc:0 "Our troops need an airforce they can rely on"
+
+ # Airforce
+USA_theAirforce:0 "Found the Airforce"
+USA_theAirforce_desc:0 "Establish the Airforce branch of the Pentagon"
+
+USA_fighters:0 "Fabricate new Fighters"
+USA_fighters_desc:0 "Design and produce new fighter planes"
+
+USA_bombers:0 "Roll-out More Bombers"
+USA_bombers_desc:0 "Get more modern bombers into the air"
+
+ # Carrier Fleet
+USA_carrierFleet:0 "Establish the Carrier Fleet"
+USA_carrierFleet_desc:0 "Create a carrier fleet to use for your naval planes"
+
+USA_interceptor:0 "Create a Naval Interceptor"
+USA_interceptor_desc:0 "Create a modern naval interceptor for anti-torpedo-bombing"
+
+USA_torpedoSquad:0 "Create a Torpedo Bomber Squardon"
+USA_torpedoSquad_desc:0 "Invest into making Torpedo bombers that can take out your emeny's fleets"
+
+# Army
+USA_theArmy:0 "Improve the Army"
+USA_theArmy_desc:0 ""
+
+USA_armyTacticDone:0 "Complete the Tactic"
+USA_armyTacticDone_desc:0 ""
+
+  # Tactical
+USA_armyTactics:0 "Battle Plans"
+USA_armyTactics_desc:0 ""
+
+    # Armor
+USA_armored:0 "Tank Focus"
+USA_armored_desc:0 ""
+
+USA_tanks:0 "Improve our Tanks"
+USA_tanks_desc:0 ""
+
+USA_armorCombined:0 "Tanks of Ground and Sky"
+USA_armorCombined_desc:0 ""
+
+    # Artillery
+USA_artillery:0 "Artillery Focus"
+USA_artillery_desc:0 ""
+
+USA_barrage:0 "Barrage Warfare"
+USA_barrage_desc:0 ""
+
+USA_artilleryCombined:0 "Combined Firefare"
+USA_artilleryCombined_desc:0 ""
+
+# Navy
+USA_theNavy:0 "Improve the Navy"
+USA_theNavy_desc:0 ""

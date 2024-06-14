@@ -1,0 +1,13 @@
+spriteTypes = {
+
+	SpriteType = {
+		name = "GFX_building_strip"
+		texturefile = "gfx\interface\buildings\building_icon_strip.dds"
+		noOfFrames = 17
+	}
+
+	SpriteType = {
+		name = "GFX_USA_Pentagon"
+		texturefile = "gfx\interface\buildings\pentagon-icon.dds"
+	}
+}

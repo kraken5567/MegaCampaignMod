@@ -1,0 +1,25 @@
+﻿l_english:
+
+USA_democratic:0 "United States of America"
+USA_democratic_DEF:0 "The United States of America"
+USA_democratic_ADJ:0 "American"
+
+USA_fascism:0 "North American States"
+USA_fascism_DEF:0 "The North American States"
+USA_fascism_ADJ:0 "American"
+
+USA_communism:0 "Communist States of America"
+USA_communism_DEF:0 "CSSA"
+USA_communism_ADJ:0 "American"
+
+USA_neutrality:0 "United Archduchies of America"
+USA_neutrality_DEF:0 "United Kingdoms of America"
+USA_neutrality_ADJ:0 "American"
+
+USA_socialism:0 "United States of America"
+USA_socialism_DEF:0 "Moderately Socialist America"
+USA_socialism_ADJ:0 "American"
+
+USA_nationalist:0 "Confederate States of America"
+USA_nationalist_DEF:0 "Anti-Federalist America"
+USA_nationalist_ADJ:0 "American"

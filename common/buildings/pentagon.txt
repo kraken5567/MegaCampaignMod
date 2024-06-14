@@ -1,0 +1,17 @@
+buildings = {
+
+	pentagon = {
+		
+		# cannot be built normally
+		base_cost = 2147483647
+		
+		icon_frame = 17
+		max_level = 1
+		value = 1 
+
+		show_modifier = yes
+		allied_build = no
+		infrastructure_construction_effect = yes
+	}
+
+}
